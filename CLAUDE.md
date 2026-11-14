@@ -129,7 +129,11 @@ Nhật ký tiến độ: mỗi phiên cập nhật mục này và mục "Ghi ch�
   - Phân cụm: KMeans, silhouette, PCA.
   - Văn dồn ở 5,0: vì sao so với mốc 4,5/5,5.
   - Quyền riêng tư: xóa SBD từ bước 2, chỉ công bố số liệu tổng hợp. Ý này đã bỏ khỏi hình H4.1, cần viết trong báo cáo mục 2.4.
-- [ ] **Viết báo cáo** — sau buổi review. Định dạng cuối là .docx (người dùng chưa xác nhận).
+- [ ] **Viết báo cáo** — đang làm. Bản nháp nội dung nằm trong `bao_cao/dat_van_de.md`.
+  - Đã có chương 1–5: đặt vấn đề, dữ liệu, tích hợp (E.1 làm sạch, E.2 ghép), pipeline, kết quả. Mỗi chương có đoạn báo cáo kèm lời nói mẫu.
+  - Còn thiếu: chương 6 thảo luận và hạn chế, chương 7 kết luận, tài liệu tham khảo.
+  - Sau đó chuyển sang .docx (người dùng chưa xác nhận định dạng).
+  - Người dùng chuộng khung **Vấn đề → Giải pháp → Kết quả** và ngôn ngữ đời thường.
 - [ ] (Tùy chọn) Hồi quy: thử lưới regParam cho ridge (hiện chỉ có 0,5, quá mạnh) bằng nested CV.
 - [x] Điểm Văn dồn ở 5,0 **ở cấp tỉnh** (H5.6). So với mốc 4,5/5,5, không dùng 4,75/5,25, vì Văn được chấm theo nửa điểm.
 - [ ] (Tuỳ chọn) Xem tiếp ở cấp cụm điểm thi (`ma_diem_thi` = 3 số sau mã tỉnh trong SBD). Chỉ trình bày như "quan sát thống kê", không kết luận gian lận.
