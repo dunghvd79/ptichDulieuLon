@@ -1,0 +1,24 @@
+# Dữ liệu thô: lớn và là dữ liệu cá nhân -> không đưa lên Git (tải lại bằng scripts/get_data.py)
+data/raw/
+
+# Dữ liệu cấp thí sinh sau làm sạch (vẫn là dữ liệu cá nhân, ~ hàng chục MB)
+data/processed/diemthi_2026_clean.*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Spark
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Hệ điều hành / IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

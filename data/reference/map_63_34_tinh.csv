@@ -1,0 +1,64 @@
+ma_tinh_cu,ten_tinh_cu,ma_tinh_moi,ten_tinh_moi,loai
+01,Hà Nội,01,Hà Nội,giu_nguyen
+02,Hà Giang,08,Tuyên Quang,sap_nhap
+04,Cao Bằng,04,Cao Bằng,giu_nguyen
+06,Bắc Kạn,19,Thái Nguyên,sap_nhap
+08,Tuyên Quang,08,Tuyên Quang,sap_nhap
+10,Lào Cai,15,Lào Cai,sap_nhap
+11,Điện Biên,11,Điện Biên,giu_nguyen
+12,Lai Châu,12,Lai Châu,giu_nguyen
+14,Sơn La,14,Sơn La,giu_nguyen
+15,Yên Bái,15,Lào Cai,sap_nhap
+17,Hòa Bình,25,Phú Thọ,sap_nhap
+19,Thái Nguyên,19,Thái Nguyên,sap_nhap
+20,Lạng Sơn,20,Lạng Sơn,giu_nguyen
+22,Quảng Ninh,22,Quảng Ninh,giu_nguyen
+24,Bắc Giang,24,Bắc Ninh,sap_nhap
+25,Phú Thọ,25,Phú Thọ,sap_nhap
+26,Vĩnh Phúc,25,Phú Thọ,sap_nhap
+27,Bắc Ninh,24,Bắc Ninh,sap_nhap
+30,Hải Dương,31,Hải Phòng,sap_nhap
+31,Hải Phòng,31,Hải Phòng,sap_nhap
+33,Hưng Yên,33,Hưng Yên,sap_nhap
+34,Thái Bình,33,Hưng Yên,sap_nhap
+35,Hà Nam,37,Ninh Bình,sap_nhap
+36,Nam Định,37,Ninh Bình,sap_nhap
+37,Ninh Bình,37,Ninh Bình,sap_nhap
+38,Thanh Hóa,38,Thanh Hóa,giu_nguyen
+40,Nghệ An,40,Nghệ An,giu_nguyen
+42,Hà Tĩnh,42,Hà Tĩnh,giu_nguyen
+44,Quảng Bình,44,Quảng Trị,sap_nhap
+45,Quảng Trị,44,Quảng Trị,sap_nhap
+46,Huế,46,Huế,giu_nguyen
+48,Đà Nẵng,48,Đà Nẵng,sap_nhap
+49,Quảng Nam,48,Đà Nẵng,sap_nhap
+51,Quảng Ngãi,51,Quảng Ngãi,sap_nhap
+52,Bình Định,52,Gia Lai,sap_nhap
+54,Phú Yên,66,Đắk Lắk,sap_nhap
+56,Khánh Hòa,56,Khánh Hòa,sap_nhap
+58,Ninh Thuận,56,Khánh Hòa,sap_nhap
+60,Bình Thuận,68,Lâm Đồng,sap_nhap
+62,Kon Tum,51,Quảng Ngãi,sap_nhap
+64,Gia Lai,52,Gia Lai,sap_nhap
+66,Đắk Lắk,66,Đắk Lắk,sap_nhap
+67,Đắk Nông,68,Lâm Đồng,sap_nhap
+68,Lâm Đồng,68,Lâm Đồng,sap_nhap
+70,Bình Phước,75,Đồng Nai,sap_nhap
+72,Tây Ninh,80,Tây Ninh,sap_nhap
+74,Bình Dương,79,Hồ Chí Minh,sap_nhap
+75,Đồng Nai,75,Đồng Nai,sap_nhap
+77,Bà Rịa - Vũng Tàu,79,Hồ Chí Minh,sap_nhap
+79,Hồ Chí Minh,79,Hồ Chí Minh,sap_nhap
+80,Long An,80,Tây Ninh,sap_nhap
+82,Tiền Giang,82,Đồng Tháp,sap_nhap
+83,Bến Tre,86,Vĩnh Long,sap_nhap
+84,Trà Vinh,86,Vĩnh Long,sap_nhap
+86,Vĩnh Long,86,Vĩnh Long,sap_nhap
+87,Đồng Tháp,82,Đồng Tháp,sap_nhap
+89,An Giang,91,An Giang,sap_nhap
+91,Kiên Giang,91,An Giang,sap_nhap
+92,Cần Thơ,92,Cần Thơ,sap_nhap
+93,Hậu Giang,92,Cần Thơ,sap_nhap
+94,Sóc Trăng,92,Cần Thơ,sap_nhap
+95,Bạc Liêu,96,Cà Mau,sap_nhap
+96,Cà Mau,96,Cà Mau,sap_nhap

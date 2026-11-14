@@ -1,0 +1,1939 @@
+ma_tinh,ten_tinh,chi_tieu,nam,gia_tri,don_vi,bieu_nien_giam
+01,Hà Nội,dan_so_tb,2020,8246.5,nghìn người,6
+01,Hà Nội,dan_so_tb,2021,8330.8,nghìn người,6
+01,Hà Nội,dan_so_tb,2022,8435.7,nghìn người,6
+01,Hà Nội,dan_so_tb,2023,8587.1,nghìn người,6
+01,Hà Nội,dan_so_tb,2024,8717.6,nghìn người,6
+01,Hà Nội,dan_so_tb,2025,8857.5,nghìn người,6
+01,Hà Nội,dan_so_thanh_thi,2020,4061.1,nghìn người,9
+01,Hà Nội,dan_so_thanh_thi,2021,4095.4,nghìn người,9
+01,Hà Nội,dan_so_thanh_thi,2022,4138.5,nghìn người,9
+01,Hà Nội,dan_so_thanh_thi,2023,4213.0,nghìn người,9
+01,Hà Nội,dan_so_thanh_thi,2024,4280.8,nghìn người,9
+01,Hà Nội,dan_so_thanh_thi,2025,4234.8,nghìn người,9
+01,Hà Nội,dien_tich,2025,3359.8,km2,5
+01,Hà Nội,gini,2020,0.341,hệ số,166
+01,Hà Nội,gini,2021,0.359,hệ số,166
+01,Hà Nội,gini,2022,0.346,hệ số,166
+01,Hà Nội,gini,2023,0.348,hệ số,166
+01,Hà Nội,gini,2024,0.359,hệ số,166
+01,Hà Nội,gini,2025,0.29,hệ số,166
+01,Hà Nội,grdp_binh_quan_nguoi,2020,123.4,triệu đồng,43
+01,Hà Nội,grdp_binh_quan_nguoi,2021,128.3,triệu đồng,43
+01,Hà Nội,grdp_binh_quan_nguoi,2022,141.1,triệu đồng,43
+01,Hà Nội,grdp_binh_quan_nguoi,2023,149.7,triệu đồng,43
+01,Hà Nội,grdp_binh_quan_nguoi,2024,162.9,triệu đồng,43
+01,Hà Nội,grdp_binh_quan_nguoi,2025,179.3,triệu đồng,43
+01,Hà Nội,hdi,2020,0.799,chỉ số,164
+01,Hà Nội,hdi,2021,0.809,chỉ số,164
+01,Hà Nội,hdi,2022,0.817,chỉ số,164
+01,Hà Nội,hdi,2023,0.823,chỉ số,164
+01,Hà Nội,hdi,2024,0.829,chỉ số,164
+01,Hà Nội,hdi,2025,0.845,chỉ số,164
+01,Hà Nội,hs_tren_gv_thpt,2025,24.0,người,147
+01,Hà Nội,mat_do_dan_so,2025,2636.0,người/km2,5
+01,Hà Nội,so_gv_thpt,2025,13021.0,người,142
+01,Hà Nội,so_hs_thpt,2025,310719.0,người,143
+01,Hà Nội,so_truong_thpt,2025,200.0,trường,140
+01,Hà Nội,thu_nhap_bq_lao_dong_thang,2020,7090.1,nghìn đồng,163
+01,Hà Nội,thu_nhap_bq_lao_dong_thang,2021,7711.7,nghìn đồng,163
+01,Hà Nội,thu_nhap_bq_lao_dong_thang,2022,8858.9,nghìn đồng,163
+01,Hà Nội,thu_nhap_bq_lao_dong_thang,2023,9833.2,nghìn đồng,163
+01,Hà Nội,thu_nhap_bq_lao_dong_thang,2024,10815.3,nghìn đồng,163
+01,Hà Nội,thu_nhap_bq_lao_dong_thang,2025,12133.2,nghìn đồng,163
+01,Hà Nội,thu_nhap_bq_nguoi_thang,2025,8374.0,nghìn đồng,158
+01,Hà Nội,ty_le_dung_internet,2024,87.9,%,186
+01,Hà Nội,ty_le_dung_internet,2025,91.3,%,186
+01,Hà Nội,ty_le_ho_ngheo,2020,0.5,%,173
+01,Hà Nội,ty_le_ho_ngheo,2021,0.4,%,173
+01,Hà Nội,ty_le_ho_ngheo,2022,0.1,%,173
+01,Hà Nội,ty_le_ho_ngheo,2023,0.1,%,173
+01,Hà Nội,ty_le_ho_ngheo,2024,0.1,%,173
+01,Hà Nội,ty_le_ho_ngheo,2025,0.0,%,173
+01,Hà Nội,ty_le_ld_qua_dao_tao,2020,48.5,%,34
+01,Hà Nội,ty_le_ld_qua_dao_tao,2021,50.3,%,34
+01,Hà Nội,ty_le_ld_qua_dao_tao,2022,50.3,%,34
+01,Hà Nội,ty_le_ld_qua_dao_tao,2023,50.8,%,34
+01,Hà Nội,ty_le_ld_qua_dao_tao,2024,53.9,%,34
+01,Hà Nội,ty_le_ld_qua_dao_tao,2025,54.9,%,34
+04,Cao Bằng,dan_so_tb,2020,533.1,nghìn người,6
+04,Cao Bằng,dan_so_tb,2021,542.2,nghìn người,6
+04,Cao Bằng,dan_so_tb,2022,543.1,nghìn người,6
+04,Cao Bằng,dan_so_tb,2023,547.9,nghìn người,6
+04,Cao Bằng,dan_so_tb,2024,558.5,nghìn người,6
+04,Cao Bằng,dan_so_tb,2025,562.9,nghìn người,6
+04,Cao Bằng,dan_so_thanh_thi,2020,136.0,nghìn người,9
+04,Cao Bằng,dan_so_thanh_thi,2021,138.2,nghìn người,9
+04,Cao Bằng,dan_so_thanh_thi,2022,138.5,nghìn người,9
+04,Cao Bằng,dan_so_thanh_thi,2023,139.5,nghìn người,9
+04,Cao Bằng,dan_so_thanh_thi,2024,142.2,nghìn người,9
+04,Cao Bằng,dan_so_thanh_thi,2025,83.5,nghìn người,9
+04,Cao Bằng,dien_tich,2025,6703.0,km2,5
+04,Cao Bằng,gini,2020,0.501,hệ số,166
+04,Cao Bằng,gini,2021,0.525,hệ số,166
+04,Cao Bằng,gini,2022,0.493,hệ số,166
+04,Cao Bằng,gini,2023,0.491,hệ số,166
+04,Cao Bằng,gini,2024,0.477,hệ số,166
+04,Cao Bằng,gini,2025,0.458,hệ số,166
+04,Cao Bằng,grdp_binh_quan_nguoi,2020,35.8,triệu đồng,43
+04,Cao Bằng,grdp_binh_quan_nguoi,2021,35.8,triệu đồng,43
+04,Cao Bằng,grdp_binh_quan_nguoi,2022,38.7,triệu đồng,43
+04,Cao Bằng,grdp_binh_quan_nguoi,2023,41.0,triệu đồng,43
+04,Cao Bằng,grdp_binh_quan_nguoi,2024,44.2,triệu đồng,43
+04,Cao Bằng,grdp_binh_quan_nguoi,2025,49.6,triệu đồng,43
+04,Cao Bằng,hdi,2020,0.641,chỉ số,164
+04,Cao Bằng,hdi,2021,0.648,chỉ số,164
+04,Cao Bằng,hdi,2022,0.658,chỉ số,164
+04,Cao Bằng,hdi,2023,0.668,chỉ số,164
+04,Cao Bằng,hdi,2024,0.669,chỉ số,164
+04,Cao Bằng,hdi,2025,0.684,chỉ số,164
+04,Cao Bằng,hs_tren_gv_thpt,2025,18.0,người,147
+04,Cao Bằng,mat_do_dan_so,2025,84.0,người/km2,5
+04,Cao Bằng,so_gv_thpt,2025,821.0,người,142
+04,Cao Bằng,so_hs_thpt,2025,14639.0,người,143
+04,Cao Bằng,so_truong_thpt,2025,24.0,trường,140
+04,Cao Bằng,thu_nhap_bq_lao_dong_thang,2020,2166.4,nghìn đồng,163
+04,Cao Bằng,thu_nhap_bq_lao_dong_thang,2021,4658.5,nghìn đồng,163
+04,Cao Bằng,thu_nhap_bq_lao_dong_thang,2022,3680.8,nghìn đồng,163
+04,Cao Bằng,thu_nhap_bq_lao_dong_thang,2023,3544.2,nghìn đồng,163
+04,Cao Bằng,thu_nhap_bq_lao_dong_thang,2024,3868.2,nghìn đồng,163
+04,Cao Bằng,thu_nhap_bq_lao_dong_thang,2025,3144.9,nghìn đồng,163
+04,Cao Bằng,thu_nhap_bq_nguoi_thang,2025,2690.0,nghìn đồng,158
+04,Cao Bằng,ty_le_dung_internet,2024,71.5,%,186
+04,Cao Bằng,ty_le_dung_internet,2025,77.8,%,186
+04,Cao Bằng,ty_le_ho_ngheo,2020,26.0,%,173
+04,Cao Bằng,ty_le_ho_ngheo,2021,24.5,%,173
+04,Cao Bằng,ty_le_ho_ngheo,2022,23.6,%,173
+04,Cao Bằng,ty_le_ho_ngheo,2023,21.2,%,173
+04,Cao Bằng,ty_le_ho_ngheo,2024,17.0,%,173
+04,Cao Bằng,ty_le_ho_ngheo,2025,10.9,%,173
+04,Cao Bằng,ty_le_ld_qua_dao_tao,2020,21.8,%,34
+04,Cao Bằng,ty_le_ld_qua_dao_tao,2021,24.7,%,34
+04,Cao Bằng,ty_le_ld_qua_dao_tao,2022,25.6,%,34
+04,Cao Bằng,ty_le_ld_qua_dao_tao,2023,25.9,%,34
+04,Cao Bằng,ty_le_ld_qua_dao_tao,2024,26.1,%,34
+04,Cao Bằng,ty_le_ld_qua_dao_tao,2025,26.2,%,34
+08,Tuyên Quang,dan_so_tb,2020,1663.1,nghìn người,6
+08,Tuyên Quang,dan_so_tb,2021,1688.8,nghìn người,6
+08,Tuyên Quang,dan_so_tb,2022,1698.5,nghìn người,6
+08,Tuyên Quang,dan_so_tb,2023,1712.1,nghìn người,6
+08,Tuyên Quang,dan_so_tb,2024,1731.7,nghìn người,6
+08,Tuyên Quang,dan_so_tb,2025,1748.2,nghìn người,6
+08,Tuyên Quang,dan_so_thanh_thi,2020,247.5,nghìn người,9
+08,Tuyên Quang,dan_so_thanh_thi,2021,251.6,nghìn người,9
+08,Tuyên Quang,dan_so_thanh_thi,2022,262.9,nghìn người,9
+08,Tuyên Quang,dan_so_thanh_thi,2023,267.9,nghìn người,9
+08,Tuyên Quang,dan_so_thanh_thi,2024,307.8,nghìn người,9
+08,Tuyên Quang,dan_so_thanh_thi,2025,226.8,nghìn người,9
+08,Tuyên Quang,dien_tich,2025,13795.6,km2,5
+08,Tuyên Quang,gini,2020,0.416,hệ số,166
+08,Tuyên Quang,gini,2021,0.427,hệ số,166
+08,Tuyên Quang,gini,2022,0.433,hệ số,166
+08,Tuyên Quang,gini,2023,0.431,hệ số,166
+08,Tuyên Quang,gini,2024,0.422,hệ số,166
+08,Tuyên Quang,gini,2025,0.399,hệ số,166
+08,Tuyên Quang,grdp_binh_quan_nguoi,2020,36.3,triệu đồng,43
+08,Tuyên Quang,grdp_binh_quan_nguoi,2021,37.6,triệu đồng,43
+08,Tuyên Quang,grdp_binh_quan_nguoi,2022,41.6,triệu đồng,43
+08,Tuyên Quang,grdp_binh_quan_nguoi,2023,43.7,triệu đồng,43
+08,Tuyên Quang,grdp_binh_quan_nguoi,2024,48.3,triệu đồng,43
+08,Tuyên Quang,grdp_binh_quan_nguoi,2025,54.6,triệu đồng,43
+08,Tuyên Quang,hdi,2020,0.63,chỉ số,164
+08,Tuyên Quang,hdi,2021,0.632,chỉ số,164
+08,Tuyên Quang,hdi,2022,0.647,chỉ số,164
+08,Tuyên Quang,hdi,2023,0.662,chỉ số,164
+08,Tuyên Quang,hdi,2024,0.664,chỉ số,164
+08,Tuyên Quang,hdi,2025,0.677,chỉ số,164
+08,Tuyên Quang,hs_tren_gv_thpt,2025,21.0,người,147
+08,Tuyên Quang,mat_do_dan_so,2025,127.0,người/km2,5
+08,Tuyên Quang,so_gv_thpt,2025,2478.0,người,142
+08,Tuyên Quang,so_hs_thpt,2025,52520.0,người,143
+08,Tuyên Quang,so_truong_thpt,2025,46.0,trường,140
+08,Tuyên Quang,thu_nhap_bq_lao_dong_thang,2020,2765.2,nghìn đồng,163
+08,Tuyên Quang,thu_nhap_bq_lao_dong_thang,2021,3427.8,nghìn đồng,163
+08,Tuyên Quang,thu_nhap_bq_lao_dong_thang,2022,4202.1,nghìn đồng,163
+08,Tuyên Quang,thu_nhap_bq_lao_dong_thang,2023,4826.2,nghìn đồng,163
+08,Tuyên Quang,thu_nhap_bq_lao_dong_thang,2024,4993.0,nghìn đồng,163
+08,Tuyên Quang,thu_nhap_bq_lao_dong_thang,2025,5573.8,nghìn đồng,163
+08,Tuyên Quang,thu_nhap_bq_nguoi_thang,2025,3306.0,nghìn đồng,158
+08,Tuyên Quang,ty_le_dung_internet,2024,74.7,%,186
+08,Tuyên Quang,ty_le_dung_internet,2025,77.2,%,186
+08,Tuyên Quang,ty_le_ho_ngheo,2020,19.5,%,173
+08,Tuyên Quang,ty_le_ho_ngheo,2021,18.1,%,173
+08,Tuyên Quang,ty_le_ho_ngheo,2022,20.2,%,173
+08,Tuyên Quang,ty_le_ho_ngheo,2023,17.6,%,173
+08,Tuyên Quang,ty_le_ho_ngheo,2024,13.0,%,173
+08,Tuyên Quang,ty_le_ho_ngheo,2025,7.0,%,173
+08,Tuyên Quang,ty_le_ld_qua_dao_tao,2020,16.9,%,34
+08,Tuyên Quang,ty_le_ld_qua_dao_tao,2021,21.3,%,34
+08,Tuyên Quang,ty_le_ld_qua_dao_tao,2022,21.1,%,34
+08,Tuyên Quang,ty_le_ld_qua_dao_tao,2023,21.4,%,34
+08,Tuyên Quang,ty_le_ld_qua_dao_tao,2024,22.4,%,34
+08,Tuyên Quang,ty_le_ld_qua_dao_tao,2025,22.5,%,34
+11,Điện Biên,dan_so_tb,2020,613.5,nghìn người,6
+11,Điện Biên,dan_so_tb,2021,625.1,nghìn người,6
+11,Điện Biên,dan_so_tb,2022,635.9,nghìn người,6
+11,Điện Biên,dan_so_tb,2023,646.2,nghìn người,6
+11,Điện Biên,dan_so_tb,2024,656.7,nghìn người,6
+11,Điện Biên,dan_so_tb,2025,667.4,nghìn người,6
+11,Điện Biên,dan_so_thanh_thi,2020,93.2,nghìn người,9
+11,Điện Biên,dan_so_thanh_thi,2021,95.0,nghìn người,9
+11,Điện Biên,dan_so_thanh_thi,2022,96.7,nghìn người,9
+11,Điện Biên,dan_so_thanh_thi,2023,98.2,nghìn người,9
+11,Điện Biên,dan_so_thanh_thi,2024,99.8,nghìn người,9
+11,Điện Biên,dan_so_thanh_thi,2025,92.6,nghìn người,9
+11,Điện Biên,dien_tich,2025,9548.0,km2,5
+11,Điện Biên,gini,2020,0.452,hệ số,166
+11,Điện Biên,gini,2021,0.501,hệ số,166
+11,Điện Biên,gini,2022,0.426,hệ số,166
+11,Điện Biên,gini,2023,0.427,hệ số,166
+11,Điện Biên,gini,2024,0.433,hệ số,166
+11,Điện Biên,gini,2025,0.454,hệ số,166
+11,Điện Biên,grdp_binh_quan_nguoi,2020,33.1,triệu đồng,43
+11,Điện Biên,grdp_binh_quan_nguoi,2021,35.3,triệu đồng,43
+11,Điện Biên,grdp_binh_quan_nguoi,2022,39.5,triệu đồng,43
+11,Điện Biên,grdp_binh_quan_nguoi,2023,43.2,triệu đồng,43
+11,Điện Biên,grdp_binh_quan_nguoi,2024,47.7,triệu đồng,43
+11,Điện Biên,grdp_binh_quan_nguoi,2025,53.4,triệu đồng,43
+11,Điện Biên,hdi,2020,0.602,chỉ số,164
+11,Điện Biên,hdi,2021,0.61,chỉ số,164
+11,Điện Biên,hdi,2022,0.618,chỉ số,164
+11,Điện Biên,hdi,2023,0.634,chỉ số,164
+11,Điện Biên,hdi,2024,0.642,chỉ số,164
+11,Điện Biên,hdi,2025,0.656,chỉ số,164
+11,Điện Biên,hs_tren_gv_thpt,2025,17.0,người,147
+11,Điện Biên,mat_do_dan_so,2025,70.0,người/km2,5
+11,Điện Biên,so_gv_thpt,2025,1305.0,người,142
+11,Điện Biên,so_hs_thpt,2025,21949.0,người,143
+11,Điện Biên,so_truong_thpt,2025,29.0,trường,140
+11,Điện Biên,thu_nhap_bq_lao_dong_thang,2020,2477.2,nghìn đồng,163
+11,Điện Biên,thu_nhap_bq_lao_dong_thang,2021,2847.6,nghìn đồng,163
+11,Điện Biên,thu_nhap_bq_lao_dong_thang,2022,2901.2,nghìn đồng,163
+11,Điện Biên,thu_nhap_bq_lao_dong_thang,2023,3050.3,nghìn đồng,163
+11,Điện Biên,thu_nhap_bq_lao_dong_thang,2024,3083.8,nghìn đồng,163
+11,Điện Biên,thu_nhap_bq_lao_dong_thang,2025,3721.9,nghìn đồng,163
+11,Điện Biên,thu_nhap_bq_nguoi_thang,2025,2583.0,nghìn đồng,158
+11,Điện Biên,ty_le_dung_internet,2024,77.1,%,186
+11,Điện Biên,ty_le_dung_internet,2025,80.4,%,186
+11,Điện Biên,ty_le_ho_ngheo,2020,36.7,%,173
+11,Điện Biên,ty_le_ho_ngheo,2021,34.5,%,173
+11,Điện Biên,ty_le_ho_ngheo,2022,33.6,%,173
+11,Điện Biên,ty_le_ho_ngheo,2023,29.5,%,173
+11,Điện Biên,ty_le_ho_ngheo,2024,23.2,%,173
+11,Điện Biên,ty_le_ho_ngheo,2025,13.2,%,173
+11,Điện Biên,ty_le_ld_qua_dao_tao,2020,16.2,%,34
+11,Điện Biên,ty_le_ld_qua_dao_tao,2021,18.8,%,34
+11,Điện Biên,ty_le_ld_qua_dao_tao,2022,18.1,%,34
+11,Điện Biên,ty_le_ld_qua_dao_tao,2023,18.2,%,34
+11,Điện Biên,ty_le_ld_qua_dao_tao,2024,18.4,%,34
+11,Điện Biên,ty_le_ld_qua_dao_tao,2025,18.6,%,34
+12,Lai Châu,dan_so_tb,2020,469.8,nghìn người,6
+12,Lai Châu,dan_so_tb,2021,478.4,nghìn người,6
+12,Lai Châu,dan_so_tb,2022,482.1,nghìn người,6
+12,Lai Châu,dan_so_tb,2023,489.3,nghìn người,6
+12,Lai Châu,dan_so_tb,2024,495.5,nghìn người,6
+12,Lai Châu,dan_so_tb,2025,501.2,nghìn người,6
+12,Lai Châu,dan_so_thanh_thi,2020,82.2,nghìn người,9
+12,Lai Châu,dan_so_thanh_thi,2021,84.7,nghìn người,9
+12,Lai Châu,dan_so_thanh_thi,2022,85.3,nghìn người,9
+12,Lai Châu,dan_so_thanh_thi,2023,86.5,nghìn người,9
+12,Lai Châu,dan_so_thanh_thi,2024,87.6,nghìn người,9
+12,Lai Châu,dan_so_thanh_thi,2025,59.3,nghìn người,9
+12,Lai Châu,dien_tich,2025,9068.7,km2,5
+12,Lai Châu,gini,2020,0.455,hệ số,166
+12,Lai Châu,gini,2021,0.496,hệ số,166
+12,Lai Châu,gini,2022,0.432,hệ số,166
+12,Lai Châu,gini,2023,0.429,hệ số,166
+12,Lai Châu,gini,2024,0.431,hệ số,166
+12,Lai Châu,gini,2025,0.392,hệ số,166
+12,Lai Châu,grdp_binh_quan_nguoi,2020,43.3,triệu đồng,43
+12,Lai Châu,grdp_binh_quan_nguoi,2021,44.7,triệu đồng,43
+12,Lai Châu,grdp_binh_quan_nguoi,2022,49.6,triệu đồng,43
+12,Lai Châu,grdp_binh_quan_nguoi,2023,50.8,triệu đồng,43
+12,Lai Châu,grdp_binh_quan_nguoi,2024,60.4,triệu đồng,43
+12,Lai Châu,grdp_binh_quan_nguoi,2025,79.4,triệu đồng,43
+12,Lai Châu,hdi,2020,0.582,chỉ số,164
+12,Lai Châu,hdi,2021,0.6,chỉ số,164
+12,Lai Châu,hdi,2022,0.603,chỉ số,164
+12,Lai Châu,hdi,2023,0.623,chỉ số,164
+12,Lai Châu,hdi,2024,0.622,chỉ số,164
+12,Lai Châu,hdi,2025,0.621,chỉ số,164
+12,Lai Châu,hs_tren_gv_thpt,2025,23.0,người,147
+12,Lai Châu,mat_do_dan_so,2025,55.0,người/km2,5
+12,Lai Châu,so_gv_thpt,2025,588.0,người,142
+12,Lai Châu,so_hs_thpt,2025,13478.0,người,143
+12,Lai Châu,so_truong_thpt,2025,23.0,trường,140
+12,Lai Châu,thu_nhap_bq_lao_dong_thang,2020,2500.4,nghìn đồng,163
+12,Lai Châu,thu_nhap_bq_lao_dong_thang,2021,3825.7,nghìn đồng,163
+12,Lai Châu,thu_nhap_bq_lao_dong_thang,2022,3449.0,nghìn đồng,163
+12,Lai Châu,thu_nhap_bq_lao_dong_thang,2023,3606.1,nghìn đồng,163
+12,Lai Châu,thu_nhap_bq_lao_dong_thang,2024,3039.5,nghìn đồng,163
+12,Lai Châu,thu_nhap_bq_lao_dong_thang,2025,4099.7,nghìn đồng,163
+12,Lai Châu,thu_nhap_bq_nguoi_thang,2025,2920.0,nghìn đồng,158
+12,Lai Châu,ty_le_dung_internet,2024,73.1,%,186
+12,Lai Châu,ty_le_dung_internet,2025,82.1,%,186
+12,Lai Châu,ty_le_ho_ngheo,2020,30.8,%,173
+12,Lai Châu,ty_le_ho_ngheo,2021,27.9,%,173
+12,Lai Châu,ty_le_ho_ngheo,2022,30.3,%,173
+12,Lai Châu,ty_le_ho_ngheo,2023,28.1,%,173
+12,Lai Châu,ty_le_ho_ngheo,2024,21.8,%,173
+12,Lai Châu,ty_le_ho_ngheo,2025,12.8,%,173
+12,Lai Châu,ty_le_ld_qua_dao_tao,2020,12.5,%,34
+12,Lai Châu,ty_le_ld_qua_dao_tao,2021,25.6,%,34
+12,Lai Châu,ty_le_ld_qua_dao_tao,2022,23.8,%,34
+12,Lai Châu,ty_le_ld_qua_dao_tao,2023,23.8,%,34
+12,Lai Châu,ty_le_ld_qua_dao_tao,2024,23.8,%,34
+12,Lai Châu,ty_le_ld_qua_dao_tao,2025,24.0,%,34
+14,Sơn La,dan_so_tb,2020,1270.6,nghìn người,6
+14,Sơn La,dan_so_tb,2021,1287.7,nghìn người,6
+14,Sơn La,dan_so_tb,2022,1300.1,nghìn người,6
+14,Sơn La,dan_so_tb,2023,1313.3,nghìn người,6
+14,Sơn La,dan_so_tb,2024,1330.6,nghìn người,6
+14,Sơn La,dan_so_tb,2025,1341.2,nghìn người,6
+14,Sơn La,dan_so_thanh_thi,2020,176.1,nghìn người,9
+14,Sơn La,dan_so_thanh_thi,2021,180.1,nghìn người,9
+14,Sơn La,dan_so_thanh_thi,2022,181.8,nghìn người,9
+14,Sơn La,dan_so_thanh_thi,2023,185.6,nghìn người,9
+14,Sơn La,dan_so_thanh_thi,2024,191.7,nghìn người,9
+14,Sơn La,dan_so_thanh_thi,2025,186.4,nghìn người,9
+14,Sơn La,dien_tich,2025,14108.9,km2,5
+14,Sơn La,gini,2020,0.469,hệ số,166
+14,Sơn La,gini,2021,0.474,hệ số,166
+14,Sơn La,gini,2022,0.42,hệ số,166
+14,Sơn La,gini,2023,0.42,hệ số,166
+14,Sơn La,gini,2024,0.405,hệ số,166
+14,Sơn La,gini,2025,0.382,hệ số,166
+14,Sơn La,grdp_binh_quan_nguoi,2020,43.3,triệu đồng,43
+14,Sơn La,grdp_binh_quan_nguoi,2021,44.3,triệu đồng,43
+14,Sơn La,grdp_binh_quan_nguoi,2022,48.8,triệu đồng,43
+14,Sơn La,grdp_binh_quan_nguoi,2023,50.8,triệu đồng,43
+14,Sơn La,grdp_binh_quan_nguoi,2024,57.4,triệu đồng,43
+14,Sơn La,grdp_binh_quan_nguoi,2025,71.4,triệu đồng,43
+14,Sơn La,hdi,2020,0.633,chỉ số,164
+14,Sơn La,hdi,2021,0.636,chỉ số,164
+14,Sơn La,hdi,2022,0.647,chỉ số,164
+14,Sơn La,hdi,2023,0.658,chỉ số,164
+14,Sơn La,hdi,2024,0.663,chỉ số,164
+14,Sơn La,hdi,2025,0.678,chỉ số,164
+14,Sơn La,hs_tren_gv_thpt,2025,23.0,người,147
+14,Sơn La,mat_do_dan_so,2025,95.0,người/km2,5
+14,Sơn La,so_gv_thpt,2025,1619.0,người,142
+14,Sơn La,so_hs_thpt,2025,37021.0,người,143
+14,Sơn La,so_truong_thpt,2025,30.0,trường,140
+14,Sơn La,thu_nhap_bq_lao_dong_thang,2020,2729.6,nghìn đồng,163
+14,Sơn La,thu_nhap_bq_lao_dong_thang,2021,3222.1,nghìn đồng,163
+14,Sơn La,thu_nhap_bq_lao_dong_thang,2022,3719.2,nghìn đồng,163
+14,Sơn La,thu_nhap_bq_lao_dong_thang,2023,3725.3,nghìn đồng,163
+14,Sơn La,thu_nhap_bq_lao_dong_thang,2024,4066.0,nghìn đồng,163
+14,Sơn La,thu_nhap_bq_lao_dong_thang,2025,4747.6,nghìn đồng,163
+14,Sơn La,thu_nhap_bq_nguoi_thang,2025,3052.0,nghìn đồng,158
+14,Sơn La,ty_le_dung_internet,2024,72.6,%,186
+14,Sơn La,ty_le_dung_internet,2025,77.9,%,186
+14,Sơn La,ty_le_ho_ngheo,2020,30.5,%,173
+14,Sơn La,ty_le_ho_ngheo,2021,28.6,%,173
+14,Sơn La,ty_le_ho_ngheo,2022,23.9,%,173
+14,Sơn La,ty_le_ho_ngheo,2023,19.8,%,173
+14,Sơn La,ty_le_ho_ngheo,2024,14.5,%,173
+14,Sơn La,ty_le_ho_ngheo,2025,8.2,%,173
+14,Sơn La,ty_le_ld_qua_dao_tao,2020,13.1,%,34
+14,Sơn La,ty_le_ld_qua_dao_tao,2021,16.8,%,34
+14,Sơn La,ty_le_ld_qua_dao_tao,2022,18.5,%,34
+14,Sơn La,ty_le_ld_qua_dao_tao,2023,19.0,%,34
+14,Sơn La,ty_le_ld_qua_dao_tao,2024,19.2,%,34
+14,Sơn La,ty_le_ld_qua_dao_tao,2025,19.5,%,34
+15,Lào Cai,dan_so_tb,2020,1577.9,nghìn người,6
+15,Lào Cai,dan_so_tb,2021,1604.6,nghìn người,6
+15,Lào Cai,dan_so_tb,2022,1617.8,nghìn người,6
+15,Lào Cai,dan_so_tb,2023,1635.4,nghìn người,6
+15,Lào Cai,dan_so_tb,2024,1656.6,nghìn người,6
+15,Lào Cai,dan_so_tb,2025,1675.7,nghìn người,6
+15,Lào Cai,dan_so_thanh_thi,2020,368.8,nghìn người,9
+15,Lào Cai,dan_so_thanh_thi,2021,376.6,nghìn người,9
+15,Lào Cai,dan_so_thanh_thi,2022,383.2,nghìn người,9
+15,Lào Cai,dan_so_thanh_thi,2023,390.2,nghìn người,9
+15,Lào Cai,dan_so_thanh_thi,2024,396.3,nghìn người,9
+15,Lào Cai,dan_so_thanh_thi,2025,354.1,nghìn người,9
+15,Lào Cai,dien_tich,2025,13255.1,km2,5
+15,Lào Cai,gini,2020,0.46,hệ số,166
+15,Lào Cai,gini,2021,0.428,hệ số,166
+15,Lào Cai,gini,2022,0.415,hệ số,166
+15,Lào Cai,gini,2023,0.426,hệ số,166
+15,Lào Cai,gini,2024,0.385,hệ số,166
+15,Lào Cai,gini,2025,0.378,hệ số,166
+15,Lào Cai,grdp_binh_quan_nguoi,2020,55.1,triệu đồng,43
+15,Lào Cai,grdp_binh_quan_nguoi,2021,57.7,triệu đồng,43
+15,Lào Cai,grdp_binh_quan_nguoi,2022,64.6,triệu đồng,43
+15,Lào Cai,grdp_binh_quan_nguoi,2023,66.9,triệu đồng,43
+15,Lào Cai,grdp_binh_quan_nguoi,2024,73.3,triệu đồng,43
+15,Lào Cai,grdp_binh_quan_nguoi,2025,84.7,triệu đồng,43
+15,Lào Cai,hdi,2020,0.656,chỉ số,164
+15,Lào Cai,hdi,2021,0.662,chỉ số,164
+15,Lào Cai,hdi,2022,0.672,chỉ số,164
+15,Lào Cai,hdi,2023,0.684,chỉ số,164
+15,Lào Cai,hdi,2024,0.689,chỉ số,164
+15,Lào Cai,hdi,2025,0.7,chỉ số,164
+15,Lào Cai,hs_tren_gv_thpt,2025,24.0,người,147
+15,Lào Cai,mat_do_dan_so,2025,126.0,người/km2,5
+15,Lào Cai,so_gv_thpt,2025,2258.0,người,142
+15,Lào Cai,so_hs_thpt,2025,53666.0,người,143
+15,Lào Cai,so_truong_thpt,2025,51.0,trường,140
+15,Lào Cai,thu_nhap_bq_lao_dong_thang,2020,3607.0,nghìn đồng,163
+15,Lào Cai,thu_nhap_bq_lao_dong_thang,2021,4147.7,nghìn đồng,163
+15,Lào Cai,thu_nhap_bq_lao_dong_thang,2022,4409.4,nghìn đồng,163
+15,Lào Cai,thu_nhap_bq_lao_dong_thang,2023,4774.4,nghìn đồng,163
+15,Lào Cai,thu_nhap_bq_lao_dong_thang,2024,5642.5,nghìn đồng,163
+15,Lào Cai,thu_nhap_bq_lao_dong_thang,2025,6549.9,nghìn đồng,163
+15,Lào Cai,thu_nhap_bq_nguoi_thang,2025,3844.0,nghìn đồng,158
+15,Lào Cai,ty_le_dung_internet,2024,79.0,%,186
+15,Lào Cai,ty_le_dung_internet,2025,81.9,%,186
+15,Lào Cai,ty_le_ho_ngheo,2020,15.2,%,173
+15,Lào Cai,ty_le_ho_ngheo,2021,14.4,%,173
+15,Lào Cai,ty_le_ho_ngheo,2022,16.1,%,173
+15,Lào Cai,ty_le_ho_ngheo,2023,12.0,%,173
+15,Lào Cai,ty_le_ho_ngheo,2024,8.4,%,173
+15,Lào Cai,ty_le_ho_ngheo,2025,5.5,%,173
+15,Lào Cai,ty_le_ld_qua_dao_tao,2020,19.9,%,34
+15,Lào Cai,ty_le_ld_qua_dao_tao,2021,23.4,%,34
+15,Lào Cai,ty_le_ld_qua_dao_tao,2022,22.8,%,34
+15,Lào Cai,ty_le_ld_qua_dao_tao,2023,23.0,%,34
+15,Lào Cai,ty_le_ld_qua_dao_tao,2024,24.1,%,34
+15,Lào Cai,ty_le_ld_qua_dao_tao,2025,24.9,%,34
+19,Thái Nguyên,dan_so_tb,2020,1624.3,nghìn người,6
+19,Thái Nguyên,dan_so_tb,2021,1646.9,nghìn người,6
+19,Thái Nguyên,dan_so_tb,2022,1660.3,nghìn người,6
+19,Thái Nguyên,dan_so_tb,2023,1676.8,nghìn người,6
+19,Thái Nguyên,dan_so_tb,2024,1694.5,nghìn người,6
+19,Thái Nguyên,dan_so_tb,2025,1711.6,nghìn người,6
+19,Thái Nguyên,dan_so_thanh_thi,2020,491.2,nghìn người,9
+19,Thái Nguyên,dan_so_thanh_thi,2021,498.4,nghìn người,9
+19,Thái Nguyên,dan_so_thanh_thi,2022,599.1,nghìn người,9
+19,Thái Nguyên,dan_so_thanh_thi,2023,627.5,nghìn người,9
+19,Thái Nguyên,dan_so_thanh_thi,2024,636.9,nghìn người,9
+19,Thái Nguyên,dan_so_thanh_thi,2025,630.5,nghìn người,9
+19,Thái Nguyên,dien_tich,2025,8374.5,km2,5
+19,Thái Nguyên,gini,2020,0.36,hệ số,166
+19,Thái Nguyên,gini,2021,0.379,hệ số,166
+19,Thái Nguyên,gini,2022,0.386,hệ số,166
+19,Thái Nguyên,gini,2023,0.387,hệ số,166
+19,Thái Nguyên,gini,2024,0.38,hệ số,166
+19,Thái Nguyên,gini,2025,0.324,hệ số,166
+19,Thái Nguyên,grdp_binh_quan_nguoi,2020,84.0,triệu đồng,43
+19,Thái Nguyên,grdp_binh_quan_nguoi,2021,88.7,triệu đồng,43
+19,Thái Nguyên,grdp_binh_quan_nguoi,2022,96.2,triệu đồng,43
+19,Thái Nguyên,grdp_binh_quan_nguoi,2023,99.0,triệu đồng,43
+19,Thái Nguyên,grdp_binh_quan_nguoi,2024,103.3,triệu đồng,43
+19,Thái Nguyên,grdp_binh_quan_nguoi,2025,112.4,triệu đồng,43
+19,Thái Nguyên,hdi,2020,0.728,chỉ số,164
+19,Thái Nguyên,hdi,2021,0.741,chỉ số,164
+19,Thái Nguyên,hdi,2022,0.753,chỉ số,164
+19,Thái Nguyên,hdi,2023,0.765,chỉ số,164
+19,Thái Nguyên,hdi,2024,0.759,chỉ số,164
+19,Thái Nguyên,hdi,2025,0.772,chỉ số,164
+19,Thái Nguyên,hs_tren_gv_thpt,2025,22.0,người,147
+19,Thái Nguyên,mat_do_dan_so,2025,204.0,người/km2,5
+19,Thái Nguyên,so_gv_thpt,2025,2371.0,người,142
+19,Thái Nguyên,so_hs_thpt,2025,51565.0,người,143
+19,Thái Nguyên,so_truong_thpt,2025,47.0,trường,140
+19,Thái Nguyên,thu_nhap_bq_lao_dong_thang,2020,4213.6,nghìn đồng,163
+19,Thái Nguyên,thu_nhap_bq_lao_dong_thang,2021,5169.2,nghìn đồng,163
+19,Thái Nguyên,thu_nhap_bq_lao_dong_thang,2022,5860.4,nghìn đồng,163
+19,Thái Nguyên,thu_nhap_bq_lao_dong_thang,2023,6295.1,nghìn đồng,163
+19,Thái Nguyên,thu_nhap_bq_lao_dong_thang,2024,6860.6,nghìn đồng,163
+19,Thái Nguyên,thu_nhap_bq_lao_dong_thang,2025,7800.8,nghìn đồng,163
+19,Thái Nguyên,thu_nhap_bq_nguoi_thang,2025,4939.0,nghìn đồng,158
+19,Thái Nguyên,ty_le_dung_internet,2024,86.0,%,186
+19,Thái Nguyên,ty_le_dung_internet,2025,88.0,%,186
+19,Thái Nguyên,ty_le_ho_ngheo,2020,7.3,%,173
+19,Thái Nguyên,ty_le_ho_ngheo,2021,6.8,%,173
+19,Thái Nguyên,ty_le_ho_ngheo,2022,5.5,%,173
+19,Thái Nguyên,ty_le_ho_ngheo,2023,4.5,%,173
+19,Thái Nguyên,ty_le_ho_ngheo,2024,3.1,%,173
+19,Thái Nguyên,ty_le_ho_ngheo,2025,2.4,%,173
+19,Thái Nguyên,ty_le_ld_qua_dao_tao,2020,25.7,%,34
+19,Thái Nguyên,ty_le_ld_qua_dao_tao,2021,33.8,%,34
+19,Thái Nguyên,ty_le_ld_qua_dao_tao,2022,34.3,%,34
+19,Thái Nguyên,ty_le_ld_qua_dao_tao,2023,34.9,%,34
+19,Thái Nguyên,ty_le_ld_qua_dao_tao,2024,36.1,%,34
+19,Thái Nguyên,ty_le_ld_qua_dao_tao,2025,36.4,%,34
+20,Lạng Sơn,dan_so_tb,2020,788.7,nghìn người,6
+20,Lạng Sơn,dan_so_tb,2021,796.9,nghìn người,6
+20,Lạng Sơn,dan_so_tb,2022,802.1,nghìn người,6
+20,Lạng Sơn,dan_so_tb,2023,807.3,nghìn người,6
+20,Lạng Sơn,dan_so_tb,2024,814.0,nghìn người,6
+20,Lạng Sơn,dan_so_tb,2025,820.6,nghìn người,6
+20,Lạng Sơn,dan_so_thanh_thi,2020,181.7,nghìn người,9
+20,Lạng Sơn,dan_so_thanh_thi,2021,183.9,nghìn người,9
+20,Lạng Sơn,dan_so_thanh_thi,2022,185.9,nghìn người,9
+20,Lạng Sơn,dan_so_thanh_thi,2023,187.1,nghìn người,9
+20,Lạng Sơn,dan_so_thanh_thi,2024,192.3,nghìn người,9
+20,Lạng Sơn,dan_so_thanh_thi,2025,138.5,nghìn người,9
+20,Lạng Sơn,dien_tich,2025,8307.3,km2,5
+20,Lạng Sơn,gini,2020,0.382,hệ số,166
+20,Lạng Sơn,gini,2021,0.401,hệ số,166
+20,Lạng Sơn,gini,2022,0.364,hệ số,166
+20,Lạng Sơn,gini,2023,0.364,hệ số,166
+20,Lạng Sơn,gini,2024,0.359,hệ số,166
+20,Lạng Sơn,gini,2025,0.367,hệ số,166
+20,Lạng Sơn,grdp_binh_quan_nguoi,2020,44.2,triệu đồng,43
+20,Lạng Sơn,grdp_binh_quan_nguoi,2021,47.2,triệu đồng,43
+20,Lạng Sơn,grdp_binh_quan_nguoi,2022,51.0,triệu đồng,43
+20,Lạng Sơn,grdp_binh_quan_nguoi,2023,57.8,triệu đồng,43
+20,Lạng Sơn,grdp_binh_quan_nguoi,2024,62.4,triệu đồng,43
+20,Lạng Sơn,grdp_binh_quan_nguoi,2025,70.9,triệu đồng,43
+20,Lạng Sơn,hdi,2020,0.674,chỉ số,164
+20,Lạng Sơn,hdi,2021,0.678,chỉ số,164
+20,Lạng Sơn,hdi,2022,0.692,chỉ số,164
+20,Lạng Sơn,hdi,2023,0.699,chỉ số,164
+20,Lạng Sơn,hdi,2024,0.701,chỉ số,164
+20,Lạng Sơn,hdi,2025,0.709,chỉ số,164
+20,Lạng Sơn,hs_tren_gv_thpt,2025,17.0,người,147
+20,Lạng Sơn,mat_do_dan_so,2025,99.0,người/km2,5
+20,Lạng Sơn,so_gv_thpt,2025,1520.0,người,142
+20,Lạng Sơn,so_hs_thpt,2025,26392.0,người,143
+20,Lạng Sơn,so_truong_thpt,2025,26.0,trường,140
+20,Lạng Sơn,thu_nhap_bq_lao_dong_thang,2020,3408.4,nghìn đồng,163
+20,Lạng Sơn,thu_nhap_bq_lao_dong_thang,2021,4943.0,nghìn đồng,163
+20,Lạng Sơn,thu_nhap_bq_lao_dong_thang,2022,5585.1,nghìn đồng,163
+20,Lạng Sơn,thu_nhap_bq_lao_dong_thang,2023,5761.0,nghìn đồng,163
+20,Lạng Sơn,thu_nhap_bq_lao_dong_thang,2024,6411.3,nghìn đồng,163
+20,Lạng Sơn,thu_nhap_bq_lao_dong_thang,2025,6497.1,nghìn đồng,163
+20,Lạng Sơn,thu_nhap_bq_nguoi_thang,2025,3581.0,nghìn đồng,158
+20,Lạng Sơn,ty_le_dung_internet,2024,79.3,%,186
+20,Lạng Sơn,ty_le_dung_internet,2025,81.4,%,186
+20,Lạng Sơn,ty_le_ho_ngheo,2020,12.3,%,173
+20,Lạng Sơn,ty_le_ho_ngheo,2021,10.7,%,173
+20,Lạng Sơn,ty_le_ho_ngheo,2022,7.9,%,173
+20,Lạng Sơn,ty_le_ho_ngheo,2023,6.1,%,173
+20,Lạng Sơn,ty_le_ho_ngheo,2024,4.1,%,173
+20,Lạng Sơn,ty_le_ho_ngheo,2025,2.5,%,173
+20,Lạng Sơn,ty_le_ld_qua_dao_tao,2020,21.0,%,34
+20,Lạng Sơn,ty_le_ld_qua_dao_tao,2021,27.8,%,34
+20,Lạng Sơn,ty_le_ld_qua_dao_tao,2022,28.5,%,34
+20,Lạng Sơn,ty_le_ld_qua_dao_tao,2023,27.6,%,34
+20,Lạng Sơn,ty_le_ld_qua_dao_tao,2024,29.0,%,34
+20,Lạng Sơn,ty_le_ld_qua_dao_tao,2025,29.2,%,34
+22,Quảng Ninh,dan_so_tb,2020,1337.6,nghìn người,6
+22,Quảng Ninh,dan_so_tb,2021,1350.8,nghìn người,6
+22,Quảng Ninh,dan_so_tb,2022,1362.9,nghìn người,6
+22,Quảng Ninh,dan_so_tb,2023,1381.2,nghìn người,6
+22,Quảng Ninh,dan_so_tb,2024,1396.5,nghìn người,6
+22,Quảng Ninh,dan_so_tb,2025,1411.6,nghìn người,6
+22,Quảng Ninh,dan_so_thanh_thi,2020,901.1,nghìn người,9
+22,Quảng Ninh,dan_so_thanh_thi,2021,909.9,nghìn người,9
+22,Quảng Ninh,dan_so_thanh_thi,2022,918.0,nghìn người,9
+22,Quảng Ninh,dan_so_thanh_thi,2023,930.4,nghìn người,9
+22,Quảng Ninh,dan_so_thanh_thi,2024,968.3,nghìn người,9
+22,Quảng Ninh,dan_so_thanh_thi,2025,1072.1,nghìn người,9
+22,Quảng Ninh,dien_tich,2025,6231.3,km2,5
+22,Quảng Ninh,gini,2020,0.309,hệ số,166
+22,Quảng Ninh,gini,2021,0.277,hệ số,166
+22,Quảng Ninh,gini,2022,0.366,hệ số,166
+22,Quảng Ninh,gini,2023,0.364,hệ số,166
+22,Quảng Ninh,gini,2024,0.329,hệ số,166
+22,Quảng Ninh,gini,2025,0.288,hệ số,166
+22,Quảng Ninh,grdp_binh_quan_nguoi,2020,155.6,triệu đồng,43
+22,Quảng Ninh,grdp_binh_quan_nguoi,2021,170.2,triệu đồng,43
+22,Quảng Ninh,grdp_binh_quan_nguoi,2022,195.3,triệu đồng,43
+22,Quảng Ninh,grdp_binh_quan_nguoi,2023,213.2,triệu đồng,43
+22,Quảng Ninh,grdp_binh_quan_nguoi,2024,234.1,triệu đồng,43
+22,Quảng Ninh,grdp_binh_quan_nguoi,2025,261.2,triệu đồng,43
+22,Quảng Ninh,hdi,2020,0.769,chỉ số,164
+22,Quảng Ninh,hdi,2021,0.778,chỉ số,164
+22,Quảng Ninh,hdi,2022,0.784,chỉ số,164
+22,Quảng Ninh,hdi,2023,0.799,chỉ số,164
+22,Quảng Ninh,hdi,2024,0.812,chỉ số,164
+22,Quảng Ninh,hdi,2025,0.814,chỉ số,164
+22,Quảng Ninh,hs_tren_gv_thpt,2025,24.0,người,147
+22,Quảng Ninh,mat_do_dan_so,2025,227.0,người/km2,5
+22,Quảng Ninh,so_gv_thpt,2025,2066.0,người,142
+22,Quảng Ninh,so_hs_thpt,2025,49321.0,người,143
+22,Quảng Ninh,so_truong_thpt,2025,39.0,trường,140
+22,Quảng Ninh,thu_nhap_bq_lao_dong_thang,2020,5667.2,nghìn đồng,163
+22,Quảng Ninh,thu_nhap_bq_lao_dong_thang,2021,6133.9,nghìn đồng,163
+22,Quảng Ninh,thu_nhap_bq_lao_dong_thang,2022,7027.3,nghìn đồng,163
+22,Quảng Ninh,thu_nhap_bq_lao_dong_thang,2023,7692.1,nghìn đồng,163
+22,Quảng Ninh,thu_nhap_bq_lao_dong_thang,2024,8431.9,nghìn đồng,163
+22,Quảng Ninh,thu_nhap_bq_lao_dong_thang,2025,9806.9,nghìn đồng,163
+22,Quảng Ninh,thu_nhap_bq_nguoi_thang,2025,6917.0,nghìn đồng,158
+22,Quảng Ninh,ty_le_dung_internet,2024,83.1,%,186
+22,Quảng Ninh,ty_le_dung_internet,2025,87.2,%,186
+22,Quảng Ninh,ty_le_ho_ngheo,2020,2.1,%,173
+22,Quảng Ninh,ty_le_ho_ngheo,2021,1.8,%,173
+22,Quảng Ninh,ty_le_ho_ngheo,2022,1.1,%,173
+22,Quảng Ninh,ty_le_ho_ngheo,2023,1.1,%,173
+22,Quảng Ninh,ty_le_ho_ngheo,2024,0.6,%,173
+22,Quảng Ninh,ty_le_ho_ngheo,2025,0.4,%,173
+22,Quảng Ninh,ty_le_ld_qua_dao_tao,2020,38.7,%,34
+22,Quảng Ninh,ty_le_ld_qua_dao_tao,2021,41.4,%,34
+22,Quảng Ninh,ty_le_ld_qua_dao_tao,2022,41.8,%,34
+22,Quảng Ninh,ty_le_ld_qua_dao_tao,2023,41.9,%,34
+22,Quảng Ninh,ty_le_ld_qua_dao_tao,2024,42.4,%,34
+22,Quảng Ninh,ty_le_ld_qua_dao_tao,2025,44.0,%,34
+24,Bắc Ninh,dan_so_tb,2020,3260.8,nghìn người,6
+24,Bắc Ninh,dan_so_tb,2021,3338.1,nghìn người,6
+24,Bắc Ninh,dan_so_tb,2022,3379.2,nghìn người,6
+24,Bắc Ninh,dan_so_tb,2023,3440.2,nghìn người,6
+24,Bắc Ninh,dan_so_tb,2024,3509.2,nghìn người,6
+24,Bắc Ninh,dan_so_tb,2025,3572.4,nghìn người,6
+24,Bắc Ninh,dan_so_thanh_thi,2020,780.5,nghìn người,9
+24,Bắc Ninh,dan_so_thanh_thi,2021,877.8,nghìn người,9
+24,Bắc Ninh,dan_so_thanh_thi,2022,924.9,nghìn người,9
+24,Bắc Ninh,dan_so_thanh_thi,2023,1150.1,nghìn người,9
+24,Bắc Ninh,dan_so_thanh_thi,2024,1263.5,nghìn người,9
+24,Bắc Ninh,dan_so_thanh_thi,2025,1555.0,nghìn người,9
+24,Bắc Ninh,dien_tich,2025,4713.8,km2,5
+24,Bắc Ninh,gini,2020,0.314,hệ số,166
+24,Bắc Ninh,gini,2021,0.317,hệ số,166
+24,Bắc Ninh,gini,2022,0.316,hệ số,166
+24,Bắc Ninh,gini,2023,0.326,hệ số,166
+24,Bắc Ninh,gini,2024,0.312,hệ số,166
+24,Bắc Ninh,gini,2025,0.269,hệ số,166
+24,Bắc Ninh,grdp_binh_quan_nguoi,2020,101.2,triệu đồng,43
+24,Bắc Ninh,grdp_binh_quan_nguoi,2021,108.6,triệu đồng,43
+24,Bắc Ninh,grdp_binh_quan_nguoi,2022,120.6,triệu đồng,43
+24,Bắc Ninh,grdp_binh_quan_nguoi,2023,122.9,triệu đồng,43
+24,Bắc Ninh,grdp_binh_quan_nguoi,2024,131.2,triệu đồng,43
+24,Bắc Ninh,grdp_binh_quan_nguoi,2025,146.2,triệu đồng,43
+24,Bắc Ninh,hdi,2020,0.737,chỉ số,164
+24,Bắc Ninh,hdi,2021,0.742,chỉ số,164
+24,Bắc Ninh,hdi,2022,0.757,chỉ số,164
+24,Bắc Ninh,hdi,2023,0.763,chỉ số,164
+24,Bắc Ninh,hdi,2024,0.764,chỉ số,164
+24,Bắc Ninh,hdi,2025,0.774,chỉ số,164
+24,Bắc Ninh,hs_tren_gv_thpt,2025,21.0,người,147
+24,Bắc Ninh,mat_do_dan_so,2025,758.0,người/km2,5
+24,Bắc Ninh,so_gv_thpt,2025,5199.0,người,142
+24,Bắc Ninh,so_hs_thpt,2025,111318.0,người,143
+24,Bắc Ninh,so_truong_thpt,2025,81.0,trường,140
+24,Bắc Ninh,thu_nhap_bq_lao_dong_thang,2020,6043.5,nghìn đồng,163
+24,Bắc Ninh,thu_nhap_bq_lao_dong_thang,2021,6649.2,nghìn đồng,163
+24,Bắc Ninh,thu_nhap_bq_lao_dong_thang,2022,7531.7,nghìn đồng,163
+24,Bắc Ninh,thu_nhap_bq_lao_dong_thang,2023,7684.0,nghìn đồng,163
+24,Bắc Ninh,thu_nhap_bq_lao_dong_thang,2024,8054.2,nghìn đồng,163
+24,Bắc Ninh,thu_nhap_bq_lao_dong_thang,2025,8751.6,nghìn đồng,163
+24,Bắc Ninh,thu_nhap_bq_nguoi_thang,2025,6020.0,nghìn đồng,158
+24,Bắc Ninh,ty_le_dung_internet,2024,88.7,%,186
+24,Bắc Ninh,ty_le_dung_internet,2025,90.3,%,186
+24,Bắc Ninh,ty_le_ho_ngheo,2020,1.8,%,173
+24,Bắc Ninh,ty_le_ho_ngheo,2021,1.7,%,173
+24,Bắc Ninh,ty_le_ho_ngheo,2022,1.5,%,173
+24,Bắc Ninh,ty_le_ho_ngheo,2023,1.3,%,173
+24,Bắc Ninh,ty_le_ho_ngheo,2024,0.8,%,173
+24,Bắc Ninh,ty_le_ho_ngheo,2025,0.2,%,173
+24,Bắc Ninh,ty_le_ld_qua_dao_tao,2020,23.1,%,34
+24,Bắc Ninh,ty_le_ld_qua_dao_tao,2021,29.7,%,34
+24,Bắc Ninh,ty_le_ld_qua_dao_tao,2022,33.1,%,34
+24,Bắc Ninh,ty_le_ld_qua_dao_tao,2023,33.4,%,34
+24,Bắc Ninh,ty_le_ld_qua_dao_tao,2024,34.6,%,34
+24,Bắc Ninh,ty_le_ld_qua_dao_tao,2025,36.2,%,34
+25,Phú Thọ,dan_so_tb,2020,3514.3,nghìn người,6
+25,Phú Thọ,dan_so_tb,2021,3571.0,nghìn người,6
+25,Phú Thọ,dan_so_tb,2022,3589.9,nghìn người,6
+25,Phú Thọ,dan_so_tb,2023,3622.7,nghìn người,6
+25,Phú Thọ,dan_so_tb,2024,3663.7,nghìn người,6
+25,Phú Thọ,dan_so_tb,2025,3701.5,nghìn người,6
+25,Phú Thọ,dan_so_thanh_thi,2020,838.2,nghìn người,9
+25,Phú Thọ,dan_so_thanh_thi,2021,855.0,nghìn người,9
+25,Phú Thọ,dan_so_thanh_thi,2022,882.3,nghìn người,9
+25,Phú Thọ,dan_so_thanh_thi,2023,934.3,nghìn người,9
+25,Phú Thọ,dan_so_thanh_thi,2024,952.0,nghìn người,9
+25,Phú Thọ,dan_so_thanh_thi,2025,978.0,nghìn người,9
+25,Phú Thọ,dien_tich,2025,9346.7,km2,5
+25,Phú Thọ,gini,2020,0.34,hệ số,166
+25,Phú Thọ,gini,2021,0.359,hệ số,166
+25,Phú Thọ,gini,2022,0.354,hệ số,166
+25,Phú Thọ,gini,2023,0.357,hệ số,166
+25,Phú Thọ,gini,2024,0.346,hệ số,166
+25,Phú Thọ,gini,2025,0.307,hệ số,166
+25,Phú Thọ,grdp_binh_quan_nguoi,2020,70.8,triệu đồng,43
+25,Phú Thọ,grdp_binh_quan_nguoi,2021,75.4,triệu đồng,43
+25,Phú Thọ,grdp_binh_quan_nguoi,2022,84.3,triệu đồng,43
+25,Phú Thọ,grdp_binh_quan_nguoi,2023,87.8,triệu đồng,43
+25,Phú Thọ,grdp_binh_quan_nguoi,2024,97.4,triệu đồng,43
+25,Phú Thọ,grdp_binh_quan_nguoi,2025,111.3,triệu đồng,43
+25,Phú Thọ,hdi,2020,0.718,chỉ số,164
+25,Phú Thọ,hdi,2021,0.726,chỉ số,164
+25,Phú Thọ,hdi,2022,0.74,chỉ số,164
+25,Phú Thọ,hdi,2023,0.749,chỉ số,164
+25,Phú Thọ,hdi,2024,0.748,chỉ số,164
+25,Phú Thọ,hdi,2025,0.762,chỉ số,164
+25,Phú Thọ,hs_tren_gv_thpt,2025,20.0,người,147
+25,Phú Thọ,mat_do_dan_so,2025,396.0,người/km2,5
+25,Phú Thọ,so_gv_thpt,2025,6142.0,người,142
+25,Phú Thọ,so_hs_thpt,2025,124061.0,người,143
+25,Phú Thọ,so_truong_thpt,2025,117.0,trường,140
+25,Phú Thọ,thu_nhap_bq_lao_dong_thang,2020,4549.5,nghìn đồng,163
+25,Phú Thọ,thu_nhap_bq_lao_dong_thang,2021,5803.4,nghìn đồng,163
+25,Phú Thọ,thu_nhap_bq_lao_dong_thang,2022,6233.1,nghìn đồng,163
+25,Phú Thọ,thu_nhap_bq_lao_dong_thang,2023,6527.7,nghìn đồng,163
+25,Phú Thọ,thu_nhap_bq_lao_dong_thang,2024,7258.6,nghìn đồng,163
+25,Phú Thọ,thu_nhap_bq_lao_dong_thang,2025,8038.1,nghìn đồng,163
+25,Phú Thọ,thu_nhap_bq_nguoi_thang,2025,5523.0,nghìn đồng,158
+25,Phú Thọ,ty_le_dung_internet,2024,85.4,%,186
+25,Phú Thọ,ty_le_dung_internet,2025,87.9,%,186
+25,Phú Thọ,ty_le_ho_ngheo,2020,5.5,%,173
+25,Phú Thọ,ty_le_ho_ngheo,2021,5.2,%,173
+25,Phú Thọ,ty_le_ho_ngheo,2022,4.0,%,173
+25,Phú Thọ,ty_le_ho_ngheo,2023,3.3,%,173
+25,Phú Thọ,ty_le_ho_ngheo,2024,2.2,%,173
+25,Phú Thọ,ty_le_ho_ngheo,2025,1.4,%,173
+25,Phú Thọ,ty_le_ld_qua_dao_tao,2020,24.5,%,34
+25,Phú Thọ,ty_le_ld_qua_dao_tao,2021,31.6,%,34
+25,Phú Thọ,ty_le_ld_qua_dao_tao,2022,31.2,%,34
+25,Phú Thọ,ty_le_ld_qua_dao_tao,2023,31.8,%,34
+25,Phú Thọ,ty_le_ld_qua_dao_tao,2024,33.2,%,34
+25,Phú Thọ,ty_le_ld_qua_dao_tao,2025,33.9,%,34
+31,Hải Phòng,dan_so_tb,2020,3970.3,nghìn người,6
+31,Hải Phòng,dan_so_tb,2021,4009.2,nghìn người,6
+31,Hải Phòng,dan_so_tb,2022,4034.8,nghìn người,6
+31,Hải Phòng,dan_so_tb,2023,4061.9,nghìn người,6
+31,Hải Phòng,dan_so_tb,2024,4102.8,nghìn người,6
+31,Hải Phòng,dan_so_tb,2025,4149.9,nghìn người,6
+31,Hải Phòng,dan_so_thanh_thi,2020,1535.8,nghìn người,9
+31,Hải Phòng,dan_so_thanh_thi,2021,1556.4,nghìn người,9
+31,Hải Phòng,dan_so_thanh_thi,2022,1569.9,nghìn người,9
+31,Hải Phòng,dan_so_thanh_thi,2023,1580.7,nghìn người,9
+31,Hải Phòng,dan_so_thanh_thi,2024,1600.8,nghìn người,9
+31,Hải Phòng,dan_so_thanh_thi,2025,2102.6,nghìn người,9
+31,Hải Phòng,dien_tich,2025,3184.5,km2,5
+31,Hải Phòng,gini,2020,0.275,hệ số,166
+31,Hải Phòng,gini,2021,0.309,hệ số,166
+31,Hải Phòng,gini,2022,0.312,hệ số,166
+31,Hải Phòng,gini,2023,0.313,hệ số,166
+31,Hải Phòng,gini,2024,0.31,hệ số,166
+31,Hải Phòng,gini,2025,0.283,hệ số,166
+31,Hải Phòng,grdp_binh_quan_nguoi,2020,102.3,triệu đồng,43
+31,Hải Phòng,grdp_binh_quan_nguoi,2021,115.5,triệu đồng,43
+31,Hải Phòng,grdp_binh_quan_nguoi,2022,131.1,triệu đồng,43
+31,Hải Phòng,grdp_binh_quan_nguoi,2023,141.6,triệu đồng,43
+31,Hải Phòng,grdp_binh_quan_nguoi,2024,158.0,triệu đồng,43
+31,Hải Phòng,grdp_binh_quan_nguoi,2025,177.0,triệu đồng,43
+31,Hải Phòng,hdi,2020,0.76,chỉ số,164
+31,Hải Phòng,hdi,2021,0.773,chỉ số,164
+31,Hải Phòng,hdi,2022,0.785,chỉ số,164
+31,Hải Phòng,hdi,2023,0.792,chỉ số,164
+31,Hải Phòng,hdi,2024,0.794,chỉ số,164
+31,Hải Phòng,hdi,2025,0.805,chỉ số,164
+31,Hải Phòng,hs_tren_gv_thpt,2025,26.0,người,147
+31,Hải Phòng,mat_do_dan_so,2025,1303.0,người/km2,5
+31,Hải Phòng,so_gv_thpt,2025,5104.0,người,142
+31,Hải Phòng,so_hs_thpt,2025,131649.0,người,143
+31,Hải Phòng,so_truong_thpt,2025,110.0,trường,140
+31,Hải Phòng,thu_nhap_bq_lao_dong_thang,2020,6139.0,nghìn đồng,163
+31,Hải Phòng,thu_nhap_bq_lao_dong_thang,2021,6661.9,nghìn đồng,163
+31,Hải Phòng,thu_nhap_bq_lao_dong_thang,2022,7731.1,nghìn đồng,163
+31,Hải Phòng,thu_nhap_bq_lao_dong_thang,2023,7980.5,nghìn đồng,163
+31,Hải Phòng,thu_nhap_bq_lao_dong_thang,2024,8700.7,nghìn đồng,163
+31,Hải Phòng,thu_nhap_bq_lao_dong_thang,2025,9865.5,nghìn đồng,163
+31,Hải Phòng,thu_nhap_bq_nguoi_thang,2025,7139.0,nghìn đồng,158
+31,Hải Phòng,ty_le_dung_internet,2024,87.3,%,186
+31,Hải Phòng,ty_le_dung_internet,2025,89.3,%,186
+31,Hải Phòng,ty_le_ho_ngheo,2020,1.4,%,173
+31,Hải Phòng,ty_le_ho_ngheo,2021,1.3,%,173
+31,Hải Phòng,ty_le_ho_ngheo,2022,0.9,%,173
+31,Hải Phòng,ty_le_ho_ngheo,2023,0.5,%,173
+31,Hải Phòng,ty_le_ho_ngheo,2024,0.4,%,173
+31,Hải Phòng,ty_le_ho_ngheo,2025,0.3,%,173
+31,Hải Phòng,ty_le_ld_qua_dao_tao,2020,29.9,%,34
+31,Hải Phòng,ty_le_ld_qua_dao_tao,2021,33.3,%,34
+31,Hải Phòng,ty_le_ld_qua_dao_tao,2022,33.2,%,34
+31,Hải Phòng,ty_le_ld_qua_dao_tao,2023,33.0,%,34
+31,Hải Phòng,ty_le_ld_qua_dao_tao,2024,33.9,%,34
+31,Hải Phòng,ty_le_ld_qua_dao_tao,2025,35.0,%,34
+33,Hưng Yên,dan_so_tb,2020,3139.3,nghìn người,6
+33,Hưng Yên,dan_so_tb,2021,3158.5,nghìn người,6
+33,Hưng Yên,dan_so_tb,2022,3169.4,nghìn người,6
+33,Hưng Yên,dan_so_tb,2023,3183.3,nghìn người,6
+33,Hưng Yên,dan_so_tb,2024,3208.4,nghìn người,6
+33,Hưng Yên,dan_so_tb,2025,3235.2,nghìn người,6
+33,Hưng Yên,dan_so_thanh_thi,2020,429.2,nghìn người,9
+33,Hưng Yên,dan_so_thanh_thi,2021,433.8,nghìn người,9
+33,Hưng Yên,dan_so_thanh_thi,2022,438.4,nghìn người,9
+33,Hưng Yên,dan_so_thanh_thi,2023,442.7,nghìn người,9
+33,Hưng Yên,dan_so_thanh_thi,2024,449.7,nghìn người,9
+33,Hưng Yên,dan_so_thanh_thi,2025,511.5,nghìn người,9
+33,Hưng Yên,dien_tich,2025,2637.8,km2,5
+33,Hưng Yên,gini,2020,0.268,hệ số,166
+33,Hưng Yên,gini,2021,0.249,hệ số,166
+33,Hưng Yên,gini,2022,0.267,hệ số,166
+33,Hưng Yên,gini,2023,0.283,hệ số,166
+33,Hưng Yên,gini,2024,0.292,hệ số,166
+33,Hưng Yên,gini,2025,0.258,hệ số,166
+33,Hưng Yên,grdp_binh_quan_nguoi,2020,60.5,triệu đồng,43
+33,Hưng Yên,grdp_binh_quan_nguoi,2021,66.4,triệu đồng,43
+33,Hưng Yên,grdp_binh_quan_nguoi,2022,76.0,triệu đồng,43
+33,Hưng Yên,grdp_binh_quan_nguoi,2023,81.9,triệu đồng,43
+33,Hưng Yên,grdp_binh_quan_nguoi,2024,89.0,triệu đồng,43
+33,Hưng Yên,grdp_binh_quan_nguoi,2025,98.9,triệu đồng,43
+33,Hưng Yên,hdi,2020,0.724,chỉ số,164
+33,Hưng Yên,hdi,2021,0.732,chỉ số,164
+33,Hưng Yên,hdi,2022,0.749,chỉ số,164
+33,Hưng Yên,hdi,2023,0.756,chỉ số,164
+33,Hưng Yên,hdi,2024,0.76,chỉ số,164
+33,Hưng Yên,hdi,2025,0.77,chỉ số,164
+33,Hưng Yên,hs_tren_gv_thpt,2025,26.0,người,147
+33,Hưng Yên,mat_do_dan_so,2025,1226.0,người/km2,5
+33,Hưng Yên,so_gv_thpt,2025,4165.0,người,142
+33,Hưng Yên,so_hs_thpt,2025,106440.0,người,143
+33,Hưng Yên,so_truong_thpt,2025,72.0,trường,140
+33,Hưng Yên,thu_nhap_bq_lao_dong_thang,2020,5248.3,nghìn đồng,163
+33,Hưng Yên,thu_nhap_bq_lao_dong_thang,2021,5863.8,nghìn đồng,163
+33,Hưng Yên,thu_nhap_bq_lao_dong_thang,2022,6760.2,nghìn đồng,163
+33,Hưng Yên,thu_nhap_bq_lao_dong_thang,2023,7440.0,nghìn đồng,163
+33,Hưng Yên,thu_nhap_bq_lao_dong_thang,2024,7949.8,nghìn đồng,163
+33,Hưng Yên,thu_nhap_bq_lao_dong_thang,2025,8622.6,nghìn đồng,163
+33,Hưng Yên,thu_nhap_bq_nguoi_thang,2025,6551.0,nghìn đồng,158
+33,Hưng Yên,ty_le_dung_internet,2024,83.7,%,186
+33,Hưng Yên,ty_le_dung_internet,2025,87.7,%,186
+33,Hưng Yên,ty_le_ho_ngheo,2020,2.0,%,173
+33,Hưng Yên,ty_le_ho_ngheo,2021,1.9,%,173
+33,Hưng Yên,ty_le_ho_ngheo,2022,1.8,%,173
+33,Hưng Yên,ty_le_ho_ngheo,2023,1.5,%,173
+33,Hưng Yên,ty_le_ho_ngheo,2024,1.0,%,173
+33,Hưng Yên,ty_le_ho_ngheo,2025,0.5,%,173
+33,Hưng Yên,ty_le_ld_qua_dao_tao,2020,21.3,%,34
+33,Hưng Yên,ty_le_ld_qua_dao_tao,2021,22.4,%,34
+33,Hưng Yên,ty_le_ld_qua_dao_tao,2022,23.1,%,34
+33,Hưng Yên,ty_le_ld_qua_dao_tao,2023,25.1,%,34
+33,Hưng Yên,ty_le_ld_qua_dao_tao,2024,26.1,%,34
+33,Hưng Yên,ty_le_ld_qua_dao_tao,2025,26.6,%,34
+37,Ninh Bình,dan_so_tb,2020,3636.1,nghìn người,6
+37,Ninh Bình,dan_so_tb,2021,3719.1,nghìn người,6
+37,Ninh Bình,dan_so_tb,2022,3765.7,nghìn người,6
+37,Ninh Bình,dan_so_tb,2023,3790.1,nghìn người,6
+37,Ninh Bình,dan_so_tb,2024,3818.8,nghìn người,6
+37,Ninh Bình,dan_so_tb,2025,3843.8,nghìn người,6
+37,Ninh Bình,dan_so_thanh_thi,2020,812.4,nghìn người,9
+37,Ninh Bình,dan_so_thanh_thi,2021,833.0,nghìn người,9
+37,Ninh Bình,dan_so_thanh_thi,2022,844.8,nghìn người,9
+37,Ninh Bình,dan_so_thanh_thi,2023,855.8,nghìn người,9
+37,Ninh Bình,dan_so_thanh_thi,2024,869.7,nghìn người,9
+37,Ninh Bình,dan_so_thanh_thi,2025,1236.0,nghìn người,9
+37,Ninh Bình,dien_tich,2025,3946.1,km2,5
+37,Ninh Bình,gini,2020,0.318,hệ số,166
+37,Ninh Bình,gini,2021,0.266,hệ số,166
+37,Ninh Bình,gini,2022,0.306,hệ số,166
+37,Ninh Bình,gini,2023,0.311,hệ số,166
+37,Ninh Bình,gini,2024,0.306,hệ số,166
+37,Ninh Bình,gini,2025,0.278,hệ số,166
+37,Ninh Bình,grdp_binh_quan_nguoi,2020,55.8,triệu đồng,43
+37,Ninh Bình,grdp_binh_quan_nguoi,2021,59.0,triệu đồng,43
+37,Ninh Bình,grdp_binh_quan_nguoi,2022,65.3,triệu đồng,43
+37,Ninh Bình,grdp_binh_quan_nguoi,2023,70.4,triệu đồng,43
+37,Ninh Bình,grdp_binh_quan_nguoi,2024,79.0,triệu đồng,43
+37,Ninh Bình,grdp_binh_quan_nguoi,2025,89.2,triệu đồng,43
+37,Ninh Bình,hdi,2020,0.71,chỉ số,164
+37,Ninh Bình,hdi,2021,0.717,chỉ số,164
+37,Ninh Bình,hdi,2022,0.729,chỉ số,164
+37,Ninh Bình,hdi,2023,0.736,chỉ số,164
+37,Ninh Bình,hdi,2024,0.741,chỉ số,164
+37,Ninh Bình,hdi,2025,0.746,chỉ số,164
+37,Ninh Bình,hs_tren_gv_thpt,2025,21.0,người,147
+37,Ninh Bình,mat_do_dan_so,2025,974.0,người/km2,5
+37,Ninh Bình,so_gv_thpt,2025,5819.0,người,142
+37,Ninh Bình,so_hs_thpt,2025,120787.0,người,143
+37,Ninh Bình,so_truong_thpt,2025,106.0,trường,140
+37,Ninh Bình,thu_nhap_bq_lao_dong_thang,2020,4622.7,nghìn đồng,163
+37,Ninh Bình,thu_nhap_bq_lao_dong_thang,2021,5653.0,nghìn đồng,163
+37,Ninh Bình,thu_nhap_bq_lao_dong_thang,2022,6305.6,nghìn đồng,163
+37,Ninh Bình,thu_nhap_bq_lao_dong_thang,2023,6811.4,nghìn đồng,163
+37,Ninh Bình,thu_nhap_bq_lao_dong_thang,2024,7446.8,nghìn đồng,163
+37,Ninh Bình,thu_nhap_bq_lao_dong_thang,2025,8429.1,nghìn đồng,163
+37,Ninh Bình,thu_nhap_bq_nguoi_thang,2025,6572.0,nghìn đồng,158
+37,Ninh Bình,ty_le_dung_internet,2024,83.9,%,186
+37,Ninh Bình,ty_le_dung_internet,2025,86.8,%,186
+37,Ninh Bình,ty_le_ho_ngheo,2020,2.0,%,173
+37,Ninh Bình,ty_le_ho_ngheo,2021,1.9,%,173
+37,Ninh Bình,ty_le_ho_ngheo,2022,1.6,%,173
+37,Ninh Bình,ty_le_ho_ngheo,2023,1.2,%,173
+37,Ninh Bình,ty_le_ho_ngheo,2024,0.8,%,173
+37,Ninh Bình,ty_le_ho_ngheo,2025,0.4,%,173
+37,Ninh Bình,ty_le_ld_qua_dao_tao,2020,23.3,%,34
+37,Ninh Bình,ty_le_ld_qua_dao_tao,2021,25.8,%,34
+37,Ninh Bình,ty_le_ld_qua_dao_tao,2022,25.6,%,34
+37,Ninh Bình,ty_le_ld_qua_dao_tao,2023,26.6,%,34
+37,Ninh Bình,ty_le_ld_qua_dao_tao,2024,28.4,%,34
+37,Ninh Bình,ty_le_ld_qua_dao_tao,2025,31.2,%,34
+38,Thanh Hóa,dan_so_tb,2020,3664.9,nghìn người,6
+38,Thanh Hóa,dan_so_tb,2021,3716.4,nghìn người,6
+38,Thanh Hóa,dan_so_tb,2022,3722.1,nghìn người,6
+38,Thanh Hóa,dan_so_tb,2023,3739.5,nghìn người,6
+38,Thanh Hóa,dan_so_tb,2024,3764.2,nghìn người,6
+38,Thanh Hóa,dan_so_tb,2025,3771.8,nghìn người,6
+38,Thanh Hóa,dan_so_thanh_thi,2020,853.3,nghìn người,9
+38,Thanh Hóa,dan_so_thanh_thi,2021,993.4,nghìn người,9
+38,Thanh Hóa,dan_so_thanh_thi,2022,1029.9,nghìn người,9
+38,Thanh Hóa,dan_so_thanh_thi,2023,1036.1,nghìn người,9
+38,Thanh Hóa,dan_so_thanh_thi,2024,1058.2,nghìn người,9
+38,Thanh Hóa,dan_so_thanh_thi,2025,868.8,nghìn người,9
+38,Thanh Hóa,dien_tich,2025,11111.2,km2,5
+38,Thanh Hóa,gini,2020,0.317,hệ số,166
+38,Thanh Hóa,gini,2021,0.258,hệ số,166
+38,Thanh Hóa,gini,2022,0.305,hệ số,166
+38,Thanh Hóa,gini,2023,0.314,hệ số,166
+38,Thanh Hóa,gini,2024,0.322,hệ số,166
+38,Thanh Hóa,gini,2025,0.265,hệ số,166
+38,Thanh Hóa,grdp_binh_quan_nguoi,2020,51.3,triệu đồng,43
+38,Thanh Hóa,grdp_binh_quan_nguoi,2021,57.6,triệu đồng,43
+38,Thanh Hóa,grdp_binh_quan_nguoi,2022,69.1,triệu đồng,43
+38,Thanh Hóa,grdp_binh_quan_nguoi,2023,72.6,triệu đồng,43
+38,Thanh Hóa,grdp_binh_quan_nguoi,2024,81.3,triệu đồng,43
+38,Thanh Hóa,grdp_binh_quan_nguoi,2025,88.5,triệu đồng,43
+38,Thanh Hóa,hdi,2020,0.697,chỉ số,164
+38,Thanh Hóa,hdi,2021,0.709,chỉ số,164
+38,Thanh Hóa,hdi,2022,0.726,chỉ số,164
+38,Thanh Hóa,hdi,2023,0.732,chỉ số,164
+38,Thanh Hóa,hdi,2024,0.739,chỉ số,164
+38,Thanh Hóa,hdi,2025,0.747,chỉ số,164
+38,Thanh Hóa,hs_tren_gv_thpt,2025,21.0,người,147
+38,Thanh Hóa,mat_do_dan_so,2025,339.0,người/km2,5
+38,Thanh Hóa,so_gv_thpt,2025,5307.0,người,142
+38,Thanh Hóa,so_hs_thpt,2025,113257.0,người,143
+38,Thanh Hóa,so_truong_thpt,2025,86.0,trường,140
+38,Thanh Hóa,thu_nhap_bq_lao_dong_thang,2020,4765.7,nghìn đồng,163
+38,Thanh Hóa,thu_nhap_bq_lao_dong_thang,2021,5208.3,nghìn đồng,163
+38,Thanh Hóa,thu_nhap_bq_lao_dong_thang,2022,6060.5,nghìn đồng,163
+38,Thanh Hóa,thu_nhap_bq_lao_dong_thang,2023,6558.6,nghìn đồng,163
+38,Thanh Hóa,thu_nhap_bq_lao_dong_thang,2024,7136.6,nghìn đồng,163
+38,Thanh Hóa,thu_nhap_bq_lao_dong_thang,2025,7503.8,nghìn đồng,163
+38,Thanh Hóa,thu_nhap_bq_nguoi_thang,2025,5430.0,nghìn đồng,158
+38,Thanh Hóa,ty_le_dung_internet,2024,81.5,%,186
+38,Thanh Hóa,ty_le_dung_internet,2025,85.8,%,186
+38,Thanh Hóa,ty_le_ho_ngheo,2020,7.0,%,173
+38,Thanh Hóa,ty_le_ho_ngheo,2021,6.3,%,173
+38,Thanh Hóa,ty_le_ho_ngheo,2022,5.2,%,173
+38,Thanh Hóa,ty_le_ho_ngheo,2023,3.9,%,173
+38,Thanh Hóa,ty_le_ho_ngheo,2024,2.7,%,173
+38,Thanh Hóa,ty_le_ho_ngheo,2025,1.6,%,173
+38,Thanh Hóa,ty_le_ld_qua_dao_tao,2020,21.4,%,34
+38,Thanh Hóa,ty_le_ld_qua_dao_tao,2021,25.1,%,34
+38,Thanh Hóa,ty_le_ld_qua_dao_tao,2022,26.4,%,34
+38,Thanh Hóa,ty_le_ld_qua_dao_tao,2023,27.6,%,34
+38,Thanh Hóa,ty_le_ld_qua_dao_tao,2024,27.9,%,34
+38,Thanh Hóa,ty_le_ld_qua_dao_tao,2025,27.9,%,34
+40,Nghệ An,dan_so_tb,2020,3365.2,nghìn người,6
+40,Nghệ An,dan_so_tb,2021,3409.8,nghìn người,6
+40,Nghệ An,dan_so_tb,2022,3420.0,nghìn người,6
+40,Nghệ An,dan_so_tb,2023,3442.0,nghìn người,6
+40,Nghệ An,dan_so_tb,2024,3472.3,nghìn người,6
+40,Nghệ An,dan_so_tb,2025,3497.8,nghìn người,6
+40,Nghệ An,dan_so_thanh_thi,2020,521.6,nghìn người,9
+40,Nghệ An,dan_so_thanh_thi,2021,529.5,nghìn người,9
+40,Nghệ An,dan_so_thanh_thi,2022,530.5,nghìn người,9
+40,Nghệ An,dan_so_thanh_thi,2023,540.0,nghìn người,9
+40,Nghệ An,dan_so_thanh_thi,2024,546.0,nghìn người,9
+40,Nghệ An,dan_so_thanh_thi,2025,632.5,nghìn người,9
+40,Nghệ An,dien_tich,2025,16486.1,km2,5
+40,Nghệ An,gini,2020,0.348,hệ số,166
+40,Nghệ An,gini,2021,0.362,hệ số,166
+40,Nghệ An,gini,2022,0.367,hệ số,166
+40,Nghệ An,gini,2023,0.372,hệ số,166
+40,Nghệ An,gini,2024,0.368,hệ số,166
+40,Nghệ An,gini,2025,0.296,hệ số,166
+40,Nghệ An,grdp_binh_quan_nguoi,2020,43.1,triệu đồng,43
+40,Nghệ An,grdp_binh_quan_nguoi,2021,46.2,triệu đồng,43
+40,Nghệ An,grdp_binh_quan_nguoi,2022,51.2,triệu đồng,43
+40,Nghệ An,grdp_binh_quan_nguoi,2023,54.9,triệu đồng,43
+40,Nghệ An,grdp_binh_quan_nguoi,2024,60.7,triệu đồng,43
+40,Nghệ An,grdp_binh_quan_nguoi,2025,67.6,triệu đồng,43
+40,Nghệ An,hdi,2020,0.696,chỉ số,164
+40,Nghệ An,hdi,2021,0.7,chỉ số,164
+40,Nghệ An,hdi,2022,0.712,chỉ số,164
+40,Nghệ An,hdi,2023,0.728,chỉ số,164
+40,Nghệ An,hdi,2024,0.726,chỉ số,164
+40,Nghệ An,hdi,2025,0.733,chỉ số,164
+40,Nghệ An,hs_tren_gv_thpt,2025,22.0,người,147
+40,Nghệ An,mat_do_dan_so,2025,212.0,người/km2,5
+40,Nghệ An,so_gv_thpt,2025,5456.0,người,142
+40,Nghệ An,so_hs_thpt,2025,120890.0,người,143
+40,Nghệ An,so_truong_thpt,2025,87.0,trường,140
+40,Nghệ An,thu_nhap_bq_lao_dong_thang,2020,4468.4,nghìn đồng,163
+40,Nghệ An,thu_nhap_bq_lao_dong_thang,2021,4834.0,nghìn đồng,163
+40,Nghệ An,thu_nhap_bq_lao_dong_thang,2022,5443.2,nghìn đồng,163
+40,Nghệ An,thu_nhap_bq_lao_dong_thang,2023,5883.2,nghìn đồng,163
+40,Nghệ An,thu_nhap_bq_lao_dong_thang,2024,6325.0,nghìn đồng,163
+40,Nghệ An,thu_nhap_bq_lao_dong_thang,2025,7425.2,nghìn đồng,163
+40,Nghệ An,thu_nhap_bq_nguoi_thang,2025,4790.0,nghìn đồng,158
+40,Nghệ An,ty_le_dung_internet,2024,81.3,%,186
+40,Nghệ An,ty_le_dung_internet,2025,84.2,%,186
+40,Nghệ An,ty_le_ho_ngheo,2020,10.9,%,173
+40,Nghệ An,ty_le_ho_ngheo,2021,9.5,%,173
+40,Nghệ An,ty_le_ho_ngheo,2022,6.2,%,173
+40,Nghệ An,ty_le_ho_ngheo,2023,4.7,%,173
+40,Nghệ An,ty_le_ho_ngheo,2024,3.2,%,173
+40,Nghệ An,ty_le_ho_ngheo,2025,1.6,%,173
+40,Nghệ An,ty_le_ld_qua_dao_tao,2020,20.8,%,34
+40,Nghệ An,ty_le_ld_qua_dao_tao,2021,23.4,%,34
+40,Nghệ An,ty_le_ld_qua_dao_tao,2022,25.3,%,34
+40,Nghệ An,ty_le_ld_qua_dao_tao,2023,25.7,%,34
+40,Nghệ An,ty_le_ld_qua_dao_tao,2024,26.5,%,34
+40,Nghệ An,ty_le_ld_qua_dao_tao,2025,27.9,%,34
+42,Hà Tĩnh,dan_so_tb,2020,1296.6,nghìn người,6
+42,Hà Tĩnh,dan_so_tb,2021,1314.1,nghìn người,6
+42,Hà Tĩnh,dan_so_tb,2022,1317.3,nghìn người,6
+42,Hà Tĩnh,dan_so_tb,2023,1323.7,nghìn người,6
+42,Hà Tĩnh,dan_so_tb,2024,1329.8,nghìn người,6
+42,Hà Tĩnh,dan_so_tb,2025,1335.1,nghìn người,6
+42,Hà Tĩnh,dan_so_thanh_thi,2020,287.8,nghìn người,9
+42,Hà Tĩnh,dan_so_thanh_thi,2021,293.0,nghìn người,9
+42,Hà Tĩnh,dan_so_thanh_thi,2022,293.7,nghìn người,9
+42,Hà Tĩnh,dan_so_thanh_thi,2023,298.0,nghìn người,9
+42,Hà Tĩnh,dan_so_thanh_thi,2024,300.4,nghìn người,9
+42,Hà Tĩnh,dan_so_thanh_thi,2025,274.8,nghìn người,9
+42,Hà Tĩnh,dien_tich,2025,5994.3,km2,5
+42,Hà Tĩnh,gini,2020,0.391,hệ số,166
+42,Hà Tĩnh,gini,2021,0.367,hệ số,166
+42,Hà Tĩnh,gini,2022,0.371,hệ số,166
+42,Hà Tĩnh,gini,2023,0.375,hệ số,166
+42,Hà Tĩnh,gini,2024,0.355,hệ số,166
+42,Hà Tĩnh,gini,2025,0.327,hệ số,166
+42,Hà Tĩnh,grdp_binh_quan_nguoi,2020,63.6,triệu đồng,43
+42,Hà Tĩnh,grdp_binh_quan_nguoi,2021,68.9,triệu đồng,43
+42,Hà Tĩnh,grdp_binh_quan_nguoi,2022,71.9,triệu đồng,43
+42,Hà Tĩnh,grdp_binh_quan_nguoi,2023,76.5,triệu đồng,43
+42,Hà Tĩnh,grdp_binh_quan_nguoi,2024,82.8,triệu đồng,43
+42,Hà Tĩnh,grdp_binh_quan_nguoi,2025,90.5,triệu đồng,43
+42,Hà Tĩnh,hdi,2020,0.713,chỉ số,164
+42,Hà Tĩnh,hdi,2021,0.721,chỉ số,164
+42,Hà Tĩnh,hdi,2022,0.732,chỉ số,164
+42,Hà Tĩnh,hdi,2023,0.735,chỉ số,164
+42,Hà Tĩnh,hdi,2024,0.742,chỉ số,164
+42,Hà Tĩnh,hdi,2025,0.75,chỉ số,164
+42,Hà Tĩnh,hs_tren_gv_thpt,2025,17.0,người,147
+42,Hà Tĩnh,mat_do_dan_so,2025,223.0,người/km2,5
+42,Hà Tĩnh,so_gv_thpt,2025,2741.0,người,142
+42,Hà Tĩnh,so_hs_thpt,2025,46155.0,người,143
+42,Hà Tĩnh,so_truong_thpt,2025,40.0,trường,140
+42,Hà Tĩnh,thu_nhap_bq_lao_dong_thang,2020,3624.4,nghìn đồng,163
+42,Hà Tĩnh,thu_nhap_bq_lao_dong_thang,2021,4999.1,nghìn đồng,163
+42,Hà Tĩnh,thu_nhap_bq_lao_dong_thang,2022,5622.0,nghìn đồng,163
+42,Hà Tĩnh,thu_nhap_bq_lao_dong_thang,2023,6176.2,nghìn đồng,163
+42,Hà Tĩnh,thu_nhap_bq_lao_dong_thang,2024,6783.0,nghìn đồng,163
+42,Hà Tĩnh,thu_nhap_bq_lao_dong_thang,2025,7317.1,nghìn đồng,163
+42,Hà Tĩnh,thu_nhap_bq_nguoi_thang,2025,4457.0,nghìn đồng,158
+42,Hà Tĩnh,ty_le_dung_internet,2024,79.7,%,186
+42,Hà Tĩnh,ty_le_dung_internet,2025,81.2,%,186
+42,Hà Tĩnh,ty_le_ho_ngheo,2020,6.5,%,173
+42,Hà Tĩnh,ty_le_ho_ngheo,2021,5.9,%,173
+42,Hà Tĩnh,ty_le_ho_ngheo,2022,3.8,%,173
+42,Hà Tĩnh,ty_le_ho_ngheo,2023,2.9,%,173
+42,Hà Tĩnh,ty_le_ho_ngheo,2024,1.9,%,173
+42,Hà Tĩnh,ty_le_ho_ngheo,2025,1.2,%,173
+42,Hà Tĩnh,ty_le_ld_qua_dao_tao,2020,25.7,%,34
+42,Hà Tĩnh,ty_le_ld_qua_dao_tao,2021,30.5,%,34
+42,Hà Tĩnh,ty_le_ld_qua_dao_tao,2022,30.8,%,34
+42,Hà Tĩnh,ty_le_ld_qua_dao_tao,2023,31.6,%,34
+42,Hà Tĩnh,ty_le_ld_qua_dao_tao,2024,32.3,%,34
+42,Hà Tĩnh,ty_le_ld_qua_dao_tao,2025,32.5,%,34
+44,Quảng Trị,dan_so_tb,2020,1539.4,nghìn người,6
+44,Quảng Trị,dan_so_tb,2021,1558.4,nghìn người,6
+44,Quảng Trị,dan_so_tb,2022,1564.8,nghìn người,6
+44,Quảng Trị,dan_so_tb,2023,1572.9,nghìn người,6
+44,Quảng Trị,dan_so_tb,2024,1584.0,nghìn người,6
+44,Quảng Trị,dan_so_tb,2025,1594.1,nghìn người,6
+44,Quảng Trị,dan_so_thanh_thi,2020,414.0,nghìn người,9
+44,Quảng Trị,dan_so_thanh_thi,2021,421.0,nghìn người,9
+44,Quảng Trị,dan_so_thanh_thi,2022,424.3,nghìn người,9
+44,Quảng Trị,dan_so_thanh_thi,2023,429.1,nghìn người,9
+44,Quảng Trị,dan_so_thanh_thi,2024,433.3,nghìn người,9
+44,Quảng Trị,dan_so_thanh_thi,2025,329.4,nghìn người,9
+44,Quảng Trị,dien_tich,2025,12686.8,km2,5
+44,Quảng Trị,gini,2020,0.417,hệ số,166
+44,Quảng Trị,gini,2021,0.386,hệ số,166
+44,Quảng Trị,gini,2022,0.379,hệ số,166
+44,Quảng Trị,gini,2023,0.371,hệ số,166
+44,Quảng Trị,gini,2024,0.372,hệ số,166
+44,Quảng Trị,gini,2025,0.345,hệ số,166
+44,Quảng Trị,grdp_binh_quan_nguoi,2020,49.0,triệu đồng,43
+44,Quảng Trị,grdp_binh_quan_nguoi,2021,52.9,triệu đồng,43
+44,Quảng Trị,grdp_binh_quan_nguoi,2022,59.7,triệu đồng,43
+44,Quảng Trị,grdp_binh_quan_nguoi,2023,64.1,triệu đồng,43
+44,Quảng Trị,grdp_binh_quan_nguoi,2024,69.8,triệu đồng,43
+44,Quảng Trị,grdp_binh_quan_nguoi,2025,77.4,triệu đồng,43
+44,Quảng Trị,hdi,2020,0.682,chỉ số,164
+44,Quảng Trị,hdi,2021,0.689,chỉ số,164
+44,Quảng Trị,hdi,2022,0.701,chỉ số,164
+44,Quảng Trị,hdi,2023,0.713,chỉ số,164
+44,Quảng Trị,hdi,2024,0.72,chỉ số,164
+44,Quảng Trị,hdi,2025,0.726,chỉ số,164
+44,Quảng Trị,hs_tren_gv_thpt,2025,18.0,người,147
+44,Quảng Trị,mat_do_dan_so,2025,126.0,người/km2,5
+44,Quảng Trị,so_gv_thpt,2025,3236.0,người,142
+44,Quảng Trị,so_hs_thpt,2025,57728.0,người,143
+44,Quảng Trị,so_truong_thpt,2025,50.0,trường,140
+44,Quảng Trị,thu_nhap_bq_lao_dong_thang,2020,4192.6,nghìn đồng,163
+44,Quảng Trị,thu_nhap_bq_lao_dong_thang,2021,4720.6,nghìn đồng,163
+44,Quảng Trị,thu_nhap_bq_lao_dong_thang,2022,5412.1,nghìn đồng,163
+44,Quảng Trị,thu_nhap_bq_lao_dong_thang,2023,5817.9,nghìn đồng,163
+44,Quảng Trị,thu_nhap_bq_lao_dong_thang,2024,6272.5,nghìn đồng,163
+44,Quảng Trị,thu_nhap_bq_lao_dong_thang,2025,6639.2,nghìn đồng,163
+44,Quảng Trị,thu_nhap_bq_nguoi_thang,2025,4502.0,nghìn đồng,158
+44,Quảng Trị,ty_le_dung_internet,2024,80.6,%,186
+44,Quảng Trị,ty_le_dung_internet,2025,82.9,%,186
+44,Quảng Trị,ty_le_ho_ngheo,2020,9.0,%,173
+44,Quảng Trị,ty_le_ho_ngheo,2021,7.9,%,173
+44,Quảng Trị,ty_le_ho_ngheo,2022,7.6,%,173
+44,Quảng Trị,ty_le_ho_ngheo,2023,5.8,%,173
+44,Quảng Trị,ty_le_ho_ngheo,2024,4.3,%,173
+44,Quảng Trị,ty_le_ho_ngheo,2025,2.3,%,173
+44,Quảng Trị,ty_le_ld_qua_dao_tao,2020,23.4,%,34
+44,Quảng Trị,ty_le_ld_qua_dao_tao,2021,27.0,%,34
+44,Quảng Trị,ty_le_ld_qua_dao_tao,2022,27.0,%,34
+44,Quảng Trị,ty_le_ld_qua_dao_tao,2023,27.8,%,34
+44,Quảng Trị,ty_le_ld_qua_dao_tao,2024,29.1,%,34
+44,Quảng Trị,ty_le_ld_qua_dao_tao,2025,29.2,%,34
+46,Huế,dan_so_tb,2020,1133.6,nghìn người,6
+46,Huế,dan_so_tb,2021,1153.8,nghìn người,6
+46,Huế,dan_so_tb,2022,1160.2,nghìn người,6
+46,Huế,dan_so_tb,2023,1166.5,nghìn người,6
+46,Huế,dan_so_tb,2024,1178.6,nghìn người,6
+46,Huế,dan_so_tb,2025,1190.3,nghìn người,6
+46,Huế,dan_so_thanh_thi,2020,562.3,nghìn người,9
+46,Huế,dan_so_thanh_thi,2021,609.4,nghìn người,9
+46,Huế,dan_so_thanh_thi,2022,612.8,nghìn người,9
+46,Huế,dan_so_thanh_thi,2023,616.2,nghìn người,9
+46,Huế,dan_so_thanh_thi,2024,622.6,nghìn người,9
+46,Huế,dan_so_thanh_thi,2025,813.3,nghìn người,9
+46,Huế,dien_tich,2025,4947.1,km2,5
+46,Huế,gini,2020,0.32,hệ số,166
+46,Huế,gini,2021,0.372,hệ số,166
+46,Huế,gini,2022,0.346,hệ số,166
+46,Huế,gini,2023,0.341,hệ số,166
+46,Huế,gini,2024,0.345,hệ số,166
+46,Huế,gini,2025,0.309,hệ số,166
+46,Huế,grdp_binh_quan_nguoi,2020,48.6,triệu đồng,43
+46,Huế,grdp_binh_quan_nguoi,2021,50.8,triệu đồng,43
+46,Huế,grdp_binh_quan_nguoi,2022,56.8,triệu đồng,43
+46,Huế,grdp_binh_quan_nguoi,2023,62.0,triệu đồng,43
+46,Huế,grdp_binh_quan_nguoi,2024,67.7,triệu đồng,43
+46,Huế,grdp_binh_quan_nguoi,2025,75.3,triệu đồng,43
+46,Huế,hdi,2020,0.681,chỉ số,164
+46,Huế,hdi,2021,0.697,chỉ số,164
+46,Huế,hdi,2022,0.704,chỉ số,164
+46,Huế,hdi,2023,0.717,chỉ số,164
+46,Huế,hdi,2024,0.721,chỉ số,164
+46,Huế,hdi,2025,0.734,chỉ số,164
+46,Huế,hs_tren_gv_thpt,2025,17.0,người,147
+46,Huế,mat_do_dan_so,2025,241.0,người/km2,5
+46,Huế,so_gv_thpt,2025,2138.0,người,142
+46,Huế,so_hs_thpt,2025,36972.0,người,143
+46,Huế,so_truong_thpt,2025,36.0,trường,140
+46,Huế,thu_nhap_bq_lao_dong_thang,2020,4628.1,nghìn đồng,163
+46,Huế,thu_nhap_bq_lao_dong_thang,2021,5067.3,nghìn đồng,163
+46,Huế,thu_nhap_bq_lao_dong_thang,2022,5857.5,nghìn đồng,163
+46,Huế,thu_nhap_bq_lao_dong_thang,2023,6410.5,nghìn đồng,163
+46,Huế,thu_nhap_bq_lao_dong_thang,2024,7063.6,nghìn đồng,163
+46,Huế,thu_nhap_bq_lao_dong_thang,2025,7699.7,nghìn đồng,163
+46,Huế,thu_nhap_bq_nguoi_thang,2025,5697.0,nghìn đồng,158
+46,Huế,ty_le_dung_internet,2024,79.6,%,186
+46,Huế,ty_le_dung_internet,2025,85.4,%,186
+46,Huế,ty_le_ho_ngheo,2020,3.5,%,173
+46,Huế,ty_le_ho_ngheo,2021,3.0,%,173
+46,Huế,ty_le_ho_ngheo,2022,3.9,%,173
+46,Huế,ty_le_ho_ngheo,2023,3.3,%,173
+46,Huế,ty_le_ho_ngheo,2024,2.3,%,173
+46,Huế,ty_le_ho_ngheo,2025,1.4,%,173
+46,Huế,ty_le_ld_qua_dao_tao,2020,23.1,%,34
+46,Huế,ty_le_ld_qua_dao_tao,2021,28.7,%,34
+46,Huế,ty_le_ld_qua_dao_tao,2022,29.8,%,34
+46,Huế,ty_le_ld_qua_dao_tao,2023,30.1,%,34
+46,Huế,ty_le_ld_qua_dao_tao,2024,31.3,%,34
+46,Huế,ty_le_ld_qua_dao_tao,2025,32.3,%,34
+48,Đà Nẵng,dan_so_tb,2020,2674.5,nghìn người,6
+48,Đà Nẵng,dan_so_tb,2021,2714.0,nghìn người,6
+48,Đà Nẵng,dan_so_tb,2022,2739.6,nghìn người,6
+48,Đà Nẵng,dan_so_tb,2023,2771.3,nghìn người,6
+48,Đà Nẵng,dan_so_tb,2024,2819.9,nghìn người,6
+48,Đà Nẵng,dan_so_tb,2025,2856.4,nghìn người,6
+48,Đà Nẵng,dan_so_thanh_thi,2020,1416.6,nghìn người,9
+48,Đà Nẵng,dan_so_thanh_thi,2021,1445.6,nghìn người,9
+48,Đà Nẵng,dan_so_thanh_thi,2022,1474.5,nghìn người,9
+48,Đà Nẵng,dan_so_thanh_thi,2023,1560.5,nghìn người,9
+48,Đà Nẵng,dan_so_thanh_thi,2024,1595.3,nghìn người,9
+48,Đà Nẵng,dan_so_thanh_thi,2025,1627.7,nghìn người,9
+48,Đà Nẵng,dien_tich,2025,11870.3,km2,5
+48,Đà Nẵng,gini,2020,0.343,hệ số,166
+48,Đà Nẵng,gini,2021,0.338,hệ số,166
+48,Đà Nẵng,gini,2022,0.343,hệ số,166
+48,Đà Nẵng,gini,2023,0.362,hệ số,166
+48,Đà Nẵng,gini,2024,0.356,hệ số,166
+48,Đà Nẵng,gini,2025,0.299,hệ số,166
+48,Đà Nẵng,grdp_binh_quan_nguoi,2020,75.7,triệu đồng,43
+48,Đà Nẵng,grdp_binh_quan_nguoi,2021,78.9,triệu đồng,43
+48,Đà Nẵng,grdp_binh_quan_nguoi,2022,89.4,triệu đồng,43
+48,Đà Nẵng,grdp_binh_quan_nguoi,2023,90.6,triệu đồng,43
+48,Đà Nẵng,grdp_binh_quan_nguoi,2024,99.5,triệu đồng,43
+48,Đà Nẵng,grdp_binh_quan_nguoi,2025,110.6,triệu đồng,43
+48,Đà Nẵng,hdi,2020,0.737,chỉ số,164
+48,Đà Nẵng,hdi,2021,0.746,chỉ số,164
+48,Đà Nẵng,hdi,2022,0.761,chỉ số,164
+48,Đà Nẵng,hdi,2023,0.762,chỉ số,164
+48,Đà Nẵng,hdi,2024,0.77,chỉ số,164
+48,Đà Nẵng,hdi,2025,0.781,chỉ số,164
+48,Đà Nẵng,hs_tren_gv_thpt,2025,19.0,người,147
+48,Đà Nẵng,mat_do_dan_so,2025,241.0,người/km2,5
+48,Đà Nẵng,so_gv_thpt,2025,4799.0,người,142
+48,Đà Nẵng,so_hs_thpt,2025,92643.0,người,143
+48,Đà Nẵng,so_truong_thpt,2025,75.0,trường,140
+48,Đà Nẵng,thu_nhap_bq_lao_dong_thang,2020,5391.1,nghìn đồng,163
+48,Đà Nẵng,thu_nhap_bq_lao_dong_thang,2021,5555.8,nghìn đồng,163
+48,Đà Nẵng,thu_nhap_bq_lao_dong_thang,2022,6456.8,nghìn đồng,163
+48,Đà Nẵng,thu_nhap_bq_lao_dong_thang,2023,6948.7,nghìn đồng,163
+48,Đà Nẵng,thu_nhap_bq_lao_dong_thang,2024,7691.3,nghìn đồng,163
+48,Đà Nẵng,thu_nhap_bq_lao_dong_thang,2025,8227.5,nghìn đồng,163
+48,Đà Nẵng,thu_nhap_bq_nguoi_thang,2025,5596.0,nghìn đồng,158
+48,Đà Nẵng,ty_le_dung_internet,2024,82.5,%,186
+48,Đà Nẵng,ty_le_dung_internet,2025,87.5,%,186
+48,Đà Nẵng,ty_le_ho_ngheo,2020,5.1,%,173
+48,Đà Nẵng,ty_le_ho_ngheo,2021,4.0,%,173
+48,Đà Nẵng,ty_le_ho_ngheo,2022,4.7,%,173
+48,Đà Nẵng,ty_le_ho_ngheo,2023,3.5,%,173
+48,Đà Nẵng,ty_le_ho_ngheo,2024,2.2,%,173
+48,Đà Nẵng,ty_le_ho_ngheo,2025,1.4,%,173
+48,Đà Nẵng,ty_le_ld_qua_dao_tao,2020,30.4,%,34
+48,Đà Nẵng,ty_le_ld_qua_dao_tao,2021,35.5,%,34
+48,Đà Nẵng,ty_le_ld_qua_dao_tao,2022,36.1,%,34
+48,Đà Nẵng,ty_le_ld_qua_dao_tao,2023,37.2,%,34
+48,Đà Nẵng,ty_le_ld_qua_dao_tao,2024,38.4,%,34
+48,Đà Nẵng,ty_le_ld_qua_dao_tao,2025,39.0,%,34
+51,Quảng Ngãi,dan_so_tb,2020,1789.0,nghìn người,6
+51,Quảng Ngãi,dan_so_tb,2021,1812.9,nghìn người,6
+51,Quảng Ngãi,dan_so_tb,2022,1825.6,nghìn người,6
+51,Quảng Ngãi,dan_so_tb,2023,1839.4,nghìn người,6
+51,Quảng Ngãi,dan_so_tb,2024,1861.7,nghìn người,6
+51,Quảng Ngãi,dan_so_tb,2025,1881.2,nghìn người,6
+51,Quảng Ngãi,dan_so_thanh_thi,2020,442.1,nghìn người,9
+51,Quảng Ngãi,dan_so_thanh_thi,2021,447.9,nghìn người,9
+51,Quảng Ngãi,dan_so_thanh_thi,2022,460.7,nghìn người,9
+51,Quảng Ngãi,dan_so_thanh_thi,2023,464.8,nghìn người,9
+51,Quảng Ngãi,dan_so_thanh_thi,2024,475.7,nghìn người,9
+51,Quảng Ngãi,dan_so_thanh_thi,2025,487.6,nghìn người,9
+51,Quảng Ngãi,dien_tich,2025,14826.0,km2,5
+51,Quảng Ngãi,gini,2020,0.386,hệ số,166
+51,Quảng Ngãi,gini,2021,0.361,hệ số,166
+51,Quảng Ngãi,gini,2022,0.357,hệ số,166
+51,Quảng Ngãi,gini,2023,0.368,hệ số,166
+51,Quảng Ngãi,gini,2024,0.365,hệ số,166
+51,Quảng Ngãi,gini,2025,0.327,hệ số,166
+51,Quảng Ngãi,grdp_binh_quan_nguoi,2020,61.3,triệu đồng,43
+51,Quảng Ngãi,grdp_binh_quan_nguoi,2021,70.9,triệu đồng,43
+51,Quảng Ngãi,grdp_binh_quan_nguoi,2022,85.1,triệu đồng,43
+51,Quảng Ngãi,grdp_binh_quan_nguoi,2023,87.4,triệu đồng,43
+51,Quảng Ngãi,grdp_binh_quan_nguoi,2024,92.5,triệu đồng,43
+51,Quảng Ngãi,grdp_binh_quan_nguoi,2025,101.9,triệu đồng,43
+51,Quảng Ngãi,hdi,2020,0.677,chỉ số,164
+51,Quảng Ngãi,hdi,2021,0.691,chỉ số,164
+51,Quảng Ngãi,hdi,2022,0.704,chỉ số,164
+51,Quảng Ngãi,hdi,2023,0.714,chỉ số,164
+51,Quảng Ngãi,hdi,2024,0.717,chỉ số,164
+51,Quảng Ngãi,hdi,2025,0.721,chỉ số,164
+51,Quảng Ngãi,hs_tren_gv_thpt,2025,17.0,người,147
+51,Quảng Ngãi,mat_do_dan_so,2025,127.0,người/km2,5
+51,Quảng Ngãi,so_gv_thpt,2025,3329.0,người,142
+51,Quảng Ngãi,so_hs_thpt,2025,57918.0,người,143
+51,Quảng Ngãi,so_truong_thpt,2025,56.0,trường,140
+51,Quảng Ngãi,thu_nhap_bq_lao_dong_thang,2020,4380.5,nghìn đồng,163
+51,Quảng Ngãi,thu_nhap_bq_lao_dong_thang,2021,4765.7,nghìn đồng,163
+51,Quảng Ngãi,thu_nhap_bq_lao_dong_thang,2022,5293.1,nghìn đồng,163
+51,Quảng Ngãi,thu_nhap_bq_lao_dong_thang,2023,5593.7,nghìn đồng,163
+51,Quảng Ngãi,thu_nhap_bq_lao_dong_thang,2024,6257.3,nghìn đồng,163
+51,Quảng Ngãi,thu_nhap_bq_lao_dong_thang,2025,6853.8,nghìn đồng,163
+51,Quảng Ngãi,thu_nhap_bq_nguoi_thang,2025,4427.0,nghìn đồng,158
+51,Quảng Ngãi,ty_le_dung_internet,2024,77.5,%,186
+51,Quảng Ngãi,ty_le_dung_internet,2025,81.4,%,186
+51,Quảng Ngãi,ty_le_ho_ngheo,2020,11.5,%,173
+51,Quảng Ngãi,ty_le_ho_ngheo,2021,11.0,%,173
+51,Quảng Ngãi,ty_le_ho_ngheo,2022,10.4,%,173
+51,Quảng Ngãi,ty_le_ho_ngheo,2023,8.4,%,173
+51,Quảng Ngãi,ty_le_ho_ngheo,2024,5.8,%,173
+51,Quảng Ngãi,ty_le_ho_ngheo,2025,3.7,%,173
+51,Quảng Ngãi,ty_le_ld_qua_dao_tao,2020,20.2,%,34
+51,Quảng Ngãi,ty_le_ld_qua_dao_tao,2021,23.6,%,34
+51,Quảng Ngãi,ty_le_ld_qua_dao_tao,2022,22.7,%,34
+51,Quảng Ngãi,ty_le_ld_qua_dao_tao,2023,23.3,%,34
+51,Quảng Ngãi,ty_le_ld_qua_dao_tao,2024,24.4,%,34
+51,Quảng Ngãi,ty_le_ld_qua_dao_tao,2025,24.5,%,34
+52,Gia Lai,dan_so_tb,2020,3029.7,nghìn người,6
+52,Gia Lai,dan_so_tb,2021,3078.0,nghìn người,6
+52,Gia Lai,dan_so_tb,2022,3095.3,nghìn người,6
+52,Gia Lai,dan_so_tb,2023,3120.2,nghìn người,6
+52,Gia Lai,dan_so_tb,2024,3153.3,nghìn người,6
+52,Gia Lai,dan_so_tb,2025,3182.7,nghìn người,6
+52,Gia Lai,dan_so_thanh_thi,2020,1047.1,nghìn người,9
+52,Gia Lai,dan_so_thanh_thi,2021,1079.7,nghìn người,9
+52,Gia Lai,dan_so_thanh_thi,2022,1086.4,nghìn người,9
+52,Gia Lai,dan_so_thanh_thi,2023,1096.0,nghìn người,9
+52,Gia Lai,dan_so_thanh_thi,2024,1110.7,nghìn người,9
+52,Gia Lai,dan_so_thanh_thi,2025,1023.0,nghìn người,9
+52,Gia Lai,dien_tich,2025,21580.9,km2,5
+52,Gia Lai,gini,2020,0.408,hệ số,166
+52,Gia Lai,gini,2021,0.431,hệ số,166
+52,Gia Lai,gini,2022,0.408,hệ số,166
+52,Gia Lai,gini,2023,0.405,hệ số,166
+52,Gia Lai,gini,2024,0.403,hệ số,166
+52,Gia Lai,gini,2025,0.307,hệ số,166
+52,Gia Lai,grdp_binh_quan_nguoi,2020,51.2,triệu đồng,43
+52,Gia Lai,grdp_binh_quan_nguoi,2021,55.8,triệu đồng,43
+52,Gia Lai,grdp_binh_quan_nguoi,2022,62.6,triệu đồng,43
+52,Gia Lai,grdp_binh_quan_nguoi,2023,67.6,triệu đồng,43
+52,Gia Lai,grdp_binh_quan_nguoi,2024,75.6,triệu đồng,43
+52,Gia Lai,grdp_binh_quan_nguoi,2025,85.0,triệu đồng,43
+52,Gia Lai,hdi,2020,0.663,chỉ số,164
+52,Gia Lai,hdi,2021,0.674,chỉ số,164
+52,Gia Lai,hdi,2022,0.692,chỉ số,164
+52,Gia Lai,hdi,2023,0.698,chỉ số,164
+52,Gia Lai,hdi,2024,0.703,chỉ số,164
+52,Gia Lai,hdi,2025,0.711,chỉ số,164
+52,Gia Lai,hs_tren_gv_thpt,2025,21.0,người,147
+52,Gia Lai,mat_do_dan_so,2025,147.0,người/km2,5
+52,Gia Lai,so_gv_thpt,2025,5012.0,người,142
+52,Gia Lai,so_hs_thpt,2025,105911.0,người,143
+52,Gia Lai,so_truong_thpt,2025,96.0,trường,140
+52,Gia Lai,thu_nhap_bq_lao_dong_thang,2020,4333.0,nghìn đồng,163
+52,Gia Lai,thu_nhap_bq_lao_dong_thang,2021,4448.0,nghìn đồng,163
+52,Gia Lai,thu_nhap_bq_lao_dong_thang,2022,4847.1,nghìn đồng,163
+52,Gia Lai,thu_nhap_bq_lao_dong_thang,2023,5250.2,nghìn đồng,163
+52,Gia Lai,thu_nhap_bq_lao_dong_thang,2024,5645.6,nghìn đồng,163
+52,Gia Lai,thu_nhap_bq_lao_dong_thang,2025,6092.3,nghìn đồng,163
+52,Gia Lai,thu_nhap_bq_nguoi_thang,2025,4537.0,nghìn đồng,158
+52,Gia Lai,ty_le_dung_internet,2024,76.0,%,186
+52,Gia Lai,ty_le_dung_internet,2025,79.2,%,186
+52,Gia Lai,ty_le_ho_ngheo,2020,10.9,%,173
+52,Gia Lai,ty_le_ho_ngheo,2021,10.3,%,173
+52,Gia Lai,ty_le_ho_ngheo,2022,10.7,%,173
+52,Gia Lai,ty_le_ho_ngheo,2023,8.1,%,173
+52,Gia Lai,ty_le_ho_ngheo,2024,5.5,%,173
+52,Gia Lai,ty_le_ho_ngheo,2025,3.7,%,173
+52,Gia Lai,ty_le_ld_qua_dao_tao,2020,18.3,%,34
+52,Gia Lai,ty_le_ld_qua_dao_tao,2021,20.2,%,34
+52,Gia Lai,ty_le_ld_qua_dao_tao,2022,19.9,%,34
+52,Gia Lai,ty_le_ld_qua_dao_tao,2023,20.1,%,34
+52,Gia Lai,ty_le_ld_qua_dao_tao,2024,20.9,%,34
+52,Gia Lai,ty_le_ld_qua_dao_tao,2025,20.9,%,34
+56,Khánh Hòa,dan_so_tb,2020,1834.1,nghìn người,6
+56,Khánh Hòa,dan_so_tb,2021,1844.1,nghìn người,6
+56,Khánh Hòa,dan_so_tb,2022,1852.7,nghìn người,6
+56,Khánh Hòa,dan_so_tb,2023,1861.8,nghìn người,6
+56,Khánh Hòa,dan_so_tb,2024,1882.0,nghìn người,6
+56,Khánh Hòa,dan_so_tb,2025,1898.5,nghìn người,6
+56,Khánh Hòa,dan_so_thanh_thi,2020,735.5,nghìn người,9
+56,Khánh Hòa,dan_so_thanh_thi,2021,739.8,nghìn người,9
+56,Khánh Hòa,dan_so_thanh_thi,2022,743.5,nghìn người,9
+56,Khánh Hòa,dan_so_thanh_thi,2023,747.8,nghìn người,9
+56,Khánh Hòa,dan_so_thanh_thi,2024,759.8,nghìn người,9
+56,Khánh Hòa,dan_so_thanh_thi,2025,872.6,nghìn người,9
+56,Khánh Hòa,dien_tich,2025,8706.8,km2,5
+56,Khánh Hòa,gini,2020,0.348,hệ số,166
+56,Khánh Hòa,gini,2021,0.378,hệ số,166
+56,Khánh Hòa,gini,2022,0.36,hệ số,166
+56,Khánh Hòa,gini,2023,0.354,hệ số,166
+56,Khánh Hòa,gini,2024,0.366,hệ số,166
+56,Khánh Hòa,gini,2025,0.313,hệ số,166
+56,Khánh Hòa,grdp_binh_quan_nguoi,2020,62.6,triệu đồng,43
+56,Khánh Hòa,grdp_binh_quan_nguoi,2021,65.5,triệu đồng,43
+56,Khánh Hòa,grdp_binh_quan_nguoi,2022,77.4,triệu đồng,43
+56,Khánh Hòa,grdp_binh_quan_nguoi,2023,87.6,triệu đồng,43
+56,Khánh Hòa,grdp_binh_quan_nguoi,2024,101.2,triệu đồng,43
+56,Khánh Hòa,grdp_binh_quan_nguoi,2025,110.3,triệu đồng,43
+56,Khánh Hòa,hdi,2020,0.69,chỉ số,164
+56,Khánh Hòa,hdi,2021,0.702,chỉ số,164
+56,Khánh Hòa,hdi,2022,0.719,chỉ số,164
+56,Khánh Hòa,hdi,2023,0.73,chỉ số,164
+56,Khánh Hòa,hdi,2024,0.733,chỉ số,164
+56,Khánh Hòa,hdi,2025,0.743,chỉ số,164
+56,Khánh Hòa,hs_tren_gv_thpt,2025,19.0,người,147
+56,Khánh Hòa,mat_do_dan_so,2025,218.0,người/km2,5
+56,Khánh Hòa,so_gv_thpt,2025,2879.0,người,142
+56,Khánh Hòa,so_hs_thpt,2025,54880.0,người,143
+56,Khánh Hòa,so_truong_thpt,2025,45.0,trường,140
+56,Khánh Hòa,thu_nhap_bq_lao_dong_thang,2020,4764.7,nghìn đồng,163
+56,Khánh Hòa,thu_nhap_bq_lao_dong_thang,2021,4680.2,nghìn đồng,163
+56,Khánh Hòa,thu_nhap_bq_lao_dong_thang,2022,5752.8,nghìn đồng,163
+56,Khánh Hòa,thu_nhap_bq_lao_dong_thang,2023,6208.3,nghìn đồng,163
+56,Khánh Hòa,thu_nhap_bq_lao_dong_thang,2024,6780.3,nghìn đồng,163
+56,Khánh Hòa,thu_nhap_bq_lao_dong_thang,2025,7331.9,nghìn đồng,163
+56,Khánh Hòa,thu_nhap_bq_nguoi_thang,2025,5284.0,nghìn đồng,158
+56,Khánh Hòa,ty_le_dung_internet,2024,81.5,%,186
+56,Khánh Hòa,ty_le_dung_internet,2025,87.9,%,186
+56,Khánh Hòa,ty_le_ho_ngheo,2020,4.5,%,173
+56,Khánh Hòa,ty_le_ho_ngheo,2021,4.2,%,173
+56,Khánh Hòa,ty_le_ho_ngheo,2022,4.7,%,173
+56,Khánh Hòa,ty_le_ho_ngheo,2023,4.1,%,173
+56,Khánh Hòa,ty_le_ho_ngheo,2024,3.0,%,173
+56,Khánh Hòa,ty_le_ho_ngheo,2025,2.0,%,173
+56,Khánh Hòa,ty_le_ld_qua_dao_tao,2020,21.3,%,34
+56,Khánh Hòa,ty_le_ld_qua_dao_tao,2021,23.2,%,34
+56,Khánh Hòa,ty_le_ld_qua_dao_tao,2022,22.8,%,34
+56,Khánh Hòa,ty_le_ld_qua_dao_tao,2023,23.1,%,34
+56,Khánh Hòa,ty_le_ld_qua_dao_tao,2024,23.7,%,34
+56,Khánh Hòa,ty_le_ld_qua_dao_tao,2025,24.9,%,34
+66,Đắk Lắk,dan_so_tb,2020,2761.2,nghìn người,6
+66,Đắk Lắk,dan_so_tb,2021,2784.5,nghìn người,6
+66,Đắk Lắk,dan_so_tb,2022,2795.1,nghìn người,6
+66,Đắk Lắk,dan_so_tb,2023,2809.2,nghìn người,6
+66,Đắk Lắk,dan_so_tb,2024,2831.3,nghìn người,6
+66,Đắk Lắk,dan_so_tb,2025,2849.2,nghìn người,6
+66,Đắk Lắk,dan_so_thanh_thi,2020,752.4,nghìn người,9
+66,Đắk Lắk,dan_so_thanh_thi,2021,760.1,nghìn người,9
+66,Đắk Lắk,dan_so_thanh_thi,2022,765.0,nghìn người,9
+66,Đắk Lắk,dan_so_thanh_thi,2023,789.4,nghìn người,9
+66,Đắk Lắk,dan_so_thanh_thi,2024,799.9,nghìn người,9
+66,Đắk Lắk,dan_so_thanh_thi,2025,778.9,nghìn người,9
+66,Đắk Lắk,dien_tich,2025,18099.8,km2,5
+66,Đắk Lắk,gini,2020,0.401,hệ số,166
+66,Đắk Lắk,gini,2021,0.409,hệ số,166
+66,Đắk Lắk,gini,2022,0.391,hệ số,166
+66,Đắk Lắk,gini,2023,0.395,hệ số,166
+66,Đắk Lắk,gini,2024,0.399,hệ số,166
+66,Đắk Lắk,gini,2025,0.33,hệ số,166
+66,Đắk Lắk,grdp_binh_quan_nguoi,2020,47.5,triệu đồng,43
+66,Đắk Lắk,grdp_binh_quan_nguoi,2021,51.1,triệu đồng,43
+66,Đắk Lắk,grdp_binh_quan_nguoi,2022,56.9,triệu đồng,43
+66,Đắk Lắk,grdp_binh_quan_nguoi,2023,61.3,triệu đồng,43
+66,Đắk Lắk,grdp_binh_quan_nguoi,2024,71.1,triệu đồng,43
+66,Đắk Lắk,grdp_binh_quan_nguoi,2025,80.6,triệu đồng,43
+66,Đắk Lắk,hdi,2020,0.659,chỉ số,164
+66,Đắk Lắk,hdi,2021,0.684,chỉ số,164
+66,Đắk Lắk,hdi,2022,0.688,chỉ số,164
+66,Đắk Lắk,hdi,2023,0.705,chỉ số,164
+66,Đắk Lắk,hdi,2024,0.702,chỉ số,164
+66,Đắk Lắk,hdi,2025,0.712,chỉ số,164
+66,Đắk Lắk,hs_tren_gv_thpt,2025,18.0,người,147
+66,Đắk Lắk,mat_do_dan_so,2025,157.0,người/km2,5
+66,Đắk Lắk,so_gv_thpt,2025,5184.0,người,142
+66,Đắk Lắk,so_hs_thpt,2025,95160.0,người,143
+66,Đắk Lắk,so_truong_thpt,2025,80.0,trường,140
+66,Đắk Lắk,thu_nhap_bq_lao_dong_thang,2020,4183.3,nghìn đồng,163
+66,Đắk Lắk,thu_nhap_bq_lao_dong_thang,2021,4061.3,nghìn đồng,163
+66,Đắk Lắk,thu_nhap_bq_lao_dong_thang,2022,4854.7,nghìn đồng,163
+66,Đắk Lắk,thu_nhap_bq_lao_dong_thang,2023,5103.7,nghìn đồng,163
+66,Đắk Lắk,thu_nhap_bq_lao_dong_thang,2024,6103.9,nghìn đồng,163
+66,Đắk Lắk,thu_nhap_bq_lao_dong_thang,2025,7224.7,nghìn đồng,163
+66,Đắk Lắk,thu_nhap_bq_nguoi_thang,2025,4421.0,nghìn đồng,158
+66,Đắk Lắk,ty_le_dung_internet,2024,82.8,%,186
+66,Đắk Lắk,ty_le_dung_internet,2025,83.8,%,186
+66,Đắk Lắk,ty_le_ho_ngheo,2020,7.0,%,173
+66,Đắk Lắk,ty_le_ho_ngheo,2021,6.4,%,173
+66,Đắk Lắk,ty_le_ho_ngheo,2022,7.6,%,173
+66,Đắk Lắk,ty_le_ho_ngheo,2023,6.4,%,173
+66,Đắk Lắk,ty_le_ho_ngheo,2024,4.3,%,173
+66,Đắk Lắk,ty_le_ho_ngheo,2025,2.6,%,173
+66,Đắk Lắk,ty_le_ld_qua_dao_tao,2020,17.3,%,34
+66,Đắk Lắk,ty_le_ld_qua_dao_tao,2021,19.3,%,34
+66,Đắk Lắk,ty_le_ld_qua_dao_tao,2022,19.1,%,34
+66,Đắk Lắk,ty_le_ld_qua_dao_tao,2023,19.7,%,34
+66,Đắk Lắk,ty_le_ld_qua_dao_tao,2024,20.9,%,34
+66,Đắk Lắk,ty_le_ld_qua_dao_tao,2025,22.3,%,34
+68,Lâm Đồng,dan_so_tb,2020,3187.0,nghìn người,6
+68,Lâm Đồng,dan_so_tb,2021,3232.6,nghìn người,6
+68,Lâm Đồng,dan_so_tb,2022,3255.1,nghìn người,6
+68,Lâm Đồng,dan_so_tb,2023,3285.7,nghìn người,6
+68,Lâm Đồng,dan_so_tb,2024,3324.4,nghìn người,6
+68,Lâm Đồng,dan_so_tb,2025,3356.4,nghìn người,6
+68,Lâm Đồng,dan_so_thanh_thi,2020,1083.8,nghìn người,9
+68,Lâm Đồng,dan_so_thanh_thi,2021,1106.9,nghìn người,9
+68,Lâm Đồng,dan_so_thanh_thi,2022,1119.2,nghìn người,9
+68,Lâm Đồng,dan_so_thanh_thi,2023,1131.1,nghìn người,9
+68,Lâm Đồng,dan_so_thanh_thi,2024,1149.2,nghìn người,9
+68,Lâm Đồng,dan_so_thanh_thi,2025,887.9,nghìn người,9
+68,Lâm Đồng,dien_tich,2025,24239.1,km2,5
+68,Lâm Đồng,gini,2020,0.328,hệ số,166
+68,Lâm Đồng,gini,2021,0.332,hệ số,166
+68,Lâm Đồng,gini,2022,0.335,hệ số,166
+68,Lâm Đồng,gini,2023,0.337,hệ số,166
+68,Lâm Đồng,gini,2024,0.336,hệ số,166
+68,Lâm Đồng,gini,2025,0.279,hệ số,166
+68,Lâm Đồng,grdp_binh_quan_nguoi,2020,62.4,triệu đồng,43
+68,Lâm Đồng,grdp_binh_quan_nguoi,2021,66.7,triệu đồng,43
+68,Lâm Đồng,grdp_binh_quan_nguoi,2022,75.3,triệu đồng,43
+68,Lâm Đồng,grdp_binh_quan_nguoi,2023,79.8,triệu đồng,43
+68,Lâm Đồng,grdp_binh_quan_nguoi,2024,93.4,triệu đồng,43
+68,Lâm Đồng,grdp_binh_quan_nguoi,2025,105.2,triệu đồng,43
+68,Lâm Đồng,hdi,2020,0.685,chỉ số,164
+68,Lâm Đồng,hdi,2021,0.694,chỉ số,164
+68,Lâm Đồng,hdi,2022,0.705,chỉ số,164
+68,Lâm Đồng,hdi,2023,0.716,chỉ số,164
+68,Lâm Đồng,hdi,2024,0.719,chỉ số,164
+68,Lâm Đồng,hdi,2025,0.726,chỉ số,164
+68,Lâm Đồng,hs_tren_gv_thpt,2025,19.0,người,147
+68,Lâm Đồng,mat_do_dan_so,2025,138.0,người/km2,5
+68,Lâm Đồng,so_gv_thpt,2025,5882.0,người,142
+68,Lâm Đồng,so_hs_thpt,2025,113312.0,người,143
+68,Lâm Đồng,so_truong_thpt,2025,92.0,trường,140
+68,Lâm Đồng,thu_nhap_bq_lao_dong_thang,2020,4799.3,nghìn đồng,163
+68,Lâm Đồng,thu_nhap_bq_lao_dong_thang,2021,5084.1,nghìn đồng,163
+68,Lâm Đồng,thu_nhap_bq_lao_dong_thang,2022,5807.6,nghìn đồng,163
+68,Lâm Đồng,thu_nhap_bq_lao_dong_thang,2023,6120.7,nghìn đồng,163
+68,Lâm Đồng,thu_nhap_bq_lao_dong_thang,2024,6605.2,nghìn đồng,163
+68,Lâm Đồng,thu_nhap_bq_lao_dong_thang,2025,6979.0,nghìn đồng,163
+68,Lâm Đồng,thu_nhap_bq_nguoi_thang,2025,5477.0,nghìn đồng,158
+68,Lâm Đồng,ty_le_dung_internet,2024,85.0,%,186
+68,Lâm Đồng,ty_le_dung_internet,2025,88.1,%,186
+68,Lâm Đồng,ty_le_ho_ngheo,2020,4.1,%,173
+68,Lâm Đồng,ty_le_ho_ngheo,2021,3.6,%,173
+68,Lâm Đồng,ty_le_ho_ngheo,2022,4.6,%,173
+68,Lâm Đồng,ty_le_ho_ngheo,2023,3.4,%,173
+68,Lâm Đồng,ty_le_ho_ngheo,2024,2.2,%,173
+68,Lâm Đồng,ty_le_ho_ngheo,2025,1.1,%,173
+68,Lâm Đồng,ty_le_ld_qua_dao_tao,2020,16.6,%,34
+68,Lâm Đồng,ty_le_ld_qua_dao_tao,2021,18.6,%,34
+68,Lâm Đồng,ty_le_ld_qua_dao_tao,2022,19.1,%,34
+68,Lâm Đồng,ty_le_ld_qua_dao_tao,2023,20.3,%,34
+68,Lâm Đồng,ty_le_ld_qua_dao_tao,2024,21.4,%,34
+68,Lâm Đồng,ty_le_ld_qua_dao_tao,2025,21.5,%,34
+75,Đồng Nai,dan_so_tb,2020,4188.5,nghìn người,6
+75,Đồng Nai,dan_so_tb,2021,4193.4,nghìn người,6
+75,Đồng Nai,dan_so_tb,2022,4290.5,nghìn người,6
+75,Đồng Nai,dan_so_tb,2023,4356.4,nghìn người,6
+75,Đồng Nai,dan_so_tb,2024,4427.7,nghìn người,6
+75,Đồng Nai,dan_so_tb,2025,4493.7,nghìn người,6
+75,Đồng Nai,dan_so_thanh_thi,2020,1649.8,nghìn người,9
+75,Đồng Nai,dan_so_thanh_thi,2021,1666.2,nghìn người,9
+75,Đồng Nai,dan_so_thanh_thi,2022,1774.3,nghìn người,9
+75,Đồng Nai,dan_so_thanh_thi,2023,1805.9,nghìn người,9
+75,Đồng Nai,dan_so_thanh_thi,2024,1839.4,nghìn người,9
+75,Đồng Nai,dan_so_thanh_thi,2025,1827.5,nghìn người,9
+75,Đồng Nai,dien_tich,2025,12737.2,km2,5
+75,Đồng Nai,gini,2020,0.292,hệ số,166
+75,Đồng Nai,gini,2021,0.341,hệ số,166
+75,Đồng Nai,gini,2022,0.357,hệ số,166
+75,Đồng Nai,gini,2023,0.347,hệ số,166
+75,Đồng Nai,gini,2024,0.338,hệ số,166
+75,Đồng Nai,gini,2025,0.254,hệ số,166
+75,Đồng Nai,grdp_binh_quan_nguoi,2020,103.6,triệu đồng,43
+75,Đồng Nai,grdp_binh_quan_nguoi,2021,108.6,triệu đồng,43
+75,Đồng Nai,grdp_binh_quan_nguoi,2022,119.1,triệu đồng,43
+75,Đồng Nai,grdp_binh_quan_nguoi,2023,123.7,triệu đồng,43
+75,Đồng Nai,grdp_binh_quan_nguoi,2024,134.0,triệu đồng,43
+75,Đồng Nai,grdp_binh_quan_nguoi,2025,150.8,triệu đồng,43
+75,Đồng Nai,hdi,2020,0.736,chỉ số,164
+75,Đồng Nai,hdi,2021,0.743,chỉ số,164
+75,Đồng Nai,hdi,2022,0.751,chỉ số,164
+75,Đồng Nai,hdi,2023,0.762,chỉ số,164
+75,Đồng Nai,hdi,2024,0.759,chỉ số,164
+75,Đồng Nai,hdi,2025,0.777,chỉ số,164
+75,Đồng Nai,hs_tren_gv_thpt,2025,22.0,người,147
+75,Đồng Nai,mat_do_dan_so,2025,353.0,người/km2,5
+75,Đồng Nai,so_gv_thpt,2025,5529.0,người,142
+75,Đồng Nai,so_hs_thpt,2025,119905.0,người,143
+75,Đồng Nai,so_truong_thpt,2025,72.0,trường,140
+75,Đồng Nai,thu_nhap_bq_lao_dong_thang,2020,7216.1,nghìn đồng,163
+75,Đồng Nai,thu_nhap_bq_lao_dong_thang,2021,7099.7,nghìn đồng,163
+75,Đồng Nai,thu_nhap_bq_lao_dong_thang,2022,8157.2,nghìn đồng,163
+75,Đồng Nai,thu_nhap_bq_lao_dong_thang,2023,8293.3,nghìn đồng,163
+75,Đồng Nai,thu_nhap_bq_lao_dong_thang,2024,9146.5,nghìn đồng,163
+75,Đồng Nai,thu_nhap_bq_lao_dong_thang,2025,9615.9,nghìn đồng,163
+75,Đồng Nai,thu_nhap_bq_nguoi_thang,2025,7174.0,nghìn đồng,158
+75,Đồng Nai,ty_le_dung_internet,2024,87.6,%,186
+75,Đồng Nai,ty_le_dung_internet,2025,91.8,%,186
+75,Đồng Nai,ty_le_ho_ngheo,2020,0.9,%,173
+75,Đồng Nai,ty_le_ho_ngheo,2021,0.9,%,173
+75,Đồng Nai,ty_le_ho_ngheo,2022,1.1,%,173
+75,Đồng Nai,ty_le_ho_ngheo,2023,0.8,%,173
+75,Đồng Nai,ty_le_ho_ngheo,2024,0.5,%,173
+75,Đồng Nai,ty_le_ho_ngheo,2025,0.1,%,173
+75,Đồng Nai,ty_le_ld_qua_dao_tao,2020,21.4,%,34
+75,Đồng Nai,ty_le_ld_qua_dao_tao,2021,21.2,%,34
+75,Đồng Nai,ty_le_ld_qua_dao_tao,2022,21.7,%,34
+75,Đồng Nai,ty_le_ld_qua_dao_tao,2023,22.1,%,34
+75,Đồng Nai,ty_le_ld_qua_dao_tao,2024,23.1,%,34
+75,Đồng Nai,ty_le_ld_qua_dao_tao,2025,24.3,%,34
+79,Hồ Chí Minh,dan_so_tb,2020,12976.1,nghìn người,6
+79,Hồ Chí Minh,dan_so_tb,2021,12939.7,nghìn người,6
+79,Hồ Chí Minh,dan_so_tb,2022,13331.5,nghìn người,6
+79,Hồ Chí Minh,dan_so_tb,2023,13467.6,nghìn người,6
+79,Hồ Chí Minh,dan_so_tb,2024,13608.9,nghìn người,6
+79,Hồ Chí Minh,dan_so_tb,2025,13803.8,nghìn người,6
+79,Hồ Chí Minh,dan_so_thanh_thi,2020,10141.4,nghìn người,9
+79,Hồ Chí Minh,dan_so_thanh_thi,2021,10116.2,nghìn người,9
+79,Hồ Chí Minh,dan_so_thanh_thi,2022,10337.2,nghìn người,9
+79,Hồ Chí Minh,dan_so_thanh_thi,2023,10445.1,nghìn người,9
+79,Hồ Chí Minh,dan_so_thanh_thi,2024,10634.7,nghìn người,9
+79,Hồ Chí Minh,dan_so_thanh_thi,2025,10641.0,nghìn người,9
+79,Hồ Chí Minh,dien_tich,2025,6796.9,km2,5
+79,Hồ Chí Minh,gini,2020,0.278,hệ số,166
+79,Hồ Chí Minh,gini,2021,0.307,hệ số,166
+79,Hồ Chí Minh,gini,2022,0.338,hệ số,166
+79,Hồ Chí Minh,gini,2023,0.336,hệ số,166
+79,Hồ Chí Minh,gini,2024,0.334,hệ số,166
+79,Hồ Chí Minh,gini,2025,0.253,hệ số,166
+79,Hồ Chí Minh,grdp_binh_quan_nguoi,2020,158.2,triệu đồng,43
+79,Hồ Chí Minh,grdp_binh_quan_nguoi,2021,162.1,triệu đồng,43
+79,Hồ Chí Minh,grdp_binh_quan_nguoi,2022,179.1,triệu đồng,43
+79,Hồ Chí Minh,grdp_binh_quan_nguoi,2023,183.4,triệu đồng,43
+79,Hồ Chí Minh,grdp_binh_quan_nguoi,2024,196.6,triệu đồng,43
+79,Hồ Chí Minh,grdp_binh_quan_nguoi,2025,215.3,triệu đồng,43
+79,Hồ Chí Minh,hdi,2020,0.783,chỉ số,164
+79,Hồ Chí Minh,hdi,2021,0.787,chỉ số,164
+79,Hồ Chí Minh,hdi,2022,0.801,chỉ số,164
+79,Hồ Chí Minh,hdi,2023,0.804,chỉ số,164
+79,Hồ Chí Minh,hdi,2024,0.807,chỉ số,164
+79,Hồ Chí Minh,hdi,2025,0.829,chỉ số,164
+79,Hồ Chí Minh,hs_tren_gv_thpt,2025,20.0,người,147
+79,Hồ Chí Minh,mat_do_dan_so,2025,2031.0,người/km2,5
+79,Hồ Chí Minh,so_gv_thpt,2025,17176.0,người,142
+79,Hồ Chí Minh,so_hs_thpt,2025,341536.0,người,143
+79,Hồ Chí Minh,so_truong_thpt,2025,180.0,trường,140
+79,Hồ Chí Minh,thu_nhap_bq_lao_dong_thang,2020,8123.1,nghìn đồng,163
+79,Hồ Chí Minh,thu_nhap_bq_lao_dong_thang,2021,7280.3,nghìn đồng,163
+79,Hồ Chí Minh,thu_nhap_bq_lao_dong_thang,2022,8862.4,nghìn đồng,163
+79,Hồ Chí Minh,thu_nhap_bq_lao_dong_thang,2023,9156.6,nghìn đồng,163
+79,Hồ Chí Minh,thu_nhap_bq_lao_dong_thang,2024,9746.6,nghìn đồng,163
+79,Hồ Chí Minh,thu_nhap_bq_lao_dong_thang,2025,10455.3,nghìn đồng,163
+79,Hồ Chí Minh,thu_nhap_bq_nguoi_thang,2025,8064.0,nghìn đồng,158
+79,Hồ Chí Minh,ty_le_dung_internet,2024,92.4,%,186
+79,Hồ Chí Minh,ty_le_dung_internet,2025,93.8,%,186
+79,Hồ Chí Minh,ty_le_ho_ngheo,2020,0.1,%,173
+79,Hồ Chí Minh,ty_le_ho_ngheo,2021,0.0,%,173
+79,Hồ Chí Minh,ty_le_ho_ngheo,2022,0.1,%,173
+79,Hồ Chí Minh,ty_le_ho_ngheo,2023,0.1,%,173
+79,Hồ Chí Minh,ty_le_ho_ngheo,2024,0.1,%,173
+79,Hồ Chí Minh,ty_le_ho_ngheo,2025,0.0,%,173
+79,Hồ Chí Minh,ty_le_ld_qua_dao_tao,2020,33.6,%,34
+79,Hồ Chí Minh,ty_le_ld_qua_dao_tao,2021,31.6,%,34
+79,Hồ Chí Minh,ty_le_ld_qua_dao_tao,2022,31.3,%,34
+79,Hồ Chí Minh,ty_le_ld_qua_dao_tao,2023,32.1,%,34
+79,Hồ Chí Minh,ty_le_ld_qua_dao_tao,2024,33.3,%,34
+79,Hồ Chí Minh,ty_le_ld_qua_dao_tao,2025,34.9,%,34
+80,Tây Ninh,dan_so_tb,2020,2892.0,nghìn người,6
+80,Tây Ninh,dan_so_tb,2021,2907.7,nghìn người,6
+80,Tây Ninh,dan_so_tb,2022,2923.0,nghìn người,6
+80,Tây Ninh,dan_so_tb,2023,2938.3,nghìn người,6
+80,Tây Ninh,dan_so_tb,2024,2959.0,nghìn người,6
+80,Tây Ninh,dan_so_tb,2025,2980.3,nghìn người,6
+80,Tây Ninh,dan_so_thanh_thi,2020,693.6,nghìn người,9
+80,Tây Ninh,dan_so_thanh_thi,2021,699.2,nghìn người,9
+80,Tây Ninh,dan_so_thanh_thi,2022,705.3,nghìn người,9
+80,Tây Ninh,dan_so_thanh_thi,2023,710.0,nghìn người,9
+80,Tây Ninh,dan_so_thanh_thi,2024,718.5,nghìn người,9
+80,Tây Ninh,dan_so_thanh_thi,2025,702.3,nghìn người,9
+80,Tây Ninh,dien_tich,2025,8524.4,km2,5
+80,Tây Ninh,gini,2020,0.331,hệ số,166
+80,Tây Ninh,gini,2021,0.323,hệ số,166
+80,Tây Ninh,gini,2022,0.323,hệ số,166
+80,Tây Ninh,gini,2023,0.33,hệ số,166
+80,Tây Ninh,gini,2024,0.324,hệ số,166
+80,Tây Ninh,gini,2025,0.301,hệ số,166
+80,Tây Ninh,grdp_binh_quan_nguoi,2020,75.4,triệu đồng,43
+80,Tây Ninh,grdp_binh_quan_nguoi,2021,78.5,triệu đồng,43
+80,Tây Ninh,grdp_binh_quan_nguoi,2022,88.9,triệu đồng,43
+80,Tây Ninh,grdp_binh_quan_nguoi,2023,93.4,triệu đồng,43
+80,Tây Ninh,grdp_binh_quan_nguoi,2024,103.5,triệu đồng,43
+80,Tây Ninh,grdp_binh_quan_nguoi,2025,115.6,triệu đồng,43
+80,Tây Ninh,hdi,2020,0.695,chỉ số,164
+80,Tây Ninh,hdi,2021,0.702,chỉ số,164
+80,Tây Ninh,hdi,2022,0.713,chỉ số,164
+80,Tây Ninh,hdi,2023,0.721,chỉ số,164
+80,Tây Ninh,hdi,2024,0.723,chỉ số,164
+80,Tây Ninh,hdi,2025,0.735,chỉ số,164
+80,Tây Ninh,hs_tren_gv_thpt,2025,20.0,người,147
+80,Tây Ninh,mat_do_dan_so,2025,350.0,người/km2,5
+80,Tây Ninh,so_gv_thpt,2025,3737.0,người,142
+80,Tây Ninh,so_hs_thpt,2025,76362.0,người,143
+80,Tây Ninh,so_truong_thpt,2025,58.0,trường,140
+80,Tây Ninh,thu_nhap_bq_lao_dong_thang,2020,5960.7,nghìn đồng,163
+80,Tây Ninh,thu_nhap_bq_lao_dong_thang,2021,5898.1,nghìn đồng,163
+80,Tây Ninh,thu_nhap_bq_lao_dong_thang,2022,6707.3,nghìn đồng,163
+80,Tây Ninh,thu_nhap_bq_lao_dong_thang,2023,7387.5,nghìn đồng,163
+80,Tây Ninh,thu_nhap_bq_lao_dong_thang,2024,7722.8,nghìn đồng,163
+80,Tây Ninh,thu_nhap_bq_lao_dong_thang,2025,8299.1,nghìn đồng,163
+80,Tây Ninh,thu_nhap_bq_nguoi_thang,2025,5413.0,nghìn đồng,158
+80,Tây Ninh,ty_le_dung_internet,2024,84.5,%,186
+80,Tây Ninh,ty_le_dung_internet,2025,86.8,%,186
+80,Tây Ninh,ty_le_ho_ngheo,2020,1.6,%,173
+80,Tây Ninh,ty_le_ho_ngheo,2021,1.3,%,173
+80,Tây Ninh,ty_le_ho_ngheo,2022,1.9,%,173
+80,Tây Ninh,ty_le_ho_ngheo,2023,1.3,%,173
+80,Tây Ninh,ty_le_ho_ngheo,2024,0.9,%,173
+80,Tây Ninh,ty_le_ho_ngheo,2025,0.5,%,173
+80,Tây Ninh,ty_le_ld_qua_dao_tao,2020,15.4,%,34
+80,Tây Ninh,ty_le_ld_qua_dao_tao,2021,15.5,%,34
+80,Tây Ninh,ty_le_ld_qua_dao_tao,2022,16.2,%,34
+80,Tây Ninh,ty_le_ld_qua_dao_tao,2023,16.9,%,34
+80,Tây Ninh,ty_le_ld_qua_dao_tao,2024,18.3,%,34
+80,Tây Ninh,ty_le_ld_qua_dao_tao,2025,19.0,%,34
+82,Đồng Tháp,dan_so_tb,2020,3372.6,nghìn người,6
+82,Đồng Tháp,dan_so_tb,2021,3380.7,nghìn người,6
+82,Đồng Tháp,dan_so_tb,2022,3385.4,nghìn người,6
+82,Đồng Tháp,dan_so_tb,2023,3390.9,nghìn người,6
+82,Đồng Tháp,dan_so_tb,2024,3397.2,nghìn người,6
+82,Đồng Tháp,dan_so_tb,2025,3403.8,nghìn người,6
+82,Đồng Tháp,dan_so_thanh_thi,2020,558.1,nghìn người,9
+82,Đồng Tháp,dan_so_thanh_thi,2021,576.8,nghìn người,9
+82,Đồng Tháp,dan_so_thanh_thi,2022,595.8,nghìn người,9
+82,Đồng Tháp,dan_so_thanh_thi,2023,599.5,nghìn người,9
+82,Đồng Tháp,dan_so_thanh_thi,2024,631.2,nghìn người,9
+82,Đồng Tháp,dan_so_thanh_thi,2025,816.1,nghìn người,9
+82,Đồng Tháp,dien_tich,2025,5938.6,km2,5
+82,Đồng Tháp,gini,2020,0.298,hệ số,166
+82,Đồng Tháp,gini,2021,0.3,hệ số,166
+82,Đồng Tháp,gini,2022,0.31,hệ số,166
+82,Đồng Tháp,gini,2023,0.306,hệ số,166
+82,Đồng Tháp,gini,2024,0.315,hệ số,166
+82,Đồng Tháp,gini,2025,0.277,hệ số,166
+82,Đồng Tháp,grdp_binh_quan_nguoi,2020,54.6,triệu đồng,43
+82,Đồng Tháp,grdp_binh_quan_nguoi,2021,55.1,triệu đồng,43
+82,Đồng Tháp,grdp_binh_quan_nguoi,2022,62.6,triệu đồng,43
+82,Đồng Tháp,grdp_binh_quan_nguoi,2023,69.0,triệu đồng,43
+82,Đồng Tháp,grdp_binh_quan_nguoi,2024,76.8,triệu đồng,43
+82,Đồng Tháp,grdp_binh_quan_nguoi,2025,84.0,triệu đồng,43
+82,Đồng Tháp,hdi,2020,0.675,chỉ số,164
+82,Đồng Tháp,hdi,2021,0.682,chỉ số,164
+82,Đồng Tháp,hdi,2022,0.693,chỉ số,164
+82,Đồng Tháp,hdi,2023,0.701,chỉ số,164
+82,Đồng Tháp,hdi,2024,0.704,chỉ số,164
+82,Đồng Tháp,hdi,2025,0.716,chỉ số,164
+82,Đồng Tháp,hs_tren_gv_thpt,2025,22.0,người,147
+82,Đồng Tháp,mat_do_dan_so,2025,573.0,người/km2,5
+82,Đồng Tháp,so_gv_thpt,2025,4658.0,người,142
+82,Đồng Tháp,so_hs_thpt,2025,100672.0,người,143
+82,Đồng Tháp,so_truong_thpt,2025,67.0,trường,140
+82,Đồng Tháp,thu_nhap_bq_lao_dong_thang,2020,5434.4,nghìn đồng,163
+82,Đồng Tháp,thu_nhap_bq_lao_dong_thang,2021,5018.9,nghìn đồng,163
+82,Đồng Tháp,thu_nhap_bq_lao_dong_thang,2022,6415.4,nghìn đồng,163
+82,Đồng Tháp,thu_nhap_bq_lao_dong_thang,2023,6893.3,nghìn đồng,163
+82,Đồng Tháp,thu_nhap_bq_lao_dong_thang,2024,7751.9,nghìn đồng,163
+82,Đồng Tháp,thu_nhap_bq_lao_dong_thang,2025,7985.6,nghìn đồng,163
+82,Đồng Tháp,thu_nhap_bq_nguoi_thang,2025,5585.0,nghìn đồng,158
+82,Đồng Tháp,ty_le_dung_internet,2024,79.1,%,186
+82,Đồng Tháp,ty_le_dung_internet,2025,83.8,%,186
+82,Đồng Tháp,ty_le_ho_ngheo,2020,2.9,%,173
+82,Đồng Tháp,ty_le_ho_ngheo,2021,2.6,%,173
+82,Đồng Tháp,ty_le_ho_ngheo,2022,2.7,%,173
+82,Đồng Tháp,ty_le_ho_ngheo,2023,1.6,%,173
+82,Đồng Tháp,ty_le_ho_ngheo,2024,1.1,%,173
+82,Đồng Tháp,ty_le_ho_ngheo,2025,0.6,%,173
+82,Đồng Tháp,ty_le_ld_qua_dao_tao,2020,14.5,%,34
+82,Đồng Tháp,ty_le_ld_qua_dao_tao,2021,14.0,%,34
+82,Đồng Tháp,ty_le_ld_qua_dao_tao,2022,13.8,%,34
+82,Đồng Tháp,ty_le_ld_qua_dao_tao,2023,14.4,%,34
+82,Đồng Tháp,ty_le_ld_qua_dao_tao,2024,15.8,%,34
+82,Đồng Tháp,ty_le_ld_qua_dao_tao,2025,16.6,%,34
+86,Vĩnh Long,dan_so_tb,2020,3325.3,nghìn người,6
+86,Vĩnh Long,dan_so_tb,2021,3343.4,nghìn người,6
+86,Vĩnh Long,dan_so_tb,2022,3346.1,nghìn người,6
+86,Vĩnh Long,dan_so_tb,2023,3348.8,nghìn người,6
+86,Vĩnh Long,dan_so_tb,2024,3367.4,nghìn người,6
+86,Vĩnh Long,dan_so_tb,2025,3379.6,nghìn người,6
+86,Vĩnh Long,dan_so_thanh_thi,2020,534.6,nghìn người,9
+86,Vĩnh Long,dan_so_thanh_thi,2021,540.4,nghìn người,9
+86,Vĩnh Long,dan_so_thanh_thi,2022,551.8,nghìn người,9
+86,Vĩnh Long,dan_so_thanh_thi,2023,592.8,nghìn người,9
+86,Vĩnh Long,dan_so_thanh_thi,2024,601.5,nghìn người,9
+86,Vĩnh Long,dan_so_thanh_thi,2025,627.5,nghìn người,9
+86,Vĩnh Long,dien_tich,2025,6875.9,km2,5
+86,Vĩnh Long,gini,2020,0.391,hệ số,166
+86,Vĩnh Long,gini,2021,0.387,hệ số,166
+86,Vĩnh Long,gini,2022,0.389,hệ số,166
+86,Vĩnh Long,gini,2023,0.349,hệ số,166
+86,Vĩnh Long,gini,2024,0.362,hệ số,166
+86,Vĩnh Long,gini,2025,0.318,hệ số,166
+86,Vĩnh Long,grdp_binh_quan_nguoi,2020,52.4,triệu đồng,43
+86,Vĩnh Long,grdp_binh_quan_nguoi,2021,54.2,triệu đồng,43
+86,Vĩnh Long,grdp_binh_quan_nguoi,2022,61.9,triệu đồng,43
+86,Vĩnh Long,grdp_binh_quan_nguoi,2023,67.7,triệu đồng,43
+86,Vĩnh Long,grdp_binh_quan_nguoi,2024,75.7,triệu đồng,43
+86,Vĩnh Long,grdp_binh_quan_nguoi,2025,82.4,triệu đồng,43
+86,Vĩnh Long,hdi,2020,0.678,chỉ số,164
+86,Vĩnh Long,hdi,2021,0.682,chỉ số,164
+86,Vĩnh Long,hdi,2022,0.696,chỉ số,164
+86,Vĩnh Long,hdi,2023,0.705,chỉ số,164
+86,Vĩnh Long,hdi,2024,0.708,chỉ số,164
+86,Vĩnh Long,hdi,2025,0.719,chỉ số,164
+86,Vĩnh Long,hs_tren_gv_thpt,2025,18.0,người,147
+86,Vĩnh Long,mat_do_dan_so,2025,492.0,người/km2,5
+86,Vĩnh Long,so_gv_thpt,2025,5213.0,người,142
+86,Vĩnh Long,so_hs_thpt,2025,91230.0,người,143
+86,Vĩnh Long,so_truong_thpt,2025,90.0,trường,140
+86,Vĩnh Long,thu_nhap_bq_lao_dong_thang,2020,4271.1,nghìn đồng,163
+86,Vĩnh Long,thu_nhap_bq_lao_dong_thang,2021,4262.3,nghìn đồng,163
+86,Vĩnh Long,thu_nhap_bq_lao_dong_thang,2022,4837.5,nghìn đồng,163
+86,Vĩnh Long,thu_nhap_bq_lao_dong_thang,2023,5291.7,nghìn đồng,163
+86,Vĩnh Long,thu_nhap_bq_lao_dong_thang,2024,5900.3,nghìn đồng,163
+86,Vĩnh Long,thu_nhap_bq_lao_dong_thang,2025,6566.4,nghìn đồng,163
+86,Vĩnh Long,thu_nhap_bq_nguoi_thang,2025,4904.0,nghìn đồng,158
+86,Vĩnh Long,ty_le_dung_internet,2024,80.6,%,186
+86,Vĩnh Long,ty_le_dung_internet,2025,84.5,%,186
+86,Vĩnh Long,ty_le_ho_ngheo,2020,5.7,%,173
+86,Vĩnh Long,ty_le_ho_ngheo,2021,5.2,%,173
+86,Vĩnh Long,ty_le_ho_ngheo,2022,4.7,%,173
+86,Vĩnh Long,ty_le_ho_ngheo,2023,3.5,%,173
+86,Vĩnh Long,ty_le_ho_ngheo,2024,2.4,%,173
+86,Vĩnh Long,ty_le_ho_ngheo,2025,1.5,%,173
+86,Vĩnh Long,ty_le_ld_qua_dao_tao,2020,13.3,%,34
+86,Vĩnh Long,ty_le_ld_qua_dao_tao,2021,13.1,%,34
+86,Vĩnh Long,ty_le_ld_qua_dao_tao,2022,12.7,%,34
+86,Vĩnh Long,ty_le_ld_qua_dao_tao,2023,14.8,%,34
+86,Vĩnh Long,ty_le_ld_qua_dao_tao,2024,15.8,%,34
+86,Vĩnh Long,ty_le_ld_qua_dao_tao,2025,15.9,%,34
+91,An Giang,dan_so_tb,2020,3633.4,nghìn người,6
+91,An Giang,dan_so_tb,2021,3661.8,nghìn người,6
+91,An Giang,dan_so_tb,2022,3657.3,nghìn người,6
+91,An Giang,dan_so_tb,2023,3661.6,nghìn người,6
+91,An Giang,dan_so_tb,2024,3679.2,nghìn người,6
+91,An Giang,dan_so_tb,2025,3694.6,nghìn người,6
+91,An Giang,dan_so_thanh_thi,2020,1093.4,nghìn người,9
+91,An Giang,dan_so_thanh_thi,2021,1150.4,nghìn người,9
+91,An Giang,dan_so_thanh_thi,2022,1167.5,nghìn người,9
+91,An Giang,dan_so_thanh_thi,2023,1234.0,nghìn người,9
+91,An Giang,dan_so_thanh_thi,2024,1233.8,nghìn người,9
+91,An Giang,dan_so_thanh_thi,2025,946.2,nghìn người,9
+91,An Giang,dien_tich,2025,9893.9,km2,5
+91,An Giang,gini,2020,0.378,hệ số,166
+91,An Giang,gini,2021,0.385,hệ số,166
+91,An Giang,gini,2022,0.366,hệ số,166
+91,An Giang,gini,2023,0.364,hệ số,166
+91,An Giang,gini,2024,0.367,hệ số,166
+91,An Giang,gini,2025,0.316,hệ số,166
+91,An Giang,grdp_binh_quan_nguoi,2020,50.9,triệu đồng,43
+91,An Giang,grdp_binh_quan_nguoi,2021,53.1,triệu đồng,43
+91,An Giang,grdp_binh_quan_nguoi,2022,59.2,triệu đồng,43
+91,An Giang,grdp_binh_quan_nguoi,2023,65.3,triệu đồng,43
+91,An Giang,grdp_binh_quan_nguoi,2024,73.2,triệu đồng,43
+91,An Giang,grdp_binh_quan_nguoi,2025,80.2,triệu đồng,43
+91,An Giang,hdi,2020,0.654,chỉ số,164
+91,An Giang,hdi,2021,0.665,chỉ số,164
+91,An Giang,hdi,2022,0.672,chỉ số,164
+91,An Giang,hdi,2023,0.679,chỉ số,164
+91,An Giang,hdi,2024,0.68,chỉ số,164
+91,An Giang,hdi,2025,0.699,chỉ số,164
+91,An Giang,hs_tren_gv_thpt,2025,20.0,người,147
+91,An Giang,mat_do_dan_so,2025,373.0,người/km2,5
+91,An Giang,so_gv_thpt,2025,5158.0,người,142
+91,An Giang,so_hs_thpt,2025,103161.0,người,143
+91,An Giang,so_truong_thpt,2025,66.0,trường,140
+91,An Giang,thu_nhap_bq_lao_dong_thang,2020,5231.3,nghìn đồng,163
+91,An Giang,thu_nhap_bq_lao_dong_thang,2021,5190.0,nghìn đồng,163
+91,An Giang,thu_nhap_bq_lao_dong_thang,2022,6125.7,nghìn đồng,163
+91,An Giang,thu_nhap_bq_lao_dong_thang,2023,6889.3,nghìn đồng,163
+91,An Giang,thu_nhap_bq_lao_dong_thang,2024,7441.9,nghìn đồng,163
+91,An Giang,thu_nhap_bq_lao_dong_thang,2025,7603.4,nghìn đồng,163
+91,An Giang,thu_nhap_bq_nguoi_thang,2025,5096.0,nghìn đồng,158
+91,An Giang,ty_le_dung_internet,2024,82.0,%,186
+91,An Giang,ty_le_dung_internet,2025,84.1,%,186
+91,An Giang,ty_le_ho_ngheo,2020,4.1,%,173
+91,An Giang,ty_le_ho_ngheo,2021,3.6,%,173
+91,An Giang,ty_le_ho_ngheo,2022,4.4,%,173
+91,An Giang,ty_le_ho_ngheo,2023,3.6,%,173
+91,An Giang,ty_le_ho_ngheo,2024,2.4,%,173
+91,An Giang,ty_le_ho_ngheo,2025,1.4,%,173
+91,An Giang,ty_le_ld_qua_dao_tao,2020,14.3,%,34
+91,An Giang,ty_le_ld_qua_dao_tao,2021,14.6,%,34
+91,An Giang,ty_le_ld_qua_dao_tao,2022,15.3,%,34
+91,An Giang,ty_le_ld_qua_dao_tao,2023,16.1,%,34
+91,An Giang,ty_le_ld_qua_dao_tao,2024,16.8,%,34
+91,An Giang,ty_le_ld_qua_dao_tao,2025,16.9,%,34
+92,Cần Thơ,dan_so_tb,2020,3166.3,nghìn người,6
+92,Cần Thơ,dan_so_tb,2021,3183.7,nghìn người,6
+92,Cần Thơ,dan_so_tb,2022,3179.6,nghìn người,6
+92,Cần Thơ,dan_so_tb,2023,3186.0,nghìn người,6
+92,Cần Thơ,dan_so_tb,2024,3207.1,nghìn người,6
+92,Cần Thơ,dan_so_tb,2025,3224.9,nghìn người,6
+92,Cần Thơ,dan_so_thanh_thi,2020,1459.5,nghìn người,9
+92,Cần Thơ,dan_so_thanh_thi,2021,1481.0,nghìn người,9
+92,Cần Thơ,dan_so_thanh_thi,2022,1493.5,nghìn người,9
+92,Cần Thơ,dan_so_thanh_thi,2023,1498.5,nghìn người,9
+92,Cần Thơ,dan_so_thanh_thi,2024,1515.0,nghìn người,9
+92,Cần Thơ,dan_so_thanh_thi,2025,1436.5,nghìn người,9
+92,Cần Thơ,dien_tich,2025,6361.0,km2,5
+92,Cần Thơ,gini,2020,0.396,hệ số,166
+92,Cần Thơ,gini,2021,0.338,hệ số,166
+92,Cần Thơ,gini,2022,0.339,hệ số,166
+92,Cần Thơ,gini,2023,0.344,hệ số,166
+92,Cần Thơ,gini,2024,0.357,hệ số,166
+92,Cần Thơ,gini,2025,0.311,hệ số,166
+92,Cần Thơ,grdp_binh_quan_nguoi,2020,57.6,triệu đồng,43
+92,Cần Thơ,grdp_binh_quan_nguoi,2021,59.6,triệu đồng,43
+92,Cần Thơ,grdp_binh_quan_nguoi,2022,70.5,triệu đồng,43
+92,Cần Thơ,grdp_binh_quan_nguoi,2023,78.0,triệu đồng,43
+92,Cần Thơ,grdp_binh_quan_nguoi,2024,86.5,triệu đồng,43
+92,Cần Thơ,grdp_binh_quan_nguoi,2025,94.9,triệu đồng,43
+92,Cần Thơ,hdi,2020,0.682,chỉ số,164
+92,Cần Thơ,hdi,2021,0.689,chỉ số,164
+92,Cần Thơ,hdi,2022,0.703,chỉ số,164
+92,Cần Thơ,hdi,2023,0.71,chỉ số,164
+92,Cần Thơ,hdi,2024,0.712,chỉ số,164
+92,Cần Thơ,hdi,2025,0.73,chỉ số,164
+92,Cần Thơ,hs_tren_gv_thpt,2025,20.0,người,147
+92,Cần Thơ,mat_do_dan_so,2025,507.0,người/km2,5
+92,Cần Thơ,so_gv_thpt,2025,3813.0,người,142
+92,Cần Thơ,so_hs_thpt,2025,74557.0,người,143
+92,Cần Thơ,so_truong_thpt,2025,56.0,trường,140
+92,Cần Thơ,thu_nhap_bq_lao_dong_thang,2020,4812.2,nghìn đồng,163
+92,Cần Thơ,thu_nhap_bq_lao_dong_thang,2021,4856.7,nghìn đồng,163
+92,Cần Thơ,thu_nhap_bq_lao_dong_thang,2022,5684.8,nghìn đồng,163
+92,Cần Thơ,thu_nhap_bq_lao_dong_thang,2023,6040.5,nghìn đồng,163
+92,Cần Thơ,thu_nhap_bq_lao_dong_thang,2024,6638.9,nghìn đồng,163
+92,Cần Thơ,thu_nhap_bq_lao_dong_thang,2025,7310.5,nghìn đồng,163
+92,Cần Thơ,thu_nhap_bq_nguoi_thang,2025,5472.0,nghìn đồng,158
+92,Cần Thơ,ty_le_dung_internet,2024,82.1,%,186
+92,Cần Thơ,ty_le_dung_internet,2025,85.2,%,186
+92,Cần Thơ,ty_le_ho_ngheo,2020,3.8,%,173
+92,Cần Thơ,ty_le_ho_ngheo,2021,3.6,%,173
+92,Cần Thơ,ty_le_ho_ngheo,2022,3.8,%,173
+92,Cần Thơ,ty_le_ho_ngheo,2023,3.2,%,173
+92,Cần Thơ,ty_le_ho_ngheo,2024,2.2,%,173
+92,Cần Thơ,ty_le_ho_ngheo,2025,1.0,%,173
+92,Cần Thơ,ty_le_ld_qua_dao_tao,2020,17.2,%,34
+92,Cần Thơ,ty_le_ld_qua_dao_tao,2021,16.8,%,34
+92,Cần Thơ,ty_le_ld_qua_dao_tao,2022,16.2,%,34
+92,Cần Thơ,ty_le_ld_qua_dao_tao,2023,16.7,%,34
+92,Cần Thơ,ty_le_ld_qua_dao_tao,2024,17.8,%,34
+92,Cần Thơ,ty_le_ld_qua_dao_tao,2025,18.3,%,34
+96,Cà Mau,dan_so_tb,2020,2107.4,nghìn người,6
+96,Cà Mau,dan_so_tb,2021,2127.3,nghìn người,6
+96,Cà Mau,dan_so_tb,2022,2129.4,nghìn người,6
+96,Cà Mau,dan_so_tb,2023,2132.5,nghìn người,6
+96,Cà Mau,dan_so_tb,2024,2140.7,nghìn người,6
+96,Cà Mau,dan_so_tb,2025,2150.4,nghìn người,6
+96,Cà Mau,dan_so_thanh_thi,2020,524.8,nghìn người,9
+96,Cà Mau,dan_so_thanh_thi,2021,530.3,nghìn người,9
+96,Cà Mau,dan_so_thanh_thi,2022,531.7,nghìn người,9
+96,Cà Mau,dan_so_thanh_thi,2023,535.2,nghìn người,9
+96,Cà Mau,dan_so_thanh_thi,2024,542.8,nghìn người,9
+96,Cà Mau,dan_so_thanh_thi,2025,496.3,nghìn người,9
+96,Cà Mau,dien_tich,2025,7887.3,km2,5
+96,Cà Mau,gini,2020,0.347,hệ số,166
+96,Cà Mau,gini,2021,0.333,hệ số,166
+96,Cà Mau,gini,2022,0.356,hệ số,166
+96,Cà Mau,gini,2023,0.365,hệ số,166
+96,Cà Mau,gini,2024,0.361,hệ số,166
+96,Cà Mau,gini,2025,0.302,hệ số,166
+96,Cà Mau,grdp_binh_quan_nguoi,2020,49.8,triệu đồng,43
+96,Cà Mau,grdp_binh_quan_nguoi,2021,51.7,triệu đồng,43
+96,Cà Mau,grdp_binh_quan_nguoi,2022,59.4,triệu đồng,43
+96,Cà Mau,grdp_binh_quan_nguoi,2023,64.4,triệu đồng,43
+96,Cà Mau,grdp_binh_quan_nguoi,2024,71.1,triệu đồng,43
+96,Cà Mau,grdp_binh_quan_nguoi,2025,78.6,triệu đồng,43
+96,Cà Mau,hdi,2020,0.661,chỉ số,164
+96,Cà Mau,hdi,2021,0.666,chỉ số,164
+96,Cà Mau,hdi,2022,0.68,chỉ số,164
+96,Cà Mau,hdi,2023,0.692,chỉ số,164
+96,Cà Mau,hdi,2024,0.689,chỉ số,164
+96,Cà Mau,hdi,2025,0.709,chỉ số,164
+96,Cà Mau,hs_tren_gv_thpt,2025,21.0,người,147
+96,Cà Mau,mat_do_dan_so,2025,273.0,người/km2,5
+96,Cà Mau,so_gv_thpt,2025,2673.0,người,142
+96,Cà Mau,so_hs_thpt,2025,54800.0,người,143
+96,Cà Mau,so_truong_thpt,2025,36.0,trường,140
+96,Cà Mau,thu_nhap_bq_lao_dong_thang,2020,5231.4,nghìn đồng,163
+96,Cà Mau,thu_nhap_bq_lao_dong_thang,2021,5239.1,nghìn đồng,163
+96,Cà Mau,thu_nhap_bq_lao_dong_thang,2022,5930.9,nghìn đồng,163
+96,Cà Mau,thu_nhap_bq_lao_dong_thang,2023,6397.8,nghìn đồng,163
+96,Cà Mau,thu_nhap_bq_lao_dong_thang,2024,6855.9,nghìn đồng,163
+96,Cà Mau,thu_nhap_bq_lao_dong_thang,2025,7266.7,nghìn đồng,163
+96,Cà Mau,thu_nhap_bq_nguoi_thang,2025,5382.0,nghìn đồng,158
+96,Cà Mau,ty_le_dung_internet,2024,82.4,%,186
+96,Cà Mau,ty_le_dung_internet,2025,82.4,%,186
+96,Cà Mau,ty_le_ho_ngheo,2020,6.3,%,173
+96,Cà Mau,ty_le_ho_ngheo,2021,5.5,%,173
+96,Cà Mau,ty_le_ho_ngheo,2022,5.9,%,173
+96,Cà Mau,ty_le_ho_ngheo,2023,4.8,%,173
+96,Cà Mau,ty_le_ho_ngheo,2024,3.2,%,173
+96,Cà Mau,ty_le_ho_ngheo,2025,1.9,%,173
+96,Cà Mau,ty_le_ld_qua_dao_tao,2020,11.8,%,34
+96,Cà Mau,ty_le_ld_qua_dao_tao,2021,12.6,%,34
+96,Cà Mau,ty_le_ld_qua_dao_tao,2022,13.4,%,34
+96,Cà Mau,ty_le_ld_qua_dao_tao,2023,14.2,%,34
+96,Cà Mau,ty_le_ld_qua_dao_tao,2024,15.5,%,34
+96,Cà Mau,ty_le_ld_qua_dao_tao,2025,15.7,%,34
