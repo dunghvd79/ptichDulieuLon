@@ -151,7 +151,8 @@ def h4_1():
         chu(cx, top - 3.6, phu, mw, 6.3, color=MUTED, va="top")
         chu(cx, top - 7.6, so, mw, 9, weight="semibold", color=INK, va="top")
         chu(cx, top - 11.6, don_vi, mw, 6.3, color=INK2, va="top")
-        ax.plot([cx, x + w - 1.1], [y + 6.6, y + 6.6], color=GRID, lw=0.6, zorder=3)
+        if ghi_chu:  # không có ghi chú thì bỏ luôn đường kẻ
+            ax.plot([cx, x + w - 1.1], [y + 6.6, y + 6.6], color=GRID, lw=0.6, zorder=3)
         for i, dong in enumerate(ghi_chu):
             chu(cx, y + 5.2 - i * 2.6, dong, mw, 6, color=INK2, va="top")
 
@@ -176,8 +177,7 @@ def h4_1():
     n, g = 5, 1.6
     w = (L1 - L0 - 2.4 - (n - 1) * g) / n
     xs = [L0 + 1.2 + i * (w + g) for i in range(n)]
-    box(S0, S1 - S0, "Điểm thi", "THPT 2026", "34 file", "1 file / tỉnh", ["lấy từ", "VietnamNet"],
-        edge=OUT_EDGE)
+    box(S0, S1 - S0, "Điểm thi", "THPT 2026", "34 file", "1 file / tỉnh", [], edge=OUT_EDGE)
     steps = [
         ("Đọc", "bước 1", vn(so_dong, 0), "thí sinh", ["đọc 34 file", "cùng lúc"]),
         ("Làm sạch", "bước 2", f"{vn(float(cl['co_toan_sau']) * 100, 1)}%", "có điểm Toán",
@@ -203,7 +203,8 @@ def h4_1():
     mw = S1 - S0 - 2.2
     chu(S0 + 1.1, by + bh - 1.4, "Niên giám", mw, 8, weight="semibold", va="top")
     chu(S0 + 1.1, by + bh - 5.0, "thống kê 2025", mw, 6.3, color=MUTED, va="top")
-    chu(S0 + 1.1, by + bh - 8.0, "file PDF 1.557 trang", mw, 6.3, color=INK2, va="top")
+    chu(S0 + 1.1, by + bh - 8.0, "kinh tế – xã hội", mw, 6.3, color=INK2, va="top")
+    chu(S0 + 1.1, by + bh - 10.6, "của 34 tỉnh", mw, 6.3, color=INK2, va="top")
     px, pw = xs[0], xs[2] + w - xs[0]
     khung(px, by, pw, bh, OUT_EDGE)
     mw = pw - 2.2
