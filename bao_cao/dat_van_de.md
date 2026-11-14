@@ -593,10 +593,39 @@ Tổ hợp 2 môn tự chọn, tính trên thí sinh thi đủ 4 môn:
 
 **Kết luận:** Tỉnh có thu nhập cao, HDI cao, ít hộ nghèo thì điểm Toán và tỷ lệ thí sinh chọn thi Ngoại ngữ cao hơn rõ rệt. Điểm Văn chỉ liên quan yếu. Số học sinh trên một giáo viên gần như không liên quan.
 
-**Cách đo:** dùng **hệ số tương quan Spearman**. Xếp 34 tỉnh theo thu nhập từ cao xuống thấp, rồi xếp lại theo điểm Toán, sau đó xem hai bảng xếp hạng giống nhau đến đâu. Hệ số chạy từ −1 đến 1:
-- gần **1**: tỉnh đứng đầu về thu nhập cũng đứng đầu về điểm;
-- gần **0**: hai bảng xếp hạng không liên quan gì;
-- gần **−1**: ngược nhau, tỉnh đứng đầu bên này đứng cuối bên kia.
+**Cách đo: hệ số tương quan Spearman**
+
+*Ý tưởng:* hãy tưởng tượng hai bảng xếp hạng 34 tỉnh, một bảng xếp theo **thu nhập**, một bảng xếp theo **điểm Toán**. Nếu tỉnh đứng đầu bảng này cũng đứng đầu bảng kia, tỉnh đứng cuối cũng đứng cuối, thì hai thứ "đi cùng nhau". Spearman chính là con số đo **hai bảng xếp hạng giống nhau đến đâu**. Nó không quan tâm thu nhập là bao nhiêu tiền hay điểm là bao nhiêu, chỉ quan tâm **thứ hạng**.
+
+*Ví dụ với 5 tỉnh thật:*
+
+| Tỉnh | Thu nhập (nghìn đ/tháng) | Điểm Toán TB | Hạng thu nhập | Hạng Toán | Lệch hạng |
+|---|---|---|---|---|---|
+| Hà Nội | 8.374 | 6,17 | 1 | 1 | 0 |
+| Quảng Ninh | 6.917 | 5,51 | 2 | 3 | 1 |
+| Hà Tĩnh | 4.457 | 5,99 | 3 | 2 | 1 |
+| Đắk Lắk | 4.421 | 5,14 | 4 | 4 | 0 |
+| Điện Biên | 2.583 | 4,46 | 5 | 5 | 0 |
+
+Hai bảng xếp hạng gần như trùng nhau. Chỉ Quảng Ninh và Hà Tĩnh đổi chỗ cho nhau: Quảng Ninh giàu hơn nhưng điểm Toán thấp hơn Hà Tĩnh. Hệ số Spearman của 5 tỉnh này là **0,90**, rất gần 1.
+
+Cách tính: lấy độ lệch hạng của từng tỉnh, bình phương lên rồi cộng lại (ở đây 0 + 1 + 1 + 0 + 0 = 2), sau đó đưa vào công thức
+
+ρ = 1 − 6 × (tổng lệch hạng bình phương) / (n × (n² − 1)) = 1 − 6 × 2 / (5 × 24) = 0,90
+
+với n là số tỉnh. Hai bảng càng lệch nhau thì tổng càng lớn và hệ số càng nhỏ. Trên thực tế, nhóm để máy tính làm việc này cho cả 34 tỉnh.
+
+*Cách đọc con số:* hệ số luôn nằm trong khoảng từ −1 đến 1.
+
+| Giá trị | Ý nghĩa | Ví dụ trong đồ án |
+|---|---|---|
+| Gần **1** | Hai bảng xếp hạng gần như trùng nhau: tỉnh giàu hơn thì điểm cao hơn | Thu nhập – Toán: 0,76 |
+| Gần **0** | Hai bảng không liên quan gì nhau | Học sinh/giáo viên – Toán: 0,15 |
+| Gần **−1** | Hai bảng ngược nhau: tỉnh đứng đầu bên này lại đứng cuối bên kia | Hộ nghèo – Toán: −0,77 (tỉnh càng nhiều hộ nghèo, điểm càng thấp) |
+
+Với 34 tỉnh, hệ số cần lớn hơn khoảng **0,34** (dương hay âm đều được) thì mới khó xảy ra do ngẫu nhiên, ở mức tin cậy 95% thường dùng. Dưới mức này, có thể hai thứ chỉ tình cờ trùng nhau.
+
+*Vì sao dùng Spearman mà không so trực tiếp con số?* Thu nhập của Hà Nội và TP.HCM cao vượt trội so với các tỉnh còn lại. Nếu so trực tiếp con số, vài tỉnh này có thể kéo lệch kết quả. Spearman chỉ xét thứ hạng, nên Hà Nội chỉ là "hạng 1" dù giàu hơn hạng 2 bao nhiêu đi nữa; kết quả vì thế công bằng với cả 34 tỉnh. (Để đối chiếu: so trực tiếp con số theo cách thông thường, gọi là tương quan Pearson, ra 0,81, gần với Spearman 0,76, nên kết luận không thay đổi.)
 
 **Số liệu** (hình H5.3):
 
