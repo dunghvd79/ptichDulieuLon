@@ -1,0 +1,25 @@
+<section id="pipeline" class="alt">
+<h2 class="title">Apache Spark xử lý toàn bộ dữ liệu qua 5 bước, khoảng 1 phút</h2>
+<div class="cols">
+<div class="fig" style="width: 914px;">
+<img src="/_blob/c6993480ab9904cd90c4c949c21f3529" alt="Sơ đồ pipeline: dữ liệu gốc, 5 bước xử lý bằng Apache Spark (đọc, làm sạch, tổng hợp, ghép, phân tích) và kết quả" style="width: 880px; height: 499px; object-fit: contain;">
+<p class="cap">Hình 4.1. Sơ đồ pipeline xử lý dữ liệu</p>
+</div>
+<div class="list" style="gap: 32px;">
+<div class="textcol rise" style="--i: 0;">
+<h3 class="item-title">Chia việc song song</h3>
+<p class="desc">8 nhân CPU như 8 giám khảo chấm cùng lúc</p>
+</div>
+<div class="textcol rise" style="--i: 1;">
+<h3 class="item-title">Ghi công thức trước</h3>
+<p class="desc">Spark chỉ chạy khi cần kết quả, như ghi hết danh sách rồi mới đi chợ</p>
+</div>
+<div class="textcol rise" style="--i: 2;">
+<h3 class="item-title">Xử lý theo lô</h3>
+<p class="desc">10.000 dòng mỗi lần, như chở hàng bằng xe tải</p>
+</div>
+</div>
+</div>
+<p class="pg">6</p>
+<aside>Để xử lý dữ liệu, nhóm dùng Apache Spark, một công cụ xử lý dữ liệu lớn. Ý tưởng giống như chấm 1,2 triệu bài thi: thay vì một giám khảo chấm lần lượt, ta chia thành 8 chồng cho 8 giám khảo chấm cùng lúc rồi cộng kết quả. Máy của nhóm có 8 nhân, nên Spark chia dữ liệu làm 8 phần chạy song song. Pipeline gồm 5 bước: đọc 34 file, làm sạch, tổng hợp theo tỉnh, ghép với Niên giám, và phân tích bằng thư viện học máy MLlib. Bốn bước đầu chạy hết khoảng một phút. Nhóm cũng xin nói thẳng: 1,2 triệu dòng chưa thật sự là dữ liệu quá lớn; nhóm chọn Spark vì cùng đoạn mã có thể chạy trên nhiều máy khi dữ liệu tăng lên, ví dụ gộp nhiều năm thi.</aside>
+</section>

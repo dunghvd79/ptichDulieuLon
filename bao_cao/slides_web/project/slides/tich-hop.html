@@ -1,0 +1,39 @@
+<section id="tich-hop">
+<h2 class="title">Ghép: đưa về cùng cấp độ, cùng chìa khóa rồi nối theo mã tỉnh</h2>
+<div class="cols">
+<div class="list">
+<div class="item rise" style="--i: 0;">
+<p class="num">1</p>
+<div class="textcol">
+<h3 class="item-title">Cùng cấp độ</h3>
+<p class="desc">Gom 1,2 triệu thí sinh thành 34 dòng, mỗi dòng một tỉnh</p>
+</div>
+</div>
+<div class="item rise" style="--i: 1;">
+<p class="num">2</p>
+<div class="textcol">
+<h3 class="item-title">Cùng chìa khóa</h3>
+<p class="desc">7 mã tỉnh cũ nay thuộc tỉnh khác (mã 52: Bình Định thành Gia Lai), nên chỉ ghép theo mã mới</p>
+</div>
+</div>
+<div class="item rise" style="--i: 2;">
+<p class="num">3</p>
+<div class="textcol">
+<h3 class="item-title">Nối hai bảng</h3>
+<p class="desc">Mỗi tỉnh nằm trên một dòng, vừa có điểm thi vừa có thu nhập, HDI…</p>
+</div>
+</div>
+</div>
+<div class="flow">
+<div class="box dark-box"><p class="box-text">Điểm thi: 1.200.202 dòng</p></div>
+<x-shape kind="arrow-down" class="arrow"></x-shape>
+<div class="box"><p class="box-text">Gom theo tỉnh: 34 dòng</p></div>
+<x-shape kind="arrow-down" class="arrow"></x-shape>
+<div class="box"><p class="box-text">+ Niên giám: 34 dòng<br>ghép theo mã tỉnh</p></div>
+<x-shape kind="arrow-down" class="arrow"></x-shape>
+<div class="box accent-box"><p class="box-text">Bảng chung 34 dòng × 43 cột</p></div>
+</div>
+</div>
+<p class="pg">5</p>
+<aside>Làm sạch xong, hai nguồn vẫn chưa đặt cạnh nhau được. Khó khăn đầu tiên là không cùng cấp độ: một bên là 1,2 triệu thí sinh, một bên là 34 tỉnh, nên nhóm dùng Spark gom điểm của từng tỉnh lại thành 34 dòng. Khó khăn thứ hai là chìa khóa: sau sáp nhập có 7 mã tỉnh cũ nay thuộc tỉnh khác, ví dụ mã 52 trước là Bình Định, nay là Gia Lai. Ghép không cẩn thận thì số liệu tỉnh này gán sang tỉnh kia mà máy không báo gì; nhóm tự xây bảng chuyển đổi 63 sang 34 tỉnh và chỉ ghép theo mã mới. Kết quả là một bảng chung 34 dòng, mỗi tỉnh vừa có điểm thi vừa có số liệu kinh tế – xã hội.</aside>
+</section>
