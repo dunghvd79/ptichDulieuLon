@@ -1,6 +1,6 @@
-# Đặt vấn đề, Dữ liệu và Tích hợp dữ liệu
+# Đặt vấn đề, Dữ liệu, Tích hợp dữ liệu và Pipeline
 
-Phần A, C, E dùng cho báo cáo (chương 1, 2, 3). Phần B, D, F là lời nói mẫu khi thuyết trình.
+Phần A, C, E, G dùng cho báo cáo (chương 1–4). Phần B, D, F, H là lời nói mẫu khi thuyết trình.
 Số liệu lấy từ `data/processed/spark/` và các ghi chép trong `bao_cao/DE_CUONG.md`.
 
 ---
@@ -430,3 +430,129 @@ Kiểm tra bảng chung ngay sau khi ghép, và làm lại toàn bộ quy trình
 **Nếu thầy hỏi "làm sao biết số liệu trích từ PDF là đúng?":**
 
 > "Niên giám có sẵn dòng 'Cả nước'. Nhóm cộng số liệu của 34 tỉnh vừa trích ra và so với dòng đó. Dân số, số giáo viên và số học sinh THPT đều khớp đến từng đơn vị. Nếu có ô nào bị lệch cột thì tổng sẽ sai ngay."
+
+---
+
+# Pipeline xử lý bằng Apache Spark
+
+Phần G dùng cho báo cáo (chương 4). Phần H là lời nói mẫu khi thuyết trình, chiếu hình H4.1.
+Số liệu: `data/processed/spark/thoi_gian_chay.csv`, `doi_chieu_pandas.csv`; mã nguồn trong `spark/`.
+
+## G. Đoạn pipeline cho báo cáo
+
+### G.1. Vì sao dùng Apache Spark
+
+**Apache Spark** là công cụ xử lý dữ liệu lớn. Ý tưởng cốt lõi: thay vì một người làm từ đầu đến cuối, Spark **chia dữ liệu thành nhiều phần và giao cho nhiều "người" làm cùng lúc**, rồi gộp kết quả lại.
+
+> Ví dụ: chấm 1,2 triệu bài thi. Một giám khảo chấm lần lượt từng bài sẽ rất lâu. Chia thành 8 chồng, giao cho 8 giám khảo chấm song song, rồi cộng kết quả, sẽ nhanh hơn nhiều. Spark làm đúng việc chia chồng, giao việc và cộng kết quả đó một cách tự động.
+
+Trong đồ án, "người làm" là các nhân CPU. Máy chạy đồ án có 8 nhân, nên Spark chia dữ liệu thành 8 phần xử lý song song.
+
+**Một điều cần nói thẳng:** 1,2 triệu dòng (khoảng 115 MB) chưa phải là "dữ liệu lớn" theo nghĩa chặt. Công cụ thông thường như pandas vẫn xử lý được trên một máy. Nhóm chọn Spark vì:
+- **Mở rộng được:** cùng một đoạn mã, nếu dữ liệu tăng lên nhiều năm thi hoặc cả điểm từng câu hỏi, chỉ cần chạy trên một cụm nhiều máy, không phải viết lại.
+- **Yêu cầu của môn học:** thể hiện được việc dùng công cụ dữ liệu lớn cho cả xử lý (Spark SQL / DataFrame) và học máy (Spark MLlib).
+- **Kiểm chứng chéo:** có sẵn bản xử lý bằng pandas, nên nhóm so sánh được hai cách làm độc lập (mục G.4).
+
+Spark trong đồ án chạy ở **chế độ local** (một máy, 8 nhân), phiên bản PySpark 4.0.
+
+### G.2. Năm bước của pipeline
+
+Pipeline có 5 bước, khớp với hình H4.1. Ba bước đầu đi theo cách tổ chức dữ liệu phổ biến gồm ba tầng **Bronze → Silver → Gold**: dữ liệu thô → dữ liệu đã làm sạch → dữ liệu đã tổng hợp, tầng sau "tinh" hơn tầng trước.
+
+| Bước | Tầng | Làm gì | Tính năng Spark dùng | Kết quả | Thời gian |
+|---|---|---|---|---|---|
+| 1. Đọc | Bronze | Đọc 34 file CSV, giữ nguyên mọi giá trị dạng chữ | Đọc nhiều file song song | 1.200.202 dòng, chia 8 phần | 8 giây |
+| 2. Làm sạch | Silver | Giải mã cột `extra`, chuẩn hóa 11 môn, xóa số báo danh | pandas UDF (xử lý theo lô) | 1.200.202 thí sinh, có điểm Toán 98,6% | 16 giây |
+| 3. Tổng hợp | Gold | Gom theo tỉnh, theo tỉnh × môn; tính phổ điểm, eta², tổ hợp môn | groupBy, unpivot, window | 34 tỉnh × 11 môn, 9 bảng tổng hợp | 19 giây |
+| 4. Ghép | — | Nối bảng điểm thi với bảng Niên giám theo mã tỉnh | join | Bảng chung 34 × 43 | 3 giây |
+| 5. Phân tích | — | Hồi quy, phân cụm tỉnh | Spark MLlib | Trả lời 2 câu hỏi nghiên cứu | khoảng 4 phút |
+
+Toàn bộ bước 1–4 chạy trong **khoảng 1 phút**, kể cả 6 giây khởi động Spark. Bước 5 lâu hơn vì mỗi mô hình được huấn luyện lại 25 lần để kiểm tra độ tin cậy (5 phần × 5 lần lặp).
+
+#### Ba kỹ thuật Spark quan trọng, giải thích đơn giản
+
+**a) Chia nhỏ dữ liệu (partition)**
+
+Spark chia 1,2 triệu dòng thành 8 phần, mỗi nhân CPU xử lý một phần. Đây là lý do Spark nhanh hơn khi dữ liệu lớn: thêm máy, thêm nhân là thêm "người làm".
+
+**b) Làm sau, tính trước (lazy evaluation)**
+
+Khi viết lệnh "đọc file → giải mã → gom theo tỉnh", Spark **chưa làm ngay** mà chỉ ghi lại "công thức". Đến khi thật sự cần kết quả, ví dụ xuất ra file, Spark mới xem toàn bộ công thức, tìm cách làm hiệu quả nhất rồi chạy một lần.
+
+> Ví dụ: đi chợ. Thay vì nhớ ra món nào chạy đi mua món đó, ta ghi hết danh sách rồi mới đi, sắp xếp đường đi hợp lý và mua một lượt.
+
+Nhóm cũng **giữ dữ liệu đã làm sạch trong bộ nhớ** (cache), để bước tổng hợp dùng lại nhiều lần mà không phải đọc và giải mã lại từ đầu.
+
+**c) Xử lý theo lô bằng pandas UDF**
+
+Giải mã cột `extra` cần một hàm viết riêng bằng Python. Nếu gọi hàm đó cho từng dòng, 1,2 triệu lần, thì rất chậm. Nhóm dùng **pandas UDF**: Spark gửi dữ liệu sang Python theo **từng lô khoảng 10.000 dòng** qua định dạng Apache Arrow, Python xử lý cả lô một lần rồi trả về.
+
+> Ví dụ: chuyển hàng bằng xe tải thay vì cầm từng món một.
+
+#### Bước 5: Phân tích bằng Spark MLlib
+
+MLlib là thư viện học máy của Spark. Nhóm dùng hai việc:
+- **Hồi quy tuyến tính:** tìm xem thu nhập, đô thị hóa, điều kiện giáo dục giải thích được bao nhiêu phần chênh lệch điểm thi giữa các tỉnh. Các chỉ tiêu được đưa về cùng thang đo trước khi đưa vào mô hình. Ví dụ thu nhập tính bằng nghìn đồng còn HDI chỉ từ 0 đến 1; không đưa về cùng thang thì không so sánh được.
+- **Phân cụm KMeans:** tự động chia 34 tỉnh thành các nhóm có đặc điểm giống nhau.
+
+Chi tiết kết quả ở chương 5.
+
+### G.3. Khó khăn khi cài đặt Spark trên Windows
+
+Spark được thiết kế chủ yếu cho Linux. Chạy trên Windows, nhóm gặp 7 lỗi. Phần lớn lỗi **không báo nguyên nhân rõ ràng**: chương trình treo hoặc dừng với thông báo chung chung.
+
+| Hiện tượng | Nguyên nhân | Cách xử lý |
+|---|---|---|
+| Không khởi động được, báo không tìm thấy Python | Thư mục dự án có dấu cách (`2026 Year`) | Cài môi trường Python ở thư mục không có dấu cách |
+| Mọi hàm Python tự viết đều bị dừng đột ngột | Python 3.12 chưa tương thích với Spark trên Windows | Dùng Python 3.11 |
+| Kết nối nội bộ chậm, sai địa chỉ | Docker Desktop thay đổi cấu hình mạng của máy | Ép Spark dùng địa chỉ nội bộ 127.0.0.1 |
+| Treo không báo lỗi khi đọc `*.csv` | Spark cần một công cụ phụ (winutils) để tìm file theo mẫu trên Windows | Truyền danh sách 34 file cụ thể |
+| Báo không tìm thấy file | Đường dẫn có dấu cách bị mã hóa hai lần | Đổi cách viết đường dẫn |
+| Hàm Python không tìm thấy mã nguồn dùng chung | Tiến trình con của Spark không biết thư mục `scripts/` | Khai báo đường dẫn trước khi khởi động Spark |
+| Một chỉ số tổng ra rỗng | Cộng các ô trống làm cả tổng thành rỗng | Coi ô trống là 0 khi đếm |
+
+Toàn bộ cách xử lý được đóng gói vào một file dùng chung (`spark/_session.py`), nên các bước sau chỉ cần gọi một lệnh là có Spark chạy đúng.
+
+### G.4. Kiểm chứng và hiệu năng
+
+**Kiểm chứng:** cùng dữ liệu, nhóm xử lý bằng hai chương trình độc lập, một bằng Spark và một bằng pandas, rồi so từng con số. Kết quả **khớp 60 / 60 cột**, sai số dưới 0,001. Nếu một trong hai bên có lỗi logic thì kết quả sẽ lệch.
+
+**Thời gian chạy từng bước** (máy 8 nhân, chế độ local):
+
+| Bước | Thời gian |
+|---|---|
+| Khởi động Spark | 6 giây |
+| 1. Đọc 34 file | 8 giây |
+| 2. Làm sạch | 16 giây |
+| 3. Tổng hợp | 19 giây |
+| 4. Ghép | 3 giây |
+| **Tổng bước 1–4** | **khoảng 52 giây** |
+| 5. Phân tích (MLlib) | khoảng 4 phút |
+
+Với lượng dữ liệu hiện tại, Spark không nhanh hơn pandas đáng kể, vì thời gian khởi động và chia việc chiếm phần lớn. Lợi thế của Spark thể hiện khi dữ liệu lớn hơn nhiều lần, lúc pandas không còn chứa nổi trong bộ nhớ một máy.
+
+## H. Lời nói mẫu khi thuyết trình (khoảng 60 giây, chiếu hình H4.1)
+
+> "Để xử lý dữ liệu, nhóm dùng **Apache Spark**, một công cụ xử lý dữ liệu lớn. Ý tưởng của Spark giống như chấm 1,2 triệu bài thi: thay vì một giám khảo chấm lần lượt, ta chia thành 8 chồng, giao cho 8 giám khảo chấm cùng lúc rồi cộng kết quả. Máy của nhóm có 8 nhân, nên Spark chia dữ liệu làm 8 phần chạy song song.
+>
+> Pipeline gồm 5 bước như trên hình. **Bước 1, đọc** 34 file điểm thi. **Bước 2, làm sạch**: lấy điểm bị giấu ra và xóa số báo danh. **Bước 3, tổng hợp** điểm theo từng tỉnh. **Bước 4, ghép** với số liệu Niên giám theo mã tỉnh. **Bước 5, phân tích** bằng thư viện học máy MLlib của Spark. Bốn bước đầu chạy hết khoảng một phút.
+>
+> Để chắc chắn kết quả đúng, nhóm làm lại toàn bộ bằng một công cụ khác là pandas, và hai bên khớp nhau 60 trên 60 cột số liệu.
+>
+> Nhóm cũng xin nói thẳng: 1,2 triệu dòng chưa thật sự là dữ liệu quá lớn. Nhóm chọn Spark vì cùng một đoạn mã có thể chạy trên nhiều máy khi dữ liệu tăng lên, ví dụ gộp nhiều năm thi, mà không phải viết lại."
+
+**Nếu thầy hỏi "115 MB thì sao gọi là dữ liệu lớn?":**
+
+> "Đúng là với dữ liệu hiện tại, pandas trên một máy vẫn chạy được, và nhóm đã dùng pandas để kiểm chứng. Điểm nhấn của đồ án là phần tích hợp nhiều nguồn và một pipeline có thể mở rộng. Nếu thêm điểm các năm trước hoặc điểm từng câu hỏi, dữ liệu sẽ lớn gấp nhiều lần, lúc đó chỉ cần chạy cùng đoạn mã trên một cụm máy."
+
+**Nếu thầy hỏi "Spark chạy trên mấy máy?":**
+
+> "Trong đồ án, Spark chạy ở chế độ local, trên một máy với 8 nhân CPU. Mỗi nhân đóng vai một 'máy con'. Chuyển lên cụm nhiều máy chỉ cần đổi cấu hình, không cần sửa mã xử lý."
+
+**Nếu thầy hỏi "lazy evaluation là gì?":**
+
+> "Spark không làm ngay từng lệnh mà ghi lại toàn bộ công thức, đến khi cần kết quả mới xem cả công thức để tìm cách chạy hiệu quả nhất. Giống như ghi hết danh sách đồ cần mua rồi mới đi chợ một lượt, thay vì nhớ ra món nào chạy đi mua món đó."
+
+**Nếu thầy hỏi "Bronze, Silver, Gold là gì?":**
+
+> "Đó là ba tầng của dữ liệu: Bronze là dữ liệu thô vừa đọc vào, Silver là dữ liệu đã làm sạch, Gold là dữ liệu đã tổng hợp sẵn để phân tích. Tách tầng như vậy thì khi có lỗi, nhóm biết ngay lỗi nằm ở tầng nào."
