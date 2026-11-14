@@ -22,3 +22,6 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# Node (bao_cao/build_docx.js)
+node_modules/

@@ -47,6 +47,11 @@ spark/             pipeline PySpark (xem spark/README.md)
   mllib_tinh.py      hồi quy repeated k-fold + KMeans/PCA -> spark/ml_*.csv (~4 phút; --chi-phan-cum ~20 giây)
 bao_cao/DE_CUONG.md  đề cương báo cáo ~20 trang + trạng thái từng mục + số liệu đã ghi
 bao_cao/ve_hinh.py   vẽ hình -> bao_cao/hinh/*.png (cần matplotlib trong venv)
+bao_cao/bao_cao.md   NGUỒN NỘI DUNG báo cáo Word (chương 1–7, TLTK, phụ lục; cú pháp @bang/@hinh/@ref)
+bao_cao/build_docx.js  bao_cao.md -> BaoCao_DiemThi2026_KTXH.docx (cd bao_cao && npm install && node build_docx.js)
+bao_cao/cap_nhat_word.ps1  Word COM: cập nhật mục lục/danh mục, xuất PDF (chạy sau build_docx.js)
+bao_cao/kich_ban_thuyet_trinh.md  lời nói mẫu khi thuyết trình
+bao_cao/dat_van_de.md  bản nháp cũ (đã chuyển sang bao_cao.md, không sửa nữa)
 ```
 
 Spark chạy bằng venv **ngoài repo**: `C:\Users\DELL\venvs\ptdl` (Python 3.11 + PySpark 4.0.1, `requirements-spark.txt`), chạy từ thư mục gốc repo.
@@ -133,8 +138,8 @@ Nhật ký tiến độ: mỗi phiên cập nhật mục này và mục "Ghi ch�
   - Đã có đủ chương 1–7 và tài liệu tham khảo (2026-11-14). Mỗi chương có đoạn báo cáo kèm lời nói mẫu. Spearman, eta², R², KMeans, silhouette, PCA đều đã có giải thích đời thường và ví dụ.
   - Ước tính khoảng 27 trang (8.100 chữ, 170 dòng bảng, 8 hình). Người dùng chấp nhận dài hơn 20 trang, **không cắt gọn**.
   - Tài liệu tham khảo có 2 mục đánh dấu (\*) chưa chắc số hiệu/ngày; người dùng chấp nhận để nguyên.
-  - BƯỚC TIẾP THEO: chuyển sang .docx. Người dùng dặn **dừng lại hỏi trước khi làm Word**.
-  - Khi làm Word: còn phải hỏi trường có mẫu bìa hoặc quy định trình bày riêng không.
+  - [x] Đã xuất Word (2026-11-14): `bao_cao/BaoCao_DiemThi2026_KTXH.docx` + PDF, 54 trang (9 trang đầu i–ix, 45 trang thân). Sửa nội dung trong `bao_cao.md` rồi chạy lại `build_docx.js` và `cap_nhat_word.ps1`. Chỗ người dùng tự điền in đậm trong [ngoặc vuông].
+  - Form: không tìm được quy định chính thức của Phenikaa; dùng form phổ biến (A4, lề 2/2/3/2 cm, TNR 13, giãn dòng 1,5, hình/bảng đánh số theo chương, TLTK APA theo ABC). Tên GV, SV là dữ liệu demo.
   - Người dùng chuộng khung **Vấn đề → Giải pháp → Kết quả** và ngôn ngữ đời thường.
 - [ ] (Tùy chọn) Hồi quy: thử lưới regParam cho ridge (hiện chỉ có 0,5, quá mạnh) bằng nested CV.
 - [x] Điểm Văn dồn ở 5,0 **ở cấp tỉnh** (H5.6). So với mốc 4,5/5,5, không dùng 4,75/5,25, vì Văn được chấm theo nửa điểm.
@@ -148,6 +153,7 @@ Nhật ký tiến độ: mỗi phiên cập nhật mục này và mục "Ghi ch�
   - Không dùng `df.write` hay `addPyFile`; xuất kết quả qua `.toPandas().to_csv(...)`.
   - Chi tiết các lỗi đã gặp: `spark/README.md`.
 - Docker Desktop có cài (đang tắt) — phương án dự phòng.
+- Máy có Microsoft Word 16 (COM). Khi tự động hóa Word: mở CHỈ ĐỌC rồi SaveAs2 sang file tạm; không gọi `TablesOfContents.UpdatePageNumbers()` (treo); không bật `features.updateFields` trong docx-js (hiện hộp thoại); luôn chạy trong Start-Job có timeout và chỉ kill tiến trình WINWORD có `/Automation`.
 - Không commit `data/raw/` hay dữ liệu cấp thí sinh. **Luôn bỏ SBD** trước khi xuất bất cứ thứ gì; chỉ báo cáo số liệu tổng hợp.
 - Giữ đường dẫn tập trung trong `scripts/common.py`; script chạy từ thư mục `scripts/`.
 - Người dùng là kỹ sư phần mềm (TypeScript/NestJS), quen Git; trình bày ngắn gọn, đi thẳng vào việc.
