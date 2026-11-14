@@ -1,6 +1,6 @@
-# Đặt vấn đề, Dữ liệu, Tích hợp dữ liệu và Pipeline
+# Nội dung báo cáo và thuyết trình: Đặt vấn đề → Dữ liệu → Tích hợp → Pipeline → Kết quả
 
-Phần A, C, E, G dùng cho báo cáo (chương 1–4). Phần B, D, F, H là lời nói mẫu khi thuyết trình.
+Phần A, C, E, G, I dùng cho báo cáo (chương 1–5). Phần B, D, F, H, J là lời nói mẫu khi thuyết trình.
 Số liệu lấy từ `data/processed/spark/` và các ghi chép trong `bao_cao/DE_CUONG.md`.
 
 ---
@@ -556,3 +556,256 @@ Với lượng dữ liệu nhỏ như hiện tại, một phần đáng kể th�
 **Nếu thầy hỏi "Bronze, Silver, Gold là gì?":**
 
 > "Đó là ba tầng của dữ liệu: Bronze là dữ liệu thô vừa đọc vào, Silver là dữ liệu đã làm sạch, Gold là dữ liệu đã tổng hợp sẵn để phân tích. Tách tầng như vậy thì khi có lỗi, nhóm biết ngay lỗi nằm ở tầng nào."
+
+---
+
+# Kết quả phân tích
+
+Phần I dùng cho báo cáo (chương 5). Phần J là lời nói mẫu khi thuyết trình.
+Số liệu: các file `data/processed/spark/ml_*.csv`, `tuong_quan_spearman.csv`, `chenh_lech_giua_tinh_theo_mon.csv`, `van_dinh_5_theo_tinh.csv`; hình H5.1–H5.6.
+Mỗi mục viết theo thứ tự: **kết luận bằng lời → số liệu → cách đo**.
+
+## I. Đoạn kết quả cho báo cáo
+
+### I.1. Bức tranh chung về điểm thi 2026
+
+**Kết luận:** Ngữ văn có điểm trung bình cao nhất trong hai môn bắt buộc, Toán thấp hơn và phân tán hơn. Tổ hợp tự chọn phổ biến nhất là Lịch sử + Địa lí.
+
+**Số liệu** (hình H5.1):
+- Điểm trung bình toàn quốc: Ngữ văn **6,50**, Toán **5,65**.
+- Phổ điểm Toán có **hai đỉnh**, khoảng 4,5 điểm và khoảng 7–7,75 điểm. Điều này cho thấy thí sinh chia thành hai nhóm khá rõ về năng lực Toán. Phổ điểm Văn lệch về phía điểm cao, đỉnh ở 7,0.
+- Giữa 34 tỉnh: điểm Toán trung bình dao động từ 4,25 (Sơn La) đến 6,26 (Ninh Bình); điểm Văn từ 5,00 (Vĩnh Long) đến 7,26 (Ninh Bình).
+
+Tổ hợp 2 môn tự chọn, tính trên thí sinh thi đủ 4 môn:
+
+| Tổ hợp | Tỷ lệ |
+|---|---|
+| Lịch sử + Địa lí | 22,8% |
+| Vật lí + Hóa học | 14,5% |
+| Ngoại ngữ + Vật lí | 12,2% |
+| Lịch sử + GD kinh tế và pháp luật | 10,2% |
+| Địa lí + GD kinh tế và pháp luật | 8,8% |
+| Ngoại ngữ + Lịch sử | 7,6% |
+
+### I.2. Câu hỏi 1: Mức sống, đô thị hóa, điều kiện giáo dục và điểm thi
+
+#### a) Tương quan: các tỉnh xếp hạng giống nhau đến đâu?
+
+**Kết luận:** Tỉnh có thu nhập cao, HDI cao, ít hộ nghèo thì điểm Toán và tỷ lệ thí sinh chọn thi Ngoại ngữ cao hơn rõ rệt. Điểm Văn chỉ liên quan yếu. Số học sinh trên một giáo viên gần như không liên quan.
+
+**Cách đo:** dùng **hệ số tương quan Spearman**. Xếp 34 tỉnh theo thu nhập từ cao xuống thấp, rồi xếp lại theo điểm Toán, sau đó xem hai bảng xếp hạng giống nhau đến đâu. Hệ số chạy từ −1 đến 1:
+- gần **1**: tỉnh đứng đầu về thu nhập cũng đứng đầu về điểm;
+- gần **0**: hai bảng xếp hạng không liên quan gì;
+- gần **−1**: ngược nhau, tỉnh đứng đầu bên này đứng cuối bên kia.
+
+**Số liệu** (hình H5.3):
+
+| Chỉ tiêu | Toán TB | Văn TB | Tỷ lệ thi Ngoại ngữ |
+|---|---|---|---|
+| Thu nhập bình quân đầu người | **0,76** | 0,35 | **0,85** |
+| HDI | **0,79** | 0,36 | **0,86** |
+| Tỷ lệ hộ nghèo | **−0,77** | −0,31 | **−0,79** |
+| GRDP bình quân đầu người | 0,60 | 0,20 | 0,78 |
+| Tỷ lệ đô thị hóa | 0,57 | 0,16 | 0,80 |
+| Tỷ lệ lao động qua đào tạo | 0,58 | 0,39 | 0,62 |
+| Tỷ lệ dùng internet | 0,60 | 0,30 | 0,75 |
+| Học sinh / giáo viên THPT | 0,15 | 0,24 | 0,17 |
+
+Ba điểm đáng chú ý:
+- **Thu nhập người dân và HDI** liên quan mạnh hơn **GRDP**, tức giá trị kinh tế tỉnh làm ra. Ví dụ Quảng Ninh có GRDP bình quân đầu người cao nhất cả nước, nhưng thu nhập của người dân không cao tương ứng. Điều tác động đến học sinh là đời sống của gia đình, không phải sản lượng kinh tế của tỉnh.
+- **Tỷ lệ chọn thi Ngoại ngữ** đi theo mức sống còn sát hơn cả điểm Toán (0,85–0,86).
+- **Số học sinh trên một giáo viên** gần như không liên quan (0,15). Có thể vì chỉ tiêu này chênh lệch ít giữa các tỉnh, chủ yếu từ 17 đến 24 học sinh/giáo viên.
+
+#### b) Hồi quy: thu nhập dự đoán được bao nhiêu phần điểm thi?
+
+**Kết luận:** Chỉ cần biết thu nhập của một tỉnh, mô hình dự đoán được khoảng **hai phần ba** sự chênh lệch điểm Toán giữa các tỉnh. Với Văn, mô hình gần như không dự đoán được gì.
+
+**Cách đo:** dùng Spark MLlib xây mô hình hồi quy tuyến tính, tức một công thức dạng "điểm = a + b × thu nhập". Vì chỉ có 34 tỉnh, nhóm kiểm tra mô hình bằng **kiểm định chéo 5 phần (5-fold)**:
+1. Chia 34 tỉnh thành 5 nhóm.
+2. Giấu 1 nhóm đi, xây công thức trên 4 nhóm còn lại, rồi dùng công thức đó đoán điểm của nhóm bị giấu.
+3. Lặp lại cho cả 5 nhóm, rồi làm lại toàn bộ 5 lần với cách chia khác nhau.
+
+Chỉ số **R² ngoài mẫu** cho biết cách đoán này tốt hơn bao nhiêu so với cách "đoán mọi tỉnh bằng điểm trung bình cả nước":
+- R² = 1: đoán đúng hoàn toàn.
+- R² = 0: không tốt hơn đoán bằng trung bình.
+- R² âm: còn tệ hơn đoán bằng trung bình.
+
+Kiểm tra trên các tỉnh bị giấu đảm bảo mô hình thật sự tìm ra quy luật, chứ không chỉ "học thuộc" 34 tỉnh đã thấy.
+
+**Số liệu** (hình H5.4):
+
+| Mô hình (dùng chỉ tiêu nào để đoán) | Toán TB | Văn TB | Điểm TB chung |
+|---|---|---|---|
+| Chỉ thu nhập | **0,65** | 0,06 | **0,35** |
+| Chỉ HDI | 0,56 | 0,04 | 0,30 |
+| Chỉ GRDP | 0,26 | −0,02 | 0,08 |
+| 4 chỉ tiêu: thu nhập, đô thị hóa, lao động qua đào tạo, HS/GV | 0,62 | −0,08 | 0,32 |
+| 4 chỉ tiêu, có thêm ràng buộc chống học thuộc (ridge) | 0,48 | 0,08 | 0,27 |
+
+Với Toán, sai số trung bình khi đoán giảm từ 0,50 điểm (đoán bằng trung bình cả nước) xuống **0,30 điểm** (đoán bằng thu nhập).
+
+**Bài học về "học thuộc" (overfitting):** mô hình 4 chỉ tiêu, nếu chấm điểm ngay trên chính 34 tỉnh dùng để xây nó, có R² = 0,77, trông tốt hơn mô hình chỉ có thu nhập. Nhưng khi kiểm tra trên các tỉnh bị giấu, nó chỉ đạt 0,62, **thấp hơn** mô hình một biến (0,65). Thêm chỉ tiêu làm mô hình khớp dữ liệu cũ hơn, nhưng đoán tỉnh mới không tốt hơn. Với chỉ 34 tỉnh, mô hình đơn giản là lựa chọn đúng.
+
+**Khi xét cùng lúc 4 chỉ tiêu** (điểm Toán, các chỉ tiêu đã đưa về cùng thang đo để so sánh được độ lớn):
+
+| Chỉ tiêu | Mức ảnh hưởng | Có ý nghĩa thống kê? |
+|---|---|---|
+| Thu nhập | **+0,46** (mạnh nhất) | Có (p < 0,001) |
+| Lao động qua đào tạo | +0,17 | Có (p = 0,005) |
+| Tỷ lệ đô thị hóa | −0,15 | Có, nhưng yếu (p = 0,04) |
+| Học sinh / giáo viên | −0,10 | Không (p = 0,06) |
+
+- p-value nhỏ hơn 0,05 nghĩa là kết quả khó xảy ra do ngẫu nhiên.
+- Hệ số âm của đô thị hóa **không** có nghĩa đô thị hóa làm giảm điểm. Nó có nghĩa: **khi hai tỉnh có cùng mức thu nhập**, tỉnh đô thị hóa cao hơn không có điểm cao hơn. Đô thị hóa chủ yếu "đi kèm" thu nhập; tính thu nhập rồi thì đô thị hóa không cho thêm thông tin.
+- Các chỉ tiêu này không trùng lặp thông tin quá nhiều với nhau. Chỉ số kiểm tra trùng lặp (VIF) đều dưới 2,5, mức an toàn.
+
+#### c) Phân cụm: các tỉnh tự chia thành mấy nhóm?
+
+**Kết luận:** 34 tỉnh chia thành **3 nhóm rõ rệt**: nhóm đô thị – thu nhập cao, nhóm trung bình, và nhóm miền núi phía Bắc. Khoảng cách về Toán giữa nhóm đầu và nhóm cuối lớn gấp gần 3 lần khoảng cách về Văn.
+
+**Cách đo:** dùng thuật toán **KMeans** của Spark MLlib. Thuật toán tự xếp các tỉnh giống nhau vào cùng nhóm, dựa trên 9 chỉ tiêu: thu nhập, HDI, đô thị hóa, lao động qua đào tạo, hộ nghèo, internet, điểm Toán, điểm Văn, tỷ lệ thi Ngoại ngữ. Số nhóm được chọn bằng **chỉ số silhouette**, đo xem mỗi tỉnh có "hợp" với nhóm của mình hơn nhóm khác không (càng gần 1 càng tốt):
+
+| Số nhóm | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|
+| Silhouette | **0,54** | 0,49 | 0,36 | 0,39 | 0,35 |
+
+Chia 2 nhóm có điểm cao nhất, nhưng chỉ tách 7 tỉnh miền núi phía Bắc ra khỏi 27 tỉnh còn lại, quá hiển nhiên. Chia **3 nhóm** có điểm gần bằng (0,49) và cho nhiều thông tin hơn, nên nhóm chọn 3.
+
+**Số liệu** (hình H5.5):
+
+| Nhóm | Số tỉnh | Thu nhập (khoảng, nghìn đ/tháng) | Đô thị hóa | Hộ nghèo | Toán TB | Văn TB | Thi Ngoại ngữ |
+|---|---|---|---|---|---|---|---|
+| Đô thị – thu nhập cao | 9 | 6.800 | 55% | 0,5% | **5,88** | 6,53 | 34% |
+| Trung bình | 18 | 5.100 | 27% | 1,7% | 5,44 | 6,42 | 21% |
+| Miền núi phía Bắc | 7 | 3.100 | 15% | 8,6% | **4,71** | 6,09 | 12% |
+
+- Nhóm đô thị – thu nhập cao: Hà Nội, TP.HCM, Hải Phòng, Đà Nẵng, Bắc Ninh, Quảng Ninh, Đồng Nai, Huế, Ninh Bình.
+- Nhóm miền núi phía Bắc: Cao Bằng, Lai Châu, Lào Cai, Lạng Sơn, Sơn La, Tuyên Quang, Điện Biên.
+
+Nhóm đầu và nhóm cuối chênh nhau **1,17 điểm Toán** nhưng chỉ **0,44 điểm Văn**.
+
+Hình H5.5 vẽ các tỉnh lên mặt phẳng hai chiều bằng kỹ thuật **PCA**, cách nén 9 chỉ tiêu thành 2 trục để vẽ được. Trục ngang giữ được 68% thông tin và về cơ bản là "trục mức sống": đi từ phải sang trái là từ nghèo sang giàu.
+
+#### d) Trả lời câu hỏi 1
+
+**Có.** Các tỉnh có thu nhập, mức sống và điều kiện tốt hơn có kết quả thi cao hơn, nhưng mức độ khác nhau rõ rệt giữa các môn:
+- **Rõ nhất ở Toán và việc chọn thi Ngoại ngữ.** Chỉ thu nhập đã dự đoán được khoảng 65% chênh lệch điểm Toán giữa các tỉnh.
+- **Yếu ở Văn:** mức sống gần như không dự đoán được điểm Văn.
+- **Thu nhập người dân** là chỉ tiêu giải thích tốt nhất, tốt hơn GRDP. **Đô thị hóa** chủ yếu đi kèm thu nhập. **Số học sinh trên một giáo viên** gần như không liên quan.
+
+Đây là quan hệ **tương quan ở cấp tỉnh**, không chứng minh thu nhập là nguyên nhân trực tiếp, và không áp dụng cho từng học sinh.
+
+### I.3. Câu hỏi 2: Môn nào chênh lệch giữa các tỉnh nhiều nhất?
+
+**Kết luận:** **Ngữ văn** chênh lệch giữa các tỉnh nhiều nhất, gấp gần 3 lần Toán. Lịch sử là môn các tỉnh đồng đều nhất.
+
+**Cách đo:** dùng chỉ số **eta²**. Điểm của 1,2 triệu thí sinh khác nhau rất nhiều; eta² cho biết **bao nhiêu phần trăm sự khác nhau đó là do các thí sinh ở các tỉnh khác nhau**. Phần còn lại là khác biệt giữa các bạn trong cùng một tỉnh.
+- eta² = 0%: các tỉnh có điểm trung bình y hệt nhau.
+- eta² càng cao: biết thí sinh ở tỉnh nào thì đoán điểm càng chính xác.
+
+Nhóm không dùng cách đơn giản "tỉnh cao nhất trừ tỉnh thấp nhất", vì cách đó chỉ nhìn 2 tỉnh ở hai đầu và bỏ qua 32 tỉnh còn lại.
+
+**Số liệu** (hình H5.2):
+
+| Môn | eta² | Tỉnh thấp nhất → cao nhất (điểm TB) |
+|---|---|---|
+| **Ngữ văn** | **16,3%** | Vĩnh Long 5,00 → Ninh Bình 7,26 |
+| Sinh học | 7,7% | Cao Bằng 4,49 → Bắc Ninh 6,91 |
+| Tin học | 7,2% | Sơn La 4,86 → Hà Tĩnh 7,50 |
+| Toán | 5,7% | Sơn La 4,25 → Ninh Bình 6,26 |
+| Công nghệ | 4,2% | |
+| GD kinh tế và pháp luật | 4,1% | |
+| Ngoại ngữ | 3,7% | |
+| Vật lí | 3,6% | |
+| Địa lí | 2,6% | |
+| Hóa học | 2,1% | |
+| **Lịch sử** | **1,9%** | |
+
+Hai lưu ý:
+- Ngay cả với Văn, 84% sự khác biệt điểm vẫn nằm **trong** từng tỉnh. Khác biệt giữa các bạn cùng tỉnh lớn hơn nhiều so với khác biệt giữa các tỉnh.
+- Sinh học và Tin học đứng thứ 2, thứ 3 nhưng có ít thí sinh (68.436 và 18.141 bài), và người chọn thường là người giỏi môn đó. Kết quả hai môn này kém chắc chắn hơn Toán và Văn, vốn gần như ai cũng thi.
+
+### I.4. Phát hiện chính: ghép hai câu hỏi lại
+
+Đặt hai kết quả cạnh nhau:
+
+| | Chênh lệch giữa các tỉnh (eta²) | Mức sống dự đoán được (R² ngoài mẫu) |
+|---|---|---|
+| **Toán** | 5,7%, trung bình | **0,65**, cao |
+| **Ngữ văn** | **16,3%, cao nhất** | 0,06, gần như không |
+
+**Văn là môn các tỉnh chênh nhau nhiều nhất, nhưng lại là môn ít liên quan đến giàu nghèo nhất.** Chênh lệch điểm Văn giữa các tỉnh là có thật, nhưng đến từ một yếu tố khác ngoài điều kiện kinh tế – xã hội. Đó có thể là cách dạy, cách ra đề ôn tập, hay cách chấm thi tự luận ở từng địa phương. Dữ liệu hiện có chưa đủ để xác định yếu tố nào.
+
+### I.5. Một quan sát thêm: điểm Văn dồn ở đúng 5,0
+
+**Quan sát:** ở một số tỉnh, số bài Văn được đúng 5,0 điểm nhiều hơn hẳn so với các mức điểm lân cận.
+
+**Cách đo:** Văn là môn tự luận, và giám khảo có thói quen cho điểm chẵn nửa điểm, nên các mức x,0 và x,5 luôn nhiều hơn các mức x,25 và x,75 kề bên. Vì vậy nhóm so mức 5,0 với các mức **cùng loại** là 4,5 và 5,5:
+
+> tỷ số = (% bài được 5,0) ÷ (trung bình % bài được 4,5 và 5,5)
+
+Tỷ số = 1 nghĩa là không có gì bất thường; lớn hơn 1 nghĩa là mức 5,0 "nhô" lên.
+
+**Số liệu** (hình H5.6):
+- Toàn quốc: 4,1% bài được 5,0, trong khi 4,5 có 2,0% và 5,5 có 4,4%. Tỷ số = **1,27**.
+- Để đối chứng, các mức 4,5 / 5,5 / 6,0 có tỷ số lần lượt 0,73 / 0,86 / 1,04. Như vậy **chỉ riêng mức 5,0 nhô lên**.
+- Theo tỉnh: cao nhất là **Lâm Đồng 1,82** và Đồng Nai 1,74; gần như không có hiện tượng (khoảng 1,0) ở Hưng Yên, Bắc Ninh, TP.HCM, Hà Nội.
+
+**Cách hiểu đúng:** đây chỉ là **quan sát thống kê về hình dạng phổ điểm**. Nhóm không có dữ liệu để biết nguyên nhân và **không đưa ra kết luận** về cách chấm thi của bất kỳ địa phương nào. Quan sát này gợi ý một hướng tìm hiểu tiếp, liên quan đến phát hiện ở mục I.4.
+
+### I.6. Tóm tắt kết quả
+
+| Câu hỏi | Trả lời | Bằng chứng |
+|---|---|---|
+| Tỉnh có mức sống tốt hơn thì thi tốt hơn? | **Có**, rõ ở Toán và Ngoại ngữ, yếu ở Văn | Tương quan thu nhập – Toán 0,76; thu nhập dự đoán 65% chênh lệch Toán |
+| Chỉ tiêu nào giải thích tốt nhất? | **Thu nhập người dân**, tốt hơn GRDP; đô thị hóa chỉ đi kèm | R² ngoài mẫu: thu nhập 0,65, GRDP 0,26 |
+| Môn nào chênh lệch giữa các tỉnh nhiều nhất? | **Ngữ văn**; đều nhất là Lịch sử | eta²: Văn 16,3%, Toán 5,7%, Sử 1,9% |
+| Phát hiện chính | Văn chênh lệch nhiều nhất nhưng ít liên quan đến mức sống nhất | eta² cao nhất, R² gần 0 |
+
+## J. Lời nói mẫu khi thuyết trình (khoảng 2 phút)
+
+Phần câu hỏi 1 và câu hỏi 2 đã có trong mục B. Dưới đây là bản đầy đủ theo thứ tự trình chiếu.
+
+**1. Bức tranh chung (15 giây, hình H5.1)**
+
+> "Trước hết là bức tranh chung. Điểm Văn trung bình cả nước là 6,5, Toán là 5,65. Phổ điểm Toán có hai đỉnh, cho thấy thí sinh chia thành hai nhóm khá rõ về năng lực Toán."
+
+**2. Câu hỏi 1 (45 giây, hình H5.3 rồi H5.4)**
+
+> "Câu hỏi thứ nhất: tỉnh có mức sống tốt hơn thì thi có tốt hơn không? Câu trả lời là **có, và rõ nhất ở môn Toán**.
+>
+> Nếu xếp hạng 34 tỉnh theo thu nhập rồi xếp hạng theo điểm Toán, hai bảng xếp hạng khá giống nhau. Chỉ cần biết thu nhập của một tỉnh, nhóm đã dự đoán được khoảng **hai phần ba** chênh lệch điểm Toán giữa các tỉnh. Nhóm kiểm tra bằng cách giấu bớt tỉnh đi rồi đoán thử, nên con số này đáng tin.
+>
+> Thu nhập của người dân giải thích tốt hơn nhiều so với GRDP của tỉnh. Có tỉnh làm ra nhiều của cải như Quảng Ninh, nhưng thu nhập người dân không cao tương ứng.
+>
+> Còn với **môn Văn thì mức sống gần như không dự đoán được gì**."
+
+**3. Phân cụm (20 giây, hình H5.5)**
+
+> "Khi để máy tự chia nhóm, 34 tỉnh tách thành 3 nhóm: nhóm đô thị thu nhập cao như Hà Nội, TP.HCM; nhóm trung bình; và nhóm 7 tỉnh miền núi phía Bắc. Nhóm đầu và nhóm cuối chênh nhau hơn 1 điểm Toán, nhưng chỉ chưa tới nửa điểm Văn."
+
+**4. Câu hỏi 2 (30 giây, hình H5.2)**
+
+> "Câu hỏi thứ hai: môn nào chênh lệch giữa các tỉnh nhiều nhất? Giả sử chỉ biết một bạn đến từ tỉnh nào, ta đoán được điểm của bạn ấy tốt hơn bao nhiêu? Đo theo cách đó, **Ngữ văn là môn chênh lệch nhiều nhất**, gấp gần 3 lần Toán. Văn trung bình cao nhất là Ninh Bình 7,26, thấp nhất là Vĩnh Long 5,0. Lịch sử là môn các tỉnh đều nhau nhất."
+
+**5. Phát hiện chính (20 giây)**
+
+> "Đặt hai kết quả cạnh nhau thì thấy điều bất ngờ: **Văn là môn các tỉnh chênh nhau nhiều nhất, nhưng lại ít liên quan đến giàu nghèo nhất**. Chênh lệch điểm Văn là có thật, nhưng đến từ một yếu tố khác, có thể là cách dạy hay cách chấm tự luận ở từng nơi. Dữ liệu hiện tại chưa đủ để biết chính xác."
+
+**6. Quan sát điểm 5,0 (20 giây, hình H5.6, tùy thời gian)**
+
+> "Nhóm còn quan sát thấy ở một số tỉnh, số bài Văn được đúng 5 điểm nhiều hơn hẳn các mức lân cận, cao nhất là Lâm Đồng. Nhóm xin nhấn mạnh đây chỉ là quan sát về hình dạng phổ điểm, nhóm không có dữ liệu để kết luận nguyên nhân."
+
+**Câu trả lời dự phòng:**
+
+**"R² là gì?"**
+> "R² cho biết cách đoán của mô hình tốt hơn bao nhiêu so với đoán đại bằng điểm trung bình cả nước. R² bằng 0,65 nghĩa là sai số giảm được 65%. Nhóm tính R² trên các tỉnh bị giấu đi, nên đây là khả năng đoán tỉnh mới, không phải độ khớp với dữ liệu cũ."
+
+**"Vì sao không dùng nhiều chỉ tiêu hơn cho mô hình tốt hơn?"**
+> "Nhóm đã thử. Mô hình 4 chỉ tiêu khớp dữ liệu cũ tốt hơn, nhưng khi đoán các tỉnh bị giấu thì lại kém hơn mô hình chỉ có thu nhập. Với 34 tỉnh, thêm chỉ tiêu chỉ làm mô hình học thuộc dữ liệu."
+
+**"Như vậy giàu thì học giỏi à?"**
+> "Không hẳn. Nhóm chỉ thấy các **tỉnh** có thu nhập cao thì điểm **trung bình của tỉnh** cao hơn. Đó là tương quan, không chứng minh thu nhập là nguyên nhân, và cũng không áp dụng cho từng học sinh. Trong tỉnh nghèo vẫn có nhiều bạn điểm rất cao."
+
+**"Điểm Văn dồn ở 5,0 có phải gian lận không?"**
+> "Nhóm không kết luận như vậy. Đây chỉ là quan sát thống kê về hình dạng phổ điểm. Có nhiều cách giải thích khác nhau, và nhóm không có dữ liệu để biết đâu là nguyên nhân."
