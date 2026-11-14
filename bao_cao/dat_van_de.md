@@ -155,9 +155,11 @@ Số liệu: `data/processed/spark/chat_luong_du_lieu.csv`, `co_diem_theo_mon.cs
 
 ## E. Đoạn tích hợp dữ liệu cho báo cáo
 
-Ghép hai bộ dữ liệu theo tỉnh nghe đơn giản, nhưng nhóm gặp 5 vấn đề. Phần lớn trong số đó **không gây ra lỗi nào khi chạy chương trình**: nếu không kiểm tra kỹ, kết quả vẫn ra nhưng sai.
+Ghép hai bộ dữ liệu theo tỉnh nghe đơn giản, nhưng nhóm gặp 5 vấn đề. Phần lớn trong số đó **không gây ra lỗi nào khi chạy chương trình**: nếu không kiểm tra kỹ, kết quả vẫn ra nhưng sai. Mỗi vấn đề dưới đây được trình bày theo ba bước: vấn đề gặp phải, giải pháp và kết quả.
 
 ### Vấn đề 1: Điểm thi bị "giấu" trong một cột văn bản
+
+**1. Vấn đề gặp phải**
 
 Ở 14 tỉnh, trong đó có TP.HCM, Hải Phòng, Đồng Nai, Cần Thơ, An Giang và Huế, các cột điểm Toán, Văn, Ngoại ngữ… đều trống. Toàn bộ điểm bị dồn vào một cột phụ tên `extra`, dưới dạng chuỗi chữ mã hóa kiểu trang web:
 
@@ -165,9 +167,15 @@ Ghép hai bộ dữ liệu theo tỉnh nghe đơn giản, nhưng nhóm gặp 5 v
 To&#xE1;n=8; V&#x103;n=7; S&#x1EED;=9      (nghĩa là: Toán=8; Văn=7; Sử=9)
 ```
 
-Môn Giáo dục kinh tế và pháp luật **chỉ** nằm trong cột này ở cả 34 tỉnh.
+Môn Giáo dục kinh tế và pháp luật **chỉ** nằm trong cột này ở cả 34 tỉnh. Nếu đọc thẳng các cột điểm, chỉ 39,3% thí sinh có điểm Toán. Kết quả này sai, vì gần như ai cũng thi Toán.
 
-Nếu đọc thẳng các cột điểm, chỉ **39,3%** thí sinh có điểm Toán. Kết quả này sai, vì gần như ai cũng thi Toán. Nhóm giải mã chuỗi về tiếng Việt, tách thành từng môn rồi điền vào đúng cột. Sau khi xử lý:
+**2. Giải pháp**
+
+- Giải mã chuỗi về tiếng Việt bình thường: `To&#xE1;n` thành `Toán`.
+- Tách chuỗi thành từng cặp "môn = điểm".
+- Điền điểm vào đúng cột môn. Ô nào đã có điểm thì giữ nguyên, ô trống thì lấy điểm từ `extra`.
+
+**3. Kết quả**
 
 | Môn | Trước | Sau |
 |---|---|---|
@@ -175,13 +183,27 @@ Nếu đọc thẳng các cột điểm, chỉ **39,3%** thí sinh có điểm T
 | Ngữ văn | 39,6% | **99,0%** |
 | GD kinh tế và pháp luật | 0% | **23,4%** |
 
-96,4% thí sinh có đủ 4 môn, đúng với cấu trúc thi mới. Riêng Sinh học và Tin học không bao giờ nằm trong `extra`, nên tỷ lệ có điểm hai môn này không đổi, và nhóm đã kiểm tra là không bị mất dữ liệu (hình H3.1).
+96,4% thí sinh có đủ 4 môn, đúng với cấu trúc thi mới. Sinh học và Tin học không bao giờ nằm trong `extra`, nên tỷ lệ có điểm hai môn này không đổi; nhóm đã kiểm tra là không bị mất dữ liệu (hình H3.1).
 
 ### Vấn đề 2: Môn thi thay đổi theo chương trình mới
 
-Môn Giáo dục công dân đổi thành Giáo dục kinh tế và pháp luật. Có thêm Tin học và Công nghệ; Công nghệ gồm hai phân môn công nghiệp và nông nghiệp, được gộp làm một. Nhóm chuẩn hóa về một danh sách 11 môn thống nhất.
+**1. Vấn đề gặp phải**
+
+Dữ liệu còn cột của môn cũ Giáo dục công dân, gần như trống, trong khi môn mới Giáo dục kinh tế và pháp luật lại không có cột riêng. Môn Công nghệ được ghi thành hai tên khác nhau: "công nghệ công nghiệp" và "công nghệ nông nghiệp".
+
+**2. Giải pháp**
+
+- Đổi tên cột Giáo dục công dân thành Giáo dục kinh tế và pháp luật.
+- Gộp hai phân môn Công nghệ làm một.
+- Chuẩn hóa về một danh sách 11 môn thống nhất.
+
+**3. Kết quả**
+
+Cả 34 tỉnh dùng chung một danh sách 11 môn: Toán, Ngữ văn, Ngoại ngữ, Vật lí, Hóa học, Sinh học, Lịch sử, Địa lí, GD kinh tế và pháp luật, Tin học, Công nghệ. So sánh giữa các tỉnh là so cùng một môn.
 
 ### Vấn đề 3: Mã tỉnh cũ bị dùng lại cho tỉnh khác
+
+**1. Vấn đề gặp phải**
 
 Sau sắp xếp, 63 tỉnh còn 34. Có **7 mã số cũ nay trỏ sang một tỉnh khác hẳn**:
 
@@ -195,30 +217,68 @@ Sau sắp xếp, 63 tỉnh còn 34. Có **7 mã số cũ nay trỏ sang một t�
 | 82 | Tiền Giang | Đồng Tháp |
 | 91 | Kiên Giang | An Giang |
 
-Nếu ghép số liệu cũ theo mã số, số liệu của Bình Định sẽ bị gán nhầm cho Gia Lai mà **không có thông báo lỗi nào**. Nhóm tự xây bảng ánh xạ 63 → 34 tỉnh theo Nghị quyết 202/2025/QH15 và đối chiếu: 34 mã tỉnh mới khớp 100% với mã tỉnh nằm trong số báo danh. Ngoài ra, tên tỉnh giữa hai nguồn cũng lệch nhau, ví dụ "TP. Hồ Chí Minh" và "Hồ Chí Minh", nên nhóm ghép theo mã tỉnh chứ không theo tên.
+Nếu ghép số liệu cũ theo mã số, số liệu của Bình Định sẽ bị gán nhầm cho Gia Lai mà **không có thông báo lỗi nào**. Tên tỉnh giữa hai nguồn cũng lệch nhau, ví dụ "TP. Hồ Chí Minh" và "Hồ Chí Minh".
+
+**2. Giải pháp**
+
+- Tự xây bảng ánh xạ 63 tỉnh cũ sang 34 tỉnh mới theo Nghị quyết 202/2025/QH15.
+- Chỉ dùng **mã tỉnh mới** làm khóa để ghép, không ghép theo tên.
+- Chuẩn hóa tên tỉnh, ví dụ bỏ tiền tố "TP.".
+
+**3. Kết quả**
+
+34 mã tỉnh mới khớp 100% với mã tỉnh nằm trong số báo danh của thí sinh. Ghép hai nguồn được đủ **34 / 34 tỉnh**, không tỉnh nào bị gán nhầm.
 
 ### Vấn đề 4: Số liệu kinh tế – xã hội nằm trong file PDF
 
-Niên giám không có bản Excel. Lấy số liệu từ bảng trong PDF gặp các khó khăn:
+**1. Vấn đề gặp phải**
+
+Niên giám không có bản Excel, chỉ có file PDF 1.557 trang. Lấy số liệu từ bảng trong PDF gặp các khó khăn:
 - **Số viết kiểu Việt Nam:** `1.234,5` (dấu chấm phân cách nghìn, dấu phẩy thập phân). Dấu `-` hoặc `..` nghĩa là không có số liệu.
-- **Ô trống làm lệch cột.** Khi một ô không có số, các số phía sau bị dồn sang trái và rơi nhầm vào cột khác. Nhóm xác định cột dựa trên vị trí của từng con số trên trang, lấy các dòng đầy đủ làm mốc.
-- **Mỗi bảng trải trên 2 trang** với lề khác nhau, và phải bỏ qua các trang mục lục có cùng tiêu đề.
+- **Ô trống làm lệch cột.** Khi một ô không có số, các số phía sau bị dồn sang trái và rơi nhầm vào cột khác.
+- **Mỗi bảng trải trên 2 trang** với lề khác nhau, và có các trang mục lục trùng tiêu đề với bảng.
 
-### Vấn đề 5: Kiểm tra lại toàn bộ kết quả
+**2. Giải pháp**
 
-Vì các lỗi trên đều "im lặng", nhóm kiểm tra kết quả bằng nhiều cách độc lập:
+- Chuyển số kiểu Việt Nam sang dạng số máy tính hiểu được; coi `-` và `..` là "không có số liệu".
+- Xác định cột dựa trên **vị trí của từng con số trên trang**, không dựa trên thứ tự, lấy các dòng đầy đủ số làm mốc.
+- Xử lý riêng từng trang để chịu được lề khác nhau, bỏ qua các trang mục lục.
+
+**3. Kết quả**
+
+Trích được 24 chỉ tiêu cho 34 tỉnh. Cộng số liệu 34 tỉnh, so với dòng "Cả nước" có sẵn trong Niên giám, **khớp chính xác**: dân số 102.345,3 nghìn người, giáo viên THPT 148.396, học sinh THPT 3.082.574.
+
+### Vấn đề 5: Lỗi "im lặng" khó phát hiện
+
+**1. Vấn đề gặp phải**
+
+Bốn vấn đề trên đều không làm chương trình báo lỗi. Ngoài ra có những hiện tượng trông giống lỗi nhưng không phải: nhiều môn có điểm lẻ như 6,1 hay 7,35, không phải bội số của 0,25. Nếu không kiểm tra, nhóm có thể sửa nhầm dữ liệu đúng, hoặc bỏ sót dữ liệu sai.
+
+**2. Giải pháp**
+
+Kiểm tra kết quả bằng nhiều cách độc lập. Quan trọng nhất là **làm lại toàn bộ bằng hai công cụ khác nhau** (Spark và pandas) rồi so sánh. Với điểm lẻ, nhóm tìm hiểu và xác nhận đây là do đề trắc nghiệm mới có phần đúng/sai và trả lời ngắn, nên giữ nguyên.
+
+**3. Kết quả**
 
 | Kiểm tra | Kết quả |
 |---|---|
-| Cộng số liệu 34 tỉnh, so với dòng "Cả nước" trong Niên giám | Khớp chính xác: dân số 102.345,3 nghìn người; giáo viên THPT 148.396; học sinh THPT 3.082.574 |
+| Cộng 34 tỉnh, so với dòng "Cả nước" trong Niên giám | Khớp chính xác |
 | Số báo danh trùng lặp | Không có (1.200.202 / 1.200.202) |
 | Mã tỉnh trong số báo danh so với cột mã tỉnh | Khớp 100% |
 | Điểm nằm ngoài khoảng 0–10 | Không có |
 | Thí sinh không có điểm môn nào | Không có |
 | Ghép hai nguồn theo tỉnh | 34 / 34 tỉnh |
-| Làm lại toàn bộ bằng hai công cụ khác nhau (Spark và pandas), so sánh kết quả | Khớp 60 / 60 cột số liệu |
+| Spark so với pandas | Khớp 60 / 60 cột số liệu |
 
-Một điểm cần phân biệt: nhiều môn có điểm lẻ như 6,1 hay 7,35, không phải bội số của 0,25. Đây **không phải lỗi dữ liệu** mà do đề trắc nghiệm mới có phần đúng/sai và trả lời ngắn. Nhóm giữ nguyên các điểm này.
+### Tóm tắt
+
+| # | Vấn đề | Giải pháp | Kết quả |
+|---|---|---|---|
+| 1 | Điểm bị giấu trong cột `extra` | Giải mã, tách, điền vào đúng cột | Có điểm Toán: 39,3% → 98,6% |
+| 2 | Môn thi thay đổi | Đổi tên, gộp, chuẩn hóa 11 môn | 34 tỉnh dùng chung danh sách môn |
+| 3 | Mã tỉnh cũ bị dùng lại | Bảng ánh xạ 63 → 34, ghép theo mã mới | 34 / 34 tỉnh, không gán nhầm |
+| 4 | Số liệu nằm trong PDF | Đọc số theo vị trí trên trang | Tổng 34 tỉnh = số cả nước |
+| 5 | Lỗi im lặng | Kiểm tra chéo bằng 2 công cụ | Khớp 60 / 60 cột |
 
 ## F. Lời nói mẫu khi thuyết trình (khoảng 50 giây, chiếu hình H3.1)
 
