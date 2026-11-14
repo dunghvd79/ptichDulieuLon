@@ -728,11 +728,46 @@ Hình H5.5 vẽ các tỉnh lên mặt phẳng hai chiều bằng kỹ thuật *
 
 **Kết luận:** **Ngữ văn** chênh lệch giữa các tỉnh nhiều nhất, gấp gần 3 lần Toán. Lịch sử là môn các tỉnh đồng đều nhất.
 
-**Cách đo:** dùng chỉ số **eta²**. Điểm của 1,2 triệu thí sinh khác nhau rất nhiều; eta² cho biết **bao nhiêu phần trăm sự khác nhau đó là do các thí sinh ở các tỉnh khác nhau**. Phần còn lại là khác biệt giữa các bạn trong cùng một tỉnh.
-- eta² = 0%: các tỉnh có điểm trung bình y hệt nhau.
-- eta² càng cao: biết thí sinh ở tỉnh nào thì đoán điểm càng chính xác.
+**Cách đo: chỉ số eta² (đọc là "eta bình phương")**
 
-Nhóm không dùng cách đơn giản "tỉnh cao nhất trừ tỉnh thấp nhất", vì cách đó chỉ nhìn 2 tỉnh ở hai đầu và bỏ qua 32 tỉnh còn lại.
+*Ý tưởng:* điểm của 1,2 triệu thí sinh khác nhau rất nhiều, có bạn 3 điểm, có bạn 9 điểm. Sự khác nhau đó đến từ hai nguồn:
+- **Khác nhau giữa các tỉnh:** tỉnh này điểm trung bình cao, tỉnh kia thấp.
+- **Khác nhau giữa các bạn trong cùng một tỉnh:** cùng tỉnh nhưng bạn học giỏi, bạn học yếu.
+
+eta² trả lời câu hỏi: **trong toàn bộ sự khác nhau về điểm, bao nhiêu phần trăm là do khác tỉnh?** Môn nào có eta² càng cao thì các tỉnh càng chênh lệch nhau.
+
+Một cách hiểu khác: nếu phải đoán điểm của một thí sinh bất kỳ, biết thêm **bạn ấy ở tỉnh nào** thì đoán chính xác hơn bao nhiêu? eta² cao nghĩa là biết tỉnh giúp đoán tốt hơn nhiều. Đây cũng chính là ý tưởng của R² ở mục I.2b, chỉ khác là thông tin dùng để đoán ở đây là "tỉnh".
+
+*Ví dụ với 2 tỉnh, mỗi tỉnh 3 thí sinh (số liệu minh họa):*
+
+| | Tỉnh A | Tỉnh B | Điểm TB của tỉnh | eta² | Ý nghĩa |
+|---|---|---|---|---|---|
+| **Môn X** | 7 – 8 – 9 | 3 – 4 – 5 | A: 8, B: 4 | **86%** | Trong mỗi tỉnh các bạn gần nhau, nhưng hai tỉnh cách xa nhau. Hầu hết khác biệt là **do tỉnh**. |
+| **Môn Y** | 3 – 6 – 9 | 2 – 5 – 8 | A: 6, B: 5 | **4%** | Hai tỉnh gần như ngang nhau, nhưng trong mỗi tỉnh các bạn rất khác nhau. Khác biệt chủ yếu là **giữa các bạn**, không phải do tỉnh. |
+
+Ở môn X, chỉ cần biết thí sinh ở tỉnh A là đoán được điểm khoảng 8, sai không quá 1 điểm. Ở môn Y, biết thí sinh ở tỉnh A cũng chẳng giúp gì, vì điểm trong tỉnh A trải từ 3 đến 9.
+
+Cách tính (cho môn X):
+1. Điểm trung bình chung của cả 6 bạn là 6.
+2. **Tổng khác biệt:** mỗi bạn lệch bao nhiêu so với 6, bình phương lên rồi cộng lại: 1 + 4 + 9 + 9 + 4 + 1 = **28**.
+3. **Phần do tỉnh:** điểm trung bình mỗi tỉnh lệch bao nhiêu so với 6, bình phương, nhân với số bạn của tỉnh rồi cộng lại: 3 × (8 − 6)² + 3 × (4 − 6)² = **24**.
+4. **eta² = 24 / 28 = 86%.**
+
+Với dữ liệu thật, máy tính làm đúng như vậy cho từng môn, trên toàn bộ 1,2 triệu thí sinh và 34 tỉnh.
+
+*Cách đọc con số:*
+
+| eta² | Ý nghĩa | Ví dụ trong đồ án |
+|---|---|---|
+| 0% | Các tỉnh có điểm trung bình y hệt nhau, biết tỉnh không giúp gì | — |
+| Thấp (dưới 5%) | Các tỉnh khá đồng đều | Lịch sử 1,9%, Hóa học 2,1% |
+| Cao hơn hẳn các môn khác | Các tỉnh chênh lệch rõ rệt | **Ngữ văn 16,3%**, gấp gần 3 lần Toán 5,7% |
+
+**Lưu ý khi đọc:** ngay cả với Văn, 84% sự khác biệt điểm vẫn là khác biệt giữa các bạn **trong cùng một tỉnh**. Tỉnh có ảnh hưởng, nhưng năng lực của từng học sinh vẫn quan trọng hơn nhiều. Khi nói nên dùng đủ cụm "16% **sự khác nhau về điểm**", không nói "16% thí sinh".
+
+*Vì sao không dùng cách đơn giản "tỉnh cao nhất trừ tỉnh thấp nhất"?*
+- Cách đó chỉ nhìn **2 tỉnh ở hai đầu** và bỏ qua 32 tỉnh còn lại. Chỉ cần một tỉnh bất thường là kết quả lệch.
+- Mỗi môn có độ "rộng" điểm khác nhau. Chênh 1 điểm ở môn mà điểm thí sinh vốn trải rộng thì không đáng kể bằng chênh 1 điểm ở môn mà điểm thí sinh vốn sát nhau. eta² tự tính đến điều này vì nó so chênh lệch giữa các tỉnh với độ rộng điểm của chính môn đó, nên **so sánh được giữa các môn**.
 
 **Số liệu** (hình H5.2):
 
