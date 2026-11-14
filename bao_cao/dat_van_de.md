@@ -649,17 +649,38 @@ Ba điểm đáng chú ý:
 
 **Kết luận:** Chỉ cần biết thu nhập của một tỉnh, mô hình dự đoán được khoảng **hai phần ba** sự chênh lệch điểm Toán giữa các tỉnh. Với Văn, mô hình gần như không dự đoán được gì.
 
-**Cách đo:** dùng Spark MLlib xây mô hình hồi quy tuyến tính, tức một công thức dạng "điểm = a + b × thu nhập". Vì chỉ có 34 tỉnh, nhóm kiểm tra mô hình bằng **kiểm định chéo 5 phần (5-fold)**:
-1. Chia 34 tỉnh thành 5 nhóm.
-2. Giấu 1 nhóm đi, xây công thức trên 4 nhóm còn lại, rồi dùng công thức đó đoán điểm của nhóm bị giấu.
-3. Lặp lại cho cả 5 nhóm, rồi làm lại toàn bộ 5 lần với cách chia khác nhau.
+**Cách đo: hồi quy tuyến tính, kiểm định chéo và R² ngoài mẫu**
 
-Chỉ số **R² ngoài mẫu** cho biết cách đoán này tốt hơn bao nhiêu so với cách "đoán mọi tỉnh bằng điểm trung bình cả nước":
-- R² = 1: đoán đúng hoàn toàn.
-- R² = 0: không tốt hơn đoán bằng trung bình.
-- R² âm: còn tệ hơn đoán bằng trung bình.
+*Hồi quy tuyến tính là gì?* Là tìm một công thức đơn giản để **đoán** điểm từ thu nhập, dạng "điểm Toán = a + b × thu nhập". Máy tự chọn a và b sao cho công thức đoán sát nhất với 34 tỉnh. Trên hình H5.4, công thức chính là đường thẳng màu xám.
 
-Kiểm tra trên các tỉnh bị giấu đảm bảo mô hình thật sự tìm ra quy luật, chứ không chỉ "học thuộc" 34 tỉnh đã thấy.
+*Kiểm định chéo: kiểm tra bằng "đề chưa gặp".* Một học sinh có thể làm đúng 100% đề cũ chỉ vì đã thuộc đáp án. Muốn biết em ấy có thật sự hiểu bài không, phải cho làm **đề mới**. Mô hình cũng vậy: chấm nó trên chính dữ liệu dùng để xây thì dễ "đẹp" giả tạo. Vì vậy nhóm làm như sau:
+1. Chia 34 tỉnh thành 5 nhóm, mỗi nhóm khoảng 7 tỉnh.
+2. **Giấu 1 nhóm**, xây công thức trên 4 nhóm còn lại, rồi dùng công thức đoán điểm của các tỉnh bị giấu.
+3. Lần lượt giấu từng nhóm, để tỉnh nào cũng được đoán đúng một lần khi "chưa gặp".
+4. Làm lại toàn bộ 5 lần với cách chia khác nhau rồi lấy trung bình, để kết quả không phụ thuộc vào may rủi của một lần chia.
+
+*R² ngoài mẫu: đoán tốt hơn "đoán bừa" bao nhiêu?* Cách đoán đơn giản nhất là đoán mọi tỉnh bằng điểm trung bình cả nước. R² so cách đoán của mô hình với cách đó.
+
+Ví dụ với 3 tỉnh (số liệu minh họa), điểm thật là 5, 6, 7:
+
+| | Tỉnh 1 | Tỉnh 2 | Tỉnh 3 | Tổng sai số (bình phương) |
+|---|---|---|---|---|
+| Điểm thật | 5 | 6 | 7 | |
+| Đoán bằng trung bình (6) | sai 1 | sai 0 | sai 1 | 1 + 0 + 1 = **2** |
+| Đoán bằng mô hình | 5,2 (sai 0,2) | 6,0 (sai 0) | 6,8 (sai 0,2) | 0,04 + 0 + 0,04 = **0,08** |
+
+R² = 1 − 0,08 / 2 = **0,96**: mô hình loại bỏ được 96% phần sai của cách đoán bừa.
+
+*Cách đọc con số:*
+
+| R² | Ý nghĩa | Ví dụ trong đồ án |
+|---|---|---|
+| Gần 1 | Đoán gần như đúng hoàn toàn | — |
+| Khoảng 0,5–0,7 | Giải thích được phần lớn chênh lệch | Thu nhập → Toán: **0,65** |
+| Gần 0 | Không tốt hơn đoán bừa bằng trung bình | Thu nhập → Văn: 0,06 |
+| Âm | Còn tệ hơn đoán bừa (mô hình "học thuộc", gặp tỉnh mới thì đoán sai) | 4 chỉ tiêu → Văn: −0,08 |
+
+Chữ "ngoài mẫu" nghĩa là R² được tính trên **các tỉnh bị giấu**, tức đúng kiểu "đề chưa gặp". Đây là con số trung thực về khả năng dự đoán.
 
 **Số liệu** (hình H5.4):
 
@@ -692,13 +713,37 @@ Với Toán, sai số trung bình khi đoán giảm từ 0,50 điểm (đoán b�
 
 **Kết luận:** 34 tỉnh chia thành **3 nhóm rõ rệt**: nhóm đô thị – thu nhập cao, nhóm trung bình, và nhóm miền núi phía Bắc. Khoảng cách về Toán giữa nhóm đầu và nhóm cuối lớn gấp gần 3 lần khoảng cách về Văn.
 
-**Cách đo:** dùng thuật toán **KMeans** của Spark MLlib. Thuật toán tự xếp các tỉnh giống nhau vào cùng nhóm, dựa trên 9 chỉ tiêu: thu nhập, HDI, đô thị hóa, lao động qua đào tạo, hộ nghèo, internet, điểm Toán, điểm Văn, tỷ lệ thi Ngoại ngữ. Số nhóm được chọn bằng **chỉ số silhouette**, đo xem mỗi tỉnh có "hợp" với nhóm của mình hơn nhóm khác không (càng gần 1 càng tốt):
+**Cách đo: thuật toán KMeans và chỉ số silhouette**
+
+*KMeans: tự chia nhóm mà không cần ai gán nhãn trước.* Mỗi tỉnh được mô tả bằng 9 chỉ tiêu: thu nhập, HDI, đô thị hóa, lao động qua đào tạo, hộ nghèo, internet, điểm Toán, điểm Văn, tỷ lệ thi Ngoại ngữ. Các chỉ tiêu được đưa về cùng thang đo trước, để thu nhập (hàng nghìn) không lấn át HDI (từ 0 đến 1). Hai tỉnh có 9 chỉ tiêu càng gần nhau thì càng "giống nhau".
+
+Thuật toán chạy giống cách chia lớp thành 3 tổ:
+1. Chọn tạm 3 "tỉnh tiêu biểu" làm tâm của 3 nhóm.
+2. Mỗi tỉnh về nhóm có tâm giống mình nhất.
+3. Dời tâm mỗi nhóm về chính giữa các tỉnh vừa vào nhóm đó.
+4. Lặp lại bước 2–3 đến khi không tỉnh nào đổi nhóm nữa.
+
+Thuật toán không biết tên tỉnh hay vùng miền; nhóm "miền núi phía Bắc" hoàn toàn do số liệu tự gom lại.
+
+*Silhouette: mỗi tỉnh có "ngồi đúng bàn" không?* Với từng tỉnh, so hai khoảng cách:
+- **a** = tỉnh đó khác các tỉnh **cùng nhóm** bao nhiêu (trung bình);
+- **b** = tỉnh đó khác các tỉnh của **nhóm gần nhất bên cạnh** bao nhiêu.
+
+Nếu a nhỏ hơn hẳn b, tỉnh nằm đúng nhóm. Silhouette của tỉnh = (b − a) / (giá trị lớn hơn trong a và b), rồi lấy trung bình cho cả 34 tỉnh.
+
+| Silhouette | Ý nghĩa |
+|---|---|
+| Gần 1 | Các nhóm tách bạch rõ, tỉnh nào cũng giống nhóm mình hơn hẳn nhóm khác |
+| Khoảng 0 | Tỉnh nằm ở ranh giới giữa hai nhóm |
+| Âm | Tỉnh bị xếp nhầm nhóm |
+
+Nhóm thử chia từ 2 đến 6 nhóm:
 
 | Số nhóm | 2 | 3 | 4 | 5 | 6 |
 |---|---|---|---|---|---|
 | Silhouette | **0,54** | 0,49 | 0,36 | 0,39 | 0,35 |
 
-Chia 2 nhóm có điểm cao nhất, nhưng chỉ tách 7 tỉnh miền núi phía Bắc ra khỏi 27 tỉnh còn lại, quá hiển nhiên. Chia **3 nhóm** có điểm gần bằng (0,49) và cho nhiều thông tin hơn, nên nhóm chọn 3.
+Chia 2 nhóm có điểm cao nhất, nhưng chỉ tách 7 tỉnh miền núi phía Bắc ra khỏi 27 tỉnh còn lại, quá hiển nhiên. Chia **3 nhóm** có điểm gần bằng (0,49) và cho nhiều thông tin hơn, nên nhóm chọn 3. Từ 4 nhóm trở lên, điểm giảm rõ, nghĩa là chia nhỏ hơn bắt đầu tách cả những tỉnh vốn giống nhau.
 
 **Số liệu** (hình H5.5):
 
@@ -713,7 +758,17 @@ Chia 2 nhóm có điểm cao nhất, nhưng chỉ tách 7 tỉnh miền núi ph�
 
 Nhóm đầu và nhóm cuối chênh nhau **1,17 điểm Toán** nhưng chỉ **0,44 điểm Văn**.
 
-Hình H5.5 vẽ các tỉnh lên mặt phẳng hai chiều bằng kỹ thuật **PCA**, cách nén 9 chỉ tiêu thành 2 trục để vẽ được. Trục ngang giữ được 68% thông tin và về cơ bản là "trục mức sống": đi từ phải sang trái là từ nghèo sang giàu.
+**Cách vẽ hình H5.5: kỹ thuật PCA**
+
+Mỗi tỉnh có 9 chỉ tiêu, tức 9 chiều, nhưng giấy chỉ vẽ được 2 chiều. **PCA** (phân tích thành phần chính) là cách "nén" 9 chỉ tiêu thành 2 trục mà mất ít thông tin nhất.
+
+> Ví dụ: chụp ảnh một chiếc ô tô. Ảnh chỉ có 2 chiều nên luôn mất bớt thông tin. Chụp từ chính diện thì khó nhận ra đó là xe gì; chụp chéo từ bên hông thì nhìn là biết ngay. PCA tự tìm "góc chụp" cho 9 chỉ tiêu sao cho ảnh 2 chiều giữ được nhiều hình dạng nhất.
+
+Kết quả:
+- **Trục ngang** giữ được **68%** thông tin của cả 9 chỉ tiêu. Trên trục này, thu nhập, HDI, đô thị hóa, internet, điểm Toán và tỷ lệ thi Ngoại ngữ cùng tăng về một phía, hộ nghèo tăng về phía ngược lại. Vì vậy có thể gọi nó là **"trục mức sống"**: bên trái là các tỉnh khá giả (Hà Nội, TP.HCM), bên phải là các tỉnh khó khăn (Điện Biên, Lai Châu).
+- **Trục dọc** giữ thêm **12%** thông tin, và gần như **chỉ do điểm Văn** quyết định: tỉnh càng nằm cao thì điểm Văn càng thấp. Tỉnh nằm tách hẳn ở trên cùng là Vĩnh Long, tỉnh có điểm Văn trung bình thấp nhất (5,00). Việc điểm Văn "tách" ra thành một trục riêng, không nằm trên trục mức sống, là một cách nhìn khác của phát hiện chính (mục I.4): chênh lệch điểm Văn giữa các tỉnh không đi theo giàu nghèo.
+
+Hai trục cộng lại giữ 80% thông tin, đủ để các tỉnh trên hình nằm đúng vị trí tương đối với nhau. Ba nhóm do KMeans chia, phân biệt bằng màu và hình dạng điểm, tách nhau khá rõ chủ yếu theo trục mức sống.
 
 #### d) Trả lời câu hỏi 1
 
