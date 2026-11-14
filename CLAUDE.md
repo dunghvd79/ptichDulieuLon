@@ -46,6 +46,7 @@ spark/             pipeline PySpark (xem spark/README.md)
   doi_chieu_pandas.py  so Spark vs pandas (60/60 cột khớp)
   mllib_tinh.py      hồi quy repeated k-fold + KMeans/PCA -> spark/ml_*.csv (~4 phút; --chi-phan-cum ~20 giây)
 bao_cao/DE_CUONG.md  đề cương báo cáo ~20 trang + trạng thái từng mục + số liệu đã ghi
+bao_cao/ve_hinh.py   vẽ hình -> bao_cao/hinh/*.png (cần matplotlib trong venv)
 ```
 
 Spark chạy bằng venv **ngoài repo**: `C:\Users\DELL\venvs\ptdl` (Python 3.11 + PySpark 4.0.1, `requirements-spark.txt`), chạy từ thư mục gốc repo.
@@ -120,11 +121,11 @@ Nhật ký tiến độ: mỗi phiên cập nhật mục này và mục "Ghi ch�
 - [x] **PySpark ETL** (2026-11-14): `spark/etl_diemthi.py`, pandas UDF parse `extra`, khớp bản pandas 60/60 cột.
 - [x] Bảng phân phối tỉnh × môn, chênh lệch giữa tỉnh theo môn (eta²), tổ hợp môn (2026-11-14).
 - [x] **Spark MLlib** (2026-11-14): `spark/mllib_tinh.py`, đã chạy xong hồi quy repeated 5-fold × 5 lần và KMeans k = 2..6. Kết quả ghi trong `bao_cao/DE_CUONG.md`.
-- [ ] **Biểu đồ cho báo cáo** — BƯỚC TIẾP THEO (danh mục H/B trong `bao_cao/DE_CUONG.md`).
+- [x] **Biểu đồ cho báo cáo** (2026-11-14): `bao_cao/ve_hinh.py` → `bao_cao/hinh/` (8 hình). ETL có thêm `pho_diem.csv` và `co_diem_theo_mon.csv`.
+- [ ] **Viết báo cáo** — BƯỚC TIẾP THEO. Định dạng cuối là .docx (người dùng chưa xác nhận).
 - [ ] (Tùy chọn) Hồi quy: thử lưới regParam cho ridge (hiện chỉ có 0,5, quá mạnh) bằng nested CV.
-- [ ] Viết báo cáo ~20 trang theo `bao_cao/DE_CUONG.md`.
-- [ ] (Tuỳ chọn) Phân tích theo cụm điểm thi (`ma_diem_thi` = 3 số sau mã tỉnh trong SBD), ví dụ hiện tượng điểm Văn dồn ở mức 5,0. Chỉ trình bày như "quan sát thống kê", không kết luận gian lận.
-- [ ] Notebook/biểu đồ, dashboard, báo cáo.
+- [x] Điểm Văn dồn ở 5,0 **ở cấp tỉnh** (H5.6). So với mốc 4,5/5,5, không dùng 4,75/5,25, vì Văn được chấm theo nửa điểm.
+- [ ] (Tuỳ chọn) Xem tiếp ở cấp cụm điểm thi (`ma_diem_thi` = 3 số sau mã tỉnh trong SBD). Chỉ trình bày như "quan sát thống kê", không kết luận gian lận.
 
 ## 8. Lưu ý kỹ thuật
 

@@ -25,7 +25,7 @@ Khổ A4, Times New Roman 13, giãn dòng 1,3. Khoảng 20 trang nội dung, ch�
 | 3.4 | Trích bảng từ PDF: số kiểu VN, ô trống lệch cột, biểu 2 trang | | Hình 3.2 minh họa trang PDF | 🟨 |
 | 3.5 | Kiểm chứng: tổng 34 tỉnh = "Cả nước"; Spark = pandas | | `spark/doi_chieu_pandas` | 🟨 |
 | 4 | **Kiến trúc pipeline Big Data** | 3 | | ⬜ |
-| 4.1 | Sơ đồ tổng thể: nguồn → Bronze → Silver → Gold → MLlib → báo cáo | | Hình 4.1 sơ đồ | ⬜ |
+| 4.1 | Sơ đồ tổng thể: nguồn → Bronze → Silver → Gold → MLlib → báo cáo | | H4.1 | 🟨 |
 | 4.2 | PySpark ETL: đọc song song, pandas UDF (Arrow) giải mã `extra`, unpivot, cửa sổ | | `spark/etl_diemthi.py` | 🟨 |
 | 4.3 | Môi trường và các lỗi khi triển khai Spark trên Windows | | `spark/README.md` | 🟨 |
 | 4.4 | Hiệu năng: thời gian từng bước, Spark vs pandas | | `spark/thoi_gian_chay.csv` | 🟨 |
@@ -35,7 +35,7 @@ Khổ A4, Times New Roman 13, giãn dòng 1,3. Khoảng 20 trang nội dung, ch�
 | 5.3 | CH1: Tương quan KT-XH ↔ điểm (Spearman, n=34) | | Hình 5.3 heatmap; Hình 5.4 scatter thu nhập–Toán | 🟨 |
 | 5.4 | Hồi quy tuyến tính MLlib (chuẩn hóa, k-fold CV) | | Bảng 5.2 hệ số, R² CV (`ml_hoi_quy_*.csv`, `ml_vif.csv`) | 🟨 |
 | 5.5 | Phân cụm tỉnh KMeans (chọn k bằng silhouette) | | Hình 5.5 PCA 2D tô màu theo cụm (`ml_kmeans_k3_*.csv`, `ml_pca_tai.csv`) | 🟨 |
-| 5.6 | (Tùy chọn) Quan sát theo cụm điểm thi: điểm Văn dồn ở 5,0. Chỉ nêu như quan sát thống kê | | | ⬜ |
+| 5.6 | Quan sát: điểm Văn dồn ở 5,0, chỉ nêu như quan sát thống kê | | H5.6, `van_dinh_5_theo_tinh.csv` | 🟨 |
 | 6 | **Thảo luận** | 1,5 | | ⬜ |
 | 6.1 | Diễn giải; tương quan không phải nhân quả; n=34 nhỏ; ecological fallacy | | | ⬜ |
 | 6.2 | Hạn chế: tự chọn môn (selection bias), dữ liệu cào web, số liệu 2025 vs thi 2026 | | | ⬜ |
@@ -45,15 +45,18 @@ Khổ A4, Times New Roman 13, giãn dòng 1,3. Khoảng 20 trang nội dung, ch�
 
 ## Danh mục hình/bảng cần sinh (script: `notebooks/` hoặc `bao_cao/hinh/`)
 
-- [ ] H3.1 Tỷ lệ có điểm theo môn: trước và sau khi tách `extra`
-- [ ] H4.1 Sơ đồ pipeline
-- [ ] H5.1 Phân phối điểm 11 môn (histogram/violin)
-- [ ] H5.2 Chênh lệch giữa tỉnh theo môn (eta², cột ngang)
-- [ ] H5.3 Heatmap tương quan Spearman KT-XH × điểm
-- [ ] H5.4 Scatter thu nhập bình quân – điểm Toán TB (nhãn tỉnh)
-- [ ] H5.5 Kết quả phân cụm KMeans
-- [ ] B5.1 Top tổ hợp môn tự chọn
-- [ ] B5.2 Hệ số hồi quy + R² cross-validation
+Script: `bao_cao/ve_hinh.py` → `bao_cao/hinh/*.png` (200 dpi, rộng 16 cm, nền trắng). Palette đã kiểm bằng validator của skill dataviz.
+
+- [x] H3.1 Tỷ lệ có điểm theo môn: trước và sau khi tách `extra` (dumbbell)
+- [x] H4.1 Sơ đồ pipeline
+- [x] H5.1 Phổ điểm 11 môn (small multiples, khoảng 0,25)
+- [x] H5.2 eta² theo môn (cột ngang, nhấn mạnh Văn)
+- [x] H5.3 Heatmap Spearman KT-XH × điểm (cũng ghi ra `spark/tuong_quan_spearman.csv`)
+- [x] H5.4 Thu nhập → Toán và Văn (2 panel cùng trục y, tô theo cụm k = 3, R²_cv)
+- [x] H5.5 KMeans k = 3 trên mặt phẳng PCA
+- [x] H5.6 Văn dồn ở 5,0: toàn quốc + theo tỉnh
+- [x] B5.1 Top tổ hợp môn: bảng trong mục ghi chép 2026-11-14
+- [x] B5.2 Hệ số hồi quy + R²_cv: bảng trong mục ghi chép MLlib
 
 ## Ghi chép số liệu để viết (điền khi có)
 
@@ -161,3 +164,29 @@ Tổng cộng có 36 tổ hợp.
 | Miền núi phía Bắc | 7 | 3.111 | 15% | 8,6% | 4,71 | 6,09 | 12% | Cao Bằng, Lai Châu, Lào Cai, Lạng Sơn, Sơn La, Tuyên Quang, Điện Biên |
 
 Khoảng cách Toán giữa cụm đô thị và cụm miền núi là 1,17 điểm, Văn chỉ 0,44 điểm.
+
+### 2026-11-14 — Biểu đồ và các quan sát thêm khi vẽ
+
+- **Sinh học và Tin học không có trong `extra`.** Cột `extra` chỉ có 10 khóa môn. Điểm Sinh và Tin ở cả 34 tỉnh, kể cả 14 tỉnh dùng `extra`, đều nằm trong cột thường (tỷ lệ chọn Sinh ≥ 2,2% ở mọi tỉnh), nên không mất dữ liệu. Có thể nêu trong mục 3.1. Xem `co_diem_theo_mon.csv`.
+- **Điểm lẻ không phải lỗi.** Đề trắc nghiệm mới (đúng/sai, trả lời ngắn) cho điểm lẻ, ví dụ 6,1. Tỷ lệ điểm không phải bội 0,25 theo môn:
+
+  | Môn | Tỷ lệ điểm lẻ |
+  |---|---|
+  | GD KT&PL | 53% |
+  | Địa | 37% |
+  | Sử | 34% |
+  | Sinh | 33% |
+  | Lí | 27% |
+  | Hóa | 26% |
+  | Toán | 14% |
+  | Văn | 0,4% (tự luận, chấm theo bước 0,25) |
+
+  Vì vậy phổ điểm H5.1 được gom vào khoảng rộng 0,25, không lọc bỏ điểm lẻ.
+- **Phổ điểm Toán có hai đỉnh** (khoảng 4,5 và 7–7,75), kèm các gai ở mức cao. Môn Văn lệch phải, đỉnh ở 7,0.
+- **Mục 5.6 – Văn dồn ở 5,0** (`van_dinh_5_theo_tinh.csv`):
+  - Văn có thói quen chấm theo nửa điểm: các mức x,0/x,5 luôn cao hơn x,25/x,75 kề bên. Vì vậy mốc so sánh là các mức cùng độ chẵn, TB(4,5; 5,5), không dùng 4,75/5,25 (sẽ phóng đại).
+  - Toàn quốc: 5,0 điểm chiếm 4,1%, so với 4,5 điểm 2,0% và 5,5 điểm 4,4%. Tỷ số = **1,27**.
+  - Đối chứng: các mức 4,5 / 5,5 / 6,0 có tỷ số 0,73 / 0,86 / 1,04, nên chỉ riêng 5,0 nhô lên.
+  - Theo tỉnh: cao nhất là Lâm Đồng 1,82, Đồng Nai 1,74, Điện Biên 1,59, Vĩnh Long 1,58; thấp nhất (≈ 1,0) là Hưng Yên, Bắc Ninh, Lai Châu, TP.HCM, Hà Nội.
+  - Chỉ trình bày như quan sát thống kê về phân phối điểm, không suy diễn nguyên nhân.
+- **PCA:** PC1 giải thích 68% phương sai (trục mức sống), PC2 12%. Vĩnh Long tách hẳn trên PC2, khớp với điểm Văn TB thấp nhất (5,00).

@@ -117,6 +117,24 @@ def chat_luong(raw, df):
              .set_axis(["chi_so", "gia_tri"], axis=1)
 
 
+def co_diem_theo_mon(raw, df):
+    """Tỷ lệ thí sinh có điểm từng môn: đọc thẳng cột (trước) và sau khi tách `extra`."""
+    truoc = raw.withColumnRenamed("gdcd", "gdktpl").agg(
+        *[F.avg(F.expr(f"try_cast({c} as double)").isNotNull().cast("int")).alias(c) for c in SUBJECTS]
+    ).first().asDict()
+    sau = df.agg(*[F.avg(F.col(c).isNotNull().cast("int")).alias(c) for c in SUBJECTS]).first().asDict()
+    return pd.DataFrame([dict(mon=c, ten_mon=TEN_MON[c], ty_le_truoc=truoc[c], ty_le_sau=sau[c])
+                         for c in SUBJECTS])
+
+
+def pho_diem(df):
+    """Phổ điểm: số bài theo (tỉnh, môn, mức điểm). Điểm là bội của 0,05 -> làm tròn 2 chữ số."""
+    return (df.unpivot(["ma_tinh"], SUBJECTS, "mon", "diem").where(F.col("diem").isNotNull())
+              .withColumn("diem", F.round("diem", 2))
+              .groupBy("ma_tinh", "mon", "diem").count().withColumnRenamed("count", "so_bai")
+              .orderBy("ma_tinh", "mon", "diem"))
+
+
 def theo_tinh(df):
     """Cùng định nghĩa cột với scripts/clean_diemthi.py::aggregate để đối chiếu."""
     co = lambda c: F.col(c).isNotNull().cast("int")
@@ -219,6 +237,8 @@ def main():
     tm_.lap("silver_lam_sach")
 
     save(chat_luong(raw, df), "chat_luong_du_lieu")
+    save(co_diem_theo_mon(raw, df), "co_diem_theo_mon")
+    save(pho_diem(df), "pho_diem")
     tt = theo_tinh(df)
     save(tt, "diemthi_theo_tinh")
     tm, long = tinh_x_mon(df)
