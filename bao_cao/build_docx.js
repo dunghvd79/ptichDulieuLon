@@ -83,19 +83,37 @@ const counters = { hinh: 0, bang: 0 };
 let chapter = "";      // "1".."7", "A", "B" hoặc "" (phần không đánh số)
 const figList = [];
 
-function figure(file, caption) {
+/**
+ * Ảnh + chú thích nằm chung MỘT ô của bảng không viền, hàng không được tách trang (cantSplit),
+ * nên ảnh và chú thích không bao giờ bị tách sang hai trang. (Người dùng đã bắt lỗi này.)
+ */
+function figure(file, caption, widthCm = 14) {
   const { w, h, data } = pngSize(path.join(DIR, "hinh", file));
-  const widthPx = Math.round((16 / 2.54) * 96);
+  const widthPx = Math.round((widthCm / 2.54) * 96);
   counters.hinh += 1;
   const label = `Hình ${chapter}.${counters.hinh}. `;
   figList.push(label + caption);
-  return [
-    new Paragraph({
-      alignment: AlignmentType.CENTER, keepNext: true, spacing: { before: 120, after: 60 },
-      children: [new ImageRun({ type: "png", data, transformation: { width: widthPx, height: Math.round(widthPx * h / w) } })],
-    }),
-    new Paragraph({ style: "HinhCaption", children: [new TextRun({ text: label, bold: true }), ...runs(caption)] }),
-  ];
+  const none = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
+  const nb = { top: none, bottom: none, left: none, right: none };
+  return [new Table({
+    width: { size: TEXT_W, type: WidthType.DXA },
+    columnWidths: [TEXT_W],
+    borders: { ...nb, insideHorizontal: none, insideVertical: none },
+    rows: [new TableRow({
+      cantSplit: true,
+      children: [new TableCell({
+        width: { size: TEXT_W, type: WidthType.DXA }, borders: nb,
+        margins: { top: 60, bottom: 0, left: 0, right: 0 },
+        children: [
+          new Paragraph({
+            alignment: AlignmentType.CENTER, keepNext: true, spacing: { before: 0, after: 40, line: 240 },
+            children: [new ImageRun({ type: "png", data, transformation: { width: widthPx, height: Math.round(widthPx * h / w) } })],
+          }),
+          new Paragraph({ style: "HinhCaption", children: [new TextRun({ text: label, bold: true }), ...runs(caption)] }),
+        ],
+      })],
+    })],
+  })];
 }
 
 function tableCaption(caption) {
@@ -193,8 +211,8 @@ function convert(md) {
     if (t.startsWith("@bang ")) { flush(); blocks.push(tableCaption(t.slice(6))); i++; continue; }
     if (t.startsWith("@hinh ")) {
       flush();
-      const [file, cap] = t.slice(6).split("|").map((s) => s.trim());
-      blocks.push(...figure(file, cap));
+      const [file, cap, cm] = t.slice(6).split("|").map((s) => s.trim());
+      blocks.push(...figure(file, cap, cm ? parseFloat(cm) : 14));
       i++; continue;
     }
     if (t.startsWith("@ref ")) {
@@ -279,7 +297,7 @@ function coverPage() {
       },
       children: [ph("[Chèn logo Đại học Phenikaa]", { size: 24, color: "666666" })],
     }),
-    center("BÁO CÁO ĐỒ ÁN CUỐI KỲ", { bold: true, size: 32, after: 120 }),
+    center("BÁO CÁO BÀI TẬP LỚN", { bold: true, size: 32, after: 120 }),
     center("HỌC PHẦN: TÍCH HỢP VÀ PHÂN TÍCH DỮ LIỆU LỚN", { bold: true, size: 26, after: 600 }),
     center("ĐỀ TÀI", { bold: true, size: 26, after: 120 }),
     center(COVER_TITLE, { bold: true, size: 30, after: 900 }),
@@ -294,60 +312,37 @@ function coverPage() {
       new TextRun({ text: " năm 2026", font: FONT, size: SZ })], { before: 1200 }),
   ];
 }
-function frontTitle(text) { // tiêu đề phần đầu: vào mục lục như chương nhưng không đánh số
-  return new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun(text)] });
+function plainTitle(text, pageBreak) { // tiêu đề phần đầu, không vào mục lục
+  return new Paragraph({ style: "TitleNoToc", pageBreakBefore: pageBreak, spacing: { before: pageBreak ? 0 : 480, after: 240 }, children: [new TextRun(text)] });
 }
-function plainTitle(text) { // tiêu đề không vào mục lục (Mục lục, Danh mục…)
-  return new Paragraph({ style: "TitleNoToc", pageBreakBefore: true, children: [new TextRun(text)] });
-}
-function gridTable(header, rows, ratios) {
+function gridTable(header, rows) {
   return mdTable(["| " + header.join(" | ") + " |", "|" + header.map(() => "---").join("|") + "|",
     ...rows.map((r) => "| " + r.join(" | ") + " |")]);
 }
+/** Phần đầu: mục lục; danh mục hình + danh mục bảng + chữ viết tắt dồn chung để tiết kiệm trang.
+ *  Không có lời cảm ơn và bảng phân công (người dùng yêu cầu bỏ). */
 function frontMatter() {
-  const pc = [
-    frontTitle("Bảng phân công nhiệm vụ"),
-    new Paragraph({ children: runs("Bảng dưới đây ghi nhận nhiệm vụ và mức độ đóng góp của từng thành viên trong nhóm.") }),
-    gridTable(["STT", "Họ và tên", "MSSV", "Nhiệm vụ chính", "Đóng góp"], [
-      ["1", "**[Họ tên sinh viên 1]**", "**[MSSV 1]**", "**[Thu thập và tích hợp dữ liệu, xây dựng pipeline Spark]**", "**[34%]**"],
-      ["2", "**[Họ tên sinh viên 2]**", "**[MSSV 2]**", "**[Phân tích bằng Spark MLlib, trực quan hóa kết quả]**", "**[33%]**"],
-      ["3", "**[Họ tên sinh viên 3]**", "**[MSSV 3]**", "**[Viết báo cáo, chuẩn bị slide thuyết trình]**", "**[33%]**"],
-    ]),
-    new Paragraph({ children: [] }),
-    frontTitle("Lời cảm ơn"),
-    new Paragraph({ children: runs("Nhóm em xin chân thành cảm ơn **[TS. Nguyễn Văn A]**, giảng viên học phần Tích hợp và phân tích dữ liệu lớn, đã tận tình hướng dẫn và góp ý trong suốt quá trình thực hiện đồ án.") }),
-    new Paragraph({ children: runs("Nhóm em cũng xin cảm ơn Trường Công nghệ Thông tin, Đại học Phenikaa đã tạo điều kiện học tập và nghiên cứu; cảm ơn Cục Thống kê đã công bố Niên giám thống kê 2025 và cộng đồng đã chia sẻ dữ liệu điểm thi, giúp đồ án có nguồn số liệu để thực hiện.") }),
-    new Paragraph({ children: runs("Do thời gian và kiến thức còn hạn chế, báo cáo khó tránh khỏi thiếu sót. Nhóm em rất mong nhận được ý kiến góp ý của thầy cô để hoàn thiện hơn.") }),
-    new Paragraph({ alignment: AlignmentType.RIGHT, spacing: { before: 240 }, children: runs("*Hà Nội, tháng* **[11]** *năm 2026*") }),
-    new Paragraph({ alignment: AlignmentType.RIGHT, children: runs("*Nhóm sinh viên thực hiện*") }),
-
-    plainTitle("MỤC LỤC"),
+  return [
+    plainTitle("MỤC LỤC", false),
     new TableOfContents("Mục lục", { hyperlink: true, headingStyleRange: "1-3" }),
-    plainTitle("DANH MỤC HÌNH"),
+    plainTitle("DANH MỤC HÌNH", true),
     new TableOfContents("Danh mục hình", { hyperlink: true, stylesWithLevels: [new StyleLevel("HinhCaption", 1)] }),
-    plainTitle("DANH MỤC BẢNG"),
+    plainTitle("DANH MỤC BẢNG", false),
     new TableOfContents("Danh mục bảng", { hyperlink: true, stylesWithLevels: [new StyleLevel("BangCaption", 1)] }),
-
-    frontTitle("Danh mục chữ viết tắt"),
+    plainTitle("DANH MỤC CHỮ VIẾT TẮT", false),
     gridTable(["Viết tắt", "Ý nghĩa"], [
-      ["CSV", "Định dạng tệp dữ liệu dạng bảng, các giá trị cách nhau bằng dấu phẩy (Comma-Separated Values)"],
-      ["GD KT&PL", "Giáo dục kinh tế và pháp luật"],
+      ["CSV", "Định dạng tệp dữ liệu dạng bảng, các giá trị cách nhau bằng dấu phẩy"],
       ["GRDP", "Tổng sản phẩm trên địa bàn tỉnh (Gross Regional Domestic Product)"],
       ["HDI", "Chỉ số phát triển con người (Human Development Index)"],
       ["HS/GV", "Số học sinh trên một giáo viên"],
-      ["KT-XH", "Kinh tế – xã hội"],
       ["MLlib", "Thư viện học máy của Apache Spark"],
-      ["NN", "Ngoại ngữ"],
       ["PCA", "Phân tích thành phần chính (Principal Component Analysis)"],
-      ["PDF", "Định dạng tài liệu di động (Portable Document Format)"],
       ["SBD", "Số báo danh"],
       ["TB", "Trung bình"],
       ["THPT", "Trung học phổ thông"],
       ["UDF", "Hàm do người dùng tự định nghĩa (User-Defined Function)"],
-      ["VIF", "Hệ số phóng đại phương sai (Variance Inflation Factor)"],
     ]),
   ];
-  return pc;
 }
 
 // ------------------------------------------------------------------ tài liệu
@@ -363,16 +358,16 @@ const heading = (size, extra = {}) => ({
 
 const doc = new Document({
   creator: "Nhóm sinh viên",
-  title: "Báo cáo đồ án: Điểm thi THPT 2026 và điều kiện kinh tế – xã hội 34 tỉnh",
+  title: "Báo cáo bài tập lớn: Điểm thi THPT 2026 và điều kiện kinh tế – xã hội 34 tỉnh",
   // Không bật features.updateFields: Word sẽ hiện hộp thoại khi mở. Mục lục được cập nhật
   // bằng cap_nhat_word.ps1 (Word COM) rồi lưu sẵn vào file.
   numbering: { config: numberingConfig },
   styles: {
     default: {
-      document: { run: { font: FONT, size: SZ }, paragraph: { spacing: { after: 120, line: 360 }, alignment: AlignmentType.JUSTIFIED } },
-      heading1: heading(28, { before: 0, after: 360, paragraph: { alignment: AlignmentType.CENTER, pageBreakBefore: true }, run: { allCaps: true } }),
-      heading2: heading(SZ, { before: 240, after: 120 }),
-      heading3: heading(SZ, { before: 180, after: 80, run: { italics: true } }),
+      document: { run: { font: FONT, size: SZ }, paragraph: { spacing: { after: 100, line: 360 }, alignment: AlignmentType.JUSTIFIED } },
+      heading1: heading(28, { before: 360, after: 200, paragraph: { alignment: AlignmentType.CENTER }, run: { allCaps: true } }),
+      heading2: heading(SZ, { before: 180, after: 80 }),
+      heading3: heading(SZ, { before: 120, after: 60, run: { italics: true } }),
       heading4: heading(SZ, { before: 120, after: 60, run: { bold: false, italics: true } }),
     },
     paragraphStyles: [
@@ -422,5 +417,5 @@ if (JSON.stringify(got) !== JSON.stringify(expected)) {
 
 Packer.toBuffer(doc).then((buf) => {
   fs.writeFileSync(OUT, buf);
-  console.log(`[docx] ${path.basename(OUT)}: ${figList.length} hình, ${MD.split("@bang").length - 1} bảng trong nội dung + 3 bảng phần đầu`);
+  console.log(`[docx] ${path.basename(OUT)}: ${figList.length} hình, ${MD.split("@bang").length - 1} bảng trong nội dung + 1 bảng chữ viết tắt`);
 });

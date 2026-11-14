@@ -47,7 +47,7 @@ Lưu ý khi nói: luôn nói đủ cụm "16% **sự khác nhau về điểm**",
 
 ### Ghép hai câu hỏi: phát hiện chính (khoảng 20 giây)
 
-> "Đặt hai kết quả cạnh nhau thì thấy một điều bất ngờ. Môn Văn là môn các tỉnh chênh nhau nhiều nhất, nhưng lại là môn **ít liên quan đến giàu nghèo nhất**. Nghĩa là chênh lệch điểm Văn giữa các tỉnh là có thật, nhưng đến từ một nguyên nhân khác, chứ không phải điều kiện kinh tế. Nhóm cho rằng đây là điều đáng chú ý nhất của đồ án, và là hướng để tìm hiểu thêm."
+> "Đặt hai kết quả cạnh nhau thì thấy một điều bất ngờ. Môn Văn là môn các tỉnh chênh nhau nhiều nhất, nhưng lại là môn **ít liên quan đến giàu nghèo nhất**. Nghĩa là chênh lệch điểm Văn giữa các tỉnh là có thật, nhưng đến từ một nguyên nhân khác, chứ không phải điều kiện kinh tế. Nhóm cho rằng đây là điều đáng chú ý nhất của bài tập lớn, và là hướng để tìm hiểu thêm."
 
 ---
 
@@ -104,11 +104,11 @@ Lưu ý khi nói: luôn nói đủ cụm "16% **sự khác nhau về điểm**",
 
 **Nếu thầy hỏi "115 MB thì sao gọi là dữ liệu lớn?":**
 
-> "Đúng là với dữ liệu hiện tại, pandas trên một máy vẫn chạy được, và nhóm đã dùng pandas để kiểm chứng. Điểm nhấn của đồ án là phần tích hợp nhiều nguồn và một pipeline có thể mở rộng. Nếu thêm điểm các năm trước hoặc điểm từng câu hỏi, dữ liệu sẽ lớn gấp nhiều lần, lúc đó chỉ cần chạy cùng đoạn mã trên một cụm máy."
+> "Đúng là với dữ liệu hiện tại, pandas trên một máy vẫn chạy được, và nhóm đã dùng pandas để kiểm chứng. Điểm nhấn của bài tập lớn là phần tích hợp nhiều nguồn và một pipeline có thể mở rộng. Nếu thêm điểm các năm trước hoặc điểm từng câu hỏi, dữ liệu sẽ lớn gấp nhiều lần, lúc đó chỉ cần chạy cùng đoạn mã trên một cụm máy."
 
 **Nếu thầy hỏi "Spark chạy trên mấy máy?":**
 
-> "Trong đồ án, Spark chạy ở chế độ local, trên một máy với 8 nhân CPU. Mỗi nhân đóng vai một 'máy con'. Chuyển lên cụm nhiều máy chỉ cần đổi cấu hình, không cần sửa mã xử lý."
+> "Trong bài tập lớn, Spark chạy ở chế độ local, trên một máy với 8 nhân CPU. Mỗi nhân đóng vai một 'máy con'. Chuyển lên cụm nhiều máy chỉ cần đổi cấu hình, không cần sửa mã xử lý."
 
 **Nếu thầy hỏi "lazy evaluation là gì?":**
 
