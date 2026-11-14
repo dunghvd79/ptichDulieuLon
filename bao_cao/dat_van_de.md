@@ -67,7 +67,7 @@ Dữ liệu được xử lý bằng Apache Spark, một công cụ xử lý d�
 
 **Nếu thầy hỏi "hai phần ba là đo thế nào?":**
 
-> "Nhóm lấy thu nhập để dự đoán điểm Toán của từng tỉnh, nhưng mỗi lần đều giấu đi một vài tỉnh, xây công thức trên các tỉnh còn lại rồi đoán thử các tỉnh bị giấu. Cách đoán này giảm được khoảng 65% sai số so với việc đoán mọi tỉnh bằng điểm trung bình cả nước. Làm vậy để chắc rằng công thức đoán được cả những tỉnh nó chưa từng thấy, chứ không chỉ khớp với dữ liệu đã có."
+> "Nhóm lấy thu nhập để dự đoán điểm Toán của từng tỉnh, nhưng mỗi lần đều giấu đi một vài tỉnh, xây công thức trên các tỉnh còn lại rồi đoán thử các tỉnh bị giấu. Cách đoán này giải thích được khoảng 65% sự chênh lệch điểm Toán giữa các tỉnh; sai số trung bình giảm từ 0,5 điểm (khi đoán mọi tỉnh bằng điểm trung bình cả nước) xuống còn 0,3 điểm. Làm vậy để chắc rằng công thức đoán được cả những tỉnh nó chưa từng thấy, chứ không chỉ khớp với dữ liệu đã có."
 
 ### Câu hỏi 2: Môn nào chênh lệch nhiều nhất (khoảng 30 giây, chiếu hình H5.2)
 
@@ -614,7 +614,7 @@ Tổ hợp 2 môn tự chọn, tính trên thí sinh thi đủ 4 môn:
 Ba điểm đáng chú ý:
 - **Thu nhập người dân và HDI** liên quan mạnh hơn **GRDP**, tức giá trị kinh tế tỉnh làm ra. Ví dụ Quảng Ninh có GRDP bình quân đầu người cao nhất cả nước, nhưng thu nhập của người dân không cao tương ứng. Điều tác động đến học sinh là đời sống của gia đình, không phải sản lượng kinh tế của tỉnh.
 - **Tỷ lệ chọn thi Ngoại ngữ** đi theo mức sống còn sát hơn cả điểm Toán (0,85–0,86).
-- **Số học sinh trên một giáo viên** gần như không liên quan (0,15). Có thể vì chỉ tiêu này chênh lệch ít giữa các tỉnh, chủ yếu từ 17 đến 24 học sinh/giáo viên.
+- **Số học sinh trên một giáo viên** gần như không liên quan (0,15). Có thể vì chỉ tiêu này chênh lệch ít giữa các tỉnh, từ 17 đến 26 học sinh/giáo viên, một nửa số tỉnh nằm trong khoảng 18–22.
 
 #### b) Hồi quy: thu nhập dự đoán được bao nhiêu phần điểm thi?
 
@@ -799,7 +799,7 @@ Phần câu hỏi 1 và câu hỏi 2 đã có trong mục B. Dưới đây là b
 **Câu trả lời dự phòng:**
 
 **"R² là gì?"**
-> "R² cho biết cách đoán của mô hình tốt hơn bao nhiêu so với đoán đại bằng điểm trung bình cả nước. R² bằng 0,65 nghĩa là sai số giảm được 65%. Nhóm tính R² trên các tỉnh bị giấu đi, nên đây là khả năng đoán tỉnh mới, không phải độ khớp với dữ liệu cũ."
+> "R² cho biết cách đoán của mô hình tốt hơn bao nhiêu so với đoán đại bằng điểm trung bình cả nước. R² bằng 0,65 nghĩa là mô hình giải thích được khoảng 65% sự chênh lệch điểm Toán giữa các tỉnh; tính theo điểm, sai số trung bình giảm từ 0,5 xuống 0,3 điểm. Nhóm tính R² trên các tỉnh bị giấu đi, nên đây là khả năng đoán tỉnh mới, không phải độ khớp với dữ liệu cũ."
 
 **"Vì sao không dùng nhiều chỉ tiêu hơn cho mô hình tốt hơn?"**
 > "Nhóm đã thử. Mô hình 4 chỉ tiêu khớp dữ liệu cũ tốt hơn, nhưng khi đoán các tỉnh bị giấu thì lại kém hơn mô hình chỉ có thu nhập. Với 34 tỉnh, thêm chỉ tiêu chỉ làm mô hình học thuộc dữ liệu."
