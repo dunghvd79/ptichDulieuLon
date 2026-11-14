@@ -44,6 +44,7 @@ spark/             pipeline PySpark (xem spark/README.md)
   _session.py        SparkSession local đã xử lý các lỗi Windows
   etl_diemthi.py     Bronze/Silver/Gold -> data/processed/spark/*.csv (~65 giây)
   doi_chieu_pandas.py  so Spark vs pandas (60/60 cột khớp)
+  mllib_tinh.py      hồi quy repeated k-fold + KMeans/PCA -> spark/ml_*.csv (~4 phút; --chi-phan-cum ~20 giây)
 bao_cao/DE_CUONG.md  đề cương báo cáo ~20 trang + trạng thái từng mục + số liệu đã ghi
 ```
 
@@ -118,10 +119,9 @@ Nhật ký tiến độ: mỗi phiên cập nhật mục này và mục "Ghi ch�
 
 - [x] **PySpark ETL** (2026-11-14): `spark/etl_diemthi.py`, pandas UDF parse `extra`, khớp bản pandas 60/60 cột.
 - [x] Bảng phân phối tỉnh × môn, chênh lệch giữa tỉnh theo môn (eta²), tổ hợp môn (2026-11-14).
-- [ ] **Spark MLlib** — BƯỚC TIẾP THEO (`spark/mllib_*.py`, đọc `data/processed/spark/diemthi_x_ktxh_34tinh.csv`):
-  - Hồi quy tuyến tính, chuẩn hóa biến, cross-validation k-fold vì n nhỏ.
-  - KMeans phân cụm tỉnh, chọn k bằng silhouette.
-- [ ] Biểu đồ cho báo cáo (danh mục H/B trong `bao_cao/DE_CUONG.md`).
+- [x] **Spark MLlib** (2026-11-14): `spark/mllib_tinh.py`, đã chạy xong hồi quy repeated 5-fold × 5 lần và KMeans k = 2..6. Kết quả ghi trong `bao_cao/DE_CUONG.md`.
+- [ ] **Biểu đồ cho báo cáo** — BƯỚC TIẾP THEO (danh mục H/B trong `bao_cao/DE_CUONG.md`).
+- [ ] (Tùy chọn) Hồi quy: thử lưới regParam cho ridge (hiện chỉ có 0,5, quá mạnh) bằng nested CV.
 - [ ] Viết báo cáo ~20 trang theo `bao_cao/DE_CUONG.md`.
 - [ ] (Tuỳ chọn) Phân tích theo cụm điểm thi (`ma_diem_thi` = 3 số sau mã tỉnh trong SBD), ví dụ hiện tượng điểm Văn dồn ở mức 5,0. Chỉ trình bày như "quan sát thống kê", không kết luận gian lận.
 - [ ] Notebook/biểu đồ, dashboard, báo cáo.

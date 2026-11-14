@@ -5,6 +5,7 @@
 | `_session.py` | Tạo SparkSession local, đã xử lý các lỗi khi chạy trên Windows |
 | `etl_diemthi.py` | Bronze → Silver → Gold: 34 CSV điểm thi → bảng tổng hợp + ghép KT-XH |
 | `doi_chieu_pandas.py` | So kết quả Spark với bản pandas (`scripts/`). Hiện tại 60/60 cột khớp |
+| `mllib_tinh.py` | MLlib trên 34 tỉnh: hồi quy (Pipeline + repeated k-fold), VIF, KMeans + silhouette, PCA → `ml_*.csv`. Cờ `--chi-phan-cum` chỉ chạy phần phân cụm |
 
 Đầu ra (chỉ có số liệu tổng hợp, không có SBD): `data/processed/spark/`
 

@@ -33,8 +33,8 @@ Khổ A4, Times New Roman 13, giãn dòng 1,3. Khoảng 20 trang nội dung, ch�
 | 5.1 | Mô tả: phân phối điểm từng môn toàn quốc; tổ hợp môn phổ biến | | Hình 5.1 histogram; Bảng 5.1 tổ hợp | 🟨 |
 | 5.2 | CH2: Môn nào chênh lệch giữa các tỉnh nhiều nhất (eta², độ lệch chuẩn giữa tỉnh, khoảng cách) | | `chenh_lech_giua_tinh_theo_mon.csv`; Hình 5.2 | 🟨 |
 | 5.3 | CH1: Tương quan KT-XH ↔ điểm (Spearman, n=34) | | Hình 5.3 heatmap; Hình 5.4 scatter thu nhập–Toán | 🟨 |
-| 5.4 | Hồi quy tuyến tính MLlib (chuẩn hóa, k-fold CV) | | Bảng 5.2 hệ số, R² CV | ⬜ |
-| 5.5 | Phân cụm tỉnh KMeans (chọn k bằng silhouette) | | Hình 5.5 bản đồ/biểu đồ cụm | ⬜ |
+| 5.4 | Hồi quy tuyến tính MLlib (chuẩn hóa, k-fold CV) | | Bảng 5.2 hệ số, R² CV (`ml_hoi_quy_*.csv`, `ml_vif.csv`) | 🟨 |
+| 5.5 | Phân cụm tỉnh KMeans (chọn k bằng silhouette) | | Hình 5.5 PCA 2D tô màu theo cụm (`ml_kmeans_k3_*.csv`, `ml_pca_tai.csv`) | 🟨 |
 | 5.6 | (Tùy chọn) Quan sát theo cụm điểm thi: điểm Văn dồn ở 5,0. Chỉ nêu như quan sát thống kê | | | ⬜ |
 | 6 | **Thảo luận** | 1,5 | | ⬜ |
 | 6.1 | Diễn giải; tương quan không phải nhân quả; n=34 nhỏ; ecological fallacy | | | ⬜ |
@@ -112,3 +112,52 @@ Nhận xét:
 | Ngoại ngữ + Sử | 7,6% |
 
 Tổng cộng có 36 tổ hợp.
+
+### 2026-11-14 — Spark MLlib (`spark/mllib_tinh.py`, `data/processed/spark/ml_*.csv`)
+
+**Hồi quy.** Pipeline gồm VectorAssembler → StandardScaler → LinearRegression.
+- Đánh giá bằng repeated 5-fold × 5 lần lặp, seed 2026.
+- R²_cv = 1 − SSE / SSE của mốc "đoán bằng trung bình tập train". Đây là R² ngoài mẫu.
+
+| Biến phụ thuộc | M1 log(thu nhập) | M2 HDI | M3 log(GRDP) | M4 đa biến OLS | M5 đa biến ridge λ=0,5 |
+|---|---|---|---|---|---|
+| Toán TB | **0,65** | 0,56 | 0,26 | 0,62 | 0,48 |
+| Văn TB | 0,06 | 0,04 | −0,02 | −0,08 | 0,08 |
+| Điểm TB chung | **0,35** | 0,30 | 0,08 | 0,32 | 0,27 |
+
+Độ lệch chuẩn của R²_cv giữa các lần lặp ≤ 0,04 (riêng M4–Văn là 0,13). Với Toán, RMSE giảm từ 0,50 (mốc) xuống 0,30.
+
+**OLS đa biến M4 trên toàn bộ 34 tỉnh, Toán TB** (hệ số chuẩn hóa, p-value). R² = 0,77, R² hiệu chỉnh = 0,73:
+
+| Biến | Hệ số chuẩn hóa | p-value |
+|---|---|---|
+| log(thu nhập) | +0,46 | < 0,001 |
+| LĐ qua đào tạo | +0,17 | 0,005 |
+| Tỷ lệ đô thị | −0,15 | 0,04 |
+| HS/GV THPT | −0,10 | 0,06 |
+
+- VIF của các biến từ 1,2 đến 2,4, nên không có đa cộng tuyến đáng ngại.
+- Hệ số âm của đô thị là "khi đã giữ cố định thu nhập". Không diễn giải thành "đô thị hóa làm giảm điểm".
+
+**Nhận xét cho báo cáo:**
+- Chỉ một biến log(thu nhập) dự đoán ngoài mẫu tốt nhất. Thêm biến làm R² trong mẫu tăng lên 0,77 nhưng R²_cv không tăng. Đây là ví dụ đẹp về overfitting khi n = 34.
+- Thu nhập người dân và HDI giải thích tốt hơn nhiều so với GRDP (0,65 so với 0,26).
+- Văn: R²_cv ≈ 0, tức KT-XH không dự đoán được Văn. Văn lại có eta² giữa tỉnh cao nhất (0,163). Kết hợp hai điều này: chênh lệch Văn giữa tỉnh là có thật nhưng không đến từ điều kiện kinh tế – xã hội. Đây là kết luận chính cho câu hỏi 2, nối sang mục 5.6.
+- Ridge λ = 0,5 quá mạnh nên underfit. Nếu cần thì thử thêm lưới λ (nested CV).
+
+**KMeans** trên 9 biến chuẩn hóa: log(thu nhập), HDI, đô thị, LĐ qua đào tạo, hộ nghèo, internet, Toán TB, Văn TB, tỷ lệ thi Ngoại ngữ.
+
+| k | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|
+| Silhouette | **0,536** | 0,489 | 0,363 | 0,387 | 0,352 |
+
+- k = 2 tách 7 tỉnh miền núi phía Bắc khỏi 27 tỉnh còn lại.
+- Báo cáo dùng **k = 3**: silhouette gần bằng và dễ diễn giải hơn.
+
+| Cụm | Số tỉnh | Thu nhập BQ (nghìn đồng/tháng) | Đô thị | Hộ nghèo | Toán TB | Văn TB | Tỷ lệ thi Ngoại ngữ | Các tỉnh |
+|---|---|---|---|---|---|---|---|---|
+| Đô thị – thu nhập cao | 9 | 6.777 | 55% | 0,5% | 5,88 | 6,53 | 34% | Hà Nội, TP.HCM, Hải Phòng, Đà Nẵng, Bắc Ninh, Quảng Ninh, Đồng Nai, Huế, Ninh Bình |
+| Trung bình | 18 | 5.094 | 27% | 1,7% | 5,44 | 6,42 | 21% | Còn lại |
+| Miền núi phía Bắc | 7 | 3.111 | 15% | 8,6% | 4,71 | 6,09 | 12% | Cao Bằng, Lai Châu, Lào Cai, Lạng Sơn, Sơn La, Tuyên Quang, Điện Biên |
+
+Khoảng cách Toán giữa cụm đô thị và cụm miền núi là 1,17 điểm, Văn chỉ 0,44 điểm.
