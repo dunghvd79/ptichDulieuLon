@@ -158,7 +158,8 @@ Số liệu: `data/processed/spark/chat_luong_du_lieu.csv`, `co_diem_theo_mon.cs
 Phần này gồm hai bước: **E.1 làm sạch** từng nguồn, rồi **E.2 ghép** hai nguồn thành một bảng chung.
 
 ### E.1. Làm sạch dữ liệu
-Ghép hai bộ dữ liệu theo tỉnh nghe đơn giản, nhưng nhóm gặp 5 vấn đề. Phần lớn trong số đó **không gây ra lỗi nào khi chạy chương trình**: nếu không kiểm tra kỹ, kết quả vẫn ra nhưng sai. Mỗi vấn đề dưới đây được trình bày theo ba bước: vấn đề gặp phải, giải pháp và kết quả.
+
+Trước khi ghép được hai bộ dữ liệu, nhóm gặp 5 vấn đề. Phần lớn trong số đó **không gây ra lỗi nào khi chạy chương trình**: nếu không kiểm tra kỹ, kết quả vẫn ra nhưng sai. Mỗi vấn đề dưới đây được trình bày theo ba bước: vấn đề gặp phải, giải pháp và kết quả.
 
 #### Vấn đề 1: Điểm thi bị "giấu" trong một cột văn bản
 
