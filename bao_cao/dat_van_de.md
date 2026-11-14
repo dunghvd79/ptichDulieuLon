@@ -463,7 +463,7 @@ Pipeline có 5 bước, khớp với hình H4.1. Ba bước đầu đi theo các
 |---|---|---|---|---|---|
 | 1. Đọc | Bronze | Đọc 34 file CSV, giữ nguyên mọi giá trị dạng chữ | Đọc nhiều file song song | 1.200.202 dòng, chia 8 phần | 8 giây |
 | 2. Làm sạch | Silver | Giải mã cột `extra`, chuẩn hóa 11 môn, xóa số báo danh | pandas UDF (xử lý theo lô) | 1.200.202 thí sinh, có điểm Toán 98,6% | 16 giây |
-| 3. Tổng hợp | Gold | Gom theo tỉnh, theo tỉnh × môn; tính phổ điểm, eta², tổ hợp môn | groupBy, unpivot, window | 34 tỉnh × 11 môn, 9 bảng tổng hợp | 19 giây |
+| 3. Tổng hợp | Gold | Gom theo tỉnh, theo tỉnh × môn; tính phổ điểm, eta², tổ hợp môn | groupBy, unpivot, window | 34 tỉnh × 11 môn, 8 bảng tổng hợp | 19 giây |
 | 4. Ghép | — | Nối bảng điểm thi với bảng Niên giám theo mã tỉnh | join | Bảng chung 34 × 43 | 3 giây |
 | 5. Phân tích | — | Hồi quy, phân cụm tỉnh | Spark MLlib | Trả lời 2 câu hỏi nghiên cứu | khoảng 4 phút |
 
@@ -529,7 +529,7 @@ Toàn bộ cách xử lý được đóng gói vào một file dùng chung (`spa
 | **Tổng bước 1–4** | **khoảng 52 giây** |
 | 5. Phân tích (MLlib) | khoảng 4 phút |
 
-Với lượng dữ liệu hiện tại, Spark không nhanh hơn pandas đáng kể, vì thời gian khởi động và chia việc chiếm phần lớn. Lợi thế của Spark thể hiện khi dữ liệu lớn hơn nhiều lần, lúc pandas không còn chứa nổi trong bộ nhớ một máy.
+Với lượng dữ liệu nhỏ như hiện tại, một phần đáng kể thời gian là chi phí cố định: khởi động Spark (6 giây) và chia, gộp việc giữa các nhân. Lợi thế của Spark thể hiện rõ khi dữ liệu lớn hơn nhiều lần, lúc một máy không còn chứa nổi toàn bộ dữ liệu trong bộ nhớ. Nhóm chưa đo so sánh thời gian chạy giữa Spark và pandas; đây là một hướng bổ sung.
 
 ## H. Lời nói mẫu khi thuyết trình (khoảng 60 giây, chiếu hình H4.1)
 
