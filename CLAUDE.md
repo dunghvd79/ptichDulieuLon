@@ -6,7 +6,7 @@ Hướng dẫn và bối cảnh cho Claude (Claude Code / IDE agent) khi làm vi
 ## 1. Bối cảnh
 
 - Đồ án cuối kỳ môn **Tích hợp và phân tích dữ liệu lớn** (Kỳ 1 – Năm 4), Trường Công nghệ Thông tin, ĐH Phenikaa.
-- Repo GitHub: `https://github.com/dunghvd79/ptichDulieuLon` (nên để private).
+- Repo GitHub: `https://github.com/dunghvd79/ptichDulieuLon`, để **public** (người dùng đồng ý 2026-11-14). Chỉ chứa code, hình và số liệu tổng hợp theo tỉnh, không bao giờ đẩy dữ liệu cấp thí sinh.
 - Thư mục local (Windows): `E:\2026 Year\Ki_1_Nam_4\cuoiki_PtichDulieuLon`.
 - **Đề tài:** Điểm thi tốt nghiệp THPT 2026 và điều kiện kinh tế – xã hội theo tỉnh.
 - **Câu hỏi nghiên cứu:**
@@ -131,10 +131,10 @@ Nhật ký tiến độ: mỗi phiên cập nhật mục này và mục "Ghi ch�
   - Quyền riêng tư: xóa SBD từ bước 2, chỉ công bố số liệu tổng hợp. Ý này đã bỏ khỏi hình H4.1, cần viết trong báo cáo mục 2.4.
 - [ ] **Viết báo cáo** — đang làm. Bản nháp nội dung nằm trong `bao_cao/dat_van_de.md`.
   - Đã có đủ chương 1–7 và tài liệu tham khảo (2026-11-14). Mỗi chương có đoạn báo cáo kèm lời nói mẫu. Spearman, eta², R², KMeans, silhouette, PCA đều đã có giải thích đời thường và ví dụ.
-  - Ước tính khoảng 27 trang (8.100 chữ, 170 dòng bảng, 8 hình), dài hơn mục tiêu 20 trang; chương 5 dài nhất. Người dùng chưa quyết cắt gọn hay giữ.
-  - Các tài liệu tham khảo đánh dấu (\*) cần kiểm tra lại số hiệu, ngày ban hành.
+  - Ước tính khoảng 27 trang (8.100 chữ, 170 dòng bảng, 8 hình). Người dùng chấp nhận dài hơn 20 trang, **không cắt gọn**.
+  - Tài liệu tham khảo có 2 mục đánh dấu (\*) chưa chắc số hiệu/ngày; người dùng chấp nhận để nguyên.
   - BƯỚC TIẾP THEO: chuyển sang .docx. Người dùng dặn **dừng lại hỏi trước khi làm Word**.
-  - Repo GitHub đang để PUBLIC; đã báo người dùng, chờ họ quyết định chuyển sang private.
+  - Khi làm Word: còn phải hỏi trường có mẫu bìa hoặc quy định trình bày riêng không.
   - Người dùng chuộng khung **Vấn đề → Giải pháp → Kết quả** và ngôn ngữ đời thường.
 - [ ] (Tùy chọn) Hồi quy: thử lưới regParam cho ridge (hiện chỉ có 0,5, quá mạnh) bằng nested CV.
 - [x] Điểm Văn dồn ở 5,0 **ở cấp tỉnh** (H5.6). So với mốc 4,5/5,5, không dùng 4,75/5,25, vì Văn được chấm theo nửa điểm.
