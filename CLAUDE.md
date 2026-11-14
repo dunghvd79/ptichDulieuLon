@@ -1,11 +1,11 @@
-# CLAUDE.md — Đồ án "Tích hợp và phân tích dữ liệu lớn"
+# CLAUDE.md — Bài tập lớn "Tích hợp và phân tích dữ liệu lớn"
 
 Hướng dẫn và bối cảnh cho Claude (Claude Code / IDE agent) khi làm việc trong repo này.
 **Luôn trả lời người dùng bằng tiếng Việt.**
 
 ## 1. Bối cảnh
 
-- Đồ án cuối kỳ môn **Tích hợp và phân tích dữ liệu lớn** (Kỳ 1 – Năm 4), Trường Công nghệ Thông tin, ĐH Phenikaa.
+- **Bài tập lớn** (KHÔNG gọi là đồ án) môn **Tích hợp và phân tích dữ liệu lớn** (Kỳ 1 – Năm 4), Trường Công nghệ Thông tin, ĐH Phenikaa.
 - Repo GitHub: `https://github.com/dunghvd79/ptichDulieuLon`, để **public** (người dùng đồng ý 2026-11-14). Chỉ chứa code, hình và số liệu tổng hợp theo tỉnh, không bao giờ đẩy dữ liệu cấp thí sinh.
 - Thư mục local (Windows): `E:\2026 Year\Ki_1_Nam_4\cuoiki_PtichDulieuLon`.
 - **Đề tài:** Điểm thi tốt nghiệp THPT 2026 và điều kiện kinh tế – xã hội theo tỉnh.
@@ -13,7 +13,7 @@ Hướng dẫn và bối cảnh cho Claude (Claude Code / IDE agent) khi làm vi
   - Tỉnh giàu hơn, đô thị hóa cao hơn, điều kiện giáo dục tốt hơn có điểm thi cao hơn không?
   - Môn nào chênh lệch giữa các tỉnh nhiều nhất?
 - **Đơn vị phân tích:** 34 tỉnh, thành phố sau sắp xếp hành chính (hiệu lực 01/07/2025, Nghị quyết 202/2025/QH15).
-- Yêu cầu của môn: phải thể hiện được **tích hợp nhiều nguồn** và dùng **công cụ Big Data** (Spark, MLlib…). Một mình bộ điểm thi (1,2 triệu dòng) chưa đủ "lớn", nên điểm nhấn của đồ án là phần tích hợp và pipeline.
+- Yêu cầu của môn: phải thể hiện được **tích hợp nhiều nguồn** và dùng **công cụ Big Data** (Spark, MLlib…). Một mình bộ điểm thi (1,2 triệu dòng) chưa đủ "lớn", nên điểm nhấn của bài tập lớn là phần tích hợp và pipeline.
 
 ## 2. Nguồn dữ liệu
 
@@ -136,9 +136,9 @@ Nhật ký tiến độ: mỗi phiên cập nhật mục này và mục "Ghi ch�
   - Quyền riêng tư: xóa SBD từ bước 2, chỉ công bố số liệu tổng hợp. Ý này đã bỏ khỏi hình H4.1, cần viết trong báo cáo mục 2.4.
 - [ ] **Viết báo cáo** — đang làm. Bản nháp nội dung nằm trong `bao_cao/dat_van_de.md`.
   - Đã có đủ chương 1–7 và tài liệu tham khảo (2026-11-14). Mỗi chương có đoạn báo cáo kèm lời nói mẫu. Spearman, eta², R², KMeans, silhouette, PCA đều đã có giải thích đời thường và ví dụ.
-  - Ước tính khoảng 27 trang (8.100 chữ, 170 dòng bảng, 8 hình). Người dùng chấp nhận dài hơn 20 trang, **không cắt gọn**.
+  - Người dùng yêu cầu **khoảng 25 trang** (bản đầu 54 trang bị chê dài). Lỗi đã mắc ghi trong mục 9.
   - Tài liệu tham khảo có 2 mục đánh dấu (\*) chưa chắc số hiệu/ngày; người dùng chấp nhận để nguyên.
-  - [x] Đã xuất Word (2026-11-14): `bao_cao/BaoCao_DiemThi2026_KTXH.docx` + PDF, 54 trang (9 trang đầu i–ix, 45 trang thân). Sửa nội dung trong `bao_cao.md` rồi chạy lại `build_docx.js` và `cap_nhat_word.ps1`. Chỗ người dùng tự điền in đậm trong [ngoặc vuông].
+  - [x] Đã xuất Word (2026-11-14), sửa theo góp ý: `bao_cao/BaoCao_DiemThi2026_KTXH.docx` + PDF, **22 trang** (bìa + 4 trang đầu i–iv, 17 trang thân). Không có lời cảm ơn, bảng phân công, phụ lục. Mỗi hình gói chung ảnh + chú thích trong một ô không tách trang. Sửa nội dung trong `bao_cao.md` rồi chạy lại `build_docx.js` và `cap_nhat_word.ps1`. Chỗ người dùng tự điền in đậm trong [ngoặc vuông].
   - Form: không tìm được quy định chính thức của Phenikaa; dùng form phổ biến (A4, lề 2/2/3/2 cm, TNR 13, giãn dòng 1,5, hình/bảng đánh số theo chương, TLTK APA theo ABC). Tên GV, SV là dữ liệu demo.
   - Người dùng chuộng khung **Vấn đề → Giải pháp → Kết quả** và ngôn ngữ đời thường.
 - [ ] (Tùy chọn) Hồi quy: thử lưới regParam cho ridge (hiện chỉ có 0,5, quá mạnh) bằng nested CV.
@@ -157,3 +157,14 @@ Nhật ký tiến độ: mỗi phiên cập nhật mục này và mục "Ghi ch�
 - Không commit `data/raw/` hay dữ liệu cấp thí sinh. **Luôn bỏ SBD** trước khi xuất bất cứ thứ gì; chỉ báo cáo số liệu tổng hợp.
 - Giữ đường dẫn tập trung trong `scripts/common.py`; script chạy từ thư mục `scripts/`.
 - Người dùng là kỹ sư phần mềm (TypeScript/NestJS), quen Git; trình bày ngắn gọn, đi thẳng vào việc.
+
+## 9. Lỗi đã mắc khi làm báo cáo (không lặp lại)
+
+Người dùng phát hiện ở bản Word đầu tiên (2026-11-14):
+1. Gọi là "đồ án": sai, đây là **bài tập lớn**.
+2. Dài 54 trang (do ước lượng theo số chữ, không đo PDF thật): mục tiêu khoảng **25 trang**.
+3. **Ảnh và chú thích bị tách nhau**: nay ảnh + chú thích nằm chung một ô bảng `cantSplit` (`figure()` trong `build_docx.js`), hình đặt ngay sau đoạn nhắc đến nó.
+4. Có lời cảm ơn và bảng phân công dù không cần: đã bỏ.
+
+Trước khi bàn giao file Word/PDF: kiểm tra tên loại bài, đếm trang trên PDF thật, xem từng hình có liền chú thích không.
+
