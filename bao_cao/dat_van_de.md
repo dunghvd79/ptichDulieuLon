@@ -1,6 +1,6 @@
-# Nội dung báo cáo và thuyết trình: Đặt vấn đề → Dữ liệu → Tích hợp → Pipeline → Kết quả
+# Nội dung báo cáo và thuyết trình: Đặt vấn đề → Dữ liệu → Tích hợp → Pipeline → Kết quả → Thảo luận, Kết luận
 
-Phần A, C, E, G, I dùng cho báo cáo (chương 1–5). Phần B, D, F, H, J là lời nói mẫu khi thuyết trình.
+Phần A, C, E, G, I, K dùng cho báo cáo (chương 1–7 và tài liệu tham khảo). Phần B, D, F, H, J, L là lời nói mẫu khi thuyết trình.
 Số liệu lấy từ `data/processed/spark/` và các ghi chép trong `bao_cao/DE_CUONG.md`.
 
 ---
@@ -873,3 +873,100 @@ Phần câu hỏi 1 và câu hỏi 2 đã có trong mục B. Dưới đây là b
 
 **"Điểm Văn dồn ở 5,0 có phải gian lận không?"**
 > "Nhóm không kết luận như vậy. Đây chỉ là quan sát thống kê về hình dạng phổ điểm. Có nhiều cách giải thích khác nhau, và nhóm không có dữ liệu để biết đâu là nguyên nhân."
+
+---
+
+# Thảo luận, Kết luận và Tài liệu tham khảo
+
+Phần K dùng cho báo cáo (chương 6, 7 và tài liệu tham khảo). Phần L là lời kết khi thuyết trình.
+
+## K. Đoạn thảo luận, kết luận cho báo cáo
+
+### K.1. Thảo luận (chương 6)
+
+#### Vì sao Toán và Ngoại ngữ đi theo mức sống, còn Văn thì không?
+
+Dữ liệu chỉ cho thấy các đại lượng **đi cùng nhau**, không cho biết **vì sao**. Dưới đây là một số cách giải thích có thể có. Chúng là **giả thuyết**, đồ án chưa kiểm chứng.
+
+- **Toán và Ngoại ngữ** là các môn mà kết quả phụ thuộc nhiều vào việc luyện tập có hệ thống: học thêm, tài liệu, trung tâm ngoại ngữ, giáo viên chuyên sâu. Những điều kiện này thường tập trung ở nơi có thu nhập cao và đô thị hóa cao.
+- **Tỷ lệ chọn thi Ngoại ngữ** đi theo mức sống còn sát hơn cả điểm Toán (Spearman 0,85 so với 0,76). Ở nhiều tỉnh khó khăn, phần lớn thí sinh không chọn thi Ngoại ngữ, có thể vì ít cơ hội tiếp cận tiếng Anh từ sớm.
+- **Ngữ văn** là môn tự luận. Kết quả phụ thuộc nhiều vào cách dạy, cách ôn và việc chấm bài theo hướng dẫn chấm. Đây là những yếu tố có thể khác nhau giữa các địa phương mà không liên quan đến thu nhập. Điều này phù hợp với việc Văn chênh lệch giữa các tỉnh nhiều nhất nhưng mức sống không dự đoán được.
+
+#### Điều kiện giáo dục đo được còn hạn chế
+
+Chỉ tiêu "số học sinh trên một giáo viên THPT" gần như không liên quan đến điểm thi. Điều này **không có nghĩa** là giáo viên không quan trọng. Chỉ tiêu này chỉ đo **số lượng** giáo viên, không đo **chất lượng**, và lại chênh lệch ít giữa các tỉnh (17–26 học sinh/giáo viên). Để đánh giá đúng vai trò của điều kiện giáo dục, cần các chỉ tiêu tốt hơn, như trình độ giáo viên, chi tiêu cho giáo dục hay tỷ lệ trường đạt chuẩn.
+
+### K.2. Hạn chế (chương 6)
+
+| # | Hạn chế | Ảnh hưởng đến kết luận |
+|---|---|---|
+| 1 | **Tương quan không phải nhân quả.** | Chỉ nói được "tỉnh giàu hơn có điểm cao hơn", không nói được "vì giàu nên điểm cao". |
+| 2 | **Kết luận ở cấp tỉnh, không áp dụng cho từng người.** | Tỉnh có thu nhập cao thì điểm trung bình cao, nhưng không suy ra học sinh nhà khá giả nào cũng điểm cao. Suy luận từ nhóm sang cá nhân là một lỗi thường gặp trong thống kê. |
+| 3 | **Chỉ có 34 tỉnh.** | Mô hình dễ "học thuộc" dữ liệu. Nhóm đã hạn chế bằng kiểm định chéo và ưu tiên mô hình đơn giản, nhưng các con số vẫn có độ dao động. |
+| 4 | **Môn tự chọn: người chọn thường là người giỏi môn đó.** | So sánh giữa các tỉnh ở Sinh, Tin, Ngoại ngữ… kém chắc chắn hơn Toán và Văn. Ví dụ tỉnh có ít người thi Ngoại ngữ thì những người thi thường là người giỏi, làm điểm trung bình Ngoại ngữ của tỉnh "đẹp" hơn thực tế. |
+| 5 | **Tỉnh sau sáp nhập gồm nhiều vùng rất khác nhau.** | Ví dụ một tỉnh mới có thể gồm cả vùng đô thị ven biển lẫn vùng núi. Con số trung bình của tỉnh che mất sự khác biệt bên trong. |
+| 6 | **Dữ liệu điểm thi lấy từ nguồn cộng đồng**, thu thập từ trang tra cứu điểm. | Nhóm đã kiểm tra tính nhất quán (không trùng số báo danh, không có điểm ngoài 0–10), nhưng chưa đối chiếu với số liệu chính thức của Bộ Giáo dục và Đào tạo. |
+| 7 | **Số liệu kinh tế – xã hội năm 2025, điểm thi năm 2026**, và một số chỉ tiêu năm 2025 trong Niên giám có thể là số sơ bộ. | Mức sống thay đổi chậm nên ảnh hưởng nhỏ, nhưng vẫn là một độ lệch thời gian. |
+| 8 | **Chỉ có một năm thi.** | Chưa biết các quan hệ này ổn định qua các năm hay chỉ riêng năm 2026. |
+| 9 | **Spark chạy trên một máy (chế độ local).** | Chưa kiểm chứng hiệu năng thực tế trên cụm nhiều máy. |
+
+### K.3. Kết luận (chương 7)
+
+Đồ án đã **tích hợp hai nguồn dữ liệu rất khác nhau**: điểm thi tốt nghiệp THPT 2026 của 1.200.202 thí sinh (34 file CSV) và số liệu kinh tế – xã hội năm 2025 của 34 tỉnh, thành phố trích từ Niên giám thống kê dạng PDF. Toàn bộ quá trình được xử lý bằng Apache Spark.
+
+Quá trình tích hợp phát hiện và xử lý nhiều vấn đề dữ liệu **không gây báo lỗi**, đáng chú ý nhất là:
+- điểm thi của 14 tỉnh bị giấu trong một cột văn bản mã hóa (tỷ lệ có điểm Toán từ 39,3% lên 98,6% sau xử lý);
+- 7 mã tỉnh cũ bị dùng lại cho tỉnh khác sau sắp xếp hành chính.
+
+Kết quả được kiểm chứng bằng đối chiếu với số liệu cả nước và bằng một pipeline độc lập viết bằng pandas (khớp 60/60 cột).
+
+Trả lời hai câu hỏi nghiên cứu:
+
+1. **Các tỉnh có mức sống tốt hơn có kết quả thi cao hơn, rõ nhất ở Toán và việc chọn thi Ngoại ngữ.** Chỉ riêng thu nhập bình quân đầu người đã giải thích được khoảng 65% chênh lệch điểm Toán giữa các tỉnh. Thu nhập của người dân giải thích tốt hơn GRDP; đô thị hóa chủ yếu đi kèm thu nhập; số học sinh trên một giáo viên gần như không liên quan.
+2. **Ngữ văn là môn chênh lệch giữa các tỉnh nhiều nhất** (16,3% sự khác nhau về điểm là do khác tỉnh, gấp gần 3 lần Toán); Lịch sử đồng đều nhất.
+
+**Phát hiện chính:** Ngữ văn chênh lệch giữa các tỉnh nhiều nhất nhưng lại **ít liên quan đến mức sống nhất**. Chênh lệch điểm Văn là có thật nhưng đến từ yếu tố khác ngoài điều kiện kinh tế – xã hội. Hiện tượng số bài Văn dồn ở đúng 5,0 điểm, rõ ở một số tỉnh, là một quan sát gợi ý hướng tìm hiểu tiếp.
+
+### K.4. Hướng phát triển (chương 7)
+
+- **Nhiều năm thi:** gộp điểm các năm 2025, 2026 và các năm sau để xem các quan hệ có ổn định không. Khi đó dữ liệu lớn hơn nhiều lần, đúng với thế mạnh của Spark.
+- **Đơn vị nhỏ hơn tỉnh:** phân tích theo cụm điểm thi hoặc cấp xã để thấy sự khác biệt bên trong các tỉnh mới sáp nhập.
+- **Thêm chỉ tiêu giáo dục chất lượng hơn:** trình độ giáo viên, chi tiêu giáo dục, tỷ lệ trường đạt chuẩn.
+- **Tìm hiểu chênh lệch điểm Văn:** xem hiện tượng dồn ở 5,0 ở cấp cụm điểm thi, và so sánh với năm trước.
+- **Chạy trên cụm nhiều máy** để đo hiệu năng thực tế của Spark với dữ liệu lớn hơn.
+
+### K.5. Tài liệu tham khảo
+
+*Ghi chú cho người viết: các mục đánh dấu (\*) cần kiểm tra lại số hiệu, ngày ban hành hoặc thông tin xuất bản trước khi nộp.*
+
+**Văn bản và nguồn dữ liệu**
+
+1. Quốc hội (2025). *Nghị quyết số 202/2025/QH15 về việc sắp xếp đơn vị hành chính cấp tỉnh*. Hiệu lực từ 01/07/2025. (\*)
+2. Cục Thống kê (2026). *Niên giám thống kê 2025*. Hà Nội. https://www.nso.gov.vn/wp-content/uploads/2026/07/NG-TOAN-QUOC-2025-1.pdf
+3. Bộ Giáo dục và Đào tạo. *Quy chế thi tốt nghiệp trung học phổ thông* (áp dụng từ năm 2025, theo chương trình giáo dục phổ thông 2018). (\*)
+4. Dữ liệu điểm thi tốt nghiệp THPT 2026: kho dữ liệu `duongtrongnguyen123/diem-thi-thptqg-2026` trên GitHub, thu thập ngày 01/07/2026.
+
+**Công cụ**
+
+5. Zaharia, M. et al. (2016). Apache Spark: A unified engine for big data processing. *Communications of the ACM*, 59(11), 56–65.
+6. Meng, X. et al. (2016). MLlib: Machine learning in Apache Spark. *Journal of Machine Learning Research*, 17(34), 1–7.
+7. Apache Software Foundation. *Apache Spark 4.0 documentation* và *PySpark API reference*. https://spark.apache.org/docs/latest/
+8. McKinney, W. (2010). Data structures for statistical computing in Python. *Proceedings of the 9th Python in Science Conference*, 56–61. (thư viện pandas)
+
+**Phương pháp**
+
+9. Spearman, C. (1904). The proof and measurement of association between two things. *The American Journal of Psychology*, 15(1), 72–101.
+10. Lloyd, S. (1982). Least squares quantization in PCM. *IEEE Transactions on Information Theory*, 28(2), 129–137. (thuật toán KMeans)
+11. Rousseeuw, P. J. (1987). Silhouettes: A graphical aid to the interpretation and validation of cluster analysis. *Journal of Computational and Applied Mathematics*, 20, 53–65.
+12. Hastie, T., Tibshirani, R. & Friedman, J. (2009). *The Elements of Statistical Learning* (2nd ed.). Springer. (hồi quy, kiểm định chéo, PCA)
+13. Robinson, W. S. (1950). Ecological correlations and the behavior of individuals. *American Sociological Review*, 15(3), 351–357. (lỗi suy luận từ nhóm sang cá nhân)
+
+## L. Lời kết khi thuyết trình (khoảng 30 giây)
+
+> "Tóm lại, nhóm đã ghép hai bộ dữ liệu rất khác nhau, điểm của 1,2 triệu thí sinh và Niên giám thống kê dạng PDF, xử lý bằng Apache Spark, và kiểm chứng kết quả bằng hai cách độc lập.
+>
+> Kết quả cho thấy tỉnh có mức sống tốt hơn thì điểm Toán và tỷ lệ thi Ngoại ngữ cao hơn rõ rệt. Nhưng môn Văn, môn chênh lệch giữa các tỉnh nhiều nhất, lại gần như không liên quan đến giàu nghèo.
+>
+> Nhóm cũng xin lưu ý: đây là tương quan ở cấp tỉnh, không phải nhân quả và không áp dụng cho từng học sinh. Hướng tiếp theo là gộp nhiều năm thi và phân tích ở cấp nhỏ hơn tỉnh, đặc biệt để tìm hiểu vì sao điểm Văn chênh lệch.
+>
+> Nhóm em xin cảm ơn thầy cô và các bạn đã lắng nghe."
