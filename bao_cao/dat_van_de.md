@@ -323,7 +323,7 @@ Mỗi bảng trong Niên giám dùng đơn vị riêng: nghìn người, nghìn 
 
 - Đặt tên cột thống nhất, có ghi đơn vị.
 - Tính các chỉ tiêu dẫn xuất: **tỷ lệ đô thị hóa** = dân số thành thị / tổng dân số; số học sinh THPT trên 1.000 dân.
-- Với chỉ tiêu bình quân như thu nhập bình quân, không cộng hay lấy trung bình cộng giữa các tỉnh, mà tính lại theo trọng số dân số khi cần gộp.
+- Niên giám 2025 đã có sẵn số liệu cho đúng 34 tỉnh mới, nên nhóm không phải tự gộp từ 63 tỉnh cũ. Nếu phải gộp (ví dụ khi dùng số liệu các năm trước), chỉ tiêu dạng tổng như dân số thì cộng lại, còn chỉ tiêu bình quân như thu nhập bình quân thì phải tính lại theo trọng số dân số, không được lấy trung bình cộng.
 
 **3. Kết quả**
 
