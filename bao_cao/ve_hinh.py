@@ -107,33 +107,117 @@ def h3_1():
 
 # ============================================================================ H4.1
 def h4_1():
-    fig, ax = plt.subplots(figsize=(W, 3.3))
-    ax.set_axis_off(); ax.set_xlim(0, 100); ax.set_ylim(0, 46)
+    """Sơ đồ pipeline theo làn: Nguồn | Apache Spark | Đầu ra.
 
-    def box(x, y, w, h, title, body, fill="#f4f8fd", edge=BLUE_LIGHT):
-        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0,rounding_size=1.2",
-                                    fc=fill, ec=edge, lw=1))
-        ax.text(x + 1.5, y + h - 2.2, title, fontsize=8.5, weight="semibold", va="top")
-        ax.text(x + 1.5, y + h - 7, body, fontsize=7, color=INK2, va="top", linespacing=1.35)
+    Làn Spark có nền riêng nên không cần chú thích màu. Mỗi bước ghi số dòng/đơn vị dữ liệu
+    thật (đọc từ file kết quả) để thấy dữ liệu được thu gọn qua từng tầng.
+    """
+    cl = pd.read_csv(SP / "chat_luong_du_lieu.csv").set_index("chi_so")["gia_tri"]
+    so_dong = int(float(cl["so_dong"]))
+    ktxh = pd.read_csv(ROOT / "data" / "processed" / "ktxh_34tinh_2025_wide.csv")
+    so_chi_tieu = ktxh.shape[1] - 2  # bỏ ma_tinh, ten_tinh
+    dc = pd.read_csv(SP / "doi_chieu_pandas.csv")
+    so_bang = len(list(SP.glob("*.csv")))
+    so_hinh = 8
 
-    def arrow(x0, y0, x1, y1):
-        ax.annotate("", (x1, y1), (x0, y0), arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=1))
+    fig, ax = plt.subplots(figsize=(W, 3.5))
+    ax.set_axis_off(); ax.set_xlim(0, 100); ax.set_ylim(-3, 54)
+    fig.subplots_adjust(0, 0, 1, 1)
+    R = fig.canvas.get_renderer()
 
-    grey = dict(fill="#f7f7f5", edge=AXIS)
-    box(0, 25, 19, 20, "Điểm thi 2026", "34 CSV, 1,2 triệu dòng\n~115 MB (GitHub)", **grey)
-    box(0, 1, 19, 20, "Niên giám TK 2025", "PDF 1.557 trang\nphụ lục 34 tỉnh", **grey)
-    box(24, 25, 18, 20, "Bronze", "spark.read.csv\nlược đồ chuỗi\n+ cột nguồn file")
-    box(24, 1, 18, 20, "Trích PDF", "pypdf layout mode\ngán cột theo vị trí\n→ bảng KT-XH 34 tỉnh", **grey)
-    box(47, 25, 18, 20, "Silver", "pandas UDF (Arrow)\ngiải mã extra\ntry_cast, bỏ SBD")
-    box(70, 25, 15, 20, "Gold", "tỉnh, tỉnh×môn\neta², tổ hợp\nphổ điểm")
-    box(70, 1, 15, 20, "Ghép", "join ma_tinh\nkiểm 34/34\nđối chiếu pandas")
-    box(88.5, 1, 11.5, 44, "MLlib", "Pipeline\nchuẩn hóa\n\nhồi quy\nk-fold\n\nKMeans\nsilhouette\n\nPCA")
-    for (x0, y0, x1, y1) in [(19, 35, 24, 35), (42, 35, 47, 35), (65, 35, 70, 35),
-                             (19, 11, 24, 11), (42, 11, 70, 11), (77.5, 25, 77.5, 21),
-                             (85, 11, 88.5, 11)]:
-        arrow(x0, y0, x1, y1)
-    ax.text(0, -2.5, "Khối xanh: chạy trên Apache Spark (PySpark 4.0, local[*]).  Khối xám: nguồn và tiền xử lý ngoài Spark.",
-            fontsize=7, color=MUTED, va="top")
+    def chu(x, y, s, max_w, size, **kw):
+        """Viết chữ; nếu rộng hơn max_w (đơn vị trục x) thì tự giảm cỡ chữ cho vừa."""
+        t = ax.text(x, y, s, fontsize=size, zorder=5, **kw)
+        while size > 4.5:
+            bb = t.get_window_extent(renderer=R).transformed(ax.transData.inverted())
+            if bb.width <= max_w:
+                break
+            size -= 0.25
+            t.set_fontsize(size)
+        return t
+
+    BOX_Y, BOX_H = 23, 23
+    SPARK_EDGE, OUT_EDGE = BLUE_LIGHT, AXIS
+
+    def khung(x, y, w, h, edge):
+        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0,rounding_size=1.0",
+                                    fc="white", ec=edge, lw=0.9, zorder=2))
+
+    def box(x, w, ten, phu, so, don_vi, ghi_chu, edge=SPARK_EDGE):
+        y, h = BOX_Y, BOX_H
+        khung(x, y, w, h, edge)
+        cx, mw, top = x + 1.1, w - 2.2, y + h - 1.4
+        chu(cx, top, ten, mw, 8, weight="semibold", va="top")
+        chu(cx, top - 3.6, phu, mw, 6.3, color=MUTED, va="top")
+        chu(cx, top - 7.6, so, mw, 9, weight="semibold", color=INK, va="top")
+        chu(cx, top - 11.6, don_vi, mw, 6.3, color=INK2, va="top")
+        ax.plot([cx, x + w - 1.1], [y + 6.6, y + 6.6], color=GRID, lw=0.6, zorder=3)
+        for i, dong in enumerate(ghi_chu):
+            chu(cx, y + 5.2 - i * 2.6, dong, mw, 6, color=INK2, va="top")
+
+    def mui_ten(x0, y0, x1, y1):
+        ax.annotate("", (x1, y1), (x0, y0), zorder=4,
+                    arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=0.9, mutation_scale=7,
+                                    shrinkA=0, shrinkB=0))
+
+    # --- tiêu đề làn ---
+    S0, S1 = 0, 13.4          # nguồn
+    L0, L1 = 15.2, 84.8       # Spark
+    O0, O1 = 86.6, 100        # đầu ra
+    ax.add_patch(FancyBboxPatch((L0, 19.5), L1 - L0, 33.5, boxstyle="round,pad=0,rounding_size=1.5",
+                                fc="#f2f7fd", ec="none", zorder=0))
+    ax.text(S0, 50.6, "NGUỒN", fontsize=7, weight="semibold", color=INK2, va="top")
+    ax.text(L0 + 1.2, 50.6, "APACHE SPARK", fontsize=7, weight="semibold", color=BLUE_DARK, va="top")
+    ax.text(L1 - 1.2, 50.6, "PySpark 4.0 · local[*] · DataFrame + MLlib", fontsize=6.2,
+            color=INK2, va="top", ha="right")
+    ax.text(O0, 50.6, "ĐẦU RA", fontsize=7, weight="semibold", color=INK2, va="top")
+
+    # --- hàng chính ---
+    n, g = 5, 1.6
+    w = (L1 - L0 - 2.4 - (n - 1) * g) / n
+    xs = [L0 + 1.2 + i * (w + g) for i in range(n)]
+    box(S0, S1 - S0, "Điểm thi", "THPT 2026", "34 CSV", "115 MB", ["cào từ", "VietnamNet"], edge=OUT_EDGE)
+    steps = [
+        ("Bronze", "đọc thô", vn(so_dong, 0), "dòng", ["đọc song song", "34 file"]),
+        ("Silver", "làm sạch", vn(so_dong, 0), "thí sinh", ["tách cột extra", "bỏ SBD"]),
+        ("Gold", "tổng hợp", "34 × 11", "tỉnh × môn", ["phổ điểm, eta²", "tổ hợp môn"]),
+        ("Ghép", "tích hợp", "34 / 34", "tỉnh khớp", [f"+{so_chi_tieu} chỉ tiêu", "KT-XH"]),
+        ("MLlib", "học máy", "n = 34", "tỉnh", ["hồi quy k-fold", "KMeans, PCA"]),
+    ]
+    for x, st in zip(xs, steps):
+        box(x, w, *st)
+    box(O0, O1 - O0, "Kết quả", "cho báo cáo", f"{so_bang} bảng", f"{so_hinh} hình",
+        ["Spark = pandas", f"{int(dc.khop.sum())}/{len(dc)} cột"], edge=OUT_EDGE)
+
+    yc = BOX_Y + BOX_H - 9.2   # ngang dòng con số
+    mui_ten(S1, yc, xs[0], yc)
+    for a_, b_ in zip(xs[:-1], xs[1:]):
+        mui_ten(a_ + w, yc, b_, yc)
+    mui_ten(xs[-1] + w, yc, O0, yc)
+
+    # --- nhánh Niên giám (xử lý ngoài Spark) đi vào bước Ghép từ dưới lên ---
+    by, bh = 1.5, 14
+    khung(S0, by, S1 - S0, bh, OUT_EDGE)
+    mw = S1 - S0 - 2.2
+    chu(S0 + 1.1, by + bh - 1.4, "Niên giám", mw, 8, weight="semibold", va="top")
+    chu(S0 + 1.1, by + bh - 5.0, "thống kê 2025", mw, 6.3, color=MUTED, va="top")
+    chu(S0 + 1.1, by + bh - 8.0, "PDF 1.557 trang", mw, 6.3, color=INK2, va="top")
+    px, pw = xs[0], xs[2] + w - xs[0]
+    khung(px, by, pw, bh, OUT_EDGE)
+    mw = pw - 2.2
+    chu(px + 1.1, by + bh - 1.4, "Trích bảng từ PDF", mw, 8, weight="semibold", va="top")
+    chu(px + 1.1, by + bh - 5.0, "pypdf · gán số vào cột theo vị trí ký tự", mw, 6.3, color=INK2, va="top")
+    chu(px + 1.1, by + bh - 8.0, f"{so_chi_tieu} chỉ tiêu × 34 tỉnh · tổng 34 tỉnh = dòng \"Cả nước\"",
+        mw, 6.3, color=INK2, va="top")
+    yb = by + 3.2   # dưới vùng chữ
+    mui_ten(S1, yb, px, yb)
+    gx = xs[3] + w / 2
+    ax.plot([px + pw, gx], [yb, yb], color=MUTED, lw=0.9, zorder=4)
+    mui_ten(gx, yb, gx, BOX_Y)
+
+    ax.text(gx + 1.2, by + bh / 2, "nhập bảng\nKT-XH", fontsize=6, color=MUTED, va="center")
+    ax.text(0, -0.6, "Từ bước Silver trở đi không còn số báo danh; mọi bảng đầu ra là số liệu tổng hợp.",
+            fontsize=6.2, color=MUTED, va="top")
     save(fig, "H4_1_pipeline")
 
 
