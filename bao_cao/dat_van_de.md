@@ -153,11 +153,47 @@ Nhóm không lấy toàn bộ 209 bảng của phụ lục. Chỉ có 34 tỉnh 
 Phần E dùng cho báo cáo (chương 3). Phần F là lời nói mẫu khi thuyết trình, nói ngay sau phần dữ liệu.
 Số liệu: `data/processed/spark/chat_luong_du_lieu.csv`, `co_diem_theo_mon.csv`, `doi_chieu_pandas.csv`; hình H3.1.
 
-## E. Đoạn tích hợp dữ liệu cho báo cáo
+## E. Làm sạch và tích hợp dữ liệu cho báo cáo
 
-Ghép hai bộ dữ liệu theo tỉnh nghe đơn giản, nhưng nhóm gặp 5 vấn đề. Phần lớn trong số đó **không gây ra lỗi nào khi chạy chương trình**: nếu không kiểm tra kỹ, kết quả vẫn ra nhưng sai. Mỗi vấn đề dưới đây được trình bày theo ba bước: vấn đề gặp phải, giải pháp và kết quả.
+Chương này gồm hai việc khác nhau, cần phân biệt rõ:
 
-### Vấn đề 1: Điểm thi bị "giấu" trong một cột văn bản
+| | Làm sạch (E1) | Tích hợp (E2) |
+|---|---|---|
+| Làm với | **Từng nguồn riêng lẻ** | **Hai nguồn cùng lúc** |
+| Câu hỏi | Dữ liệu trong nguồn này đã đúng và đủ chưa? | Ghép hai nguồn lại với nhau bằng cách nào? |
+| Ví dụ | Lấy điểm bị giấu trong cột `extra` | Gom 1,2 triệu thí sinh thành 34 tỉnh rồi nối với Niên giám theo mã tỉnh |
+
+Phải làm sạch trước rồi mới tích hợp được: ghép hai nguồn còn lỗi thì chỉ ra một bảng lỗi lớn hơn.
+
+Toàn bộ quy trình:
+
+```
+NGUỒN 1: Điểm thi                                NGUỒN 2: Niên giám 2025 (PDF)
+1.200.202 dòng, mỗi dòng 1 thí sinh               mỗi dòng 1 tỉnh
+        │                                                 │
+        │ E1. Làm sạch                                    │ E1. Trích số liệu từ PDF
+        │  - lấy điểm trong cột extra                     │  - đọc số kiểu Việt Nam
+        │  - chuẩn hóa 11 môn                             │  - xử lý ô trống lệch cột
+        ▼                                                 ▼
+1.200.202 thí sinh (đã sạch)                       34 tỉnh × 24 chỉ tiêu
+        │                                                 │
+        │ E2-B1. Gom về cấp tỉnh                          │ E2-B3. Thống nhất tên cột, đơn vị
+        ▼                                                 ▼
+34 tỉnh × 17 chỉ số điểm thi                       34 tỉnh × 24 chỉ tiêu
+        │                                                 │
+        └──────────── E2-B2 + B4. Ghép theo MÃ TỈNH ───────┘
+                                   ▼
+                  BẢNG TÍCH HỢP: 34 dòng × 43 cột
+           mỗi tỉnh vừa có điểm thi, vừa có số liệu KT-XH
+                                   │
+                         E2-B5. Kiểm tra sau ghép
+```
+
+---
+
+### E1. Làm sạch từng nguồn
+
+#### Làm sạch 1: Điểm thi bị "giấu" trong một cột văn bản (nguồn 1)
 
 **1. Vấn đề gặp phải**
 
@@ -185,57 +221,30 @@ Môn Giáo dục kinh tế và pháp luật **chỉ** nằm trong cột này ở
 
 96,4% thí sinh có đủ 4 môn, đúng với cấu trúc thi mới. Sinh học và Tin học không bao giờ nằm trong `extra`, nên tỷ lệ có điểm hai môn này không đổi; nhóm đã kiểm tra là không bị mất dữ liệu (hình H3.1).
 
-### Vấn đề 2: Môn thi thay đổi theo chương trình mới
+#### Làm sạch 2: Môn thi thay đổi theo chương trình mới (nguồn 1)
 
 **1. Vấn đề gặp phải**
 
-Dữ liệu còn cột của môn cũ Giáo dục công dân, gần như trống, trong khi môn mới Giáo dục kinh tế và pháp luật lại không có cột riêng. Môn Công nghệ được ghi thành hai tên khác nhau: "công nghệ công nghiệp" và "công nghệ nông nghiệp".
+Dữ liệu còn cột của môn cũ Giáo dục công dân, gần như trống, trong khi môn mới Giáo dục kinh tế và pháp luật lại không có cột riêng. Môn Công nghệ được ghi thành hai tên: "công nghệ công nghiệp" và "công nghệ nông nghiệp". Ngoài ra nhiều môn có điểm lẻ như 6,1 hay 7,35, trông giống lỗi.
 
 **2. Giải pháp**
 
 - Đổi tên cột Giáo dục công dân thành Giáo dục kinh tế và pháp luật.
-- Gộp hai phân môn Công nghệ làm một.
-- Chuẩn hóa về một danh sách 11 môn thống nhất.
+- Gộp hai phân môn Công nghệ làm một, chuẩn hóa về 11 môn.
+- Tìm hiểu nguyên nhân điểm lẻ: đề trắc nghiệm mới có phần đúng/sai và trả lời ngắn nên cho điểm lẻ. Đây là điểm thật, **giữ nguyên**.
+- Xóa số báo danh để bảo vệ thông tin cá nhân.
 
 **3. Kết quả**
 
-Cả 34 tỉnh dùng chung một danh sách 11 môn: Toán, Ngữ văn, Ngoại ngữ, Vật lí, Hóa học, Sinh học, Lịch sử, Địa lí, GD kinh tế và pháp luật, Tin học, Công nghệ. So sánh giữa các tỉnh là so cùng một môn.
+1.200.202 thí sinh với 11 cột điểm thống nhất. Không có thí sinh nào thiếu toàn bộ điểm, không có điểm nằm ngoài khoảng 0–10, không có số báo danh trùng lặp.
 
-### Vấn đề 3: Mã tỉnh cũ bị dùng lại cho tỉnh khác
-
-**1. Vấn đề gặp phải**
-
-Sau sắp xếp, 63 tỉnh còn 34. Có **7 mã số cũ nay trỏ sang một tỉnh khác hẳn**:
-
-| Mã | Trước 01/07/2025 | Nay |
-|---|---|---|
-| 15 | Yên Bái | Lào Cai |
-| 24 | Bắc Giang | Bắc Ninh |
-| 44 | Quảng Bình | Quảng Trị |
-| 52 | Bình Định | Gia Lai |
-| 80 | Long An | Tây Ninh |
-| 82 | Tiền Giang | Đồng Tháp |
-| 91 | Kiên Giang | An Giang |
-
-Nếu ghép số liệu cũ theo mã số, số liệu của Bình Định sẽ bị gán nhầm cho Gia Lai mà **không có thông báo lỗi nào**. Tên tỉnh giữa hai nguồn cũng lệch nhau, ví dụ "TP. Hồ Chí Minh" và "Hồ Chí Minh".
-
-**2. Giải pháp**
-
-- Tự xây bảng ánh xạ 63 tỉnh cũ sang 34 tỉnh mới theo Nghị quyết 202/2025/QH15.
-- Chỉ dùng **mã tỉnh mới** làm khóa để ghép, không ghép theo tên.
-- Chuẩn hóa tên tỉnh, ví dụ bỏ tiền tố "TP.".
-
-**3. Kết quả**
-
-34 mã tỉnh mới khớp 100% với mã tỉnh nằm trong số báo danh của thí sinh. Ghép hai nguồn được đủ **34 / 34 tỉnh**, không tỉnh nào bị gán nhầm.
-
-### Vấn đề 4: Số liệu kinh tế – xã hội nằm trong file PDF
+#### Làm sạch 3: Số liệu kinh tế – xã hội nằm trong file PDF (nguồn 2)
 
 **1. Vấn đề gặp phải**
 
-Niên giám không có bản Excel, chỉ có file PDF 1.557 trang. Lấy số liệu từ bảng trong PDF gặp các khó khăn:
+Niên giám không có bản Excel, chỉ có file PDF 1.557 trang.
 - **Số viết kiểu Việt Nam:** `1.234,5` (dấu chấm phân cách nghìn, dấu phẩy thập phân). Dấu `-` hoặc `..` nghĩa là không có số liệu.
-- **Ô trống làm lệch cột.** Khi một ô không có số, các số phía sau bị dồn sang trái và rơi nhầm vào cột khác.
+- **Ô trống làm lệch cột:** khi một ô không có số, các số phía sau bị dồn sang trái và rơi nhầm vào cột khác.
 - **Mỗi bảng trải trên 2 trang** với lề khác nhau, và có các trang mục lục trùng tiêu đề với bảng.
 
 **2. Giải pháp**
@@ -248,54 +257,149 @@ Niên giám không có bản Excel, chỉ có file PDF 1.557 trang. Lấy số l
 
 Trích được 24 chỉ tiêu cho 34 tỉnh. Cộng số liệu 34 tỉnh, so với dòng "Cả nước" có sẵn trong Niên giám, **khớp chính xác**: dân số 102.345,3 nghìn người, giáo viên THPT 148.396, học sinh THPT 3.082.574.
 
-### Vấn đề 5: Lỗi "im lặng" khó phát hiện
+---
+
+### E2. Tích hợp hai nguồn
+
+Sau bước làm sạch, hai nguồn đã đúng, nhưng vẫn **chưa thể đặt cạnh nhau**. Tích hợp gồm 5 bước.
+
+#### Bước 1: Đưa hai nguồn về cùng một cấp độ
 
 **1. Vấn đề gặp phải**
 
-Bốn vấn đề trên đều không làm chương trình báo lỗi. Ngoài ra có những hiện tượng trông giống lỗi nhưng không phải: nhiều môn có điểm lẻ như 6,1 hay 7,35, không phải bội số của 0,25. Nếu không kiểm tra, nhóm có thể sửa nhầm dữ liệu đúng, hoặc bỏ sót dữ liệu sai.
+Hai nguồn mô tả hai thứ khác nhau. Nguồn 1 có 1.200.202 dòng, **mỗi dòng là một thí sinh**. Nguồn 2 có 34 dòng, **mỗi dòng là một tỉnh**. Không thể nối từng thí sinh với "thu nhập của thí sinh đó", vì Niên giám không có số liệu cho từng người.
 
 **2. Giải pháp**
 
-Kiểm tra kết quả bằng nhiều cách độc lập. Quan trọng nhất là **làm lại toàn bộ bằng hai công cụ khác nhau** (Spark và pandas) rồi so sánh. Với điểm lẻ, nhóm tìm hiểu và xác nhận đây là do đề trắc nghiệm mới có phần đúng/sai và trả lời ngắn, nên giữ nguyên.
+Gom điểm của tất cả thí sinh trong cùng một tỉnh lại, tính ra các chỉ số đại diện cho tỉnh:
+- số thí sinh;
+- điểm trung bình Toán, Văn, Ngoại ngữ và điểm trung bình chung;
+- điểm Toán trung vị, tỷ lệ thí sinh dưới 5 điểm Toán và từ 8 điểm trở lên;
+- tỷ lệ thí sinh chọn từng môn tự chọn.
+
+Việc gom 1,2 triệu dòng này được làm bằng Apache Spark.
+
+**3. Kết quả**
+
+1.200.202 dòng thí sinh trở thành **34 dòng, mỗi dòng một tỉnh, 17 chỉ số điểm thi**. Giờ hai nguồn có cùng cấp độ: mỗi dòng là một tỉnh.
+
+#### Bước 2: Thống nhất "chìa khóa" để ghép
+
+**1. Vấn đề gặp phải**
+
+Muốn ghép hai bảng, cần một cột chung để biết dòng nào của bảng này ứng với dòng nào của bảng kia. Ứng viên là **tỉnh**, nhưng:
+- **Tên tỉnh lệch nhau** giữa hai nguồn, ví dụ "TP. Hồ Chí Minh" trong Niên giám và "Hồ Chí Minh" trong dữ liệu điểm thi.
+- **Mã tỉnh cũ bị dùng lại.** Sau sắp xếp 63 tỉnh còn 34, có 7 mã số cũ nay trỏ sang một tỉnh khác hẳn:
+
+| Mã | Trước 01/07/2025 | Nay |
+|---|---|---|
+| 15 | Yên Bái | Lào Cai |
+| 24 | Bắc Giang | Bắc Ninh |
+| 44 | Quảng Bình | Quảng Trị |
+| 52 | Bình Định | Gia Lai |
+| 80 | Long An | Tây Ninh |
+| 82 | Tiền Giang | Đồng Tháp |
+| 91 | Kiên Giang | An Giang |
+
+Nếu ghép số liệu cũ theo mã số, số liệu của Bình Định sẽ bị gán nhầm cho Gia Lai mà **không có thông báo lỗi nào**.
+
+**2. Giải pháp**
+
+- Tự xây bảng ánh xạ 63 tỉnh cũ sang 34 tỉnh mới theo Nghị quyết 202/2025/QH15.
+- Chọn **mã tỉnh mới (2 chữ số)** làm chìa khóa duy nhất để ghép, không ghép theo tên.
+- Gán mã tỉnh mới cho từng dòng của Niên giám; với dữ liệu điểm thi, lấy mã tỉnh từ 2 chữ số đầu của số báo danh.
+
+**3. Kết quả**
+
+Mã tỉnh trong số báo danh khớp 100% với cột mã tỉnh của dữ liệu điểm thi, và 34 mã của hai nguồn trùng khớp hoàn toàn.
+
+#### Bước 3: Thống nhất tên cột và đơn vị
+
+**1. Vấn đề gặp phải**
+
+Mỗi bảng trong Niên giám dùng đơn vị riêng: nghìn người, nghìn đồng, phần trăm, triệu đồng. Một số chỉ tiêu cần dùng không có sẵn mà phải tự tính. Chẳng hạn Niên giám chỉ cho số dân thành thị, không cho tỷ lệ đô thị hóa.
+
+**2. Giải pháp**
+
+- Đặt tên cột thống nhất, có ghi đơn vị.
+- Tính các chỉ tiêu dẫn xuất: **tỷ lệ đô thị hóa** = dân số thành thị / tổng dân số; số học sinh THPT trên 1.000 dân.
+- Với chỉ tiêu bình quân như thu nhập bình quân, không cộng hay lấy trung bình cộng giữa các tỉnh, mà tính lại theo trọng số dân số khi cần gộp.
+
+**3. Kết quả**
+
+Một bảng Niên giám gọn gàng: **34 dòng × 24 chỉ tiêu**, mỗi cột một ý nghĩa và một đơn vị rõ ràng.
+
+#### Bước 4: Ghép hai bảng theo mã tỉnh
+
+**1. Vấn đề gặp phải**
+
+Có hai bảng cùng 34 dòng, cùng chìa khóa mã tỉnh, nhưng vẫn đang tách rời. Muốn trả lời "tỉnh giàu hơn có điểm cao hơn không", cần đặt điểm thi và thu nhập của cùng một tỉnh **trên cùng một dòng**.
+
+**2. Giải pháp**
+
+Nối hai bảng theo mã tỉnh: dòng có mã `01` của bảng điểm thi được nối với dòng có mã `01` của bảng Niên giám, và tương tự với 33 tỉnh còn lại. Phép ghép được cài đặt để báo lỗi ngay nếu một mã tỉnh xuất hiện hai lần hoặc chỉ có ở một bên.
+
+**3. Kết quả**
+
+**Bảng tích hợp 34 dòng × 43 cột.** Ví dụ ba dòng:
+
+| Mã | Tỉnh | Thu nhập BQ (nghìn đ/tháng) | HDI | Tỷ lệ đô thị | HS/GV THPT | Số thí sinh | Toán TB | Văn TB | Tỷ lệ thi Ngoại ngữ |
+|---|---|---|---|---|---|---|---|---|---|
+| 01 | Hà Nội | 8.374 | 0,84 | 47,8% | 24 | 125.419 | 6,17 | 7,02 | 47% |
+| 79 | Hồ Chí Minh | 8.064 | 0,83 | 77,1% | 20 | 139.114 | 6,19 | 6,59 | 46% |
+| 11 | Điện Biên | 2.583 | 0,66 | 13,9% | 17 | 7.947 | 4,46 | 6,32 | 8% |
+
+Các cột thu nhập, HDI, tỷ lệ đô thị, HS/GV đến từ Niên giám; các cột số thí sinh, điểm TB và tỷ lệ thi Ngoại ngữ đến từ dữ liệu điểm thi. Đây là bảng dùng cho toàn bộ phần phân tích ở chương sau.
+
+#### Bước 5: Kiểm tra sau khi ghép
+
+**1. Vấn đề gặp phải**
+
+Phép ghép có thể "lặng lẽ" làm mất hoặc nhân đôi dữ liệu: một tỉnh có mã viết khác, ví dụ `1` và `01`, sẽ bị rơi mất mà không báo lỗi.
+
+**2. Giải pháp**
+
+Kiểm tra bảng tích hợp bằng nhiều cách độc lập. Quan trọng nhất là **làm lại toàn bộ quy trình bằng hai công cụ khác nhau** (Spark và pandas) rồi so sánh từng con số.
 
 **3. Kết quả**
 
 | Kiểm tra | Kết quả |
 |---|---|
-| Cộng 34 tỉnh, so với dòng "Cả nước" trong Niên giám | Khớp chính xác |
-| Số báo danh trùng lặp | Không có (1.200.202 / 1.200.202) |
-| Mã tỉnh trong số báo danh so với cột mã tỉnh | Khớp 100% |
-| Điểm nằm ngoài khoảng 0–10 | Không có |
-| Thí sinh không có điểm môn nào | Không có |
-| Ghép hai nguồn theo tỉnh | 34 / 34 tỉnh |
-| Spark so với pandas | Khớp 60 / 60 cột số liệu |
+| Số tỉnh ghép được | 34 / 34, không tỉnh nào bị mất hay trùng |
+| Ô trống trong bảng tích hợp | Không có |
+| Tổng 34 tỉnh so với dòng "Cả nước" của Niên giám | Khớp chính xác |
+| Kết quả Spark so với kết quả pandas | Khớp 60 / 60 cột số liệu |
 
-### Tóm tắt
+---
 
-| # | Vấn đề | Giải pháp | Kết quả |
-|---|---|---|---|
-| 1 | Điểm bị giấu trong cột `extra` | Giải mã, tách, điền vào đúng cột | Có điểm Toán: 39,3% → 98,6% |
-| 2 | Môn thi thay đổi | Đổi tên, gộp, chuẩn hóa 11 môn | 34 tỉnh dùng chung danh sách môn |
-| 3 | Mã tỉnh cũ bị dùng lại | Bảng ánh xạ 63 → 34, ghép theo mã mới | 34 / 34 tỉnh, không gán nhầm |
-| 4 | Số liệu nằm trong PDF | Đọc số theo vị trí trên trang | Tổng 34 tỉnh = số cả nước |
-| 5 | Lỗi im lặng | Kiểm tra chéo bằng 2 công cụ | Khớp 60 / 60 cột |
+### Tóm tắt chương
 
-## F. Lời nói mẫu khi thuyết trình (khoảng 50 giây, chiếu hình H3.1)
+| | Việc | Vấn đề | Giải pháp | Kết quả |
+|---|---|---|---|---|
+| E1 | Làm sạch nguồn 1 | Điểm giấu trong `extra`, môn thi thay đổi | Giải mã, tách, chuẩn hóa 11 môn | Có điểm Toán: 39,3% → 98,6% |
+| E1 | Làm sạch nguồn 2 | Số liệu nằm trong PDF, ô trống lệch cột | Đọc số theo vị trí trên trang | Tổng 34 tỉnh = số cả nước |
+| E2 | Cùng cấp độ | Thí sinh và tỉnh | Gom 1,2 triệu thí sinh theo tỉnh | 34 dòng điểm thi |
+| E2 | Cùng chìa khóa | Tên lệch, 7 mã tỉnh bị dùng lại | Bảng ánh xạ 63 → 34, ghép theo mã mới | Khớp 100% |
+| E2 | Cùng đơn vị | Đơn vị khác nhau, thiếu chỉ tiêu | Chuẩn hóa, tự tính tỷ lệ | 34 × 24 chỉ tiêu |
+| E2 | Ghép | Hai bảng tách rời | Nối theo mã tỉnh | Bảng 34 × 43 cột |
+| E2 | Kiểm tra | Lỗi im lặng | Kiểm tra chéo Spark – pandas | 34/34 tỉnh, khớp 60/60 cột |
 
-> "Ghép hai bộ dữ liệu theo tỉnh nghe thì đơn giản, nhưng nhóm gặp khá nhiều vấn đề. Điều đáng sợ là phần lớn chúng **không báo lỗi**: chương trình vẫn chạy, vẫn ra kết quả, chỉ là kết quả sai.
+## F. Lời nói mẫu khi thuyết trình (khoảng 60 giây, chiếu hình H4.1 hoặc sơ đồ quy trình ở trên)
+
+> "Phần tiếp theo là làm sao ghép hai bộ dữ liệu lại với nhau. Nhóm chia làm hai việc: **làm sạch** từng nguồn, rồi mới **tích hợp** hai nguồn.
 >
-> **Thứ nhất, điểm thi bị giấu.** Ở 14 tỉnh, trong đó có TP.HCM, các cột điểm đều trống, toàn bộ điểm bị dồn vào một cột chữ bị mã hóa. Nếu đọc thẳng thì chỉ 39% thí sinh có điểm Toán, trong khi gần như ai cũng thi Toán. Sau khi nhóm giải mã và tách ra, con số lên **98,6%**.
+> **Về làm sạch**, vấn đề lớn nhất là điểm thi bị giấu. Ở 14 tỉnh, trong đó có TP.HCM, điểm bị dồn vào một cột chữ mã hóa. Đọc thẳng thì chỉ 39% thí sinh có điểm Toán; sau khi giải mã thì lên 98,6%. Còn số liệu kinh tế nằm trong file PDF, chỉ cần một ô trống là cả hàng số lệch cột, nên nhóm phải đọc số theo vị trí trên trang.
 >
-> **Thứ hai, mã tỉnh bị dùng lại.** Sau sáp nhập, có 7 mã số cũ nay thuộc về tỉnh khác. Ví dụ mã 52 trước là Bình Định, nay là Gia Lai. Ghép theo mã số mà không cẩn thận thì số liệu của tỉnh này bị gán cho tỉnh kia, và máy không hề báo gì.
+> **Về tích hợp**, khó khăn đầu tiên là hai nguồn không cùng cấp độ: một bên là 1,2 triệu thí sinh, một bên là 34 tỉnh. Nên nhóm dùng Spark gom điểm của từng tỉnh lại, ra 34 dòng.
 >
-> **Thứ ba, số liệu kinh tế nằm trong file PDF**, không có Excel. Chỉ cần một ô trống là cả hàng số bị lệch sang cột khác.
+> Khó khăn thứ hai là chìa khóa để ghép. Sau sáp nhập có 7 mã tỉnh cũ nay thuộc về tỉnh khác, ví dụ mã 52 trước là Bình Định, nay là Gia Lai. Ghép không cẩn thận thì số liệu tỉnh này gán sang tỉnh kia mà máy không báo gì. Nhóm tự xây bảng chuyển đổi 63 sang 34 tỉnh và chỉ ghép theo mã tỉnh mới.
 >
-> Vì vậy nhóm kiểm tra lại bằng nhiều cách. Cộng 34 tỉnh phải ra đúng con số cả nước trong Niên giám, và khớp chính xác. Nhóm còn làm lại toàn bộ bằng hai công cụ khác nhau, và hai kết quả khớp nhau hoàn toàn."
+> Kết quả là **một bảng chung 34 dòng**, mỗi tỉnh vừa có điểm thi, vừa có thu nhập, mức sống, đô thị hóa. Nhóm kiểm tra lại: đủ 34 trên 34 tỉnh, cộng lại khớp số cả nước, và làm lại bằng hai công cụ khác nhau thì kết quả trùng khớp hoàn toàn."
+
+**Nếu thầy hỏi "tích hợp khác làm sạch ở chỗ nào?":**
+
+> "Làm sạch là sửa lỗi bên trong từng nguồn, ví dụ lấy điểm bị giấu ra. Tích hợp là đưa hai nguồn khác nhau về cùng cấp độ, cùng chìa khóa, cùng đơn vị, rồi nối lại thành một bảng. Phải làm sạch trước, vì ghép hai nguồn còn lỗi thì chỉ ra một bảng lỗi lớn hơn."
 
 **Nếu thầy hỏi "làm sao biết số liệu trích từ PDF là đúng?":**
 
 > "Niên giám có sẵn dòng 'Cả nước'. Nhóm cộng số liệu của 34 tỉnh vừa trích ra và so với dòng đó. Dân số, số giáo viên và số học sinh THPT đều khớp đến từng đơn vị. Nếu có ô nào bị lệch cột thì tổng sẽ sai ngay."
-
-**Nếu thầy hỏi "vì sao phải làm lại bằng hai công cụ?":**
-
-> "Để chắc chắn phần xử lý không có lỗi logic. Nhóm viết hai chương trình độc lập, một bằng Spark và một bằng pandas, cùng xử lý một dữ liệu. Nếu một bên có lỗi thì kết quả hai bên sẽ khác nhau. Cả 60 cột số liệu đều khớp."
