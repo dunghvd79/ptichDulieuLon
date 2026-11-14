@@ -40,8 +40,14 @@ scripts/
   build_ktxh.py      bước 2: trích số liệu KT-XH từ PDF (pypdf, layout mode)
   join_explore.py    bước 3: ghép 2 nguồn + tương quan Spearman
 notebooks/         (trống) phân tích khám phá, biểu đồ
-spark/             (trống) pipeline PySpark + MLlib — BƯỚC TIẾP THEO
+spark/             pipeline PySpark (xem spark/README.md)
+  _session.py        SparkSession local đã xử lý các lỗi Windows
+  etl_diemthi.py     Bronze/Silver/Gold -> data/processed/spark/*.csv (~65 giây)
+  doi_chieu_pandas.py  so Spark vs pandas (60/60 cột khớp)
+bao_cao/DE_CUONG.md  đề cương báo cáo ~20 trang + trạng thái từng mục + số liệu đã ghi
 ```
+
+Spark chạy bằng venv **ngoài repo**: `C:\Users\DELL\venvs\ptdl` (Python 3.11 + PySpark 4.0.1, `requirements-spark.txt`), chạy từ thư mục gốc repo.
 
 Chạy (từ thư mục `scripts/`): `python get_data.py && python clean_diemthi.py && python build_ktxh.py && python join_explore.py`
 Phụ thuộc: `pandas`, `pyarrow`, `pypdf` (xem `requirements.txt`). Xem nhanh một biểu bất kỳ: `python build_ktxh.py --bieu 52 60`.
@@ -108,17 +114,26 @@ Nhận xét:
 
 ## 7. Việc tiếp theo
 
-- [ ] **PySpark ETL** (`spark/`): đọc 34 CSV, parse `extra` (UDF), tổng hợp theo tỉnh, ghép với `ktxh_34tinh_2025_wide.csv`. Đối chiếu kết quả với bản pandas để kiểm chứng.
-- [ ] **Spark MLlib**:
+Nhật ký tiến độ: mỗi phiên cập nhật mục này và mục "Ghi chép số liệu" trong `bao_cao/DE_CUONG.md`.
+
+- [x] **PySpark ETL** (2026-11-14): `spark/etl_diemthi.py`, pandas UDF parse `extra`, khớp bản pandas 60/60 cột.
+- [x] Bảng phân phối tỉnh × môn, chênh lệch giữa tỉnh theo môn (eta²), tổ hợp môn (2026-11-14).
+- [ ] **Spark MLlib** — BƯỚC TIẾP THEO (`spark/mllib_*.py`, đọc `data/processed/spark/diemthi_x_ktxh_34tinh.csv`):
   - Hồi quy tuyến tính, chuẩn hóa biến, cross-validation k-fold vì n nhỏ.
   - KMeans phân cụm tỉnh, chọn k bằng silhouette.
-- [ ] Phân tích sâu hơn: theo phân phối (trung vị, tỷ lệ dưới 5, từ 8) thay vì chỉ điểm TB; độ lệch giữa các tỉnh theo từng môn; tỷ lệ chọn tổ hợp môn.
+- [ ] Biểu đồ cho báo cáo (danh mục H/B trong `bao_cao/DE_CUONG.md`).
+- [ ] Viết báo cáo ~20 trang theo `bao_cao/DE_CUONG.md`.
 - [ ] (Tuỳ chọn) Phân tích theo cụm điểm thi (`ma_diem_thi` = 3 số sau mã tỉnh trong SBD), ví dụ hiện tượng điểm Văn dồn ở mức 5,0. Chỉ trình bày như "quan sát thống kê", không kết luận gian lận.
 - [ ] Notebook/biểu đồ, dashboard, báo cáo.
 
 ## 8. Lưu ý kỹ thuật
 
-- Máy người dùng chạy **Windows** (PowerShell). PySpark trên Windows cần **Java 17** (đặt `JAVA_HOME`). Ghi parquet hoặc dùng HDFS API thường đòi `winutils.exe` + `HADOOP_HOME`. Có thể tránh bằng cách xuất kết quả nhỏ qua `.toPandas().to_csv(...)`, hoặc chạy Spark trong Docker / WSL.
+- Máy người dùng chạy **Windows** (PowerShell), có JDK 22 (chạy được với PySpark 4.0.1), không có winutils. Khi viết code Spark mới:
+  - Luôn tạo session qua `spark/_session.py`.
+  - Không dùng glob trong `spark.read` mà truyền danh sách file `Path.as_posix()`.
+  - Không dùng `df.write` hay `addPyFile`; xuất kết quả qua `.toPandas().to_csv(...)`.
+  - Chi tiết các lỗi đã gặp: `spark/README.md`.
+- Docker Desktop có cài (đang tắt) — phương án dự phòng.
 - Không commit `data/raw/` hay dữ liệu cấp thí sinh. **Luôn bỏ SBD** trước khi xuất bất cứ thứ gì; chỉ báo cáo số liệu tổng hợp.
 - Giữ đường dẫn tập trung trong `scripts/common.py`; script chạy từ thư mục `scripts/`.
 - Người dùng là kỹ sư phần mềm (TypeScript/NestJS), quen Git; trình bày ngắn gọn, đi thẳng vào việc.
