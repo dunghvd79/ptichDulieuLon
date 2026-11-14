@@ -121,7 +121,7 @@ def h4_1():
     so_hinh = 8
 
     fig, ax = plt.subplots(figsize=(W, 3.5))
-    ax.set_axis_off(); ax.set_xlim(0, 100); ax.set_ylim(-3, 54)
+    ax.set_axis_off(); ax.set_xlim(0, 100); ax.set_ylim(0.5, 54)
     fig.subplots_adjust(0, 0, 1, 1)
     R = fig.canvas.get_renderer()
 
@@ -220,9 +220,7 @@ def h4_1():
     gx = xs[3] + w / 2
     ax.plot([px + pw, gx], [yb, yb], color=INK2, lw=1.1, zorder=4)
     mui_ten(gx, yb, gx, BOX_Y)
-
-    ax.text(50, -0.6, "Từ bước 2 đã xóa số báo danh: báo cáo chỉ dùng số liệu tổng hợp theo tỉnh, "
-            "không lộ thông tin cá nhân.", fontsize=6.5, color=INK2, va="top", ha="center")
+    # Ý "đã xóa SBD, chỉ dùng số liệu tổng hợp" được viết trong báo cáo (mục 2.4), không ghi trên hình.
     save(fig, "H4_1_pipeline")
 
 

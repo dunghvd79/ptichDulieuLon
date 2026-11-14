@@ -122,7 +122,14 @@ Nhật ký tiến độ: mỗi phiên cập nhật mục này và mục "Ghi ch�
 - [x] Bảng phân phối tỉnh × môn, chênh lệch giữa tỉnh theo môn (eta²), tổ hợp môn (2026-11-14).
 - [x] **Spark MLlib** (2026-11-14): `spark/mllib_tinh.py`, đã chạy xong hồi quy repeated 5-fold × 5 lần và KMeans k = 2..6. Kết quả ghi trong `bao_cao/DE_CUONG.md`.
 - [x] **Biểu đồ cho báo cáo** (2026-11-14): `bao_cao/ve_hinh.py` → `bao_cao/hinh/` (8 hình). ETL có thêm `pho_diem.csv` và `co_diem_theo_mon.csv`.
-- [ ] **Viết báo cáo** — BƯỚC TIẾP THEO. Định dạng cuối là .docx (người dùng chưa xác nhận).
+- [ ] **Review kiến thức cùng người dùng** — người dùng hẹn làm ngay sau khi chỉnh xong hình (2026-11-14). Giải thích bằng ngôn ngữ đời thường, có ví dụ từ chính dữ liệu đồ án. Các chủ đề:
+  - Spark: vì sao dùng Spark, đọc song song/partition, lazy evaluation, pandas UDF qua Arrow, tầng Bronze/Silver/Gold.
+  - Tích hợp dữ liệu: cột `extra`, mã tỉnh bị tái sử dụng, trích PDF, kiểm chứng chéo Spark = pandas.
+  - Thống kê: Spearman, eta², R² ngoài mẫu và k-fold, overfitting khi n = 34, VIF.
+  - Phân cụm: KMeans, silhouette, PCA.
+  - Văn dồn ở 5,0: vì sao so với mốc 4,5/5,5.
+  - Quyền riêng tư: xóa SBD từ bước 2, chỉ công bố số liệu tổng hợp. Ý này đã bỏ khỏi hình H4.1, cần viết trong báo cáo mục 2.4.
+- [ ] **Viết báo cáo** — sau buổi review. Định dạng cuối là .docx (người dùng chưa xác nhận).
 - [ ] (Tùy chọn) Hồi quy: thử lưới regParam cho ridge (hiện chỉ có 0,5, quá mạnh) bằng nested CV.
 - [x] Điểm Văn dồn ở 5,0 **ở cấp tỉnh** (H5.6). So với mốc 4,5/5,5, không dùng 4,75/5,25, vì Văn được chấm theo nửa điểm.
 - [ ] (Tuỳ chọn) Xem tiếp ở cấp cụm điểm thi (`ma_diem_thi` = 3 số sau mã tỉnh trong SBD). Chỉ trình bày như "quan sát thống kê", không kết luận gian lận.
