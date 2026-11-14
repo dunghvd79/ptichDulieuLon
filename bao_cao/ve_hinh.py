@@ -146,32 +146,33 @@ def h4_1():
     def box(x, w, ten, phu, so, don_vi, ghi_chu, edge=SPARK_EDGE):
         y, h = BOX_Y, BOX_H
         khung(x, y, w, h, edge)
-        cx, mw, top = x + 1.1, w - 2.2, y + h - 1.4
-        chu(cx, top, ten, mw, 8, weight="semibold", va="top")
-        chu(cx, top - 3.6, phu, mw, 6.3, color=MUTED, va="top")
-        chu(cx, top - 7.6, so, mw, 9, weight="semibold", color=INK, va="top")
-        chu(cx, top - 11.6, don_vi, mw, 6.3, color=INK2, va="top")
+        cx, mw, top = x + w / 2, w - 1.8, y + h - 1.4   # căn giữa khối
+        c = dict(ha="center", va="top")
+        chu(cx, top, ten, mw, 8.5, weight="bold", color=INK, **c)
+        chu(cx, top - 3.7, phu, mw, 6.6, color=INK2, **c)
+        chu(cx, top - 7.6, so, mw, 9.5, weight="bold", color=INK, **c)
+        chu(cx, top - 11.7, don_vi, mw, 6.8, color=INK, **c)
         if ghi_chu:  # không có ghi chú thì bỏ luôn đường kẻ
-            ax.plot([cx, x + w - 1.1], [y + 6.6, y + 6.6], color=GRID, lw=0.6, zorder=3)
+            ax.plot([x + 1.1, x + w - 1.1], [y + 6.6, y + 6.6], color=GRID, lw=0.6, zorder=3)
         for i, dong in enumerate(ghi_chu):
-            chu(cx, y + 5.2 - i * 2.6, dong, mw, 6, color=INK2, va="top")
+            chu(cx, y + 5.3 - i * 2.6, dong, mw, 6.5, color=INK, **c)
 
     def mui_ten(x0, y0, x1, y1):
         ax.annotate("", (x1, y1), (x0, y0), zorder=4,
-                    arrowprops=dict(arrowstyle="-|>", color=MUTED, lw=0.9, mutation_scale=7,
+                    arrowprops=dict(arrowstyle="-|>", color=INK2, lw=1.1, mutation_scale=8,
                                     shrinkA=0, shrinkB=0))
 
-    # --- tiêu đề làn ---
+    # --- tiêu đề làn (căn giữa trên từng làn) ---
     S0, S1 = 0, 13.4          # nguồn
     L0, L1 = 15.2, 84.8       # Spark
     O0, O1 = 86.6, 100        # đầu ra
     ax.add_patch(FancyBboxPatch((L0, 19.5), L1 - L0, 33.5, boxstyle="round,pad=0,rounding_size=1.5",
-                                fc="#f2f7fd", ec="none", zorder=0))
-    ax.text(S0, 50.6, "DỮ LIỆU GỐC", fontsize=7, weight="semibold", color=INK2, va="top")
-    ax.text(L0 + 1.2, 50.6, "XỬ LÝ BẰNG APACHE SPARK", fontsize=7, weight="semibold", color=BLUE_DARK, va="top")
-    ax.text(L1 - 1.2, 50.6, "công cụ xử lý dữ liệu lớn", fontsize=6.2,
-            color=INK2, va="top", ha="right")
-    ax.text(O0, 50.6, "KẾT QUẢ", fontsize=7, weight="semibold", color=INK2, va="top")
+                                fc="#eaf2fc", ec="none", zorder=0))
+    hd = dict(fontsize=7.5, weight="bold", va="top", ha="center")
+    ax.text((S0 + S1) / 2, 50.8, "DỮ LIỆU GỐC", color=INK, **hd)
+    ax.text((L0 + L1) / 2, 50.8, "XỬ LÝ BẰNG APACHE SPARK  ·  công cụ xử lý dữ liệu lớn",
+            color=BLUE_DARK, **hd)
+    ax.text((O0 + O1) / 2, 50.8, "KẾT QUẢ", color=INK, **hd)
 
     # --- hàng chính ---
     n, g = 5, 1.6
@@ -199,28 +200,29 @@ def h4_1():
 
     # --- nhánh Niên giám (xử lý ngoài Spark) đi vào bước Ghép từ dưới lên ---
     by, bh = 1.5, 14
+    c = dict(ha="center", va="top")
     khung(S0, by, S1 - S0, bh, OUT_EDGE)
-    mw = S1 - S0 - 2.2
-    chu(S0 + 1.1, by + bh - 1.4, "Niên giám", mw, 8, weight="semibold", va="top")
-    chu(S0 + 1.1, by + bh - 5.0, "thống kê 2025", mw, 6.3, color=MUTED, va="top")
-    chu(S0 + 1.1, by + bh - 8.0, "kinh tế – xã hội", mw, 6.3, color=INK2, va="top")
-    chu(S0 + 1.1, by + bh - 10.6, "của 34 tỉnh", mw, 6.3, color=INK2, va="top")
+    mx, mw = (S0 + S1) / 2, S1 - S0 - 1.8
+    chu(mx, by + bh - 1.4, "Niên giám", mw, 8.5, weight="bold", color=INK, **c)
+    chu(mx, by + bh - 5.0, "thống kê 2025", mw, 6.6, color=INK2, **c)
+    chu(mx, by + bh - 8.0, "kinh tế – xã hội", mw, 6.8, color=INK, **c)
+    chu(mx, by + bh - 10.6, "của 34 tỉnh", mw, 6.8, color=INK, **c)
     px, pw = xs[0], xs[2] + w - xs[0]
     khung(px, by, pw, bh, OUT_EDGE)
-    mw = pw - 2.2
-    chu(px + 1.1, by + bh - 1.4, "Lấy số liệu từ file PDF", mw, 8, weight="semibold", va="top")
-    chu(px + 1.1, by + bh - 5.0, f"{so_chi_tieu} chỉ tiêu cho 34 tỉnh: thu nhập, HDI, tỷ lệ đô thị, hộ nghèo…",
-        mw, 6.3, color=INK2, va="top")
-    chu(px + 1.1, by + bh - 8.0, "Đã kiểm tra: cộng 34 tỉnh đúng bằng số liệu cả nước",
-        mw, 6.3, color=INK2, va="top")
+    mx, mw = px + pw / 2, pw - 2.2
+    chu(mx, by + bh - 1.4, "Lấy số liệu từ file PDF", mw, 8.5, weight="bold", color=INK, **c)
+    chu(mx, by + bh - 5.4, f"{so_chi_tieu} chỉ tiêu: thu nhập, HDI, đô thị hóa, hộ nghèo…",
+        mw, 6.8, color=INK, **c)
+    chu(mx, by + bh - 8.4, "Đã kiểm tra: cộng 34 tỉnh đúng bằng số liệu cả nước",
+        mw, 6.8, color=INK, **c)
     yb = by + 3.2   # dưới vùng chữ
     mui_ten(S1, yb, px, yb)
     gx = xs[3] + w / 2
-    ax.plot([px + pw, gx], [yb, yb], color=MUTED, lw=0.9, zorder=4)
+    ax.plot([px + pw, gx], [yb, yb], color=INK2, lw=1.1, zorder=4)
     mui_ten(gx, yb, gx, BOX_Y)
 
-    ax.text(0, -0.6, "Từ bước 2 đã xóa số báo danh: báo cáo chỉ dùng số liệu tổng hợp theo tỉnh, "
-            "không lộ thông tin cá nhân.", fontsize=6.2, color=MUTED, va="top")
+    ax.text(50, -0.6, "Từ bước 2 đã xóa số báo danh: báo cáo chỉ dùng số liệu tổng hợp theo tỉnh, "
+            "không lộ thông tin cá nhân.", fontsize=6.5, color=INK2, va="top", ha="center")
     save(fig, "H4_1_pipeline")
 
 
