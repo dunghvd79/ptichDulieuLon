@@ -1,6 +1,6 @@
-# Đặt vấn đề và Dữ liệu
+# Đặt vấn đề, Dữ liệu và Tích hợp dữ liệu
 
-Phần A, C dùng cho báo cáo (chương 1, 2). Phần B, D là lời nói mẫu khi thuyết trình.
+Phần A, C, E dùng cho báo cáo (chương 1, 2, 3). Phần B, D, F là lời nói mẫu khi thuyết trình.
 Số liệu lấy từ `data/processed/spark/` và các ghi chép trong `bao_cao/DE_CUONG.md`.
 
 ---
@@ -145,3 +145,97 @@ Nhóm không lấy toàn bộ 209 bảng của phụ lục. Chỉ có 34 tỉnh 
 **Nếu thầy hỏi "vì sao không lấy hết 209 bảng?":**
 
 > "Nhóm chỉ lấy những chỉ tiêu trả lời trực tiếp câu hỏi nghiên cứu. Chỉ có 34 tỉnh, nên lấy quá nhiều chỉ tiêu thì mô hình dễ học thuộc dữ liệu thay vì tìm ra quy luật."
+
+---
+
+# Tích hợp dữ liệu
+
+Phần E dùng cho báo cáo (chương 3). Phần F là lời nói mẫu khi thuyết trình, nói ngay sau phần dữ liệu.
+Số liệu: `data/processed/spark/chat_luong_du_lieu.csv`, `co_diem_theo_mon.csv`, `doi_chieu_pandas.csv`; hình H3.1.
+
+## E. Đoạn tích hợp dữ liệu cho báo cáo
+
+Ghép hai bộ dữ liệu theo tỉnh nghe đơn giản, nhưng nhóm gặp 5 vấn đề. Phần lớn trong số đó **không gây ra lỗi nào khi chạy chương trình**: nếu không kiểm tra kỹ, kết quả vẫn ra nhưng sai.
+
+### Vấn đề 1: Điểm thi bị "giấu" trong một cột văn bản
+
+Ở 14 tỉnh, trong đó có TP.HCM, Hải Phòng, Đồng Nai, Cần Thơ, An Giang và Huế, các cột điểm Toán, Văn, Ngoại ngữ… đều trống. Toàn bộ điểm bị dồn vào một cột phụ tên `extra`, dưới dạng chuỗi chữ mã hóa kiểu trang web:
+
+```
+To&#xE1;n=8; V&#x103;n=7; S&#x1EED;=9      (nghĩa là: Toán=8; Văn=7; Sử=9)
+```
+
+Môn Giáo dục kinh tế và pháp luật **chỉ** nằm trong cột này ở cả 34 tỉnh.
+
+Nếu đọc thẳng các cột điểm, chỉ **39,3%** thí sinh có điểm Toán. Kết quả này sai, vì gần như ai cũng thi Toán. Nhóm giải mã chuỗi về tiếng Việt, tách thành từng môn rồi điền vào đúng cột. Sau khi xử lý:
+
+| Môn | Trước | Sau |
+|---|---|---|
+| Toán | 39,3% | **98,6%** |
+| Ngữ văn | 39,6% | **99,0%** |
+| GD kinh tế và pháp luật | 0% | **23,4%** |
+
+96,4% thí sinh có đủ 4 môn, đúng với cấu trúc thi mới. Riêng Sinh học và Tin học không bao giờ nằm trong `extra`, nên tỷ lệ có điểm hai môn này không đổi, và nhóm đã kiểm tra là không bị mất dữ liệu (hình H3.1).
+
+### Vấn đề 2: Môn thi thay đổi theo chương trình mới
+
+Môn Giáo dục công dân đổi thành Giáo dục kinh tế và pháp luật. Có thêm Tin học và Công nghệ; Công nghệ gồm hai phân môn công nghiệp và nông nghiệp, được gộp làm một. Nhóm chuẩn hóa về một danh sách 11 môn thống nhất.
+
+### Vấn đề 3: Mã tỉnh cũ bị dùng lại cho tỉnh khác
+
+Sau sắp xếp, 63 tỉnh còn 34. Có **7 mã số cũ nay trỏ sang một tỉnh khác hẳn**:
+
+| Mã | Trước 01/07/2025 | Nay |
+|---|---|---|
+| 15 | Yên Bái | Lào Cai |
+| 24 | Bắc Giang | Bắc Ninh |
+| 44 | Quảng Bình | Quảng Trị |
+| 52 | Bình Định | Gia Lai |
+| 80 | Long An | Tây Ninh |
+| 82 | Tiền Giang | Đồng Tháp |
+| 91 | Kiên Giang | An Giang |
+
+Nếu ghép số liệu cũ theo mã số, số liệu của Bình Định sẽ bị gán nhầm cho Gia Lai mà **không có thông báo lỗi nào**. Nhóm tự xây bảng ánh xạ 63 → 34 tỉnh theo Nghị quyết 202/2025/QH15 và đối chiếu: 34 mã tỉnh mới khớp 100% với mã tỉnh nằm trong số báo danh. Ngoài ra, tên tỉnh giữa hai nguồn cũng lệch nhau, ví dụ "TP. Hồ Chí Minh" và "Hồ Chí Minh", nên nhóm ghép theo mã tỉnh chứ không theo tên.
+
+### Vấn đề 4: Số liệu kinh tế – xã hội nằm trong file PDF
+
+Niên giám không có bản Excel. Lấy số liệu từ bảng trong PDF gặp các khó khăn:
+- **Số viết kiểu Việt Nam:** `1.234,5` (dấu chấm phân cách nghìn, dấu phẩy thập phân). Dấu `-` hoặc `..` nghĩa là không có số liệu.
+- **Ô trống làm lệch cột.** Khi một ô không có số, các số phía sau bị dồn sang trái và rơi nhầm vào cột khác. Nhóm xác định cột dựa trên vị trí của từng con số trên trang, lấy các dòng đầy đủ làm mốc.
+- **Mỗi bảng trải trên 2 trang** với lề khác nhau, và phải bỏ qua các trang mục lục có cùng tiêu đề.
+
+### Vấn đề 5: Kiểm tra lại toàn bộ kết quả
+
+Vì các lỗi trên đều "im lặng", nhóm kiểm tra kết quả bằng nhiều cách độc lập:
+
+| Kiểm tra | Kết quả |
+|---|---|
+| Cộng số liệu 34 tỉnh, so với dòng "Cả nước" trong Niên giám | Khớp chính xác: dân số 102.345,3 nghìn người; giáo viên THPT 148.396; học sinh THPT 3.082.574 |
+| Số báo danh trùng lặp | Không có (1.200.202 / 1.200.202) |
+| Mã tỉnh trong số báo danh so với cột mã tỉnh | Khớp 100% |
+| Điểm nằm ngoài khoảng 0–10 | Không có |
+| Thí sinh không có điểm môn nào | Không có |
+| Ghép hai nguồn theo tỉnh | 34 / 34 tỉnh |
+| Làm lại toàn bộ bằng hai công cụ khác nhau (Spark và pandas), so sánh kết quả | Khớp 60 / 60 cột số liệu |
+
+Một điểm cần phân biệt: nhiều môn có điểm lẻ như 6,1 hay 7,35, không phải bội số của 0,25. Đây **không phải lỗi dữ liệu** mà do đề trắc nghiệm mới có phần đúng/sai và trả lời ngắn. Nhóm giữ nguyên các điểm này.
+
+## F. Lời nói mẫu khi thuyết trình (khoảng 50 giây, chiếu hình H3.1)
+
+> "Ghép hai bộ dữ liệu theo tỉnh nghe thì đơn giản, nhưng nhóm gặp khá nhiều vấn đề. Điều đáng sợ là phần lớn chúng **không báo lỗi**: chương trình vẫn chạy, vẫn ra kết quả, chỉ là kết quả sai.
+>
+> **Thứ nhất, điểm thi bị giấu.** Ở 14 tỉnh, trong đó có TP.HCM, các cột điểm đều trống, toàn bộ điểm bị dồn vào một cột chữ bị mã hóa. Nếu đọc thẳng thì chỉ 39% thí sinh có điểm Toán, trong khi gần như ai cũng thi Toán. Sau khi nhóm giải mã và tách ra, con số lên **98,6%**.
+>
+> **Thứ hai, mã tỉnh bị dùng lại.** Sau sáp nhập, có 7 mã số cũ nay thuộc về tỉnh khác. Ví dụ mã 52 trước là Bình Định, nay là Gia Lai. Ghép theo mã số mà không cẩn thận thì số liệu của tỉnh này bị gán cho tỉnh kia, và máy không hề báo gì.
+>
+> **Thứ ba, số liệu kinh tế nằm trong file PDF**, không có Excel. Chỉ cần một ô trống là cả hàng số bị lệch sang cột khác.
+>
+> Vì vậy nhóm kiểm tra lại bằng nhiều cách. Cộng 34 tỉnh phải ra đúng con số cả nước trong Niên giám, và khớp chính xác. Nhóm còn làm lại toàn bộ bằng hai công cụ khác nhau, và hai kết quả khớp nhau hoàn toàn."
+
+**Nếu thầy hỏi "làm sao biết số liệu trích từ PDF là đúng?":**
+
+> "Niên giám có sẵn dòng 'Cả nước'. Nhóm cộng số liệu của 34 tỉnh vừa trích ra và so với dòng đó. Dân số, số giáo viên và số học sinh THPT đều khớp đến từng đơn vị. Nếu có ô nào bị lệch cột thì tổng sẽ sai ngay."
+
+**Nếu thầy hỏi "vì sao phải làm lại bằng hai công cụ?":**
+
+> "Để chắc chắn phần xử lý không có lỗi logic. Nhóm viết hai chương trình độc lập, một bằng Spark và một bằng pandas, cùng xử lý một dữ liệu. Nếu một bên có lỗi thì kết quả hai bên sẽ khác nhau. Cả 60 cột số liệu đều khớp."
