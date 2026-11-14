@@ -2,40 +2,42 @@
 
 **Tên đề tài:** Tích hợp dữ liệu điểm thi tốt nghiệp THPT 2026 với điều kiện kinh tế – xã hội 34 tỉnh, thành và phân tích bằng Apache Spark
 
-Quy ước trạng thái: ⬜ chưa có số liệu · 🟨 có số liệu, chưa viết · ✅ đã viết
+Quy ước trạng thái: ⬜ chưa có số liệu · 🟨 có số liệu, chưa viết · ✅ đã viết bản nháp
+
+**Bản nháp nội dung chương 1–5 nằm trong `bao_cao/dat_van_de.md`** (mỗi chương có đoạn báo cáo + lời nói mẫu).
 
 Khổ A4, Times New Roman 13, giãn dòng 1,3. Khoảng 20 trang nội dung, chưa tính bìa, mục lục và phụ lục.
 
 | # | Chương / mục | Trang | Nguồn số liệu, bảng/hình | TT |
 |---|---|---|---|---|
 | — | Bìa, lời cảm ơn, mục lục, danh mục bảng/hình | (ngoài 20) | | ⬜ |
-| 1 | **Mở đầu** | 2 | | ⬜ |
-| 1.1 | Bối cảnh: thi 2025+ theo chương trình mới (4 môn), sáp nhập 63 → 34 tỉnh từ 01/07/2025 | | NQ 202/2025/QH15 | ⬜ |
-| 1.2 | Câu hỏi nghiên cứu (2 câu) | | CLAUDE.md §1 | ⬜ |
-| 1.3 | Phạm vi, đóng góp: pipeline tích hợp + phân tích bằng Spark | | | ⬜ |
-| 2 | **Dữ liệu** | 3 | | ⬜ |
-| 2.1 | Điểm thi 2026: nguồn, quy mô (1.200.202 dòng, 34 CSV, ~115 MB), lược đồ | | Bảng 2.1 lược đồ cột | 🟨 |
-| 2.2 | Niên giám thống kê 2025: phụ lục 34 tỉnh, 209 biểu; các biểu đã trích | | Bảng 2.2 = CLAUDE.md §5 | 🟨 |
-| 2.3 | Bảng ánh xạ 63 → 34 tỉnh | | `data/reference/map_63_34_tinh.csv` | 🟨 |
-| 2.4 | Vấn đề đạo đức: dữ liệu cá nhân, bỏ SBD, chỉ công bố số liệu tổng hợp | | | ⬜ |
-| 3 | **Tích hợp dữ liệu: vấn đề và cách xử lý** (điểm nhấn) | 4 | | ⬜ |
-| 3.1 | Điểm dồn trong cột `extra` (HTML-encoded): tỷ lệ có điểm Toán 39,3% → 98,6% | | `spark/chat_luong_du_lieu.csv`; Hình 3.1 trước/sau | 🟨 |
-| 3.2 | Đổi môn GDCD → GD KT&PL, môn mới | | | 🟨 |
-| 3.3 | Mã tỉnh bị tái sử dụng (7 mã): ví dụ ghép sai im lặng | | Bảng 3.1 | 🟨 |
-| 3.4 | Trích bảng từ PDF: số kiểu VN, ô trống lệch cột, biểu 2 trang | | Hình 3.2 minh họa trang PDF | 🟨 |
-| 3.5 | Kiểm chứng: tổng 34 tỉnh = "Cả nước"; Spark = pandas | | `spark/doi_chieu_pandas` | 🟨 |
-| 4 | **Kiến trúc pipeline Big Data** | 3 | | ⬜ |
-| 4.1 | Sơ đồ tổng thể: nguồn → Bronze → Silver → Gold → MLlib → báo cáo | | H4.1 | 🟨 |
-| 4.2 | PySpark ETL: đọc song song, pandas UDF (Arrow) giải mã `extra`, unpivot, cửa sổ | | `spark/etl_diemthi.py` | 🟨 |
-| 4.3 | Môi trường và các lỗi khi triển khai Spark trên Windows | | `spark/README.md` | 🟨 |
-| 4.4 | Hiệu năng: thời gian từng bước, Spark vs pandas | | `spark/thoi_gian_chay.csv` | 🟨 |
-| 5 | **Kết quả phân tích** | 6 | | ⬜ |
-| 5.1 | Mô tả: phân phối điểm từng môn toàn quốc; tổ hợp môn phổ biến | | Hình 5.1 histogram; Bảng 5.1 tổ hợp | 🟨 |
-| 5.2 | CH2: Môn nào chênh lệch giữa các tỉnh nhiều nhất (eta², độ lệch chuẩn giữa tỉnh, khoảng cách) | | `chenh_lech_giua_tinh_theo_mon.csv`; Hình 5.2 | 🟨 |
-| 5.3 | CH1: Tương quan KT-XH ↔ điểm (Spearman, n=34) | | Hình 5.3 heatmap; Hình 5.4 scatter thu nhập–Toán | 🟨 |
-| 5.4 | Hồi quy tuyến tính MLlib (chuẩn hóa, k-fold CV) | | Bảng 5.2 hệ số, R² CV (`ml_hoi_quy_*.csv`, `ml_vif.csv`) | 🟨 |
-| 5.5 | Phân cụm tỉnh KMeans (chọn k bằng silhouette) | | Hình 5.5 PCA 2D tô màu theo cụm (`ml_kmeans_k3_*.csv`, `ml_pca_tai.csv`) | 🟨 |
-| 5.6 | Quan sát: điểm Văn dồn ở 5,0, chỉ nêu như quan sát thống kê | | H5.6, `van_dinh_5_theo_tinh.csv` | 🟨 |
+| 1 | **Mở đầu** | 2 | | ✅ |
+| 1.1 | Bối cảnh: thi 2025+ theo chương trình mới (4 môn), sáp nhập 63 → 34 tỉnh từ 01/07/2025 | | NQ 202/2025/QH15 | ✅ |
+| 1.2 | Câu hỏi nghiên cứu (2 câu) | | CLAUDE.md §1 | ✅ |
+| 1.3 | Phạm vi, đóng góp: pipeline tích hợp + phân tích bằng Spark | | | ✅ |
+| 2 | **Dữ liệu** | 3 | | ✅ |
+| 2.1 | Điểm thi 2026: nguồn, quy mô (1.200.202 dòng, 34 CSV, ~115 MB), lược đồ | | Bảng 2.1 lược đồ cột | ✅ |
+| 2.2 | Niên giám thống kê 2025: phụ lục 34 tỉnh, 209 biểu; các biểu đã trích | | Bảng 2.2 = CLAUDE.md §5 | ✅ |
+| 2.3 | Bảng ánh xạ 63 → 34 tỉnh | | `data/reference/map_63_34_tinh.csv` | ✅ |
+| 2.4 | Vấn đề đạo đức: dữ liệu cá nhân, bỏ SBD, chỉ công bố số liệu tổng hợp | | | ✅ |
+| 3 | **Tích hợp dữ liệu: vấn đề và cách xử lý** (điểm nhấn) | 4 | | ✅ |
+| 3.1 | Điểm dồn trong cột `extra` (HTML-encoded): tỷ lệ có điểm Toán 39,3% → 98,6% | | `spark/chat_luong_du_lieu.csv`; Hình 3.1 trước/sau | ✅ |
+| 3.2 | Đổi môn GDCD → GD KT&PL, môn mới | | | ✅ |
+| 3.3 | Mã tỉnh bị tái sử dụng (7 mã): ví dụ ghép sai im lặng | | Bảng 3.1 | ✅ |
+| 3.4 | Trích bảng từ PDF: số kiểu VN, ô trống lệch cột, biểu 2 trang | | Hình 3.2 minh họa trang PDF | ✅ |
+| 3.5 | Kiểm chứng: tổng 34 tỉnh = "Cả nước"; Spark = pandas | | `spark/doi_chieu_pandas` | ✅ |
+| 4 | **Kiến trúc pipeline Big Data** | 3 | | ✅ |
+| 4.1 | Sơ đồ tổng thể: nguồn → Bronze → Silver → Gold → MLlib → báo cáo | | H4.1 | ✅ |
+| 4.2 | PySpark ETL: đọc song song, pandas UDF (Arrow) giải mã `extra`, unpivot, cửa sổ | | `spark/etl_diemthi.py` | ✅ |
+| 4.3 | Môi trường và các lỗi khi triển khai Spark trên Windows | | `spark/README.md` | ✅ |
+| 4.4 | Hiệu năng: thời gian từng bước, Spark vs pandas | | `spark/thoi_gian_chay.csv` | ✅ |
+| 5 | **Kết quả phân tích** | 6 | | ✅ |
+| 5.1 | Mô tả: phân phối điểm từng môn toàn quốc; tổ hợp môn phổ biến | | Hình 5.1 histogram; Bảng 5.1 tổ hợp | ✅ |
+| 5.2 | CH2: Môn nào chênh lệch giữa các tỉnh nhiều nhất (eta², độ lệch chuẩn giữa tỉnh, khoảng cách) | | `chenh_lech_giua_tinh_theo_mon.csv`; Hình 5.2 | ✅ |
+| 5.3 | CH1: Tương quan KT-XH ↔ điểm (Spearman, n=34) | | Hình 5.3 heatmap; Hình 5.4 scatter thu nhập–Toán | ✅ |
+| 5.4 | Hồi quy tuyến tính MLlib (chuẩn hóa, k-fold CV) | | Bảng 5.2 hệ số, R² CV (`ml_hoi_quy_*.csv`, `ml_vif.csv`) | ✅ |
+| 5.5 | Phân cụm tỉnh KMeans (chọn k bằng silhouette) | | Hình 5.5 PCA 2D tô màu theo cụm (`ml_kmeans_k3_*.csv`, `ml_pca_tai.csv`) | ✅ |
+| 5.6 | Quan sát: điểm Văn dồn ở 5,0, chỉ nêu như quan sát thống kê | | H5.6, `van_dinh_5_theo_tinh.csv` | ✅ |
 | 6 | **Thảo luận** | 1,5 | | ⬜ |
 | 6.1 | Diễn giải; tương quan không phải nhân quả; n=34 nhỏ; ecological fallacy | | | ⬜ |
 | 6.2 | Hạn chế: tự chọn môn (selection bias), dữ liệu cào web, số liệu 2025 vs thi 2026 | | | ⬜ |

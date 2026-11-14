@@ -274,7 +274,7 @@ def h5_2():
     ax.grid(axis="y", visible=False)
     ax.set_xlim(0, d.eta2.max() * 1.15)
     ax.set_xticks(np.arange(0, 0.181, 0.03))
-    ax.set_xlabel("eta² — tỷ lệ phương sai điểm thí sinh nằm ở chênh lệch giữa các tỉnh")
+    ax.set_xlabel("Phần trăm sự khác nhau về điểm do thí sinh ở các tỉnh khác nhau (eta²)")
     ax.set_title("Ngữ văn là môn chênh lệch giữa các tỉnh nhiều nhất")
     save(fig, "H5_2_eta2_chenh_lech_mon")
 
@@ -342,7 +342,8 @@ def h5_4():
         ax.set_xscale("log")
         ax.set_xticks([3, 4, 5, 6, 8, 10], ["3", "4", "5", "6", "8", "10"])
         ax.minorticks_off()
-        ax.set_title(f"{lab}  ·  R² ngoài mẫu (5-fold) = {vn(kf.loc[col, 'r2_cv_tb'])}", fontsize=9)
+        ax.set_title(f"{lab}: thu nhập giải thích được {vn(kf.loc[col, 'r2_cv_tb'] * 100, 0)}% chênh lệch",
+                     fontsize=9)
         ax.yaxis.set_major_formatter(vn_fmt(1))
     axes[0].set_ylabel("Điểm trung bình tỉnh")
     axes[1].tick_params(labelleft=True)
@@ -371,11 +372,12 @@ def h5_5():
     for _, r in g.loc[dist.nlargest(12).index].iterrows():
         ax.annotate(r.ten_tinh, (r.pc1, r.pc2), xytext=(4, 3), textcoords="offset points", fontsize=7, color=INK2)
     ax.axhline(0, color=AXIS, lw=0.8, zorder=1); ax.axvline(0, color=AXIS, lw=0.8, zorder=1)
-    ax.set_xlabel(f"Thành phần chính 1 ({vn(ev.pc1 * 100, 0)}% phương sai)")
-    ax.set_ylabel(f"Thành phần chính 2 ({vn(ev.pc2 * 100, 0)}% phương sai)")
+    ax.set_xlabel(f"← khá giả hơn          Trục mức sống (gộp 9 chỉ tiêu, giữ {vn(ev.pc1 * 100, 0)}% thông tin)"
+                  "          khó khăn hơn →")
+    ax.set_ylabel(f"Trục phụ (giữ {vn(ev.pc2 * 100, 0)}% thông tin)")
     ax.xaxis.set_major_formatter(vn_fmt(0)); ax.yaxis.set_major_formatter(vn_fmt(0))
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=3, fontsize=8)
-    ax.set_title("Phân cụm KMeans (k = 3) 34 tỉnh, chiếu lên 2 thành phần chính")
+    ax.set_title("34 tỉnh tự chia thành 3 nhóm (thuật toán KMeans)")
     save(fig, "H5_5_kmeans_pca")
 
 
@@ -428,7 +430,7 @@ def h5_6():
     a2.set_yticks(y, ts.ten, fontsize=6.5)
     a2.set_ylim(-1.8, len(ts) + 0.6)
     a2.xaxis.set_major_formatter(vn_fmt(1)); a2.grid(axis="y", visible=False)
-    a2.set_xlabel("Tỷ số: % bài đúng 5,0 / TB(% ở 4,5 và 5,5)")
+    a2.set_xlabel("Mức 5,0 nhiều gấp mấy lần các mức 4,5 và 5,5")
     a2.set_title("Theo tỉnh: độ nhô của mức 5,0", fontsize=9)
     fig.suptitle("Ngữ văn: số bài dồn ở đúng 5,0 điểm (quan sát thống kê)", x=0.01, ha="left",
                  fontsize=10, weight="semibold")
