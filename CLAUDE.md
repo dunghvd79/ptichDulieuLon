@@ -1,0 +1,124 @@
+# CLAUDE.md — Đồ án "Tích hợp và phân tích dữ liệu lớn"
+
+Hướng dẫn và bối cảnh cho Claude (Claude Code / IDE agent) khi làm việc trong repo này.
+**Luôn trả lời người dùng bằng tiếng Việt.**
+
+## 1. Bối cảnh
+
+- Đồ án cuối kỳ môn **Tích hợp và phân tích dữ liệu lớn** (Kỳ 1 – Năm 4), Trường Công nghệ Thông tin, ĐH Phenikaa.
+- Repo GitHub: `https://github.com/dunghvd79/ptichDulieuLon` (nên để private).
+- Thư mục local (Windows): `E:\2026 Year\Ki_1_Nam_4\cuoiki_PtichDulieuLon`.
+- **Đề tài:** Điểm thi tốt nghiệp THPT 2026 và điều kiện kinh tế – xã hội theo tỉnh.
+- **Câu hỏi nghiên cứu:**
+  - Tỉnh giàu hơn, đô thị hóa cao hơn, điều kiện giáo dục tốt hơn có điểm thi cao hơn không?
+  - Môn nào chênh lệch giữa các tỉnh nhiều nhất?
+- **Đơn vị phân tích:** 34 tỉnh, thành phố sau sắp xếp hành chính (hiệu lực 01/07/2025, Nghị quyết 202/2025/QH15).
+- Yêu cầu của môn: phải thể hiện được **tích hợp nhiều nguồn** và dùng **công cụ Big Data** (Spark, MLlib…). Một mình bộ điểm thi (1,2 triệu dòng) chưa đủ "lớn", nên điểm nhấn của đồ án là phần tích hợp và pipeline.
+
+## 2. Nguồn dữ liệu
+
+| Nguồn | Ghi chú | Vị trí |
+|---|---|---|
+| Điểm thi THPT 2026 – repo `duongtrongnguyen123/diem-thi-thptqg-2026` | 1.200.202 thí sinh, 34 CSV theo tỉnh, ~115 MB. Cào từ VietnamNet ngày 01/07/2026. **Dữ liệu cá nhân.** | `data/raw/diemthi_2026/` |
+| Niên giám thống kê 2025 – Cục Thống kê (nso.gov.vn) | PDF 1.557 trang, không có bản Excel. Phụ lục 34 tỉnh ở **trang 1142–1555 (209 biểu)**. | `data/raw/NG-TOAN-QUOC-2025.pdf` |
+| Bảng ánh xạ 63 → 34 tỉnh | Tự dựng theo NQ 202/2025/QH15; đã đối chiếu, 34 mã mới khớp mã tỉnh trong SBD | `data/reference/map_63_34_tinh.csv` |
+
+Repo `TruongThuHa/diem_thi_thptqg-2026-` (người dùng tìm thấy đầu tiên) **không chứa dữ liệu**, chỉ có script. Dữ liệu nằm ở repo gốc nói trên.
+
+URL PDF Niên giám: `https://www.nso.gov.vn/wp-content/uploads/2026/07/NG-TOAN-QUOC-2025-1.pdf`
+
+## 3. Cấu trúc repo
+
+```
+data/raw/          dữ liệu gốc — KHÔNG commit (.gitignore)
+data/reference/    map_63_34_tinh.csv
+data/processed/    đầu ra; diemthi_2026_clean.* KHÔNG commit (dữ liệu cấp thí sinh)
+scripts/
+  common.py          đường dẫn, SUBJECTS, PROVINCES_34 (tên đúng như trong Niên giám)
+  get_data.py        bước 0: clone repo điểm thi + tải PDF (bỏ qua nếu đã có)
+  clean_diemthi.py   bước 1: làm sạch điểm thi -> parquet + diemthi_theo_tinh.csv
+  build_ktxh.py      bước 2: trích số liệu KT-XH từ PDF (pypdf, layout mode)
+  join_explore.py    bước 3: ghép 2 nguồn + tương quan Spearman
+notebooks/         (trống) phân tích khám phá, biểu đồ
+spark/             (trống) pipeline PySpark + MLlib — BƯỚC TIẾP THEO
+```
+
+Chạy (từ thư mục `scripts/`): `python get_data.py && python clean_diemthi.py && python build_ktxh.py && python join_explore.py`
+Phụ thuộc: `pandas`, `pyarrow`, `pypdf` (xem `requirements.txt`). Xem nhanh một biểu bất kỳ: `python build_ktxh.py --bieu 52 60`.
+
+## 4. Các vấn đề tích hợp đã phát hiện và xử lý (quan trọng cho báo cáo)
+
+1. **Cột `extra` chứa điểm.**
+   - Ở 14 tỉnh (TP.HCM, Hải Phòng, Đồng Nai, Cần Thơ, An Giang, Huế, Gia Lai…), các cột điểm trống; điểm bị dồn vào `extra` dạng chuỗi mã hóa HTML, ví dụ `To&#xE1;n=8; V&#x103;n=7; S&#x1EED;=9`.
+   - Đọc thẳng: 39,3% thí sinh có điểm Toán. Sau khi `html.unescape` và tách: **98,6%**.
+   - Khoảng 96% thí sinh có đủ 4 môn (Toán, Văn + 2 môn tự chọn, cấu trúc thi mới).
+   - Khóa môn trong `extra`: toán, văn, ngoại ngữ, lí, hóa, sử, địa, giáo dục kinh tế pháp luật, công nghệ công nghiệp, công nghệ nông nghiệp.
+2. **Đổi môn.** GDCD đổi thành **GD Kinh tế & Pháp luật** (cột `gdktpl`, chỉ có trong `extra`); thêm Tin học, Công nghệ.
+3. **Mã tỉnh bị tái sử dụng.** 7 mã số cũ nay trỏ sang tỉnh khác:
+   - 15 Yên Bái → Lào Cai
+   - 24 Bắc Giang → Bắc Ninh
+   - 44 Quảng Bình → Quảng Trị
+   - 52 Bình Định → Gia Lai
+   - 80 Long An → Tây Ninh
+   - 82 Tiền Giang → Đồng Tháp
+   - 91 Kiên Giang → An Giang
+
+   Ghép dữ liệu cũ theo mã số mà không qua bảng ánh xạ sẽ sai mà không có lỗi nào báo ra.
+4. **Trích PDF.**
+   - Số định dạng Việt Nam `1.234,5`; `-` / `..` nghĩa là không có số liệu.
+   - **Ô trống (giá trị 0) làm lệch cột**: gán số vào cột theo vị trí ký tự, lấy các dòng đủ cột **trên cùng trang** làm mốc (số căn phải). Mỗi biểu trải 2 trang ("Tiếp theo") với lề khác nhau.
+   - Tên tỉnh trong PDF: `TP. Hồ Chí Minh`, đổi thành `Hồ Chí Minh` khi ghép.
+   - Bỏ qua trang mục lục (chứa "Trang"/"Page").
+5. **Kiểm chứng.** Tổng 34 tỉnh khớp **chính xác** dòng "Cả nước": dân số 102.345,3 nghìn người, giáo viên THPT 148.396, học sinh THPT 3.082.574. GRDP/người bình quân theo dân số = 124,9 so với 125,5 cả nước (chênh lệch là bình thường).
+6. **Gộp chỉ tiêu bình quân** (nếu phải tự quy đổi 63 → 34): chỉ tiêu tổng thì cộng; chỉ tiêu bình quân thì tính lại theo trọng số dân số, không lấy trung bình cộng. Niên giám 2025 đã có sẵn phụ lục 34 tỉnh (2020–2025) nên hiện chưa cần.
+
+## 5. Chỉ tiêu KT-XH đã trích (số biểu trong phụ lục)
+
+| Biểu | Chỉ tiêu |
+|---|---|
+| 5 | Diện tích, mật độ dân số |
+| 6 | Dân số TB 2020–2025 |
+| 9 | Dân số thành thị (tính ra `ty_le_do_thi_pct`) |
+| 34 | Tỷ lệ lao động qua đào tạo |
+| 43 | GRDP/người 2020–2025 |
+| 140 / 142 / 143 / 147 | Số trường, giáo viên, học sinh THPT; số học sinh/giáo viên |
+| 158 | Thu nhập bình quân đầu người/tháng 2025 |
+| 163 | Thu nhập bình quân một lao động |
+| 164 | HDI |
+| 166 | GINI |
+| 173 | Tỷ lệ hộ nghèo |
+| 186 | Tỷ lệ dùng internet |
+
+Các biểu khác còn dùng được: doanh nghiệp (52–71), y tế (149–151), chi tiêu (167–171), nhà ở (193–196), tỷ lệ hộ có máy tính (182).
+
+## 6. Kết quả thăm dò ban đầu (Spearman, n = 34)
+
+| | Toán TB | Văn TB | Tỷ lệ thi Ngoại ngữ |
+|---|---|---|---|
+| HDI | 0,79 | 0,36 | 0,86 |
+| Thu nhập bình quân đầu người | 0,76 | 0,35 | 0,85 |
+| Tỷ lệ hộ nghèo | −0,77 | −0,31 | −0,79 |
+| GRDP/người | 0,60 | 0,21 | 0,78 |
+| Học sinh / giáo viên THPT | 0,15 | 0,24 | 0,17 |
+
+Nhận xét:
+- Toán và tỷ lệ chọn Ngoại ngữ đi theo mức sống rõ rệt; Văn thì yếu.
+- Thu nhập và HDI giải thích tốt hơn GRDP (Quảng Ninh có GRDP/người cao nhất nhưng thu nhập người dân không cao nhất).
+- Đây mới là thăm dò, n = 34 nhỏ.
+
+## 7. Việc tiếp theo
+
+- [ ] **PySpark ETL** (`spark/`): đọc 34 CSV, parse `extra` (UDF), tổng hợp theo tỉnh, ghép với `ktxh_34tinh_2025_wide.csv`. Đối chiếu kết quả với bản pandas để kiểm chứng.
+- [ ] **Spark MLlib**:
+  - Hồi quy tuyến tính, chuẩn hóa biến, cross-validation k-fold vì n nhỏ.
+  - KMeans phân cụm tỉnh, chọn k bằng silhouette.
+- [ ] Phân tích sâu hơn: theo phân phối (trung vị, tỷ lệ dưới 5, từ 8) thay vì chỉ điểm TB; độ lệch giữa các tỉnh theo từng môn; tỷ lệ chọn tổ hợp môn.
+- [ ] (Tuỳ chọn) Phân tích theo cụm điểm thi (`ma_diem_thi` = 3 số sau mã tỉnh trong SBD), ví dụ hiện tượng điểm Văn dồn ở mức 5,0. Chỉ trình bày như "quan sát thống kê", không kết luận gian lận.
+- [ ] Notebook/biểu đồ, dashboard, báo cáo.
+
+## 8. Lưu ý kỹ thuật
+
+- Máy người dùng chạy **Windows** (PowerShell). PySpark trên Windows cần **Java 17** (đặt `JAVA_HOME`). Ghi parquet hoặc dùng HDFS API thường đòi `winutils.exe` + `HADOOP_HOME`. Có thể tránh bằng cách xuất kết quả nhỏ qua `.toPandas().to_csv(...)`, hoặc chạy Spark trong Docker / WSL.
+- Không commit `data/raw/` hay dữ liệu cấp thí sinh. **Luôn bỏ SBD** trước khi xuất bất cứ thứ gì; chỉ báo cáo số liệu tổng hợp.
+- Giữ đường dẫn tập trung trong `scripts/common.py`; script chạy từ thư mục `scripts/`.
+- Người dùng là kỹ sư phần mềm (TypeScript/NestJS), quen Git; trình bày ngắn gọn, đi thẳng vào việc.
