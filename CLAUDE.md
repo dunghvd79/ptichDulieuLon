@@ -130,9 +130,11 @@ Nhật ký tiến độ: mỗi phiên cập nhật mục này và mục "Ghi ch�
   - Văn dồn ở 5,0: vì sao so với mốc 4,5/5,5.
   - Quyền riêng tư: xóa SBD từ bước 2, chỉ công bố số liệu tổng hợp. Ý này đã bỏ khỏi hình H4.1, cần viết trong báo cáo mục 2.4.
 - [ ] **Viết báo cáo** — đang làm. Bản nháp nội dung nằm trong `bao_cao/dat_van_de.md`.
-  - Đã có chương 1–5: đặt vấn đề, dữ liệu, tích hợp (E.1 làm sạch, E.2 ghép), pipeline, kết quả. Mỗi chương có đoạn báo cáo kèm lời nói mẫu.
-  - Còn thiếu: chương 6 thảo luận và hạn chế, chương 7 kết luận, tài liệu tham khảo.
-  - Sau đó chuyển sang .docx (người dùng chưa xác nhận định dạng).
+  - Đã có đủ chương 1–7 và tài liệu tham khảo (2026-11-14). Mỗi chương có đoạn báo cáo kèm lời nói mẫu. Spearman, eta², R², KMeans, silhouette, PCA đều đã có giải thích đời thường và ví dụ.
+  - Ước tính khoảng 27 trang (8.100 chữ, 170 dòng bảng, 8 hình), dài hơn mục tiêu 20 trang; chương 5 dài nhất. Người dùng chưa quyết cắt gọn hay giữ.
+  - Các tài liệu tham khảo đánh dấu (\*) cần kiểm tra lại số hiệu, ngày ban hành.
+  - BƯỚC TIẾP THEO: chuyển sang .docx. Người dùng dặn **dừng lại hỏi trước khi làm Word**.
+  - Repo GitHub đang để PUBLIC; đã báo người dùng, chờ họ quyết định chuyển sang private.
   - Người dùng chuộng khung **Vấn đề → Giải pháp → Kết quả** và ngôn ngữ đời thường.
 - [ ] (Tùy chọn) Hồi quy: thử lưới regParam cho ridge (hiện chỉ có 0,5, quá mạnh) bằng nested CV.
 - [x] Điểm Văn dồn ở 5,0 **ở cấp tỉnh** (H5.6). So với mốc 4,5/5,5, không dùng 4,75/5,25, vì Văn được chấm theo nửa điểm.
