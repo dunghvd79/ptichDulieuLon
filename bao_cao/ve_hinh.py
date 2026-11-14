@@ -233,23 +233,27 @@ def h5_1():
     # bội 0,25 mà gom vào khoảng rộng 0,25 (tâm ở các mức 0; 0,25; ...; 10).
     p["bin"] = (p.diem * 4).round() / 4
     order = cl.sort_values("so_bai", ascending=False).index
-    fig, axes = plt.subplots(4, 3, figsize=(W, 7.4), sharex=True)
+    fig, axes = plt.subplots(4, 3, figsize=(W, 8.2))
     for ax, mon in zip(axes.flat, order):
         g = p[p.mon == mon].groupby("bin").so_bai.sum()
         g = g / g.sum()
-        ax.bar(g.index, g.values, width=0.2, color=BLUE, lw=0)
+        # mốc 5 điểm: đường mảnh, nằm dưới cột, giúp mắt định vị thang điểm
+        ax.axvline(5, color=AXIS, lw=0.8, zorder=0)
+        ax.bar(g.index, g.values, width=0.2, color=BLUE, lw=0, zorder=2)
         ax.set_title(f"{ten[mon]} · TB {vn(cl.loc[mon, 'tb_toan_quoc'])} · {vn(cl.loc[mon, 'so_bai'], 0)} bài",
                      fontsize=7)
         ax.yaxis.set_major_formatter(vn_pct())
-        ax.grid(axis="x", visible=False)
+        ax.set_xlim(-0.3, 10.3)
+        ax.set_xticks(range(0, 11, 2))                     # số ở mọi panel: 0, 2, 4, …, 10
+        ax.set_xticks(range(1, 10, 2), minor=True)         # vạch nhỏ ở điểm lẻ
+        ax.tick_params(which="minor", length=2, color=MUTED)
+        ax.grid(axis="x", which="major", color=GRID, lw=0.5, zorder=0)
         ax.tick_params(labelsize=7)
     last = axes.flat[-1]
     last.set_axis_off()
-    last.text(0.02, 0.5, "Trục ngang: điểm (0–10)\nTrục dọc: % số bài của môn\nMỗi cột = khoảng rộng 0,25 điểm",
+    last.text(0.02, 0.5, "Trục ngang: điểm (0–10)\nTrục dọc: % số bài của môn\nMỗi cột = khoảng rộng 0,25 điểm\n"
+              "Đường dọc đậm hơn: mốc 5 điểm",
               fontsize=7.5, color=INK2, va="center", transform=last.transAxes)
-    for ax in axes[-1]:
-        ax.set_xticks(range(0, 11, 2))
-    axes[-2, -1].tick_params(labelbottom=True)
     fig.suptitle("Phổ điểm toàn quốc theo môn, kỳ thi tốt nghiệp THPT 2026", x=0.01, ha="left",
                  fontsize=10, weight="semibold")
     fig.tight_layout()
