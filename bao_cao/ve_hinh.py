@@ -166,28 +166,30 @@ def h4_1():
     O0, O1 = 86.6, 100        # đầu ra
     ax.add_patch(FancyBboxPatch((L0, 19.5), L1 - L0, 33.5, boxstyle="round,pad=0,rounding_size=1.5",
                                 fc="#f2f7fd", ec="none", zorder=0))
-    ax.text(S0, 50.6, "NGUỒN", fontsize=7, weight="semibold", color=INK2, va="top")
-    ax.text(L0 + 1.2, 50.6, "APACHE SPARK", fontsize=7, weight="semibold", color=BLUE_DARK, va="top")
-    ax.text(L1 - 1.2, 50.6, "PySpark 4.0 · local[*] · DataFrame + MLlib", fontsize=6.2,
+    ax.text(S0, 50.6, "DỮ LIỆU GỐC", fontsize=7, weight="semibold", color=INK2, va="top")
+    ax.text(L0 + 1.2, 50.6, "XỬ LÝ BẰNG APACHE SPARK", fontsize=7, weight="semibold", color=BLUE_DARK, va="top")
+    ax.text(L1 - 1.2, 50.6, "công cụ xử lý dữ liệu lớn", fontsize=6.2,
             color=INK2, va="top", ha="right")
-    ax.text(O0, 50.6, "ĐẦU RA", fontsize=7, weight="semibold", color=INK2, va="top")
+    ax.text(O0, 50.6, "KẾT QUẢ", fontsize=7, weight="semibold", color=INK2, va="top")
 
     # --- hàng chính ---
     n, g = 5, 1.6
     w = (L1 - L0 - 2.4 - (n - 1) * g) / n
     xs = [L0 + 1.2 + i * (w + g) for i in range(n)]
-    box(S0, S1 - S0, "Điểm thi", "THPT 2026", "34 CSV", "115 MB", ["cào từ", "VietnamNet"], edge=OUT_EDGE)
+    box(S0, S1 - S0, "Điểm thi", "THPT 2026", "34 file", "1 file / tỉnh", ["lấy từ", "VietnamNet"],
+        edge=OUT_EDGE)
     steps = [
-        ("Bronze", "đọc thô", vn(so_dong, 0), "dòng", ["đọc song song", "34 file"]),
-        ("Silver", "làm sạch", vn(so_dong, 0), "thí sinh", ["tách cột extra", "bỏ SBD"]),
-        ("Gold", "tổng hợp", "34 × 11", "tỉnh × môn", ["phổ điểm, eta²", "tổ hợp môn"]),
-        ("Ghép", "tích hợp", "34 / 34", "tỉnh khớp", [f"+{so_chi_tieu} chỉ tiêu", "KT-XH"]),
-        ("MLlib", "học máy", "n = 34", "tỉnh", ["hồi quy k-fold", "KMeans, PCA"]),
+        ("Đọc", "bước 1", vn(so_dong, 0), "thí sinh", ["đọc 34 file", "cùng lúc"]),
+        ("Làm sạch", "bước 2", f"{vn(float(cl['co_toan_sau']) * 100, 1)}%", "có điểm Toán",
+         [f"(trước: {vn(float(cl['co_toan_truoc']) * 100, 1)}%)", "xóa số báo danh"]),
+        ("Tổng hợp", "bước 3", "34 tỉnh", "× 11 môn", ["điểm TB, tỷ lệ", "dưới 5 mỗi tỉnh"]),
+        ("Ghép", "bước 4", "34 / 34", "tỉnh khớp", ["điểm thi +", "kinh tế – xã hội"]),
+        ("Phân tích", "bước 5", "2 câu hỏi", "nghiên cứu", ["tìm yếu tố", "chia nhóm tỉnh"]),
     ]
     for x, st in zip(xs, steps):
         box(x, w, *st)
-    box(O0, O1 - O0, "Kết quả", "cho báo cáo", f"{so_bang} bảng", f"{so_hinh} hình",
-        ["Spark = pandas", f"{int(dc.khop.sum())}/{len(dc)} cột"], edge=OUT_EDGE)
+    box(O0, O1 - O0, "Báo cáo", "kết quả", f"{so_hinh} hình", f"{so_bang} bảng số",
+        ["kiểm tra chéo", "khớp 100%" if dc.khop.all() else "có sai lệch"], edge=OUT_EDGE)
 
     yc = BOX_Y + BOX_H - 9.2   # ngang dòng con số
     mui_ten(S1, yc, xs[0], yc)
@@ -201,13 +203,14 @@ def h4_1():
     mw = S1 - S0 - 2.2
     chu(S0 + 1.1, by + bh - 1.4, "Niên giám", mw, 8, weight="semibold", va="top")
     chu(S0 + 1.1, by + bh - 5.0, "thống kê 2025", mw, 6.3, color=MUTED, va="top")
-    chu(S0 + 1.1, by + bh - 8.0, "PDF 1.557 trang", mw, 6.3, color=INK2, va="top")
+    chu(S0 + 1.1, by + bh - 8.0, "file PDF 1.557 trang", mw, 6.3, color=INK2, va="top")
     px, pw = xs[0], xs[2] + w - xs[0]
     khung(px, by, pw, bh, OUT_EDGE)
     mw = pw - 2.2
-    chu(px + 1.1, by + bh - 1.4, "Trích bảng từ PDF", mw, 8, weight="semibold", va="top")
-    chu(px + 1.1, by + bh - 5.0, "pypdf · gán số vào cột theo vị trí ký tự", mw, 6.3, color=INK2, va="top")
-    chu(px + 1.1, by + bh - 8.0, f"{so_chi_tieu} chỉ tiêu × 34 tỉnh · tổng 34 tỉnh = dòng \"Cả nước\"",
+    chu(px + 1.1, by + bh - 1.4, "Lấy số liệu từ file PDF", mw, 8, weight="semibold", va="top")
+    chu(px + 1.1, by + bh - 5.0, f"{so_chi_tieu} chỉ tiêu cho 34 tỉnh: thu nhập, HDI, tỷ lệ đô thị, hộ nghèo…",
+        mw, 6.3, color=INK2, va="top")
+    chu(px + 1.1, by + bh - 8.0, "Đã kiểm tra: cộng 34 tỉnh đúng bằng số liệu cả nước",
         mw, 6.3, color=INK2, va="top")
     yb = by + 3.2   # dưới vùng chữ
     mui_ten(S1, yb, px, yb)
@@ -215,9 +218,8 @@ def h4_1():
     ax.plot([px + pw, gx], [yb, yb], color=MUTED, lw=0.9, zorder=4)
     mui_ten(gx, yb, gx, BOX_Y)
 
-    ax.text(gx + 1.2, by + bh / 2, "nhập bảng\nKT-XH", fontsize=6, color=MUTED, va="center")
-    ax.text(0, -0.6, "Từ bước Silver trở đi không còn số báo danh; mọi bảng đầu ra là số liệu tổng hợp.",
-            fontsize=6.2, color=MUTED, va="top")
+    ax.text(0, -0.6, "Từ bước 2 đã xóa số báo danh: báo cáo chỉ dùng số liệu tổng hợp theo tỉnh, "
+            "không lộ thông tin cá nhân.", fontsize=6.2, color=MUTED, va="top")
     save(fig, "H4_1_pipeline")
 
 
